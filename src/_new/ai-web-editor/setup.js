@@ -120,15 +120,18 @@ const copyFiles = (targetRoot) => {
     }
 }
 
-// Vercel calls '?action=cleanup' daily at 4:00 UTC, which deletes the reference images older than 7 days
-const cleanupCron = { path: '/api/ai-editor?action=cleanup', schedule: '0 4 * * *' }
+// Vercel calls it daily at 4:00 UTC, which deletes the reference images older than 7 days. The rewrite turns it into
+// '?action=cleanup': Vercel's docs don't say a cron path keeps its query string
+const cleanupCron = { path: '/api/ai-editor/cleanup', schedule: '0 4 * * *' }
+const cleanupRewrite = { source: cleanupCron.path, destination: '/api/ai-editor?action=cleanup' }
 
-// Adds cleanupCron to the site's vercel.json, keeping the rest
+// Adds cleanupCron and, first so no other rewrite catches it, cleanupRewrite to the site's vercel.json, keeping the rest
 const addCleanupCron = (targetRoot) => {
     const file = path.join(targetRoot, 'vercel.json')
     const config = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {}
     if (config.crons?.some(({ path: cronPath }) => cronPath === cleanupCron.path)) return console.log('Kept the cleanup cron in vercel.json')
     config.crons = [...(config.crons ?? []), cleanupCron]
+    config.rewrites = [cleanupRewrite, ...(config.rewrites ?? [])]
     fs.writeFileSync(file, `${JSON.stringify(config, null, 2)}\n`)
     console.log('Added the cleanup cron to vercel.json')
 }

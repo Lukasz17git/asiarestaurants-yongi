@@ -15,7 +15,7 @@ From the button's panel:
   version: elsewhere the chat links to it
 - **Images**, up to 20 of each kind per message, compressed to WebP before upload (`imageBoxes` in `Composer.js`):
   - **Imágenes de referencia**: only for the AI to look at; deleted after 7 days by a daily Vercel cron
-    (`?action=cleanup`, in `vercel.json`), and shown as «Imagen borrada» in the chat after that
+    (`/api/ai-editor/cleanup`, rewritten to `?action=cleanup` in `vercel.json`), and shown as «Imagen borrada» in the chat after that
   - **Imágenes para la web** (hidden for now, commented out in `imageBoxes`): the AI puts them on the site; kept for good
 - **Versions** (under the address): the branch's last 10 Vercel deploys since the tag `v0` (`EDITOR_HISTORY_TAG`), one per
   commit and numbered from 1. Each opens on the page you're on at `/_history/<number>` of the site's address:
@@ -59,7 +59,7 @@ Needs a React 18 app deployed on Vercel from a GitHub repo. `setup.js` does the 
 
    It copies this folder (always, so the site gets the editor's updates) and, only when missing, `api/ai-editor.js`, `middleware.js`,
    the workflows, `src/_new/scripts/design-domains.js`, the issue templates, `.claude/agents/client-reply.md`, the
-   skills the workflow loads and an empty `src/_new/releaseNotesData.js`, and adds the cleanup cron to `vercel.json`.
+   skills the workflow loads and an empty `src/_new/releaseNotesData.js`, and adds the cleanup cron and its rewrite to `vercel.json`.
    Then it installs the dependencies and sets:
 
    - GitHub: secrets `CLAUDE_CODE_OAUTH_TOKEN` and `VERCEL_TOKEN`, variables `CLAUDE_ALLOWED_USERS` (yours,
