@@ -3,6 +3,7 @@ import { useEditor } from './EditorContext'
 import Composer from './Composer'
 import { RequireCode } from './AccessCode'
 import { createRequest, getSiteName, mainBranch, toHost } from './api'
+import { getPagePath } from './versionPath'
 
 const getDestination = (type, ref, status) => {
     if (type === 'new') return 'Se creará otra versión de la web, con su propia dirección. La web que ya existe no cambia.'
@@ -17,7 +18,7 @@ const RequestForm = ({ type, onSent }) => {
     const [name, setName] = useState('')
 
     const send = async ({ text, images }) => {
-        const { number } = await createRequest(code, { type, name, text, ref, page: window.location.pathname, images })
+        const { number } = await createRequest(code, { type, name, text, ref, page: getPagePath(), images })
         onSent(number)
     }
 

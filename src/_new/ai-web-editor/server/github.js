@@ -12,9 +12,10 @@ const mainUrl = env.EDITOR_MAIN_URL || `https://${productionHost}`
 // '{branch}' -> the branch's slug ('lucas-v1' -> https://asiarestaurants-yongi-lucas-v1.vercel.app)
 const designUrl = env.EDITOR_DESIGN_URL || `https://${productionHost.replace(/\.vercel\.app$/, '')}-{branch}.vercel.app`
 
-// Branch, commit and own address ('asiarestaurants-yongi-4ngnuz0np-....vercel.app') of the deployment answering,
-// so each design's editor knows where it is and when it's opened as an older version
-const deployment = { ref: env.VERCEL_GIT_COMMIT_REF || mainBranch, sha: env.VERCEL_GIT_COMMIT_SHA || null, host: env.VERCEL_URL || null }
+// Branch and commit of the deployment answering, so each design's editor knows where it is
+const deployment = { ref: env.VERCEL_GIT_COMMIT_REF || mainBranch, sha: env.VERCEL_GIT_COMMIT_SHA || null }
+// The versions list starts after this tag's commit (version 1 is the first deploy after it)
+const historyTag = env.EDITOR_HISTORY_TAG || 'v0'
 
 const toSlug = (branch) => branch.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 
@@ -75,6 +76,7 @@ module.exports = {
     mainBranch,
     mainUrl,
     deployment,
+    historyTag,
     uploadFolder,
     getBranchUrl,
     github,

@@ -5,6 +5,7 @@ import Versions from './Versions'
 import { RequestRow } from './History'
 import { getPhaseText } from './AiWebEditor'
 import { formatAgo, getDesigns, getRequests, getSiteName, mainBranch, toHost } from './api'
+import { getPagePath } from './versionPath'
 
 const latestRequestsNumber = 3
 const latestDesignsNumber = 4
@@ -93,7 +94,7 @@ const Home = ({ open, phase, onEdit, onPromote, onRestore, onDesigns, onOpenRequ
                     <ul className='aiwe-request-list'>
                         {getLatestDesigns(designs).map((design) => (
                             <li key={design.branch}>
-                                <a className='aiwe-request-row aiwe-design-row' href={design.url + window.location.pathname}>
+                                <a className='aiwe-request-row aiwe-design-row' href={design.url + getPagePath()}>
                                     <span className='aiwe-request-texts'>
                                         <span className='aiwe-request-title'>{design.title ?? getSiteName(design.branch)}</span>
                                         <span className='aiwe-request-meta'>

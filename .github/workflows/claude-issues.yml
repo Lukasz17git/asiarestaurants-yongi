@@ -98,7 +98,7 @@ jobs:
               echo "This request asks to bring \`$target\` back to the version of commit \`$version\`, as a new commit on top: never reset,"
               echo "rebase or force-push, so the version it replaces stays in the history and can be brought back the same way. Run"
               echo "\`git restore --source=$version --staged --worktree -- . ':(exclude).github' ':(exclude).claude' ':(exclude)CLAUDE.md'"
-              echo "':(exclude)api' ':(exclude)vercel.json' ':(exclude)src/_new/ai-web-editor' ':(exclude)src/_new/scripts'"
+              echo "':(exclude)api' ':(exclude)middleware.js' ':(exclude)vercel.json' ':(exclude)src/_new/ai-web-editor' ':(exclude)src/_new/scripts'"
               echo "':(exclude)src/_new/releaseNotesData.js'\` (the editor, the workflows, CLAUDE.md and the release notes stay as they are)."
               echo "If the build then fails because a kept file needs something that version lacks (e.g. a dependency in package.json),"
               echo "add back only that. The release note says the website went back to that version, with one \`changes\` item per change"

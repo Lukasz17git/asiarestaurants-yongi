@@ -15,9 +15,6 @@ export const getSiteName = (branch) => {
 
 export const toHost = (url) => url.replace(/^https?:\/\//, '')
 
-// Opened by the deployment's own address (a version from the list), which never gets newer, not by the site's
-export const isVersionPage = (status) => Boolean(status?.deploymentHost) && status.deploymentHost === window.location.host
-
 /*
  * Access code
  */
@@ -69,7 +66,8 @@ export const getThread = (number) => call('request', { params: { number } })
 
 export const getDesigns = () => call('designs')
 
-export const getVersions = () => call('versions')
+// `number` is added when it isn't among the last 10 (the version being viewed)
+export const getVersions = (number) => call('versions', { params: number ? { number } : {} })
 
 export const checkCode = (code) => call('access', { method: 'POST', code })
 

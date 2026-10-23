@@ -3,6 +3,7 @@ import { Dialog } from '@base-ui/react/dialog'
 import { useEditor } from './EditorContext'
 import Icon from './Icon'
 import { formatAgo, getDesigns, getSiteName, toHost } from './api'
+import { getPagePath } from './versionPath'
 
 // The main web and the 10 latest designs; "Abrir" keeps the page you're on
 const DesignsDialog = ({ open, onClose }) => {
@@ -43,7 +44,7 @@ const DesignsDialog = ({ open, onClose }) => {
                                         {design.branch === ref
                                             ? <span className='aiwe-chip'>Estás aquí</span>
                                             : (
-                                                <a className='aiwe-button secondary small' href={design.url + window.location.pathname}>
+                                                <a className='aiwe-button secondary small' href={design.url + getPagePath()}>
                                                     Abrir
                                                     <Icon name='external' />
                                                 </a>

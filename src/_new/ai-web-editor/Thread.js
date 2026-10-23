@@ -5,6 +5,7 @@ import ImagePreview from './ImagePreview'
 import { useEditor } from './EditorContext'
 import { RequireCode } from './AccessCode'
 import { formatAgo, getSiteName, getThread, replyToRequest } from './api'
+import { getPagePath } from './versionPath'
 
 // Only while the panel is open and the tab is visible
 const pollMs = 6000
@@ -106,7 +107,7 @@ const Thread = ({ number, active }) => {
 
     const progress = getProgress(thread)
     const reply = async ({ text, images }) => {
-        await replyToRequest(code, number, { text, page: window.location.pathname, images })
+        await replyToRequest(code, number, { text, page: getPagePath(), images })
         await load()
     }
 
@@ -130,14 +131,14 @@ const Thread = ({ number, active }) => {
             {thread.branch !== ref && (
                 <ReplyElsewhere
                     text={`Esta petición es de ${getSiteName(thread.branch)}. Para seguir con ella, ábrela desde allí.`}
-                    href={thread.url + window.location.pathname}
+                    href={thread.url + getPagePath()}
                     label={`Abrir ${getSiteName(thread.branch)}`}
                 />
             )}
             {thread.branch === ref && oldVersion && (
                 <ReplyElsewhere
                     text='Estás viendo una versión anterior. Para seguir con esta petición, abre la versión actual.'
-                    href={status.url + window.location.pathname}
+                    href={status.url + getPagePath()}
                     label='Abrir la versión actual'
                 />
             )}

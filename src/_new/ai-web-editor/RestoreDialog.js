@@ -3,6 +3,7 @@ import { AlertDialog } from '@base-ui/react/alert-dialog'
 import { useEditor } from './EditorContext'
 import { RequireCode } from './AccessCode'
 import { createRequest, formatDateTime, getSiteName, toHost } from './api'
+import { getPagePath } from './versionPath'
 
 // Asks before sending a 'restore' request: the AI brings this older version back as a new change, so the version
 // that was newest stays in the list and can be brought back the same way
@@ -16,7 +17,7 @@ const RestoreDialog = ({ open, onClose, onSent }) => {
         setSending(true)
         setError('')
         try {
-            const { number } = await createRequest(code, { type: 'restore', version: oldVersion.sha, text: '', ref, page: window.location.pathname, images: [] })
+            const { number } = await createRequest(code, { type: 'restore', version: oldVersion.sha, text: '', ref, page: getPagePath(), images: [] })
             onSent(number)
         } catch (sendError) {
             setError(sendError.message)

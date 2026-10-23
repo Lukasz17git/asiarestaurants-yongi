@@ -13,8 +13,10 @@ From the button's panel:
   `main` and the 10 latest designs
 - **Tus peticiones**: the requests of the branch you're on as chats, with replies and up to 20 images (compressed to WebP
   before upload). Replies only from that branch's newest version: elsewhere the chat links to it
-- **Versions** (under the address): the branch's last 10 Vercel deploys, one per commit. Each opens on the page you're on at its
-  own address (nothing is rebuilt and visitors keep the newest). On an older one, **Volver a esta versión** asks, after a
+- **Versions** (under the address): the branch's last 10 Vercel deploys since the tag `v0` (`EDITOR_HISTORY_TAG`), one per
+  commit and numbered from 1. Each opens on the page you're on at `/_history/<number>` of the site's address:
+  `middleware.js` serves it from that deploy, so nothing is rebuilt or copied and visitors keep the newest. Numbers stay
+  as long as no deploy after the tag is deleted. On an older one, **Volver a esta versión** asks, after a
   confirmation, for a new commit with that version's files, so the version it replaces can be brought back the same way
 
 The button spins while the workflow runs or Vercel hasn't served the branch's latest commit yet, then offers a reload
@@ -50,7 +52,7 @@ Needs a React 18 app deployed on Vercel from a GitHub repo. `setup.js` does the 
    node src/_new/ai-web-editor/setup.js ../other-repo --client=<client's GitHub login>
    ```
 
-   It copies this folder (always, so the site gets the editor's updates) and, only when missing, `api/ai-editor.js`,
+   It copies this folder (always, so the site gets the editor's updates) and, only when missing, `api/ai-editor.js`, `middleware.js`,
    the workflows, `src/_new/scripts/design-domains.js`, the issue templates, `.claude/agents/client-reply.md`, the
    skills the workflow loads and an empty `src/_new/releaseNotesData.js`. Then it installs the dependencies and sets:
 
@@ -81,6 +83,22 @@ Needs a React 18 app deployed on Vercel from a GitHub repo. `setup.js` does the 
 
    An entry shows only on its `branch`; without one, on its `issue`'s branch, else on `main`.
 
+   For the versions at `/_history/<number>`, the build must use relative paths and the router its basename:
+
+   - `package.json`: `"homepage": "."`
+   - `<BrowserRouter basename={historyBasename}>`, with `import AiWebEditor, { historyBasename } from './_new/ai-web-editor'`
+   - `public/index.html`, first in `<head>`, so the relative files of `/_history/3/menu` load from `/_history/3/`:
+
+     ```html
+     <script>
+       var base = document.createElement('base')
+       base.href = (location.pathname.match(/^\/_history\/\d+/) || [''])[0] + '/'
+       document.head.appendChild(base)
+     </script>
+     ```
+
+   Then tag the commit the versions start after: `git tag v0 && git push origin v0`.
+
 4. Commit and push: Vercel deploys it with the editor working.
 
 Optional env vars in Vercel:
@@ -91,6 +109,7 @@ Optional env vars in Vercel:
 | `EDITOR_WORKFLOW`   | The Claude workflow's file (default `claude-issues.yml`)                                     |
 | `EDITOR_MAIN_URL`   | The main site's address (default: the Vercel production domain); for the workflow, the repo variable `MAIN_URL` |
 | `EDITOR_DESIGN_URL` | A design's address, with `{branch}` (default `https://<project>-{branch}.vercel.app`)        |
+| `EDITOR_HISTORY_TAG`| The tag the versions start after (default `v0`; without it, every deploy counts)            |
 
 ## Issues it writes
 
@@ -131,5 +150,7 @@ npx --yes sass@1.77.8 --no-source-map src/_new/ai-web-editor/ai-web-editor.scss 
 - `index.js`: the only export, `AiWebEditor`
 - `AiWebEditor.js`: the button and status; lazy-loads `Panel.js` (the views, dialogs and shared `EditorContext`)
 - `api.js`: calls to the function, the saved code and image uploads
-- `server/`: the Vercel function (`?action=status|requests|request|designs|versions|access|upload`), CommonJS
+- `server/`: the Vercel function (`?action=status|requests|request|designs|versions|history|access|upload`), CommonJS;
+  `historyMiddleware.js` (ESM) is the site's `middleware.js`
+- `versionPath.js`: the `/_history/<number>` an older version is opened at
 - `setup.js`: installs and configures the editor on a repo (Node, not bundled)

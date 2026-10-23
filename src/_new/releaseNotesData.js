@@ -5,6 +5,17 @@ const releaseNotes = [
     {
         date: '2026-10-24',
         branch: 'main',
+        title: 'Las versiones anteriores se abren en la misma dirección',
+        summary: 'Al abrir una versión anterior sigues en la dirección de la web, con /_history/ y su número al final.',
+        changes: [
+            { text: 'Cada versión anterior se abre en la misma dirección de la web, por ejemplo asiarestaurants-yongi.vercel.app/_history/3/menu, en vez de en una dirección larga distinta.' },
+            { text: 'Cada versión tiene su número (1, 2, 3...), que no cambia aunque salgan versiones nuevas.' },
+            { text: 'El historial empieza de cero con esta versión: las versiones de antes se han borrado.' },
+        ],
+    },
+    {
+        date: '2026-10-24',
+        branch: 'main',
         title: 'Diseños en «Editar con IA», fotos más cómodas y platos más pequeños',
         summary: '«Editar con IA» enseña tus últimos diseños, las fotos se ven mejor y en «Pedir online» caben 4 platos por fila.',
         changes: [

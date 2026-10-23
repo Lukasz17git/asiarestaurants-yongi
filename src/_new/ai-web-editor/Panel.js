@@ -10,7 +10,8 @@ import Changes from './Changes'
 import DesignsDialog from './DesignsDialog'
 import PromoteDialog from './PromoteDialog'
 import RestoreDialog from './RestoreDialog'
-import { forgetCode, getSavedCode, getVersions, isVersionPage, mainBranch } from './api'
+import { forgetCode, getSavedCode, getVersions, mainBranch } from './api'
+import { historyNumber } from './versionPath'
 
 const getTitle = (view, ref) => {
     if (view.name === 'history') return 'Tus peticiones'
@@ -21,11 +22,10 @@ const getTitle = (view, ref) => {
     return 'Editar con IA'
 }
 
-// The version this page shows when it's opened by its own address and isn't the newest; null on the site's address.
-// Older than the 10 listed: only its sha is known
-const getOldVersion = (status, versions) => {
-    if (!isVersionPage(status) || !versions?.length || versions[0].sha === status.sha) return null
-    return versions.find(({ sha }) => sha === status.sha) ?? { sha: status.sha, date: null, title: null, url: null }
+// The version this page shows at '/_history/3/...' when it isn't the newest; null on the site's own pages
+const getOldVersion = (versions) => {
+    if (historyNumber === null || !versions?.length || versions[0].number === historyNumber) return null
+    return versions.find(({ number }) => number === historyNumber) ?? null
 }
 
 // Chat-like panel over the bottom right corner. Non-modal, so the site can still be scrolled and clicked
@@ -39,10 +39,10 @@ const Panel = ({ open, onOpenChange, status, phase, onSent, changes, initialView
     // [] without the function or its Vercel settings
     const [versions, setVersions] = useState(null)
     const ref = status?.ref ?? mainBranch
-    const oldVersion = getOldVersion(status, versions)
+    const oldVersion = getOldVersion(versions)
 
     useEffect(() => {
-        if (open) getVersions().then(setVersions, () => setVersions([]))
+        if (open) getVersions(historyNumber).then(setVersions, () => setVersions([]))
     }, [open])
 
     const rejectCode = () => {

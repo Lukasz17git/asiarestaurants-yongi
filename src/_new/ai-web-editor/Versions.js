@@ -2,15 +2,17 @@ import React, { useState } from 'react'
 import { useEditor } from './EditorContext'
 import Icon from './Icon'
 import { formatAgo, formatDateTime } from './api'
+import { getPagePath, historyNumber } from './versionPath'
 
-// This site's last 10 versions under its address. Each opens on the page you're on at its own address (the newest at
-// the site's), so visitors keep seeing the newest
+// This site's last 10 versions under its address. Each opens on the page you're on, at '/_history/3' of the site
+// (the newest at the site's own pages), so visitors keep seeing the newest
 const Versions = () => {
     const { status, versions, oldVersion } = useEditor()
     const [open, setOpen] = useState(false)
     if (!status || !versions?.length) return null
 
-    const getHref = (version, index) => `${index === 0 ? status.url : version.url}${window.location.pathname}`
+    const getHref = (version, index) => `${index === 0 ? status.url : version.url}${getPagePath()}`
+    const viewedNumber = historyNumber ?? versions[0].number
     const oldDate = oldVersion?.date ? `, del ${formatDateTime(oldVersion.date)}` : ''
 
     return (
@@ -24,9 +26,9 @@ const Versions = () => {
             {open && (
                 <ul className='aiwe-version-list'>
                     {versions.map((version, index) => {
-                        const here = version.sha === status.sha
+                        const here = version.number === viewedNumber
                         return (
-                            <li key={version.sha}>
+                            <li key={version.number}>
                                 <a className={here ? 'aiwe-version current' : 'aiwe-version'} href={getHref(version, index)} aria-current={here ? 'page' : undefined}>
                                     <span className='aiwe-version-texts'>
                                         <span className='aiwe-version-title'>{version.title}</span>

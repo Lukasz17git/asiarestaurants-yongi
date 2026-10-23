@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { getStatus, isVersionPage } from './api'
+import { getStatus } from './api'
+import { historyNumber } from './versionPath'
 
 const pollMs = 15000
 // After sending a request, the workflow run takes up to ~1 min to show up in GitHub
@@ -12,7 +13,7 @@ const busyPhases = ['working', 'deploy', 'elsewhere']
 // A version page stays on its commit, so it's never 'ready' or 'deploy'
 const getPhase = (status, loadedSha) => {
     if (!status) return null
-    const versionPage = isVersionPage(status)
+    const versionPage = historyNumber !== null
     if (!versionPage && loadedSha && status.sha && status.sha !== loadedSha) return 'ready'
     if (status.working.some(({ branch }) => branch === status.ref)) return 'working'
     if (!versionPage && status.sha && status.branchSha && status.sha !== status.branchSha) return 'deploy'

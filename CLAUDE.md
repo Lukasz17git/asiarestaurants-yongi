@@ -17,7 +17,7 @@ Lasting wishes from the client; follow them in every change and add new ones her
 - Everything added on top of the original site (features, scripts, data, images) lives in `src/_new/`, laid out like
   `src/` (`src/_new/images/`, `src/_new/pedidos/`), so deleting it leaves the original site; edits to the site's own
   pages and texts stay in their files. Only what a tool reads from a fixed place stays outside: `api/ai-editor.js`
-  (Vercel), `.github/` (GitHub), `.claude/` and this file (Claude), `vercel.json`, `package.json` and `.gitignore`
+  and `middleware.js` (Vercel), `.github/` (GitHub), `.claude/` and this file (Claude), `vercel.json`, `package.json` and `.gitignore`
 - Pages (`src/App.js`): `/` Home, `/restaurant` Restaurants, `/menu` Menus, `/qr` and `/qr-new` QR menu pages,
   `/pedidos` «Pedir online»
 - «Pedir online» (`src/_new/pedidos/`): the takeaway dishes from `takeaway-menu.json` (`takeawayMenu.js`), a cart kept in
@@ -40,10 +40,11 @@ Lasting wishes from the client; follow them in every change and add new ones her
 - "Editar con IA" is the floating button at the bottom right: `src/_new/ai-web-editor/`, a self-contained module mounted once
   as `<AiWebEditor />` in `App.js` (see its `README.md`). Its panel edits this site, starts a new design, uses a design
   as the main web, lists the changes, the designs, the branch's requests (chat and images per request) and its last 10
-  versions (Vercel deploys, opened at their own address; «Volver a esta versión» asks for a new commit with one's files);
+  versions since the tag `v0` (Vercel deploys, opened at `/_history/<number>` by `middleware.js`; «Volver a esta versión»
+  asks for a new commit with one's files);
   the button spins while the Claude workflow runs or Vercel hasn't served the branch's latest commit. Its only Vercel
   function is `api/ai-editor.js`
-  (`?action=status|requests|request|designs|versions|access|upload`, code in `src/_new/ai-web-editor/server/`). Env vars:
+  (`?action=status|requests|request|designs|versions|history|access|upload`, code in `src/_new/ai-web-editor/server/`). Env vars:
   `EDITOR_CODE` (asked once per browser), `GITHUB_TOKEN` (Issues read/write, Actions and Contents read),
   `BLOB_READ_WRITE_TOKEN` (a Blob store shared by every site, images under `<repo>/peticiones/`), `EDITOR_VERCEL_TOKEN`,
   `EDITOR_VERCEL_TEAM` and `EDITOR_VERCEL_PROJECT` (the versions list). All of them, and the

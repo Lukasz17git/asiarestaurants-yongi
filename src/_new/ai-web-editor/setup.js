@@ -40,6 +40,7 @@ CLAUDE_ALLOWED_USERS=
 const editorFolder = 'src/_new/ai-web-editor'
 const siteFiles = [
     'api/ai-editor.js',
+    'middleware.js',
     '.github/workflows/claude-issues.yml',
     '.github/workflows/design-domains.yml',
     '.github/ISSUE_TEMPLATE',

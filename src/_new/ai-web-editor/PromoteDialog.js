@@ -3,6 +3,7 @@ import { AlertDialog } from '@base-ui/react/alert-dialog'
 import { useEditor } from './EditorContext'
 import { RequireCode } from './AccessCode'
 import { createRequest, getSiteName } from './api'
+import { getPagePath } from './versionPath'
 
 // Asks before sending a 'promote' request: the AI merges this design's branch into the main web
 const PromoteDialog = ({ open, onClose, onSent }) => {
@@ -16,7 +17,7 @@ const PromoteDialog = ({ open, onClose, onSent }) => {
         setSending(true)
         setError('')
         try {
-            const { number } = await createRequest(code, { type: 'promote', text: note, ref, page: window.location.pathname, images: [] })
+            const { number } = await createRequest(code, { type: 'promote', text: note, ref, page: getPagePath(), images: [] })
             setNote('')
             onSent(number)
         } catch (sendError) {

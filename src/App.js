@@ -11,7 +11,7 @@ import Menus from './Menu/Menus';
 import ScrollToTop from './ScrollToTop';
 import Qr from './qr/Qr';
 import QrNew from './qrNew/QrNew'
-import AiWebEditor from './_new/ai-web-editor'
+import AiWebEditor, { historyBasename } from './_new/ai-web-editor'
 import releaseNotes from './_new/releaseNotesData'
 
 const Pedidos = lazy(() => import('./_new/pedidos/Pedidos'))
@@ -19,7 +19,7 @@ const Pedidos = lazy(() => import('./_new/pedidos/Pedidos'))
 function App() {
   console.log('Made by Lukasz Maraj')
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={historyBasename}>
       <div className="App">
         <ScrollToTop />
         <Routes>

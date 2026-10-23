@@ -3,6 +3,12 @@
 
 <head>
   <meta charset="utf-8" />
+  <!-- An older version at '/_history/3/...' (src/_new/ai-web-editor/versionPath.js) loads its relative files from there -->
+  <script>
+    var base = document.createElement('base')
+    base.href = (location.pathname.match(/^\/_history\/\d+/) || [''])[0] + '/'
+    document.head.appendChild(base)
+  </script>
   <link rel="icon" href="%PUBLIC_URL%/LogoRedIcon.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#121518" />

@@ -5,6 +5,7 @@ const {
     mainBranch,
     mainUrl,
     deployment,
+    historyTag,
     uploadFolder,
     getBranchUrl,
     github,
@@ -68,7 +69,6 @@ const getStatus = async (req, res) => {
         url: getBranchUrl(deployment.ref),
         mainUrl,
         sha: deployment.sha,
-        deploymentHost: deployment.host,
         branchSha: branch?.commit.sha ?? null,
         working,
         uploadFolder,
@@ -194,31 +194,71 @@ const listDesigns = async (req, res) => {
 // 'Changed the menu prices (#12)' -> 12
 const getIssueNumber = (message) => Number(message.split('\n')[0].match(/\(#(\d+)\)\s*$/)?.[1]) || null
 
-// The last 10 deploys of this branch Vercel finished, newest (the current version) first, one per commit. Each stays
-// at its own address, so opening one builds nothing. Titled by its request's title, else by its commit's first line
+// The commit of the tag historyTag ('v0'), kept for good; null without the tag, so every deploy counts
+let historyStart
+const getHistoryStart = async () => {
+    historyStart ??= await github('GET', `/commits/${historyTag}`).then(
+        ({ sha, commit }) => ({ sha, time: new Date(commit.committer.date).getTime() }),
+        (error) => ([404, 422].includes(error.status) ? null : Promise.reject(error)),
+    )
+    return historyStart
+}
+
+// Every deploy Vercel finished on this branch after historyStart, oldest first and one per commit (a redeploy is the
+// same version): version 1, 2... Numbers stay as long as no deploy after the tag is deleted
+const getBranchVersions = async () => {
+    const start = await getHistoryStart()
+    const deployments = []
+    let until = null
+    for (let page = 0; page < 20; page++) {
+        const query = new URLSearchParams({ projectId: vercelSettings.project, branch: deployment.ref, state: 'READY', limit: '100' })
+        if (start) query.set('since', start.time)
+        if (until) query.set('until', until)
+        const { deployments: found, pagination } = await vercel(`/v6/deployments?${query}`)
+        deployments.push(...found)
+        until = pagination?.next
+        if (!until) break
+    }
+    const versions = []
+    for (const { url, created, meta } of deployments.sort((a, b) => a.created - b.created)) {
+        const sha = meta?.githubCommitSha
+        if (!sha || sha === start?.sha || versions.some((version) => version.sha === sha)) continue
+        versions.push({ number: versions.length + 1, sha, created, message: meta.githubCommitMessage ?? '', deployUrl: `https://${url}` })
+    }
+    return versions
+}
+
+// The last 10 versions, newest (the current one) first, plus `number` when it's older (the version being viewed).
+// Each opens at the site's address under '/_history/3' (middleware.js), titled by its request's title, else by
+// its commit's first line
 const listVersions = async (req, res) => {
     if (!vercelSettings) return sendCached(res, 60, [])
 
-    const query = new URLSearchParams({ projectId: vercelSettings.project, branch: deployment.ref, state: 'READY', limit: '30' })
-    const [{ deployments }, issues] = await Promise.all([vercel(`/v6/deployments?${query}`), getRecentIssues(100)])
-    // A redeploy of the same commit is the same version
-    const unique = deployments.filter((deploy, index) => deployments.findIndex(({ meta }) => meta?.githubCommitSha === deploy.meta?.githubCommitSha) === index)
-    const versions = unique
-        .filter(({ meta }) => meta?.githubCommitSha)
-        .slice(0, maxVersions)
-        .map(({ url, created, meta }) => {
-            const message = meta.githubCommitMessage ?? ''
-            const request = getIssueNumber(message)
-            const issue = issues.find(({ number }) => number === request)
-            return {
-                sha: meta.githubCommitSha,
-                date: new Date(created).toISOString(),
-                title: issue?.title ?? message.split('\n')[0],
-                request,
-                url: `https://${url}`,
-            }
-        })
-    sendCached(res, 30, versions)
+    const [versions, issues] = await Promise.all([getBranchVersions(), getRecentIssues(100)])
+    const number = Number(getNumber(req))
+    const listed = versions.slice(-maxVersions).reverse()
+    const viewed = versions.find((version) => version.number === number)
+    if (viewed && !listed.includes(viewed)) listed.push(viewed)
+    sendCached(res, 30, listed.map(({ number, sha, created, message }) => {
+        const request = getIssueNumber(message)
+        const issue = issues.find((issue) => issue.number === request)
+        return {
+            number,
+            sha,
+            date: new Date(created).toISOString(),
+            title: issue?.title ?? message.split('\n')[0],
+            request,
+            url: `${getBranchUrl(deployment.ref)}/_history/${number}`,
+        }
+    }))
+}
+
+// The deploy of version `number`, for middleware.js; it never changes, so the CDN keeps it an hour
+const getHistoryDeploy = async (req, res) => {
+    const number = Number(getNumber(req))
+    const version = number && vercelSettings ? (await getBranchVersions()).find((version) => version.number === number) : null
+    if (!version) return res.status(404).json({ error: 'Esta versión no existe.' })
+    sendCached(res, 3600, { url: version.deployUrl })
 }
 
 /*
@@ -259,6 +299,7 @@ const handlers = {
     'POST request': addReply,
     'GET designs': listDesigns,
     'GET versions': listVersions,
+    'GET history': getHistoryDeploy,
     'POST access': checkAccess,
     'POST upload': upload,
 }
