@@ -4,6 +4,19 @@
 const releaseNotes = [
     {
         date: '2026-10-24',
+        branch: 'menu-total',
+        title: 'Diseño «menu-total»: la carta completa',
+        summary: 'La página «Menú» enseña todos los platos de la carta, con su foto, su precio y su descripción.',
+        changes: [
+            { text: 'La página «Menú» tiene ahora los 238 platos de la carta, ordenados por secciones, con foto cuando la hay.' },
+            { text: 'Se puede buscar un plato por nombre, ingrediente o número, y ver solo los veganos o los picantes.' },
+            { text: 'La barra de secciones se queda arriba al bajar, y cada sección tiene su foto para encontrarla rápido.' },
+            { text: 'Al pulsar un plato se abre en grande, con su nombre en otros idiomas y el botón «Añadir a mi pedido», que lo pasa a «Pedir online».' },
+            { text: 'Los menús de mediodía y de noche y la carta de vinos están al principio de la página, con su horario y su precio.' },
+        ],
+    },
+    {
+        date: '2026-10-24',
         branch: 'main',
         title: 'Página «Pedir online»',
         summary: 'Los clientes pueden elegir platos de la carta para llevar y enviar el pedido por WhatsApp desde la web.',
