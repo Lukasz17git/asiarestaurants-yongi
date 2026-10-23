@@ -34,15 +34,15 @@ const Navbar = () => {
                         <div className='underline' />
                     </Link>
                 </div>
-                <div className={path === '/restaurant' ? 'link selected' : 'link'} onClick={hideMenu}>
-                    <Link to='/restaurant'>
-                        {restaurantsName[language]}
-                        <div className='underline' />
-                    </Link>
-                </div>
                 <div className={path === '/pedidos' ? 'link selected' : 'link'} onClick={hideMenu}>
                     <Link to='/pedidos'>
                         {pedidosName[language]}
+                        <div className='underline' />
+                    </Link>
+                </div>
+                <div className={path === '/restaurant' ? 'link selected' : 'link'} onClick={hideMenu}>
+                    <Link to='/restaurant'>
+                        {restaurantsName[language]}
                         <div className='underline' />
                     </Link>
                 </div>

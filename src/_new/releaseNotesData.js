@@ -3,6 +3,22 @@
 // issue: GitHub issue number; no link/linkText on changes (the client asked for none in #3)
 const releaseNotes = [
     {
+        date: '2026-10-23',
+        issue: 12,
+        branch: 'main',
+        title: 'Nuevo aspecto de «Pedir online»',
+        summary: '«Pedir online» sube en el menú y la página tiene platos más compactos, con foto más grande, y botones más suaves.',
+        changes: [
+            { text: '«Pedir online» es ahora la tercera opción del menú de arriba, antes de «Restaurantes».' },
+            { text: 'Los avisos «Envío gratis en Vilafranca (08720) desde 20 €» y «Recogida sin pedido mínimo» son más grandes y destacan más.' },
+            { text: 'Los títulos «Pide online» y «Tu pedido» usan otra letra, la de los títulos de Inicio.' },
+            { text: 'En el ordenador caben 3 platos por fila en vez de 2, con una foto cuadrada más grande arriba a la izquierda, el nombre y el precio a su lado y la descripción debajo.' },
+            { text: 'En «Tu pedido» cada plato ocupa una sola línea más baja, así caben más platos sin bajar.' },
+            { text: 'Los botones dorados de la página (añadir plato, cantidades, secciones y «Ver mi pedido») tienen un color más suave.' },
+            { text: 'El «+» del botón para añadir un plato está ahora justo en el centro.' },
+        ],
+    },
+    {
         date: '2026-10-24',
         branch: 'main',
         title: 'Página «Pedir online»',
