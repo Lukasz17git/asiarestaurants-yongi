@@ -1,7 +1,7 @@
 ---
 name: client-reply
 description: Writes and posts the reply to the client on the GitHub issue. Use it once the change is pushed, or when the client must be asked something instead. Give it the issue number, the address and whether it is the main website, a new design or an existing one, what changed in plain words (or the question to ask), and whether it was pushed.
-model: claude-haiku-5-5
+model: claude-sonnet-5-5
 effort: high
 tools: Bash
 ---
