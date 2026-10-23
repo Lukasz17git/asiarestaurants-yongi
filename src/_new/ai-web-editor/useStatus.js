@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { getStatus } from './api'
+import { getStatus, isVersionPage } from './api'
 
 const pollMs = 15000
 // After sending a request, the workflow run takes up to ~1 min to show up in GitHub
@@ -8,12 +8,14 @@ const watchMs = 3 * 60000
 const busyPhases = ['working', 'deploy', 'elsewhere']
 
 // 'ready': a newer version is live than this tab's, 'working': Claude is changing this site,
-// 'deploy': pushed, Vercel still building, 'elsewhere': Claude is working on another design
+// 'deploy': pushed, Vercel still building, 'elsewhere': Claude is working on another design.
+// A version page stays on its commit, so it's never 'ready' or 'deploy'
 const getPhase = (status, loadedSha) => {
     if (!status) return null
-    if (loadedSha && status.sha && status.sha !== loadedSha) return 'ready'
+    const versionPage = isVersionPage(status)
+    if (!versionPage && loadedSha && status.sha && status.sha !== loadedSha) return 'ready'
     if (status.working.some(({ branch }) => branch === status.ref)) return 'working'
-    if (status.sha && status.branchSha && status.sha !== status.branchSha) return 'deploy'
+    if (!versionPage && status.sha && status.branchSha && status.sha !== status.branchSha) return 'deploy'
     if (status.working.length) return 'elsewhere'
     return null
 }

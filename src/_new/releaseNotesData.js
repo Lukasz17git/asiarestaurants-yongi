@@ -21,6 +21,20 @@ const releaseNotes = [
     {
         date: '2026-10-24',
         branch: 'main',
+        title: 'Historial de versiones en «Editar con IA»',
+        summary: 'Puedes ver las últimas versiones de la web o del diseño con un click y volver a cualquiera de ellas.',
+        changes: [
+            { text: 'Debajo de la dirección, en «Estás en», está «Versión actual»: al pulsarla salen las 10 últimas versiones, con su fecha y la petición que las hizo.' },
+            { text: 'Cada versión se abre en la misma página en la que estás, al momento. Quien entra en la web sigue viendo la versión actual.' },
+            { text: 'Desde una versión anterior, «Volver a esta versión» (con una segunda confirmación) hace que la web vuelva a ser así para todos. Se publica como un cambio nuevo, así que la versión que había se guarda y puedes volver a ella.' },
+            { text: '«Tus peticiones» enseña solo las peticiones de la web o del diseño en el que estás.' },
+            { text: 'Solo puedes responder a una petición desde su propio diseño; desde otro sitio, el chat te da un botón para abrirlo.' },
+            { text: 'Las versiones anteriores ya no están en «Ver cambios»: ahora están en «Versión actual».' },
+        ],
+    },
+    {
+        date: '2026-10-24',
+        branch: 'main',
         title: 'Página «Pedir online»',
         summary: 'Los clientes pueden elegir platos de la carta para llevar y enviar el pedido por WhatsApp desde la web.',
         changes: [

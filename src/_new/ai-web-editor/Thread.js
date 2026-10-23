@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import Composer from './Composer'
+import Icon from './Icon'
 import ImagePreview from './ImagePreview'
 import { useEditor } from './EditorContext'
 import { RequireCode } from './AccessCode'
@@ -59,9 +60,21 @@ const getProgress = (thread) => {
     return ''
 }
 
-// The request's messages, refreshed every 6s while `active`, and a box to reply (a reply starts Claude again)
+// In place of the reply box, with a link to the same page where replying works
+const ReplyElsewhere = ({ text, href, label }) => (
+    <div className='aiwe-card aiwe-reply-elsewhere'>
+        <p>{text}</p>
+        <a className='aiwe-button secondary small' href={href}>
+            {label}
+            <Icon name='external' />
+        </a>
+    </div>
+)
+
+// The request's messages, refreshed every 6s while `active`, and a box to reply (a reply starts Claude again).
+// The box shows only on the request's design and its newest version, where the reply's changes will show
 const Thread = ({ number, active }) => {
-    const { code } = useEditor()
+    const { code, ref, status, oldVersion } = useEditor()
     const [thread, setThread] = useState(null)
     const [error, setError] = useState('')
     const [preview, setPreview] = useState({ images: [], index: null })
@@ -114,14 +127,30 @@ const Thread = ({ number, active }) => {
                     {progress}
                 </p>
             )}
-            <RequireCode>
-                <Composer
-                    compact
-                    placeholder='Escribe aquí para corregir algo, deshacerlo o pedir más cambios en esta petición'
-                    sendLabel='Responder'
-                    onSend={reply}
+            {thread.branch !== ref && (
+                <ReplyElsewhere
+                    text={`Esta petición es de ${getSiteName(thread.branch)}. Para seguir con ella, ábrela desde allí.`}
+                    href={thread.url + window.location.pathname}
+                    label={`Abrir ${getSiteName(thread.branch)}`}
                 />
-            </RequireCode>
+            )}
+            {thread.branch === ref && oldVersion && (
+                <ReplyElsewhere
+                    text='Estás viendo una versión anterior. Para seguir con esta petición, abre la versión actual.'
+                    href={status.url + window.location.pathname}
+                    label='Abrir la versión actual'
+                />
+            )}
+            {thread.branch === ref && !oldVersion && (
+                <RequireCode>
+                    <Composer
+                        compact
+                        placeholder='Escribe aquí para corregir algo, deshacerlo o pedir más cambios en esta petición'
+                        sendLabel='Responder'
+                        onSend={reply}
+                    />
+                </RequireCode>
+            )}
             <ImagePreview images={preview.images} index={preview.index} onIndexChange={(index) => setPreview((current) => ({ ...current, index }))} />
         </div>
     )

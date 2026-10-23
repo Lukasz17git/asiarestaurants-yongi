@@ -83,6 +83,32 @@ jobs:
             where="Web principal"
           fi
 
+          # "Volver a una versión anterior" (sent from an older version by the website's editor): a new commit with that
+          # version's files on the "Diseño" branch, so the version it replaces stays in the history and can come back too
+          version=$(field 'Versión')
+          if [ "$action" = "Volver a una versión anterior" ]; then
+            target="${design:-main}"
+            if ! { printf '%s' "$target" | grep -Eqx '[A-Za-z0-9._/-]+' && printf '%s' "$version" | grep -Eqx '[0-9a-f]{7,40}' &&
+              git merge-base --is-ancestor "$version" "origin/$target" 2> /dev/null; }; then
+              gh issue comment "$ISSUE_NUMBER" --body "No encuentro esa versión de «$target». Ábrela otra vez desde «Editar con IA» (la lista de versiones, debajo de la dirección) y pulsa «Volver a esta versión»."
+              exit 1
+            fi
+            {
+              echo "restore_note<<END_OF_NOTE"
+              echo "This request asks to bring \`$target\` back to the version of commit \`$version\`, as a new commit on top: never reset,"
+              echo "rebase or force-push, so the version it replaces stays in the history and can be brought back the same way. Run"
+              echo "\`git restore --source=$version --staged --worktree -- . ':(exclude).github' ':(exclude).claude' ':(exclude)CLAUDE.md'"
+              echo "':(exclude)api' ':(exclude)vercel.json' ':(exclude)src/_new/ai-web-editor' ':(exclude)src/_new/scripts'"
+              echo "':(exclude)src/_new/releaseNotesData.js'\` (the editor, the workflows, CLAUDE.md and the release notes stay as they are)."
+              echo "If the build then fails because a kept file needs something that version lacks (e.g. a dependency in package.json),"
+              echo "add back only that. The release note says the website went back to that version, with one \`changes\` item per change"
+              echo "it undoes: the entries of this branch in \`src/_new/releaseNotesData.js\` that"
+              echo "\`git show $version:src/_new/releaseNotesData.js\` doesn't have. The client's text, if any, only adds instructions."
+              echo "END_OF_NOTE"
+            } >> "$GITHUB_OUTPUT"
+            where="Actual"
+          fi
+
           case "$where" in
             "Nuevo diseño") branch="diseno-$ISSUE_NUMBER" ;;
             "Actual") branch="${design:-main}" ;;
@@ -151,6 +177,8 @@ jobs:
 
             ${{ steps.target.outputs.merge_note }}
 
+            ${{ steps.target.outputs.restore_note }}
+
             1. Read the whole thread: `gh issue view ${{ github.event.issue.number }} --comments`.
                The most recent message from the client is the current request; earlier messages are context.
                You decide which pages the change affects.
@@ -186,7 +214,7 @@ jobs:
             --model claude-opus-5-5
             --effort high
             --max-turns 85
-            --allowedTools "Read,Edit,Write,Glob,Grep,Skill,Agent,Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(git add:*),Bash(git rm:*),Bash(git mv:*),Bash(git commit:*),Bash(git revert:*),Bash(git fetch origin:*),Bash(git merge:*),Bash(git pull --rebase origin ${{ steps.target.outputs.branch }}),Bash(git push origin ${{ steps.target.outputs.branch }}),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(npm run build),Bash(npx --yes sass@1.77.8:*),Bash(curl -sL -o:*),Bash(cwebp:*),Bash(mkdir:*),Bash(ls:*),Bash(file:*)"
+            --allowedTools "Read,Edit,Write,Glob,Grep,Skill,Agent,Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(git add:*),Bash(git rm:*),Bash(git mv:*),Bash(git commit:*),Bash(git revert:*),Bash(git restore:*),Bash(git show:*),Bash(git fetch origin:*),Bash(git merge:*),Bash(git pull --rebase origin ${{ steps.target.outputs.branch }}),Bash(git push origin ${{ steps.target.outputs.branch }}),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(npm run build),Bash(npx --yes sass@1.77.8:*),Bash(curl -sL -o:*),Bash(cwebp:*),Bash(mkdir:*),Bash(ls:*),Bash(file:*)"
 
       # Claude's whole run (every tool call and permission denial), to see why a reply never reached the issue
       - name: Save Claude's log

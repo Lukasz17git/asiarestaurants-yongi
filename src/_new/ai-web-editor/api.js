@@ -15,6 +15,9 @@ export const getSiteName = (branch) => {
 
 export const toHost = (url) => url.replace(/^https?:\/\//, '')
 
+// Opened by the deployment's own address (a version from the list), which never gets newer, not by the site's
+export const isVersionPage = (status) => Boolean(status?.deploymentHost) && status.deploymentHost === window.location.host
+
 /*
  * Access code
  */
@@ -66,9 +69,12 @@ export const getThread = (number) => call('request', { params: { number } })
 
 export const getDesigns = () => call('designs')
 
+export const getVersions = () => call('versions')
+
 export const checkCode = (code) => call('access', { method: 'POST', code })
 
-// type: 'edit' (this site), 'new' (a new design) or 'promote' (this design becomes the main web)
+// type: 'edit' (this site), 'new' (a new design), 'promote' (this design becomes the main web)
+// or 'restore' (this site goes back to the `version` sha, as a new commit)
 export const createRequest = (code, body) => call('requests', { method: 'POST', code, body })
 
 export const replyToRequest = (code, number, body) => call('request', { method: 'POST', code, body, params: { number } })
@@ -121,3 +127,6 @@ export const formatAgo = (date) => {
     if (!unit) return 'ahora'
     return relativeTime.format(Math.round(seconds / unitSeconds), unit)
 }
+
+// '2026-10-23T22:29:19Z' -> '24 de octubre a las 0:29'
+export const formatDateTime = (date) => new Date(date).toLocaleString('es-ES', { day: 'numeric', month: 'long', hour: 'numeric', minute: '2-digit' })

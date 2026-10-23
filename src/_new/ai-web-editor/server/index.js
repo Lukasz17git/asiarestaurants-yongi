@@ -8,6 +8,8 @@ const {
     uploadFolder,
     getBranchUrl,
     github,
+    vercelSettings,
+    vercel,
     getWorkingTitles,
     isBranchName,
     branchExists,
@@ -30,10 +32,11 @@ const {
 } = require('./requests')
 
 const maxDesigns = 10
+const maxVersions = 10
 const maxImageBytes = 5 * 1024 * 1024
 
-const getRecentIssues = async () => {
-    const issues = await github('GET', '/issues?state=all&sort=created&direction=desc&per_page=30')
+const getRecentIssues = async (count = 30) => {
+    const issues = await github('GET', `/issues?state=all&sort=created&direction=desc&per_page=${count}`)
     return issues.filter((issue) => !issue.pull_request)
 }
 
@@ -65,6 +68,7 @@ const getStatus = async (req, res) => {
         url: getBranchUrl(deployment.ref),
         mainUrl,
         sha: deployment.sha,
+        deploymentHost: deployment.host,
         branchSha: branch?.commit.sha ?? null,
         working,
         uploadFolder,
@@ -75,8 +79,9 @@ const getStatus = async (req, res) => {
  * Requests
  */
 
+// The last 100, so each design (the editor shows only its own) still has its older ones
 const listRequests = async (req, res) => {
-    const [issues, workingTitles] = await Promise.all([getRecentIssues(), getWorkingTitles()])
+    const [issues, workingTitles] = await Promise.all([getRecentIssues(100), getWorkingTitles()])
     sendCached(res, 5, issues.map((issue) => toSummary(issue, workingTitles)))
 }
 
@@ -84,7 +89,7 @@ const listRequests = async (req, res) => {
 const getRequestError = async ({ type, name, text, ref, images }) => {
     if (!Object.hasOwn(requestTypes, type)) return 'No se reconoce la petición.'
     if (type === 'new' && !name) return 'Ponle un nombre a tu diseño.'
-    const payloadError = getPayloadError({ text, images }, { optional: type === 'promote' })
+    const payloadError = getPayloadError({ text, images }, { optional: type === 'promote' || type === 'restore' })
     if (payloadError) return payloadError
     if (!isBranchName(ref)) return 'No se reconoce el diseño desde el que lo pides.'
     if (type === 'promote' && ref === mainBranch) return 'Esta ya es la web principal.'
@@ -92,16 +97,26 @@ const getRequestError = async ({ type, name, text, ref, images }) => {
     return ''
 }
 
+// { sha, date } of `sha` when it's an earlier commit of `ref`, else null ('identical' is the current version)
+const findEarlierVersion = async (sha, ref) => {
+    if (typeof sha !== 'string' || !/^[0-9a-f]{7,40}$/.test(sha)) return null
+    const comparison = await github('GET', `/compare/${sha}...${ref}?per_page=1`).catch((error) => (error.status === 404 ? null : Promise.reject(error)))
+    if (comparison?.status !== 'ahead') return null
+    return { sha: comparison.base_commit.sha, date: comparison.base_commit.commit.committer.date }
+}
+
 const createRequest = async (req, res) => {
     if (!hasEditorCode(req)) return rejectCode(res)
 
-    const { type, name: givenName, text = '', ref, page, images = [] } = req.body ?? {}
+    const { type, name: givenName, text = '', ref, version: versionSha, page, images = [] } = req.body ?? {}
     const name = type === 'new' ? cleanName(givenName) : ''
     const requestError = await getRequestError({ type, name, text, ref, images })
     if (requestError) return res.status(400).json({ error: requestError })
+    const version = type === 'restore' ? await findEarlierVersion(versionSha, ref) : null
+    if (type === 'restore' && !version) return res.status(400).json({ error: 'No se puede volver a esta versión: no es una versión anterior de esta web.' })
 
-    const body = buildIssueBody({ type, name, text, ref, page: cleanPage(page), images: cleanImages(images) })
-    const issue = await github('POST', '/issues', { title: getTitle({ type, name, text, ref }), body })
+    const body = buildIssueBody({ type, name, text, ref, version, page: cleanPage(page), images: cleanImages(images) })
+    const issue = await github('POST', '/issues', { title: getTitle({ type, name, text, ref, version }), body })
     res.status(201).json({ number: issue.number })
 }
 
@@ -172,6 +187,40 @@ const listDesigns = async (req, res) => {
 }
 
 /*
+ * Versions
+ */
+
+// 'Changed the menu prices (#12)' -> 12
+const getIssueNumber = (message) => Number(message.split('\n')[0].match(/\(#(\d+)\)\s*$/)?.[1]) || null
+
+// The last 10 deploys of this branch Vercel finished, newest (the current version) first, one per commit. Each stays
+// at its own address, so opening one builds nothing. Titled by its request's title, else by its commit's first line
+const listVersions = async (req, res) => {
+    if (!vercelSettings) return sendCached(res, 60, [])
+
+    const query = new URLSearchParams({ projectId: vercelSettings.project, branch: deployment.ref, state: 'READY', limit: '30' })
+    const [{ deployments }, issues] = await Promise.all([vercel(`/v6/deployments?${query}`), getRecentIssues(100)])
+    // A redeploy of the same commit is the same version
+    const unique = deployments.filter((deploy, index) => deployments.findIndex(({ meta }) => meta?.githubCommitSha === deploy.meta?.githubCommitSha) === index)
+    const versions = unique
+        .filter(({ meta }) => meta?.githubCommitSha)
+        .slice(0, maxVersions)
+        .map(({ url, created, meta }) => {
+            const message = meta.githubCommitMessage ?? ''
+            const request = getIssueNumber(message)
+            const issue = issues.find(({ number }) => number === request)
+            return {
+                sha: meta.githubCommitSha,
+                date: new Date(created).toISOString(),
+                title: issue?.title ?? message.split('\n')[0],
+                request,
+                url: `https://${url}`,
+            }
+        })
+    sendCached(res, 30, versions)
+}
+
+/*
  * Access code and uploads
  */
 
@@ -208,6 +257,7 @@ const handlers = {
     'GET request': getThread,
     'POST request': addReply,
     'GET designs': listDesigns,
+    'GET versions': listVersions,
     'POST access': checkAccess,
     'POST upload': upload,
 }

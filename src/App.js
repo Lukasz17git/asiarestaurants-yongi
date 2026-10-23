@@ -31,7 +31,7 @@ function App() {
           <Route exact path='/qr-new' element={<><QrNew /></>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-        <AiWebEditor changes={releaseNotes} versionsUrl='/versiones.json' />
+        <AiWebEditor changes={releaseNotes} />
       </div>
     </BrowserRouter>
   );

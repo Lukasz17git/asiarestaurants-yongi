@@ -36,15 +36,17 @@ Lasting wishes from the client; follow them in every change and add new ones her
     dish in the `restaurant_menu_maker` repo. Dishes it doesn't have (new uramaki, Spicy Pot...) have only `es` and no
     photo
   - `src/_new/releaseNotesData.js`: the changes listed in «Editar con IA» -> «Ver cambios», newest entry first (one entry
-    per change request, in Spanish for the client); each shows only on its `branch`. The same view lists the earlier
-    versions from `/versiones.json` (`src/_new/scripts/build-versions.js`)
+    per change request, in Spanish for the client); each shows only on its `branch`
 - "Editar con IA" is the floating button at the bottom right: `src/_new/ai-web-editor/`, a self-contained module mounted once
   as `<AiWebEditor />` in `App.js` (see its `README.md`). Its panel edits this site, starts a new design, uses a design
-  as the main web, lists the changes, the designs and the requests (chat and images per request); the button spins while
-  the Claude workflow runs or Vercel hasn't served the branch's latest commit. Its only Vercel function is `api/ai-editor.js`
-  (`?action=status|requests|request|designs|access|upload`, code in `src/_new/ai-web-editor/server/`). Env vars:
+  as the main web, lists the changes, the designs, the branch's requests (chat and images per request) and its last 10
+  versions (Vercel deploys, opened at their own address; «Volver a esta versión» asks for a new commit with one's files);
+  the button spins while the Claude workflow runs or Vercel hasn't served the branch's latest commit. Its only Vercel
+  function is `api/ai-editor.js`
+  (`?action=status|requests|request|designs|versions|access|upload`, code in `src/_new/ai-web-editor/server/`). Env vars:
   `EDITOR_CODE` (asked once per browser), `GITHUB_TOKEN` (Issues read/write, Actions and Contents read),
-  `BLOB_READ_WRITE_TOKEN` (a Blob store shared by every site, images under `<repo>/peticiones/`). All of them, and the
+  `BLOB_READ_WRITE_TOKEN` (a Blob store shared by every site, images under `<repo>/peticiones/`), `EDITOR_VERCEL_TOKEN`,
+  `EDITOR_VERCEL_TEAM` and `EDITOR_VERCEL_PROJECT` (the versions list). All of them, and the
   GitHub secrets and variables the workflows use, are set by `node src/_new/ai-web-editor/setup.js` from `~/.ai-web-editor.env`;
   the same script installs the editor on another repo
 - Every branch but `main` is a design, with its short address `asiarestaurants-yongi-<branch>.vercel.app`
@@ -53,7 +55,8 @@ Lasting wishes from the client; follow them in every change and add new ones her
   plus «Nombre del diseño», the issue's title, for a new design). "¿Dónde?"
   picks the branch in `claude-issues.yml`: "Actual" -> "Diseño" or main, "Nuevo diseño" -> `diseno-<issue>`,
   "Web principal" -> `main`; the request text never changes it. "Acción: Usar este diseño como principal" (sent from a
-  design) merges the "Diseño" branch into `main`
+  design) merges the "Diseño" branch into `main`; "Acción: Volver a una versión anterior" (sent from an older version)
+  commits the files of the "Versión" commit on the "Diseño" branch
 - Texts are objects by language (`es`, `cat`, `it`, `en`); the site shows `es`
 - Menu PDFs: `public/pdfs/`, linked as `'./pdfs/<file>.pdf'`
 

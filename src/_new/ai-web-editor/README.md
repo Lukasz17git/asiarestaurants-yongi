@@ -8,9 +8,13 @@ From the button's panel:
 - **Editar esta web / este diseño**: a request for the branch the site was built from
 - **Crear un diseño nuevo**: a request for a new branch, `diseno-<issue>`, with its own Vercel address
 - **Usar este diseño como principal** (designs only): asks the AI to merge this design's branch into `main`
-- **Ver cambios** (with `changes` or `versionsUrl`): the `changes` entries of the branch you're on, and its earlier versions
+- **Ver cambios** (with `changes`): the `changes` entries of the branch you're on
 - **Ver diseños**: `main` and the 10 most recently updated branches, each opened on the page you're on
-- **Tus peticiones**: every request as a chat, with replies and up to 20 images (compressed to WebP before upload)
+- **Tus peticiones**: the requests of the branch you're on as chats, with replies and up to 20 images (compressed to WebP
+  before upload). Replies only from that branch's newest version: elsewhere the chat links to it
+- **Versions** (under the address): the branch's last 10 Vercel deploys, one per commit. Each opens on the page you're on at its
+  own address (nothing is rebuilt and visitors keep the newest). On an older one, **Volver a esta versión** asks, after a
+  confirmation, for a new commit with that version's files, so the version it replaces can be brought back the same way
 
 The button spins while the workflow runs or Vercel hasn't served the branch's latest commit yet, then offers a reload
 that opens «Ver cambios». Visitors make one status call per page load (and one when the tab is back); it polls every
@@ -51,7 +55,8 @@ Needs a React 18 app deployed on Vercel from a GitHub repo. `setup.js` does the 
 
    - GitHub: secrets `CLAUDE_CODE_OAUTH_TOKEN` and `VERCEL_TOKEN`, variables `CLAUDE_ALLOWED_USERS` (yours,
      `--client` and the ones already there), `VERCEL_PROJECT` and `VERCEL_TEAM`
-   - Vercel (production and preview): `GITHUB_TOKEN`, `BLOB_READ_WRITE_TOKEN` and a new `EDITOR_CODE`, printed for the
+   - Vercel (production and preview): `GITHUB_TOKEN`, `BLOB_READ_WRITE_TOKEN`, `EDITOR_VERCEL_TOKEN`, `EDITOR_VERCEL_TEAM` and
+     `EDITOR_VERCEL_PROJECT` (for the versions list) and a new `EDITOR_CODE`, printed for the
      client; an existing one is kept. Preview only: `VERCEL_PREVIEW_FEEDBACK_ENABLED=0`, which hides the Vercel Toolbar
      on the designs
 
@@ -71,7 +76,6 @@ Needs a React 18 app deployed on Vercel from a GitHub repo. `setup.js` does the 
    | Prop          | Value                                                                                          |
    | ------------- | ---------------------------------------------------------------------------------------------- |
    | `changes`     | Release notes, newest first: `{ date: 'YYYY-MM-DD', title, summary, changes: [{ text }], issue, branch }` |
-   | `versionsUrl` | A JSON list of earlier versions, `[{ sha, date, title, url }]`                                 |
    | `apiUrl`      | Where the function is served (default `/api/ai-editor`)                                       |
 
    An entry shows only on its `branch`; without one, on its `issue`'s branch, else on `main`.
@@ -96,7 +100,8 @@ The workflow picks the branch from these sections only, up to "¿Qué quieres ca
 | `### Diseño`                | The branch the site was built from                                          |
 | `### ¿Dónde?`               | `Actual` (that branch), `Nuevo diseño` (`diseno-<issue>`), `Web principal` (`main`) |
 | `### Nombre del diseño`     | Only for `Nuevo diseño`: the name the client gave it, also the issue's title |
-| `### Acción`                | Only `Usar este diseño como principal`: merge the "Diseño" branch into `main` |
+| `### Acción`                | `Usar este diseño como principal`: merge the "Diseño" branch into `main`; `Volver a una versión anterior`: a new commit on the "Diseño" branch with the files of `### Versión` |
+| `### Versión`               | Only for `Volver a una versión anterior`: the sha of an earlier commit of that branch |
 | `### ¿Qué quieres cambiar?` | The client's text                                                           |
 | `### Imágenes`              | `![name](url)` per uploaded image                                           |
 
@@ -125,5 +130,5 @@ npx --yes sass@1.77.8 --no-source-map src/_new/ai-web-editor/ai-web-editor.scss 
 - `index.js`: the only export, `AiWebEditor`
 - `AiWebEditor.js`: the button and status; lazy-loads `Panel.js` (the views, dialogs and shared `EditorContext`)
 - `api.js`: calls to the function, the saved code and image uploads
-- `server/`: the Vercel function (`?action=status|requests|request|designs|access|upload`), CommonJS
+- `server/`: the Vercel function (`?action=status|requests|request|designs|versions|access|upload`), CommonJS
 - `setup.js`: installs and configures the editor on a repo (Node, not bundled)

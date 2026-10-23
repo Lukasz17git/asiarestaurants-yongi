@@ -50,9 +50,9 @@ const getFabText = (phase) => {
 
 // Floating "Editar con IA" button (bottom right), which shows the AI status in its text, and the editor panel it opens.
 // `apiUrl`: where the site serves server/ (default '/api/ai-editor');
-// `changes`: the site's release notes ({ date, title, summary, changes: [{ text }], issue?, branch? }), newest first;
-// `versionsUrl`: a JSON list of previous versions ({ sha, date, title, url }); both show in "Ver cambios"
-const AiWebEditor = ({ apiUrl, changes, versionsUrl }) => {
+// `changes`: the site's release notes ({ date, title, summary, changes: [{ text }], issue?, branch? }), newest first,
+// shown in "Ver cambios"
+const AiWebEditor = ({ apiUrl, changes }) => {
     if (apiUrl) setApiUrl(apiUrl)
     const [showChanges] = useState(takeShowChanges)
     const [open, setOpen] = useState(showChanges)
@@ -91,7 +91,6 @@ const AiWebEditor = ({ apiUrl, changes, versionsUrl }) => {
                         phase={phase}
                         onSent={() => check({ watch: true })}
                         changes={changes}
-                        versionsUrl={versionsUrl}
                         initialView={showChanges ? 'changes' : 'home'}
                     />
                 </Suspense>

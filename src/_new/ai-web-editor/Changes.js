@@ -5,8 +5,6 @@ import { getRequests, getSiteName, mainBranch } from './api'
 // Noon keeps '2026-10-21' on the 21st in any time zone
 const formatDate = (date) => new Date(`${date}T12:00:00`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })
 
-const formatDateTime = (date) => new Date(date).toLocaleString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })
-
 // An entry without `branch` belongs to its request's branch, or to main (entries from before `branch`)
 const getEntryBranch = (entry, requests) => entry.branch ?? requests?.find(({ number }) => number === entry.issue)?.branch ?? mainBranch
 
@@ -26,36 +24,8 @@ const Entry = ({ entry, onOpenRequest }) => (
     </li>
 )
 
-// Versions built from this branch's earlier commits ({ sha, date, title, url }); [] when the file is missing
-const Versions = ({ versionsUrl }) => {
-    const [versions, setVersions] = useState(null)
-
-    useEffect(() => {
-        fetch(versionsUrl, { cache: 'no-store' })
-            .then((res) => (res.ok ? res.json() : []))
-            .catch(() => [])
-            .then(setVersions)
-    }, [versionsUrl])
-
-    if (!versions) return <p className='aiwe-empty'>Cargando versiones...</p>
-    if (!versions.length) return <p className='aiwe-empty'>Todavía no hay versiones guardadas. Aparecerán después de los próximos cambios.</p>
-    return (
-        <ul className='aiwe-design-list'>
-            {versions.map((version) => (
-                <li key={version.sha} className='aiwe-design'>
-                    <span className='aiwe-design-texts'>
-                        <span className='aiwe-design-name'>{version.title}</span>
-                        <span className='aiwe-design-meta'>{formatDateTime(version.date)}</span>
-                    </span>
-                    <a className='aiwe-button secondary small' href={version.url} target='_blank' rel='noopener noreferrer'>Abrir</a>
-                </li>
-            ))}
-        </ul>
-    )
-}
-
-// The `changes` entries of the site or design you're on, newest first, and its previous versions
-const Changes = ({ changes = [], versionsUrl, onOpenRequest }) => {
+// The `changes` entries of the site or design you're on, newest first
+const Changes = ({ changes = [], onOpenRequest }) => {
     const { ref } = useEditor()
     const [requests, setRequests] = useState(null)
     const [loaded, setLoaded] = useState(false)
@@ -78,13 +48,6 @@ const Changes = ({ changes = [], versionsUrl, onOpenRequest }) => {
                     </ul>
                 )}
             </section>
-            {versionsUrl && (
-                <section>
-                    <h3 className='aiwe-section-title'>Versiones anteriores</h3>
-                    <p className='aiwe-intro aiwe-section-intro'>Las últimas versiones publicadas antes de la actual. Cada una se abre tal como era, sin cambiar esta web.</p>
-                    <Versions versionsUrl={versionsUrl} />
-                </section>
-            )}
         </div>
     )
 }

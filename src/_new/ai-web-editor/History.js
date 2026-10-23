@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { formatAgo, getRequests, getSiteName } from './api'
+import { useEditor } from './EditorContext'
+import { formatAgo, getRequests, getSiteName, mainBranch } from './api'
 
 export const getRequestStatus = (request) => {
     if (request.working) return { id: 'working', label: 'IA trabajando' }
@@ -21,21 +22,23 @@ export const RequestRow = ({ request }) => {
     )
 }
 
-// The last 30 requests, from every design
+// The requests of the site or design you're on, from the last 100 of every design
 const History = ({ onOpen }) => {
+    const { ref } = useEditor()
     const [requests, setRequests] = useState(null)
     const [error, setError] = useState('')
+    const branchRequests = requests?.filter(({ branch }) => branch === ref)
 
     useEffect(() => {
         getRequests().then(setRequests, (loadError) => setError(loadError.message))
     }, [])
 
     if (error) return <p className='aiwe-error'>{error}</p>
-    if (!requests) return <p className='aiwe-empty'>Cargando peticiones...</p>
-    if (requests.length === 0) return <p className='aiwe-empty'>Todavía no hay peticiones.</p>
+    if (!branchRequests) return <p className='aiwe-empty'>Cargando peticiones...</p>
+    if (branchRequests.length === 0) return <p className='aiwe-empty'>Todavía no hay peticiones en {ref === mainBranch ? 'esta web' : 'este diseño'}.</p>
     return (
         <ul className='aiwe-request-list'>
-            {requests.map((request) => (
+            {branchRequests.map((request) => (
                 <li key={request.number}>
                     <button type='button' className='aiwe-request-row' onClick={() => onOpen(request.number)}>
                         <RequestRow request={request} />

@@ -221,6 +221,10 @@ const setVercelEnv = async (vercel, project, settings) => {
     const values = {
         GITHUB_TOKEN: settings.GITHUB_TOKEN,
         BLOB_READ_WRITE_TOKEN: settings.BLOB_READ_WRITE_TOKEN,
+        // The versions list reads the site's Vercel deploys
+        EDITOR_VERCEL_TOKEN: settings.VERCEL_TOKEN,
+        EDITOR_VERCEL_TEAM: settings.VERCEL_TEAM,
+        EDITOR_VERCEL_PROJECT: project.id,
         ...(editorCode && { EDITOR_CODE: editorCode }),
     }
     await vercel('POST', `/v10/projects/${project.id}/env?upsert=true`, [

@@ -3,6 +3,7 @@
 const { mainBranch, getBranchUrl } = require('./github')
 
 const promoteAction = 'Usar este diseño como principal'
+const restoreAction = 'Volver a una versión anterior'
 
 // Each editor action -> the form's "¿Dónde?" (and "Acción"), plus a hidden note for Claude
 const requestTypes = {
@@ -18,6 +19,11 @@ const requestTypes = {
         where: 'Web principal',
         action: promoteAction,
         note: (ref) => `El cliente quiere que la web principal pase a ser el diseño ${ref}.`,
+    },
+    restore: {
+        where: 'Actual',
+        action: restoreAction,
+        note: (ref) => `El cliente quiere que ${ref === mainBranch ? 'la web principal' : `el diseño ${ref}`} vuelva a ser como en la versión elegida.`,
     },
 }
 
@@ -58,14 +64,26 @@ const cleanPage = (page) => String(page ?? '').replace(/[^\w/.-]/g, '').slice(0,
 
 const getPromoteText = (ref, note) => [`Usar el diseño ${ref} como web principal.`, note.trim()].filter(Boolean).join('\n\n')
 
-const buildIssueBody = ({ type, name, text, ref, page, images }) => {
+// '2026-10-23T22:29:19Z' -> '24 de octubre a las 0:29', in Spain's time like the client
+const formatVersionDate = (date) => new Date(date).toLocaleString('es-ES', { timeZone: 'Europe/Madrid', day: 'numeric', month: 'long', hour: 'numeric', minute: '2-digit' })
+
+// The text under '¿Qué quieres cambiar?', written by the editor for 'promote' and 'restore'
+const getChangeText = ({ type, text, ref, version }) => {
+    if (type === 'promote') return getPromoteText(ref, text)
+    if (type === 'restore') return `Volver a la versión del ${formatVersionDate(version.date)} (${version.sha.slice(0, 7)}).`
+    return text.trim()
+}
+
+// `version` ({ sha, date }) only for 'restore'
+const buildIssueBody = ({ type, name, text, ref, version, page, images }) => {
     const { where, action, note } = requestTypes[type]
     return [
         '### Diseño', ref,
         '### ¿Dónde?', where,
         ...(name ? ['### Nombre del diseño', escapeHeadings(name)] : []),
         ...(action ? ['### Acción', action] : []),
-        '### ¿Qué quieres cambiar?', escapeHeadings(type === 'promote' ? getPromoteText(ref, text) : text.trim()),
+        ...(version ? ['### Versión', version.sha] : []),
+        '### ¿Qué quieres cambiar?', escapeHeadings(getChangeText({ type, text, ref, version })),
         ...(images.length ? ['### Imágenes', toImagesMarkdown(images)] : []),
         `<!-- Enviado desde la web, en la página ${page} ${getSiteName(ref)}. ${note(ref)} -->`,
     ].join('\n\n')
@@ -78,8 +96,9 @@ const buildCommentBody = ({ text, page, images }) => [
 ].join('\n\n')
 
 // A new design is titled by its name, so "Ver diseños" lists it by it
-const getTitle = ({ type, name, text, ref }) => {
+const getTitle = ({ type, name, text, ref, version }) => {
     if (type === 'promote') return `Usar ${ref} como web principal`
+    if (type === 'restore') return `Volver a la versión del ${formatVersionDate(version.date)}`
     if (type === 'new') return name
     const firstLine = text.trim().split('\n')[0]
     return firstLine.length > 70 ? `${firstLine.slice(0, 67)}...` : firstLine

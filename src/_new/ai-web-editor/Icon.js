@@ -12,6 +12,9 @@ const paths = {
     designs: 'M4 4h7v7H4z M13 4h7v7h-7z M4 13h7v7H4z M13 13h7v7h-7z',
     check: 'M5 12.5l4.5 4.5L19 7.5',
     external: 'M14 4h6v6 M20 4l-9 9 M18 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h5',
+    history: 'M3.5 12a8.5 8.5 0 102.5-6 M3.5 3.5V8H8 M12 7.5V12l3 2',
+    undo: 'M9 14L4 9l5-5 M4 9h10.5a5.5 5.5 0 010 11H11',
+    chevron: 'M6 9l6 6 6-6',
 }
 
 const Icon = ({ name }) => (
