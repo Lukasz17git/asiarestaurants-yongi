@@ -5,7 +5,7 @@ const { execSync } = require('child_process')
 
 const { VERCEL_PROJECT: project, VERCEL_TEAM: team, VERCEL_TOKEN: token } = process.env
 
-// Same slug as toSlug in src/_new/ai-web-editor/server/github.js, or "Ver diseños" would link to a missing address
+// Same slug as toSlug in src/_new/ai-web-editor/server/github.js, or «Diseños» in the editor would link to a missing address
 const toSlug = (branch) => branch.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 const getDesignDomain = (branch) => `${project}-${toSlug(branch)}.vercel.app`
 const getVercelBranchUrl = (branch) => `${project}-git-${toSlug(branch)}-${team}.vercel.app`

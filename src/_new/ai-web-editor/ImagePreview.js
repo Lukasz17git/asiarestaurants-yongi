@@ -2,7 +2,7 @@ import React from 'react'
 import { Dialog } from '@base-ui/react/dialog'
 import Icon from './Icon'
 
-// One image of `images` in large, with previous/next; closed while `index` is null
+// One image of `images` in large, with previous/next; closed while `index` is null or on a click outside the image
 const ImagePreview = ({ images, index, onIndexChange }) => {
     const image = index === null ? null : images[index]
     const hasSeveral = images.length > 1
@@ -11,9 +11,11 @@ const ImagePreview = ({ images, index, onIndexChange }) => {
     return (
         <Dialog.Root open={Boolean(image)} onOpenChange={(open) => !open && onIndexChange(null)}>
             <Dialog.Portal>
-                <Dialog.Backdrop className='aiwe-backdrop dark' />
+                {/* Base UI skips the backdrop of a dialog opened inside another one without forceRender */}
+                <Dialog.Backdrop className='aiwe-backdrop dark' forceRender />
                 <Dialog.Popup
                     className='aiwe-preview'
+                    onClick={(event) => event.target === event.currentTarget && onIndexChange(null)}
                     onKeyDown={(event) => {
                         if (!hasSeveral) return
                         if (event.key === 'ArrowRight') move(1)
@@ -21,10 +23,14 @@ const ImagePreview = ({ images, index, onIndexChange }) => {
                     }}
                 >
                     <Dialog.Title className='aiwe-preview-title'>{image?.name}</Dialog.Title>
-                    <Dialog.Close className='aiwe-icon-button aiwe-preview-close' aria-label='Cerrar'>
-                        <Icon name='close' />
-                    </Dialog.Close>
-                    {image && <img src={image.url} alt={image.name} />}
+                    {image && (
+                        <div className='aiwe-preview-frame'>
+                            <img src={image.url} alt={image.name} />
+                            <Dialog.Close className='aiwe-icon-button aiwe-preview-close' aria-label='Cerrar'>
+                                <Icon name='close' />
+                            </Dialog.Close>
+                        </div>
+                    )}
                     {hasSeveral && (
                         <>
                             <button type='button' className='aiwe-preview-nav previous' onClick={() => move(-1)} aria-label='Imagen anterior'>‹</button>

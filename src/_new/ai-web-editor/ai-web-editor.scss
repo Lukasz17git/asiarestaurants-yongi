@@ -214,7 +214,7 @@ $panelHeight: 782px;
     transition: opacity 0.2s;
 
     &.dark {
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.45);
     }
 
     &[data-starting-style],
@@ -529,6 +529,7 @@ $panelHeight: 782px;
 }
 
 .aiwe-request-texts {
+    flex: 1;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -546,6 +547,17 @@ $panelHeight: 782px;
 .aiwe-request-meta {
     color: var(--aiwe-muted);
     font-size: 12px;
+}
+
+.aiwe-design-row {
+    align-items: center;
+    text-decoration: none;
+
+    .aiwe-request-meta {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }
 
 /*
@@ -1069,9 +1081,16 @@ $panelHeight: 782px;
         transform: scale(0.97);
     }
 
+}
+
+.aiwe-preview-frame {
+    position: relative;
+    display: flex;
+
+    // The popup's inset (24px) on each side, plus 40px above and below for the title and the count
     img {
-        max-width: 100%;
-        max-height: calc(100% - 80px);
+        max-width: calc(100vw - 48px);
+        max-height: calc(100vh - 128px);
         border-radius: 4px;
         object-fit: contain;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
@@ -1091,13 +1110,23 @@ $panelHeight: 782px;
     font-weight: normal;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
 }
 
 .aiwe-preview-close {
     position: absolute;
-    top: -8px;
-    right: 0;
-    color: var(--aiwe-text);
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+
+    &:hover {
+        background-color: var(--aiwe-accent);
+        color: var(--aiwe-on-accent);
+    }
 }
 
 .aiwe-preview-nav {
@@ -1135,8 +1164,10 @@ $panelHeight: 782px;
 .aiwe-preview-count {
     position: absolute;
     bottom: 0;
-    color: var(--aiwe-muted);
+    color: var(--aiwe-text);
     font-size: 13px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
 }
 
 .aiwe-alert {
@@ -1368,6 +1399,11 @@ $panelHeight: 782px;
 
     .aiwe-preview {
         inset: 16px;
+    }
+
+    .aiwe-preview-frame img {
+        max-width: calc(100vw - 32px);
+        max-height: calc(100vh - 112px);
     }
 }
 

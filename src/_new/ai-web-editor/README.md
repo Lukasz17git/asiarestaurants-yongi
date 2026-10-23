@@ -9,7 +9,8 @@ From the button's panel:
 - **Crear un diseño nuevo**: a request for a new branch, `diseno-<issue>`, with its own Vercel address
 - **Usar este diseño como principal** (designs only): asks the AI to merge this design's branch into `main`
 - **Ver cambios** (with `changes`): the `changes` entries of the branch you're on
-- **Ver diseños**: `main` and the 10 most recently updated branches, each opened on the page you're on
+- **Diseños**: the 4 most recently updated branches (`main` included), each opened on the page you're on; **Ver todos** lists
+  `main` and the 10 latest designs
 - **Tus peticiones**: the requests of the branch you're on as chats, with replies and up to 20 images (compressed to WebP
   before upload). Replies only from that branch's newest version: elsewhere the chat links to it
 - **Versions** (under the address): the branch's last 10 Vercel deploys, one per commit. Each opens on the page you're on at its

@@ -164,18 +164,19 @@ const addReply = async (req, res) => {
  * Designs
  */
 
-// The main web and the 10 designs (every other branch) with the latest commits; a design made by the editor
+// The main web, then the 10 designs (every other branch) with the latest commits; a design made by the editor
 // ('diseno-12') gets the title of its issue (#12): the name the client gave it
 const listDesigns = async (req, res) => {
     const [branches, issues] = await Promise.all([github('GET', '/branches?per_page=100'), getRecentIssues()])
     const dated = await Promise.all(branches
-        .filter(({ name }) => name !== mainBranch)
         .slice(0, 30)
         .map(async ({ name, commit }) => {
             const { commit: { committer } } = await github('GET', `/commits/${commit.sha}`)
             return { branch: name, updatedAt: committer.date }
         }))
+    const main = dated.find(({ branch }) => branch === mainBranch)
     const designs = dated
+        .filter(({ branch }) => branch !== mainBranch)
         .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
         .slice(0, maxDesigns)
         .map((design) => {
@@ -183,7 +184,7 @@ const listDesigns = async (req, res) => {
             const issue = issues.find(({ number }) => number === issueNumber)
             return { ...design, title: issue?.title ?? null, url: getBranchUrl(design.branch) }
         })
-    sendCached(res, 60, [{ branch: mainBranch, updatedAt: null, title: null, url: mainUrl }, ...designs])
+    sendCached(res, 60, [{ branch: mainBranch, updatedAt: main?.updatedAt ?? null, title: null, url: mainUrl }, ...designs])
 }
 
 /*

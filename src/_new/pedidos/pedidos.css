@@ -202,18 +202,17 @@
 
 .pedidos-dishes {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 
 /*
  * Dish
  */
 .pedidos-dish {
-  display: grid;
-  grid-template-columns: 112px 1fr;
-  align-content: start;
-  gap: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   padding: 10px;
   border: 1px solid rgba(201, 171, 129, 0.16);
   border-radius: 14px;
@@ -224,24 +223,28 @@
   border-color: #c9ab81;
 }
 
-.pedidos-dish-texts {
-  flex: 1;
-  min-width: 0;
+.pedidos-dish-title {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.pedidos-dish-texts h3 {
-  font-size: 14.5px;
-  font-weight: 600;
+  align-items: flex-end;
+  min-height: 2.6em;
+  font-size: 14px;
   line-height: 1.3;
+}
+.pedidos-dish-title h3 {
+  font-size: inherit;
+  font-weight: 600;
+  line-height: inherit;
   overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .pedidos-dish-number {
   display: inline-block;
   min-width: 26px;
-  margin-right: 8px;
+  margin-right: 6px;
   padding: 1px 6px;
   border-radius: 6px;
   background-color: rgba(201, 171, 129, 0.14);
@@ -252,9 +255,8 @@
 }
 
 .pedidos-dish-description {
-  grid-column: 1/-1;
   color: #959494;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.45;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -263,14 +265,14 @@
 }
 
 .pedidos-dish-footer {
-  margin-top: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .pedidos-dish-price {
+  margin-right: auto;
   color: #ead1af;
   font-weight: 600;
   font-size: 16px;
@@ -292,8 +294,7 @@
 
 .pedidos-dish-media {
   position: relative;
-  width: 112px;
-  height: 112px;
+  aspect-ratio: 1;
 }
 .pedidos-dish-media img,
 .pedidos-dish-media .pedidos-dish-placeholder {
@@ -314,9 +315,8 @@
 .pedidos-dish-media .pedidos-add,
 .pedidos-dish-media .pedidos-quantity {
   position: absolute;
-  left: 50%;
-  bottom: 6px;
-  transform: translateX(-50%);
+  right: 8px;
+  bottom: 8px;
 }
 
 .pedidos-add {
@@ -746,6 +746,17 @@
   }
   body.pedidos-sheet-open .aiwe-corner {
     display: none;
+  }
+}
+@media (min-width: 600px) {
+  .pedidos-dishes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+@media (min-width: 860px) {
+  .pedidos-dishes {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 @media (min-width: 700px) {

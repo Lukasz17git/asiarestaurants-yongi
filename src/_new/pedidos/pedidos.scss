@@ -11,7 +11,6 @@ $cardBorder: rgba(201, 171, 129, 0.16);
 $whatsapp: #25d366;
 // Gold of the page's buttons, a bit softer than $textColor2
 $buttonColor: mix($textColor2, $backgroundColor2, 85%);
-$dishPhotoSize: 112px;
 // The «Editar con IA» button (56px, 24px from the corner) stays beside the cart bar
 $fabSpace: 24px + 56px + 12px;
 
@@ -242,9 +241,9 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 
 .pedidos-dishes {
     display: grid;
-    // 3 cards a row beside the order column, 1 on phones
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 12px;
+    // 2 cards a row on phones, 4 from 860px (also beside the order column)
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
 }
 
 /*
@@ -252,10 +251,9 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
  */
 
 .pedidos-dish {
-    display: grid;
-    grid-template-columns: $dishPhotoSize 1fr;
-    align-content: start;
-    gap: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     padding: 10px;
     border: 1px solid $cardBorder;
     border-radius: $radius;
@@ -267,25 +265,30 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
     }
 }
 
-.pedidos-dish-texts {
-    flex: 1;
-    min-width: 0;
+// Always 2 lines high, the name at the bottom, so the photos of a row line up
+.pedidos-dish-title {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
+    align-items: flex-end;
+    min-height: 2.6em;
+    font-size: 14px;
+    line-height: 1.3;
 
     h3 {
-        font-size: 14.5px;
+        font-size: inherit;
         font-weight: 600;
-        line-height: 1.3;
+        line-height: inherit;
         overflow-wrap: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
 
 .pedidos-dish-number {
     display: inline-block;
     min-width: 26px;
-    margin-right: 8px;
+    margin-right: 6px;
     padding: 1px 6px;
     border-radius: 6px;
     background-color: rgba(201, 171, 129, 0.14);
@@ -296,9 +299,8 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 }
 
 .pedidos-dish-description {
-    grid-column: 1 / -1;
     color: $textColor4;
-    font-size: 13px;
+    font-size: 12.5px;
     line-height: 1.45;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -307,14 +309,14 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 }
 
 .pedidos-dish-footer {
-    margin-top: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .pedidos-dish-price {
+    margin-right: auto;
     color: $lineColor2;
     font-weight: 600;
     font-size: 16px;
@@ -338,8 +340,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 
 .pedidos-dish-media {
     position: relative;
-    width: $dishPhotoSize;
-    height: $dishPhotoSize;
+    aspect-ratio: 1;
 
     img,
     .pedidos-dish-placeholder {
@@ -362,9 +363,8 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
     .pedidos-add,
     .pedidos-quantity {
         position: absolute;
-        left: 50%;
-        bottom: 6px;
-        transform: translateX(-50%);
+        right: 8px;
+        bottom: 8px;
     }
 }
 
@@ -788,6 +788,19 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
         .aiwe-corner {
             display: none;
         }
+    }
+}
+
+@media (min-width: 600px) {
+    .pedidos-dishes {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (min-width: 860px) {
+    .pedidos-dishes {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
 

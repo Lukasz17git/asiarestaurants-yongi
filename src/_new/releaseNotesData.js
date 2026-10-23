@@ -3,6 +3,20 @@
 // issue: GitHub issue number; no link/linkText on changes (the client asked for none in #3)
 const releaseNotes = [
     {
+        date: '2026-10-24',
+        branch: 'main',
+        title: 'Diseños en «Editar con IA», fotos más cómodas y platos más pequeños',
+        summary: '«Editar con IA» enseña tus últimos diseños, las fotos se ven mejor y en «Pedir online» caben 4 platos por fila.',
+        changes: [
+            { text: '«Editar con IA» tiene una sección nueva, «Diseños», con los 4 últimos que han cambiado (también la web principal); «Ver todos» los enseña todos.' },
+            { text: 'Se ha quitado el botón «Ver diseños»: ahora está en «Ver todos», dentro de «Diseños».' },
+            { text: 'Al abrir una foto de una petición, el fondo se oscurece un poco, la × para cerrarla está en la esquina de la foto y se cierra también pulsando fuera.' },
+            { text: 'En «Pedir online» el número y el nombre del plato están justo encima de la foto, en una o dos líneas.' },
+            { text: 'Caben 4 platos por fila en el ordenador, 3 en la tableta y 2 en el móvil.' },
+            { text: 'El botón para añadir un plato está en la esquina de abajo a la derecha de la foto, y el precio debajo de ella.' },
+        ],
+    },
+    {
         date: '2026-10-23',
         issue: 12,
         branch: 'main',

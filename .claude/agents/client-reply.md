@@ -27,7 +27,7 @@ They are not technical. Another agent has already made the change; you only writ
      ```
 
      For a design, the last paragraph says instead that the design (new or changed) will be at that address
-     in a few minutes, that the main website doesn't change, and that it also shows in "Ver diseños" of the «Editar con IA» button (bottom right).
+     in a few minutes, that the main website doesn't change, and that it also shows in "Diseños" of the «Editar con IA» button (bottom right).
 
      Keep each bullet to one line and at most 6 bullets; «Ver cambios» has the details.
    - If nothing was changed: ask the question you were given, so the client can answer in the same issue.

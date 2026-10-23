@@ -95,7 +95,7 @@ const buildCommentBody = ({ text, page, images }) => [
     `<!-- Enviado desde la web, en la página ${page} -->`,
 ].join('\n\n')
 
-// A new design is titled by its name, so "Ver diseños" lists it by it
+// A new design is titled by its name, so «Diseños» lists it by it
 const getTitle = ({ type, name, text, ref, version }) => {
     if (type === 'promote') return `Usar ${ref} como web principal`
     if (type === 'restore') return `Volver a la versión del ${formatVersionDate(version.date)}`

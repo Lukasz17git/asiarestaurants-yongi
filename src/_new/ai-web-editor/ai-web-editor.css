@@ -195,7 +195,7 @@
   transition: opacity 0.2s;
 }
 .aiwe-backdrop.dark {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.45);
 }
 .aiwe-backdrop[data-starting-style], .aiwe-backdrop[data-ending-style] {
   opacity: 0;
@@ -512,6 +512,7 @@ li:last-child > .aiwe-version {
 }
 
 .aiwe-request-texts {
+  flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -529,6 +530,16 @@ li:last-child > .aiwe-version {
 .aiwe-request-meta {
   color: var(--aiwe-muted);
   font-size: 12px;
+}
+
+.aiwe-design-row {
+  align-items: center;
+  text-decoration: none;
+}
+.aiwe-design-row .aiwe-request-meta {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /*
@@ -1043,9 +1054,14 @@ li:last-child > .aiwe-version {
   opacity: 0;
   transform: scale(0.97);
 }
-.aiwe-preview img {
-  max-width: 100%;
-  max-height: calc(100% - 80px);
+
+.aiwe-preview-frame {
+  position: relative;
+  display: flex;
+}
+.aiwe-preview-frame img {
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 128px);
   border-radius: 4px;
   object-fit: contain;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
@@ -1064,13 +1080,22 @@ li:last-child > .aiwe-version {
   font-weight: normal;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
 }
 
 .aiwe-preview-close {
   position: absolute;
-  top: -8px;
-  right: 0;
-  color: var(--aiwe-text);
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+.aiwe-preview-close:hover {
+  background-color: var(--aiwe-accent);
+  color: var(--aiwe-on-accent);
 }
 
 .aiwe-preview-nav {
@@ -1110,8 +1135,10 @@ li:last-child > .aiwe-version {
 .aiwe-preview-count {
   position: absolute;
   bottom: 0;
-  color: var(--aiwe-muted);
+  color: var(--aiwe-text);
   font-size: 13px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
 }
 
 .aiwe-alert {
@@ -1332,6 +1359,10 @@ li:last-child > .aiwe-version {
   }
   .aiwe-preview {
     inset: 16px;
+  }
+  .aiwe-preview-frame img {
+    max-width: calc(100vw - 32px);
+    max-height: calc(100vh - 112px);
   }
 }
 @media (prefers-reduced-motion: reduce) {
