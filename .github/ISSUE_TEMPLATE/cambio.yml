@@ -1,0 +1,29 @@
+name: Pedir un cambio
+description: Cambia textos, fotos, menús o precios de la web
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Escribe el cambio como se lo dirías a alguien. Claude lo hace, lo publica y te contesta aquí en unos minutos.
+        Para seguir pidiendo cosas sobre el mismo cambio (corregir algo, deshacerlo), contesta en esta misma conversación.
+  - type: dropdown
+    id: donde
+    attributes:
+      label: ¿Dónde?
+      description: |
+        Actual: el cambio se publica en la web principal.
+        Nuevo diseño: se crea otra versión de la web en su propia dirección y la principal no cambia.
+        Se hace siempre donde elijas aquí, diga lo que diga el texto. Para cambiarlo, abre otra petición.
+      options:
+        - Actual
+        - Nuevo diseño
+    validations:
+      required: true
+  - type: textarea
+    id: cambio
+    attributes:
+      label: ¿Qué quieres cambiar?
+      description: Si es un texto, pon el texto nuevo tal cual. Si es un precio, el plato y el precio nuevo.
+      placeholder: "Ejemplo: en el menú del mediodía, cambiar el precio de 14,50 € a 15,90 €"
+    validations:
+      required: true

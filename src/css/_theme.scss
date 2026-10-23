@@ -1,0 +1,29 @@
+$backgroundColor1: #171c20;
+$backgroundColor2:#121518;
+$backgroundColor3: #191D22;
+$textColor1: #eee; /*white*/
+$textColor2: #c9ab81; /*gold*/
+$textColor3:#b3b2b2; /*grey*/
+$textColor4: #959494;
+$textColor5: #ad8b5e; /*brown-gold*/
+
+$lineColor1: #c9ab81; /*gold line*/
+$lineColor2: #ead1af;
+$lineColor3: #856B48;
+$lineColor4: #8F795C;
+$lineColor5: #99866a;
+
+$lineColorHover: #fff;
+$black: #01090B;
+$underline: rgb(237, 167, 126);
+
+@mixin gold{
+    background: radial-gradient(#b88746, #fdf5a6);
+    background: -webkit-linear-gradient(top , #b88746, #fdf5a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin shadowNavbar{
+    box-shadow: 0px 1px 8px 1px #080808;
+}

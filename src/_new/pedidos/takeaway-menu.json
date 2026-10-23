@@ -1,0 +1,4897 @@
+[
+   {
+      "name": {
+         "es": "Dim Sum",
+         "cat": "Dim Sum",
+         "en": "Dim Sum",
+         "it": "Dim Sum",
+         "zh": "点心"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 1,
+            "name": {
+               "es": "Empanadillas de carne",
+               "cat": "Empanades de carn",
+               "en": "Meat Dumplings",
+               "it": "RAVIOLI DI CARNE",
+               "zh": "肉馄饨"
+            },
+            "description": {
+               "es": "Empanadillas de carne",
+               "cat": "Empanades de porc",
+               "en": "Pork Dumplings",
+               "it": "Carne di maiale*",
+               "zh": "猪肉馄饨"
+            },
+            "priceInCents": 500,
+            "photo": "ravioli-carne",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 2,
+            "name": {
+               "es": "Siu Mai",
+               "cat": "Empanades de porc",
+               "en": "Pork Dumplings",
+               "it": "RAVIOLI SHAOMAI",
+               "zh": "猪肉馄饨"
+            },
+            "description": {
+               "es": "Empanadillas de cerdo y gambas",
+               "cat": "Empanades de porc i gambes",
+               "en": "Pork and Shrimp Dumplings",
+               "it": "Carne di maiale e gamberi*",
+               "zh": "猪肉和虾馄饨"
+            },
+            "priceInCents": 500,
+            "photo": "ravioli-shaomai",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 3,
+            "name": {
+               "es": "Empanadillas veganas",
+               "cat": "Empanades veganes",
+               "en": "Vegan Dumplings",
+               "it": "RAVIOLI VEGAN",
+               "zh": "素食馄饨"
+            },
+            "description": {
+               "es": "Empanadillas de verduras mixtas",
+               "cat": "Empanades de verdures mixtes",
+               "en": "Mixed Vegetables Dumplings",
+               "it": "Verdure miste*",
+               "zh": "蔬菜馄饨"
+            },
+            "priceInCents": 500,
+            "photo": "ravioli-vegan",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 4,
+            "name": {
+               "es": "Guo Tie"
+            },
+            "description": {
+               "es": "Empanadilla de carne a la plancha"
+            },
+            "priceInCents": 500,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 6,
+            "name": {
+               "es": "Pan chino",
+               "cat": "Pa xinès",
+               "en": "Chinese Bread",
+               "it": "PANE CINESE",
+               "zh": "中国面包"
+            },
+            "description": {
+               "es": "Pan chino frito",
+               "cat": "Pa xinès fregit",
+               "en": "Chinese fried bread",
+               "it": "Pane* cinese fritto",
+               "zh": "中国炸面包"
+            },
+            "priceInCents": 500,
+            "photo": "pane-cinese",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 8,
+            "name": {
+               "es": "Guabao de pollo",
+               "cat": "Guabao de poll fregit",
+               "en": "Fried Chicken Guabao",
+               "it": "GUABAO DI POLLO FRITTO",
+               "zh": "炸鸡割包"
+            },
+            "description": {
+               "es": "Relleno de pollo frito y salsa dulce picante",
+               "cat": "Farcit de poll fregit i salsa picant",
+               "en": "Filled with fried chicken and spicy sauce",
+               "it": "Ripieno di pollo fritto e salsa agropiccante",
+               "zh": "填有炸鸡和辣酱"
+            },
+            "priceInCents": 650,
+            "photo": "guabao-pollo-fritto",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 9,
+            "name": {
+               "es": "Guabao de atún",
+               "cat": "Guabao de tonyina",
+               "en": "Tuna Guabao",
+               "it": "GUABAO DI TONNO",
+               "zh": "金枪鱼割包"
+            },
+            "description": {
+               "es": "Relleno de atún cocido, mayonesa y salsa teriyaki",
+               "cat": "Farcit de tonyina cuita, maionesa i salsa teriyaki",
+               "en": "Filled with cooked tuna, mayo, and teriyaki sauce",
+               "it": "Ripieno di tonno cotto, maio e teriyaki",
+               "zh": "填有熟金枪鱼，蛋黄酱和照烧酱"
+            },
+            "priceInCents": 650,
+            "photo": "guabao-tonno-cotto",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 10,
+            "name": {
+               "es": "Guabao de salmón",
+               "cat": "Guabao de salmó",
+               "en": "Salmon Guabao",
+               "it": "GUABAO DI SALMONE",
+               "zh": "鲑鱼割包"
+            },
+            "description": {
+               "es": "Relleno de salmón crudo, mayonesa y salsa teriyaki",
+               "cat": "Farcit de salmó cru, maionesa i salsa teriyaki",
+               "en": "Filled with raw salmon, mayo, and teriyaki sauce",
+               "it": "Ripieno di salmone crudo, maio e salsa teriyaki",
+               "zh": "填有生鲑鱼，蛋黄酱和照烧酱"
+            },
+            "priceInCents": 700,
+            "photo": "guabao-salmone",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 11,
+            "name": {
+               "es": "Guabao de pato",
+               "cat": "Guabao d'ànec",
+               "en": "Duck Guabao",
+               "it": "GUABAO DI ANATRA",
+               "zh": "鸭肉割包"
+            },
+            "description": {
+               "es": "Relleno de pato frito con salsa del chef",
+               "cat": "Farcit d'ànec fregit amb salsa del xef",
+               "en": "Filled with fried duck and chef's sauce",
+               "it": "Ripieno di anatra* fritta con salsa dello chef",
+               "zh": "填有炸鸭和厨师特制酱"
+            },
+            "priceInCents": 700,
+            "photo": "guabao-anatra",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 12,
+            "name": {
+               "es": "Guabao de gamba",
+               "cat": "Guabao de gambes",
+               "en": "Shrimp Guabao",
+               "it": "GUABAO DI GAMBERI",
+               "zh": "虾仁割包"
+            },
+            "description": {
+               "es": "Relleno de gamba frita y salsa teriyaki",
+               "cat": "Farcit de gambes fregides i salsa teriyaki",
+               "en": "Filled with fried shrimp and teriyaki sauce",
+               "it": "Ripieno di gamberi fritti e teriyaki",
+               "zh": "填有炸虾仁和照烧酱"
+            },
+            "priceInCents": 650,
+            "photo": "guabao-gambero-fritto",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 13,
+            "name": {
+               "es": "Baozi de carne",
+               "cat": "Baozi de carn",
+               "en": "Meat Baozi",
+               "it": "BAOZI DI CARNE",
+               "zh": "肉包子"
+            },
+            "description": {
+               "es": "Pan chino relleno de carne de cerdo",
+               "cat": "Pa xinès farcit de carn de porc",
+               "en": "Chinese bun filled with pork meat",
+               "it": "Pane* cinese ripieno di carne maiale",
+               "zh": "中国包子，填充猪肉"
+            },
+            "priceInCents": 400,
+            "photo": "baozi",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 14,
+            "name": {
+               "es": "Empanadillas de gambas",
+               "cat": "Empanades de cristall",
+               "en": "Crystal Dumplings",
+               "it": "RAVIOLI DI CRISTALLO",
+               "zh": "水晶馄饨"
+            },
+            "description": {
+               "es": "Empanadillas de gambas",
+               "cat": "Empanades de gambes",
+               "en": "Shrimp Dumplings",
+               "it": "Gamberi*",
+               "zh": "虾馄饨"
+            },
+            "priceInCents": 500,
+            "photo": "ravioli-di-cristallo",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Fritura y Tempura",
+         "cat": "Fritura i Tempura",
+         "en": "Fry & Tempura",
+         "it": "Frittura & Tempura",
+         "zh": "炸和天妇罗"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 17,
+            "name": {
+               "es": "Rollito de primavera",
+               "cat": "Rollet de primavera",
+               "en": "Spring Roll",
+               "it": "INVOLTINO PRIMAVERA",
+               "zh": "春卷"
+            },
+            "description": {
+               "es": "Vegetales variados",
+               "cat": "Verdures diverses",
+               "en": "Mixed vegetables",
+               "it": "Verdure miste",
+               "zh": "蔬菜拼盘"
+            },
+            "priceInCents": 400,
+            "photo": "involtino-primavera",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 18,
+            "name": {
+               "es": "Rollito vietnamita",
+               "cat": "Rollet vietnamita",
+               "en": "Vietnamese Spring Roll",
+               "it": "INVOLTINO VIETNAMITI",
+               "zh": "越南春卷"
+            },
+            "description": {
+               "es": "Gambas y vegetales variados",
+               "cat": "Gambes* i verdures diverses",
+               "en": "Shrimp* and mixed vegetables",
+               "it": "Gamberi* e verdure miste",
+               "zh": "虾仁*和蔬菜拼盘"
+            },
+            "priceInCents": 400,
+            "photo": "involtino-vietnamita",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 19,
+            "name": {
+               "es": "Chips de gamba",
+               "cat": "Núvols de gambes",
+               "en": "Shrimp Clouds",
+               "it": "NUVOLETTE DI GAMBERI",
+               "zh": "虾云朵"
+            },
+            "description": {
+               "es": "Chips de gamba",
+               "cat": "Xips de gambes",
+               "en": "Shrimp chips",
+               "it": "Chips di gambero",
+               "zh": "虾片"
+            },
+            "priceInCents": 500,
+            "photo": "nuvolette-di-gamberi",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 20,
+            "name": {
+               "es": "Pollo frito",
+               "cat": "Escalopa de pollastre",
+               "en": "Chicken Cutlet",
+               "it": "COTOLETTA DI POLLO",
+               "zh": "炸鸡排"
+            },
+            "description": {
+               "es": "Pollo frito",
+               "cat": "Pollastre fregit*",
+               "en": "Fried chicken*",
+               "it": "Pollo fritto*",
+               "zh": "炸鸡"
+            },
+            "priceInCents": 600,
+            "photo": "cotoletta-di-pollo",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 21,
+            "name": {
+               "es": "Patatas fritas",
+               "cat": "Patates fregides",
+               "en": "French Fries",
+               "it": "PATATINE FRITTE",
+               "zh": "炸薯条"
+            },
+            "description": {
+               "es": "Patatas fritas",
+               "cat": "Patates fregides*",
+               "en": "Fried potatoes*",
+               "it": "Patatine fritte*",
+               "zh": "炸土豆条"
+            },
+            "priceInCents": 500,
+            "photo": "patatine-fritte",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 22,
+            "name": {
+               "es": "Alitas de pollo",
+               "cat": "Aletes de pollastre*",
+               "en": "Chicken Wings*",
+               "it": "ALETTE DI POLLO*",
+               "zh": "鸡翅*"
+            },
+            "priceInCents": 500,
+            "photo": "alette-di-pollo",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 23,
+            "name": {
+               "es": "Tempura de verduras",
+               "cat": "Tempura de verdures",
+               "en": "Vegetable Tempura",
+               "it": "TEMPURA YASAI",
+               "zh": "天妇罗蔬菜"
+            },
+            "description": {
+               "es": "Variedad de verduras fritas",
+               "cat": "Assortiment de verdures fregides",
+               "en": "Assorted fried vegetables",
+               "it": "Misto di verdure fritte",
+               "zh": "各种炸蔬菜"
+            },
+            "priceInCents": 800,
+            "photo": "tempura-yasai",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 24,
+            "name": {
+               "es": "Tempura de gambas",
+               "cat": "Tempura de gambes",
+               "en": "Shrimp Tempura",
+               "it": "TEMPURA EBI",
+               "zh": "天妇罗虾"
+            },
+            "description": {
+               "es": "Gambas fritas",
+               "cat": "Gambes fregides",
+               "en": "Deep-fried shrimp",
+               "it": "Tempura di gamberi*",
+               "zh": "炸虾"
+            },
+            "priceInCents": 900,
+            "photo": "tempura-di-gamberi",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 25,
+            "name": {
+               "es": "Tempura mixto",
+               "cat": "Tempura mixta",
+               "en": "Mixed Tempura",
+               "it": "TEMPURA MIX",
+               "zh": "天妇罗拼盘"
+            },
+            "description": {
+               "es": "Tempura variada de gambas y verduras",
+               "cat": "Tempura variada de gambes i verdures",
+               "en": "Assorted shrimp and vegetable tempura",
+               "it": "Misto di gamberi* e verdure",
+               "zh": "各种天妇罗拼盘"
+            },
+            "priceInCents": 1000,
+            "photo": "mix-tempura",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 26,
+            "name": {
+               "es": "Stick Samurai",
+               "cat": "Palillo samurai",
+               "en": "Samurai Stick",
+               "it": "SAMURAI STICK",
+               "zh": "武士棍"
+            },
+            "description": {
+               "es": "Gamba y pescado blanco",
+               "cat": "Peix blanc i gambeta*",
+               "en": "White fish and shrimp*",
+               "it": "Pesce bianco e gambero*",
+               "zh": "白鱼和虾*"
+            },
+            "priceInCents": 400,
+            "photo": "samurai-stick",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 27,
+            "name": {
+               "es": "Calamares fritos",
+               "cat": "Calamars fregits",
+               "en": "Fried Calamari",
+               "it": "CALAMARI FRITTI",
+               "zh": "炸鱿鱼"
+            },
+            "description": {
+               "es": "Calamares fritos",
+               "cat": "Anells de calamar fregits*",
+               "en": "Fried squid rings*",
+               "it": "Anelli di calamari fritti*",
+               "zh": "炸鱿鱼圈"
+            },
+            "priceInCents": 700,
+            "photo": "calamari-fritti",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 28,
+            "name": {
+               "es": "Takoyaki",
+               "cat": "Takoyaki",
+               "en": "Takoyaki",
+               "it": "TAKOYAKI",
+               "zh": "章鱼小丸子"
+            },
+            "description": {
+               "es": "Bolitas de pulpo, mayonesa, hoja de sepia y teriyaki",
+               "cat": "Boles de pop*, maionesa, sípia fumada i teriyaki",
+               "en": "Octopus balls*, mayo, smoked cuttlefish, and teriyaki",
+               "it": "Polpette di polipo*, maio, seppia affumicato e teriyaki",
+               "zh": "章鱼丸子*，美乃滋，烟熏墨鱼和照烧酱"
+            },
+            "priceInCents": 650,
+            "photo": "takoyaki",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 29,
+            "name": {
+               "es": "Karaage de pollo",
+               "cat": "Nuggets de pollastre*",
+               "en": "Chicken Nuggets*",
+               "it": "PEPITE DI POLLO*",
+               "zh": "鸡块*"
+            },
+            "priceInCents": 600,
+            "photo": "pepite-di-pollo",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 30,
+            "name": {
+               "es": "Gambas Ioyi",
+               "cat": "Gambes daurades",
+               "en": "Golden Shrimp",
+               "it": "GOLDEN EBI",
+               "zh": "金虾"
+            },
+            "description": {
+               "es": "Gambas fritas con kataifi",
+               "cat": "Gambes fregides amb kataifi",
+               "en": "Fried shrimp with kataifi",
+               "it": "Gamberi* fritti con kataifi",
+               "zh": "金虾配kataifi"
+            },
+            "priceInCents": 1000,
+            "photo": "golden-ebi",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 31,
+            "name": {
+               "es": "Cangrejos fritos",
+               "cat": "Crancs fregits"
+            },
+            "description": {
+               "es": "Palo de cangrejo frito con salsa picante",
+               "cat": "Pal de cranc fregit amb salsa picant"
+            },
+            "priceInCents": 500,
+            "photo": "img31",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 32,
+            "name": {
+               "es": "Pescado frito",
+               "cat": "Peix fregit"
+            },
+            "description": {
+               "es": "Pescado blanco frito con salsa",
+               "cat": "Peix blanc fregit amb salsa"
+            },
+            "priceInCents": 800,
+            "photo": "img32",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Ensaladas y Vegetal",
+         "cat": "Amanides i Vegetal",
+         "en": "Salads & Veggie",
+         "it": "Insalate & Veggie",
+         "zh": "沙拉和素食"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 35,
+            "name": {
+               "es": "Edamame",
+               "cat": "Edamame",
+               "en": "Edamame",
+               "it": "EDAMAME",
+               "zh": "毛豆"
+            },
+            "description": {
+               "es": "Habas de soja",
+               "cat": "Mongetes de soja*",
+               "en": "Soybeans*",
+               "it": "Bacelli di soia*",
+               "zh": "大豆"
+            },
+            "priceInCents": 400,
+            "photo": "edamame",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 36,
+            "name": {
+               "es": "Wakame",
+               "cat": "Wakame",
+               "en": "Wakame",
+               "it": "WAKAME",
+               "zh": "裙帶菜"
+            },
+            "description": {
+               "es": "Alga japonesa",
+               "cat": "Alga japonesa*",
+               "en": "Japanese seaweed*",
+               "it": "Alghe giapponesi*",
+               "zh": "日本海藻"
+            },
+            "priceInCents": 450,
+            "photo": "wakame",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 37,
+            "name": {
+               "es": "Ensalada mixta",
+               "cat": "Amanida Mixta",
+               "en": "Mixed Salad",
+               "it": "INSALATA MIX",
+               "zh": "混合沙拉"
+            },
+            "description": {
+               "es": "Con salsa del chef",
+               "cat": "Amb salsa de l'xef",
+               "en": "With chef's sauce",
+               "it": "Con salsa dello chef",
+               "zh": "配師傅醬汁"
+            },
+            "priceInCents": 500,
+            "photo": "insalata-mix",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 38,
+            "name": {
+               "es": "Daikon",
+               "cat": "Daikon encurtit",
+               "en": "Pickled Daikon",
+               "it": "DAIKON SOTTO ACETO",
+               "zh": "醃蘿蔔"
+            },
+            "description": {
+               "es": "Rábano blanco asiático",
+               "cat": "Ràban blanc asiàtic",
+               "en": "Asian white radish",
+               "it": "Rapa bianca asiatica",
+               "zh": "亞洲白蘿蔔"
+            },
+            "priceInCents": 450,
+            "photo": "daikon-sottaceto",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 39,
+            "name": {
+               "es": "Ensalada mixta de mariscos",
+               "cat": "Amanida Mixta de Marisc",
+               "en": "Mixed Seafood Salad",
+               "it": "INSALATA MIX CON FRUTTI DI MARE",
+               "zh": "海鲜沙拉"
+            },
+            "description": {
+               "es": "Con salsa del chef",
+               "cat": "Amb salsa de l'xef",
+               "en": "With chef's sauce",
+               "it": "Con salsa dello chef",
+               "zh": "配師傅醬汁"
+            },
+            "priceInCents": 600,
+            "photo": "insalata-mix-mare",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Onigiri",
+         "cat": "Onigiri",
+         "en": "Onigiri",
+         "it": "Onigiri",
+         "zh": "饭团"
+      },
+      "photo": "onigiri",
+      "dishes": [
+         {
+            "number": 43,
+            "name": {
+               "es": "Onigiri de salmón",
+               "cat": "Onigiri de salmó",
+               "en": "Salmon Onigiri",
+               "it": "ONIGIRI SAKE",
+               "zh": "鮭魚飯糰"
+            },
+            "description": {
+               "es": "Arroz relleno de salmón",
+               "cat": "Arròs farcit de salmó",
+               "en": "Rice filled with salmon",
+               "it": "Riso ripieno di salmone",
+               "zh": "鮭魚飯糰內有鮭魚"
+            },
+            "priceInCents": 400,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 44,
+            "name": {
+               "es": "Onigiri de atún",
+               "cat": "Onigiri de tonyina",
+               "en": "Tuna Onigiri",
+               "it": "ONIGIRI TUNA",
+               "zh": "鮪魚飯糰"
+            },
+            "description": {
+               "es": "Arroz relleno de atún",
+               "cat": "Arròs farcit de tonyina",
+               "en": "Rice filled with tuna",
+               "it": "Riso ripieno di tonno",
+               "zh": "鮪魚飯糰內有鮪魚"
+            },
+            "priceInCents": 500,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 45,
+            "name": {
+               "es": "Onigiri de salmón cocido",
+               "cat": "Onigiri de Salmó Ardent",
+               "en": "Fire Sake Onigiri",
+               "it": "ONIGIRI FIRE SAKE",
+               "zh": "火焰鮭魚飯糰"
+            },
+            "description": {
+               "es": "Arroz relleno de salmón cocido y salsa teriyaki",
+               "cat": "Arròs farcit de salmó cuit i salsa teriyaki",
+               "en": "Rice filled with cooked salmon and teriyaki sauce",
+               "it": "Riso ripieno di salmone cotto e salsa teriyaki",
+               "zh": "內有熟鮭魚和照燒醬的米飯糰"
+            },
+            "priceInCents": 450,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 46,
+            "name": {
+               "es": "Onigiri de atún cocido",
+               "cat": "Onigiri de Tonyina Ardent",
+               "en": "Fire Tuna Onigiri",
+               "it": "ONIGIRI FIRE TUNA",
+               "zh": "火焰鮪魚飯糰"
+            },
+            "description": {
+               "es": "Arroz relleno de atún cocido y salsa teriyaki",
+               "cat": "Arròs farcit de tonyina cuita i salsa teriyaki",
+               "en": "Rice filled with cooked tuna and teriyaki sauce",
+               "it": "Riso ripieno di tonno cotto e salsa teriyaki",
+               "zh": "內有熟鮪魚和照燒醬的米飯糰"
+            },
+            "priceInCents": 450,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 47,
+            "name": {
+               "es": "Onigiri vegano",
+               "cat": "Onigiri Vegà",
+               "en": "Vegan Onigiri",
+               "it": "ONIGIRI VEGAN",
+               "zh": "素食飯糰"
+            },
+            "description": {
+               "es": "Arroz relleno de verduras mixtas",
+               "cat": "Arròs farcit de verdures diverses",
+               "en": "Rice filled with mixed vegetables",
+               "it": "Riso ripieno di verdure miste",
+               "zh": "內有各式蔬菜的米飯糰"
+            },
+            "priceInCents": 400,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Carpaccio",
+         "cat": "Carpaccio",
+         "en": "Carpaccio",
+         "it": "Carpaccio",
+         "zh": "薄片"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 50,
+            "name": {
+               "es": "Carpaccio de salmón",
+               "cat": "Carpaccio de salmó",
+               "en": "Salmon Carpaccio",
+               "it": "CARPACCIO DI SALMONE",
+               "zh": "三文鱼薄片"
+            },
+            "description": {
+               "es": "Salmón servido con salsa ponzu",
+               "cat": "Salmó servit amb salsa ponzu",
+               "en": "Salmon served with ponzu sauce",
+               "it": "Salmone servito con salsa ponzu",
+               "zh": "配柚子酱的三文鱼"
+            },
+            "priceInCents": 900,
+            "photo": "carpaccio-salmone",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 51,
+            "name": {
+               "es": "Carpaccio mixto",
+               "cat": "Carpaccio mixt",
+               "en": "Mixed Carpaccio",
+               "it": "CARPACCIO MIX",
+               "zh": "混合薄片"
+            },
+            "description": {
+               "es": "Salmón, lubina, atún, servido con salsa ponzu",
+               "cat": "Salmó, llobarro, tonyina, servit amb salsa ponzu",
+               "en": "Salmon, sea bass, tuna, served with ponzu sauce",
+               "it": "Salmone, branzino, tonno, servito con salsa ponzu",
+               "zh": "三文鱼，鲈鱼，金枪鱼配柚子酱"
+            },
+            "priceInCents": 1200,
+            "photo": "carpaccio-mix",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 52,
+            "name": {
+               "es": "Carpaccio de atún",
+               "cat": "Carpaccio de tonyina",
+               "en": "Tuna Carpaccio",
+               "it": "CARPACCIO DI TONNO",
+               "zh": "金枪鱼薄片"
+            },
+            "description": {
+               "es": "Atún servido con salsa ponzu",
+               "cat": "Tonyina servida amb salsa ponzu",
+               "en": "Tuna served with ponzu sauce",
+               "it": "Tonno servito con salsa ponzu",
+               "zh": "配柚子酱的金枪鱼"
+            },
+            "priceInCents": 1000,
+            "photo": "carpaccio-tonno",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 53,
+            "name": {
+               "es": "Carpaccio de lubina",
+               "cat": "Carpaccio de llobarro",
+               "en": "Sea Bass Carpaccio",
+               "it": "CARPACCIO DI BRANZINO",
+               "zh": "鲈鱼薄片"
+            },
+            "description": {
+               "es": "Lubina servida con salsa de maracuyá",
+               "cat": "Llobarro servit amb salsa de fruita de la passió",
+               "en": "Sea bass served with passion fruit sauce",
+               "it": "Branzino servito con salsa passion fruit",
+               "zh": "配百香果酱的鲈鱼"
+            },
+            "priceInCents": 1000,
+            "photo": "carpaccio-ricciola",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 54,
+            "name": {
+               "es": "Carpaccio de pulpo",
+               "cat": "Carpaccio de pop",
+               "en": "Octopus Carpaccio",
+               "it": "CARPACCIO DI POLIPO",
+               "zh": "章鱼薄片"
+            },
+            "description": {
+               "es": "Pulpo servido con salsa ponzu",
+               "cat": "Pop servit amb salsa ponzu",
+               "en": "Octopus served with ponzu sauce",
+               "it": "Polipo* servito con salsa ponzu",
+               "zh": "配柚子酱的章鱼"
+            },
+            "priceInCents": 1000,
+            "photo": "carpaccio-tako",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 55,
+            "name": {
+               "es": "Carpaccio de vieira",
+               "cat": "Carpaccio de vieira",
+               "en": "Scallop Carpaccio",
+               "it": "CARPACCIO DI CAPASANTA",
+               "zh": "扇贝薄片"
+            },
+            "description": {
+               "es": "Vieira servida con salsa ponzu",
+               "cat": "Vieira servida amb salsa ponzu",
+               "en": "Scallop served with ponzu sauce",
+               "it": "Capasanta servito con salsa ponzu",
+               "zh": "配柚子酱的扇贝"
+            },
+            "priceInCents": 1300,
+            "photo": "carpaccio-capasanta",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 56,
+            "name": {
+               "es": "Ternera Ioyi",
+               "cat": "Vedella Ioyi"
+            },
+            "description": {
+               "es": "Ternera medio cocida, con wakame y guacamole, teriyaki, salsa vinagre y limón",
+               "cat": "Vedella mitjanament cuita, amb wakame i guacamole, teriyaki, salsa de vinagre i llimona"
+            },
+            "priceInCents": 1500,
+            "photo": "img1",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 57,
+            "name": {
+               "es": "Salmón Ioyi",
+               "cat": "Salmó Ioyi"
+            },
+            "description": {
+               "es": "Salsa miso flameado con salmón y pepino, y un poco de picante",
+               "cat": "Salsa miso flamejada amb salmó i cogombre, i un toc de picant"
+            },
+            "priceInCents": 1200,
+            "photo": "img56",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 58,
+            "name": {
+               "es": "Carpaccio de estilo nuevo",
+               "cat": "Carpaccio d'estil nou",
+               "en": "New Style Carpaccio",
+               "it": "CARPACCIO NEW STYLE",
+               "zh": "新式薄片生魚片"
+            },
+            "description": {
+               "es": "Carpaccio de pescado mixto bañado en salsa stracciatella con reducción de teriyaki y vinagre balsámico",
+               "cat": "Carpaccio de peixos diversos banyat en salsa stracciatella amb reducció de teriyaki i vinagre balsàmic",
+               "en": "Mixed fish carpaccio soaked in stracciatella sauce with teriyaki reduction and balsamic vinegar",
+               "it": "Carpaccio di pesce misto inzuppato di salsa stracciatella con riduzione di teriyaki e aceto balsamico",
+               "zh": "混合魚肉薄片沾著 stracciatella 醬，配上照燒醬和黑醋"
+            },
+            "priceInCents": 1800,
+            "photo": "carpaccio-new-style",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 59,
+            "name": {
+               "es": "Carpaccio Fantasy",
+               "cat": "Carpaccio Fantasy",
+               "en": "Fantasy Carpaccio",
+               "it": "CARPACCIO FANTASY",
+               "zh": "幻想薄片生魚片"
+            },
+            "description": {
+               "es": "Carpaccio de vieira servido con té chino, chocolate blanco/negro y salsa de fruta de la pasión",
+               "cat": "Carpaccio de cloïsses servit amb té xinès, xocolata blanca/negra i salsa de fruita de la passió",
+               "en": "Scallop carpaccio served with Chinese tea, white/dark chocolate, and passion fruit sauce",
+               "it": "Carpaccio di capasanta servito con té cinese, cioccolato bianco/nero e salsa passion fruit",
+               "zh": "以中國茶、白巧克力/黑巧克力和百香果醬配搭的干貝薄片"
+            },
+            "priceInCents": 1500,
+            "photo": "carpaccio-fantasy",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Tartar",
+         "cat": "Tàrtar",
+         "en": "Tartare",
+         "it": "Tartare",
+         "zh": "鞑靼"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 61,
+            "name": {
+               "es": "Tártar de salmón",
+               "cat": "Tàrtar de Salmó",
+               "en": "Salmon Tartare",
+               "it": "TARTARE DI SALMONE",
+               "zh": "鮭魚塔塔"
+            },
+            "description": {
+               "es": "Servido con salsa ponzu",
+               "cat": "S'ha servit amb salsa ponzu",
+               "en": "Served with ponzu sauce",
+               "it": "Servito con salsa ponzu",
+               "zh": "配上柚子醋醬"
+            },
+            "priceInCents": 900,
+            "photo": "tartare-di-salmone",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 62,
+            "name": {
+               "es": "Tártar de atún",
+               "cat": "Tàrtar de Tonyina",
+               "en": "Tuna Tartare",
+               "it": "TARTARE DI TONNO",
+               "zh": "金槍魚塔塔"
+            },
+            "description": {
+               "es": "Servido con salsa ponzu",
+               "cat": "S'ha servit amb salsa ponzu",
+               "en": "Served with ponzu sauce",
+               "it": "Servito con salsa ponzu",
+               "zh": "配上柚子醋醬"
+            },
+            "priceInCents": 1000,
+            "photo": "tartare-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 63,
+            "name": {
+               "es": "Tártar mixto",
+               "cat": "Tàrtar Mixt",
+               "en": "Mixed Tartare",
+               "it": "TARTARE MIX",
+               "zh": "綜合塔塔"
+            },
+            "description": {
+               "es": "Servido con salsa ponzu",
+               "cat": "S'ha servit amb salsa ponzu",
+               "en": "Served with ponzu sauce",
+               "it": "Servito con salsa ponzu",
+               "zh": "配上柚子醋醬"
+            },
+            "priceInCents": 1200,
+            "photo": "tartare-mix",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 64,
+            "name": {
+               "es": "Tártar Ioyi",
+               "cat": "Tàrtar amb Gla d'ou de Cadernera",
+               "en": "Tartare with Quail Egg Yolk",
+               "it": "TARTARE CON TUORLO DI QUAGLIA",
+               "zh": "鵪鶉蛋塔塔"
+            },
+            "description": {
+               "es": "Servido con yema de huevo de codorniz y salsa ponzu",
+               "cat": "Servit amb rovell d'ou de guatlla i salsa ponzu"
+            },
+            "priceInCents": 1000,
+            "photo": "tartare-salmone-uovo-quaglia",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 65,
+            "name": {
+               "es": "Tártar de amaebi",
+               "cat": "Tàrtar d'AMAEBI",
+               "en": "AMAEBI Tartare",
+               "it": "TARTARE AMAEBI",
+               "zh": "甜海老塔塔"
+            },
+            "description": {
+               "es": "Servido con salsa de stracciatella y reducción de teriyaki",
+               "cat": "Acompanyat de salsa de stracciatella i reducció de teriyaki",
+               "en": "Served with stracciatella sauce and teriyaki reduction",
+               "it": "Servito con salsa di stracciatella e riduzione di teriyaki",
+               "zh": "配以stracciatella醬和照燒醬汁"
+            },
+            "priceInCents": 1200,
+            "photo": "tartare-amaebi",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 66,
+            "name": {
+               "es": "Tártaro de ternera",
+               "cat": "Tàrtar de Vedella",
+               "en": "Beef Tartare",
+               "it": "TARTARE DI MANZO",
+               "zh": "牛肉塔塔"
+            },
+            "description": {
+               "es": "Servido con salsa de stracciatella, aceite de oliva virgen extra y pimienta negra",
+               "cat": "Acompanyat de salsa de stracciatella, oli d'oliva verge extra i pebre negre",
+               "en": "Served with stracciatella sauce, extra virgin olive oil, and black pepper",
+               "it": "Servito con salsa di stracciatella, olio extra vergine e pepe nero",
+               "zh": "配以stracciatella醬、特級初榨橄欖油和黑胡椒"
+            },
+            "priceInCents": 1200,
+            "photo": "tartare-manzo",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 67,
+            "name": {
+               "es": "Tarta de mango",
+               "cat": "Pastís de mango"
+            },
+            "description": {
+               "es": "Arroz negro, salmón, mango y salsa mango pasión",
+               "cat": "Arròs negre, salmó, mango i salsa de mango i maracujà"
+            },
+            "priceInCents": 1200,
+            "photo": "image53",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 68,
+            "name": {
+               "es": "Tarta aguacate",
+               "cat": "Pastís d'alvocat"
+            },
+            "description": {
+               "es": "Aguacate tempura, salmón, condimento y salsa teriyaki",
+               "cat": "Alvocat en tempura, salmó, condiments i salsa teriyaki"
+            },
+            "priceInCents": 1500,
+            "photo": "image54",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Sashimi",
+         "cat": "Sashimi",
+         "en": "Sashimi",
+         "it": "Sashimi",
+         "zh": "刺身"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 71,
+            "name": {
+               "es": "Sashimi de salmón",
+               "cat": "Sashimi de Salmó",
+               "en": "Salmon Sashimi",
+               "it": "SASHIMI SALMONE",
+               "zh": "鮭魚刺身"
+            },
+            "priceInCents": 900,
+            "photo": "sashimi-salmone",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 72,
+            "name": {
+               "es": "Sashimi Plus",
+               "cat": "SASHIMI PLUS",
+               "en": "SASHIMI PLUS",
+               "it": "SASHIMI PLUS",
+               "zh": "SASHIMI PLUS"
+            },
+            "description": {
+               "es": "Salmón, atún, pez limón, lubina, langostino rojo y langostinos",
+               "cat": "Salmó, tonyina, peix lleó, llobarro, llagostí vermell i escamarlans",
+               "en": "Salmon, tuna, yellowtail, sea bass, red shrimp, and prawns",
+               "it": "Salmone, tonno, ricciola, branzino, gambero rosso e scampi",
+               "zh": "鮭魚、金槍魚、黃尾魚、鱸魚、紅蝦和大蝦"
+            },
+            "priceInCents": 2000,
+            "photo": "sashimi-plus",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 73,
+            "name": {
+               "es": "Sashimi Mix",
+               "cat": "SASHIMI MIX",
+               "en": "SASHIMI MIX",
+               "it": "SASHIMI MIX",
+               "zh": "SASHIMI MIX"
+            },
+            "description": {
+               "es": "Salmón, atún y lubina",
+               "cat": "Salmó, tonyina i llobarro",
+               "en": "Salmon, tuna, and sea bass",
+               "it": "Salmone, tonno e branzino",
+               "zh": "鮭魚、金槍魚和鱸魚"
+            },
+            "priceInCents": 1400,
+            "photo": "sashimi-mix",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 74,
+            "name": {
+               "es": "Sashimi de atún",
+               "cat": "Sashimi de Tonyina",
+               "en": "Tuna Sashimi",
+               "it": "SASHIMI TONNO",
+               "zh": "鮪魚刺身"
+            },
+            "priceInCents": 1000,
+            "photo": "sashimi-tonno",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 75,
+            "name": {
+               "es": "Sashimi de lubina",
+               "cat": "Sashimi de llobarro",
+               "en": "Sea Bass Sashimi",
+               "it": "SASHIMI BRANZINO",
+               "zh": "鱸魚刺身"
+            },
+            "priceInCents": 1000,
+            "photo": "sashimi-ricciola",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Tataki",
+         "cat": "Tataki",
+         "en": "Tataki",
+         "it": "Tataki",
+         "zh": "拍炙"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 77,
+            "name": {
+               "es": "Tataki de salmón",
+               "cat": "Tataki de Salmó",
+               "en": "Salmon Tataki",
+               "it": "TATAKI SAKE",
+               "zh": "鮭魚炙"
+            },
+            "description": {
+               "es": "En costra de sésamo sellado, servido con salsa teriyaki",
+               "cat": "En crosta de sèsam escaldat, servit amb salsa teriyaki",
+               "en": "Seared sesame-crusted, served with teriyaki sauce",
+               "it": "In crosta di sesamo scottato servito con salsa teriyaki",
+               "zh": "煎芝麻外皮，配以照燒醬汁"
+            },
+            "priceInCents": 900,
+            "photo": "tataki-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 78,
+            "name": {
+               "es": "Tataki de atún",
+               "cat": "Tataki de Tonyina",
+               "en": "Tuna Tataki",
+               "it": "TATAKI TUNA",
+               "zh": "鮪魚燒"
+            },
+            "description": {
+               "es": "Sellado en costra de sésamo, servido con salsa teriyaki",
+               "cat": "Escaldat en crosta de sèsam, servit amb salsa teriyaki",
+               "en": "Seared sesame-crusted, served with teriyaki sauce",
+               "it": "In crosta di sesamo scottato servito con salsa teriyaki",
+               "zh": "芝麻燒鮪魚，配以照燒醬汁"
+            },
+            "priceInCents": 1000,
+            "photo": "tataki-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 79,
+            "name": {
+               "es": "Tataki de salmón al estilo nuevo",
+               "cat": "Tataki de Salmó Estil Nou",
+               "en": "New Style Salmon Tataki",
+               "it": "TATAKI SAKE NEW STYLE",
+               "zh": "新風格鮭魚燒"
+            },
+            "description": {
+               "es": "Salmón en costra de semillas de chía, servido con burrata y salsa de sésamo",
+               "cat": "Salmó en crosta de llavors de xia, servit amb burrata i salsa de sèsam",
+               "en": "Salmon in chia seed crust, served with burrata and sesame sauce",
+               "it": "Salmone in crosta di semi di chia burrata servito con salsa di sesamo",
+               "zh": "芝麻燒鮭魚，配以布拉塔奶酪和芝麻醬"
+            },
+            "priceInCents": 1200,
+            "photo": "tataki-sake-new-style",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 80,
+            "name": {
+               "es": "Tataki de atún al estilo nuevo",
+               "cat": "Tataki de Tonyina Estil Nou",
+               "en": "New Style Tuna Tataki",
+               "it": "TATAKI TUNA NEW STYLE",
+               "zh": "新風格鮪魚燒"
+            },
+            "description": {
+               "es": "Atún en costra de pistachos, servido con burrata y salsa de sésamo",
+               "cat": "Tonyina en crosta de pistatxos, servit amb burrata i salsa de sèsam",
+               "en": "Tuna in pistachio crust, served with burrata and sesame sauce",
+               "it": "Tonno in crosta di pistacchio burrata servito con salsa di sesamo",
+               "zh": "芝麻燒鮪魚，配以布拉塔奶酪和芝麻醬"
+            },
+            "priceInCents": 1300,
+            "photo": "tataki-tuna-new-style",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Chirashi",
+         "cat": "Chirashi",
+         "en": "Chirashi",
+         "it": "Chirashi",
+         "zh": "散寿司"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 82,
+            "name": {
+               "es": "Chirashi de salmón",
+               "cat": "Chirashi de Salmó",
+               "en": "Salmon Chirashi",
+               "it": "CHIRASHI SALMONE",
+               "zh": "三文魚散壽司"
+            },
+            "description": {
+               "es": "Cuenco de arroz con salmón y salsa teriyaki",
+               "cat": "Gerret de salmó amb salsa teriyaki",
+               "en": "Bowl of rice with salmon toppings and teriyaki sauce",
+               "it": "Ciottola di riso con ripieno di salmone e salsa teriyaki",
+               "zh": "盛滿三文魚的飯碗，配以照燒醬汁"
+            },
+            "priceInCents": 500,
+            "photo": "chirashi-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 83,
+            "name": {
+               "es": "Chirashi vegano",
+               "cat": "Chirashi Vegà",
+               "en": "Vegan Chirashi",
+               "it": "CHIRASHI VEGAN",
+               "zh": "素食散壽司"
+            },
+            "description": {
+               "es": "Cuenco de arroz con verduras variadas y salsa de sésamo",
+               "cat": "Gerret de verdura mixta amb salsa de sèsam",
+               "en": "Bowl of rice with assorted vegetables and sesame sauce",
+               "it": "Ciottola di riso con ripieno di verdure miste e salsa sesamo",
+               "zh": "盛滿各種蔬菜的飯碗，配以芝麻醬"
+            },
+            "priceInCents": 500,
+            "photo": "chirashi-vegan",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 84,
+            "name": {
+               "es": "Chirashi mixto",
+               "cat": "Chirashi Mixt",
+               "en": "Chirashi Mix",
+               "it": "CHIRASHI MIX",
+               "zh": "綜合散壽司"
+            },
+            "description": {
+               "es": "Cuenco de arroz con mezcla de pescado y salsa teriyaki",
+               "cat": "Gerret de arròs amb farciment de peix mixt i salsa teriyaki",
+               "en": "Bowl of rice with assorted fish toppings and teriyaki sauce",
+               "it": "Ciottola di riso con ripieno di pesce mix e salsa teriyaki",
+               "zh": "盛滿各種魚肉的飯碗，配以照燒醬汁"
+            },
+            "priceInCents": 550,
+            "photo": "chirashi-misto",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 85,
+            "name": {
+               "es": "Chirashi de atún",
+               "cat": "Chirashi de Tonyina",
+               "en": "Tuna Chirashi",
+               "it": "CHIRASHI TONNO",
+               "zh": "吞拿魚散壽司"
+            },
+            "description": {
+               "es": "Cuenco de arroz con atún y salsa teriyaki",
+               "cat": "Gerret de tonyina amb salsa teriyaki",
+               "en": "Bowl of rice with tuna toppings and teriyaki sauce",
+               "it": "Ciottola di riso con ripieno di tonno e salsa teriyaki",
+               "zh": "盛滿吞拿魚的飯碗，配以照燒醬汁"
+            },
+            "priceInCents": 550,
+            "photo": "chirashi-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Poke",
+         "cat": "Poke",
+         "en": "Poke",
+         "it": "Poke",
+         "zh": "波奇饭"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 87,
+            "name": {
+               "es": "Poke de salmón",
+               "cat": "Poke de Salmó",
+               "en": "Salmon Poke",
+               "it": "POKE SALMONE",
+               "zh": "三文魚沙拉"
+            },
+            "description": {
+               "es": "Cuenco de arroz con salmón, mango, zanahoria, edamame, aguacate y salsa de sésamo",
+               "cat": "Gerret de salmó, mango, pastanaga, edamame, alvocat i salsa de sèsam",
+               "en": "Bowl of rice with salmon, mango, carrot, edamame, avocado, and sesame sauce",
+               "it": "Ciottola di riso con ripieno di salmone, mango, carota, edamame, avocado e salsa sesamo",
+               "zh": "盛滿三文魚、芒果、胡蘿蔔、毛豆、牛油果和芝麻醬的飯碗"
+            },
+            "priceInCents": 1000,
+            "photo": "poke-salmone",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 88,
+            "name": {
+               "es": "Poke vegano",
+               "cat": "Poke Vegà",
+               "en": "Vegan Poke",
+               "it": "POKE VEGAN",
+               "zh": "素食沙拉"
+            },
+            "description": {
+               "es": "Cuenco de arroz con verduras variadas y salsa de sésamo",
+               "cat": "Gerret de verdura mixta amb salsa de sèsam",
+               "en": "Bowl of rice with assorted vegetables and sesame sauce",
+               "it": "Ciottola di riso con ripieno di verdure miste e salsa sesamo",
+               "zh": "盛滿各種蔬菜的飯碗，配以芝麻醬"
+            },
+            "priceInCents": 900,
+            "photo": "poke-vegan",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 89,
+            "name": {
+               "es": "Poke de atún",
+               "cat": "Poke de Tonyina",
+               "en": "Tuna Poke",
+               "it": "POKE TONNO",
+               "zh": "吞拿魚沙拉"
+            },
+            "description": {
+               "es": "Cuenco de arroz con atún, mango, zanahoria, edamame, aguacate y salsa de sésamo",
+               "cat": "Gerret de tonyina, mango, pastanaga, edamame, alvocat i salsa de sèsam",
+               "en": "Bowl of rice with tuna, mango, carrot, edamame, avocado, and sesame sauce",
+               "it": "Ciottola di riso con ripieno di tonno, mango, carota, edamame, avocado e salsa sesamo",
+               "zh": "盛滿吞拿魚、芒果、胡蘿蔔、毛豆、牛油果和芝麻醬的飯碗"
+            },
+            "priceInCents": 1200,
+            "photo": "poke-tonno",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Hosomaki",
+         "cat": "Hosomaki",
+         "en": "Hosomaki",
+         "it": "Hosomaki",
+         "zh": "细卷"
+      },
+      "note": {
+         "es": "(6 unidades)",
+         "cat": "(6 unitats)",
+         "en": "(6 pieces)",
+         "it": "(6 pezzi)",
+         "zh": "(6个)"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 91,
+            "name": {
+               "es": "Maki de salmón",
+               "cat": "Maki de Salmó",
+               "en": "Salmon Maki",
+               "it": "SAKE MAKI",
+               "zh": "三文魚卷"
+            },
+            "description": {
+               "es": "Salmón",
+               "cat": "Salmó",
+               "en": "Salmon",
+               "it": "Salmone",
+               "zh": "三文魚"
+            },
+            "priceInCents": 500,
+            "photo": "hosomaki-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 92,
+            "name": {
+               "es": "Maki de atún",
+               "cat": "Maki de Tonyina",
+               "en": "Tuna Maki",
+               "it": "TUNA MAKI",
+               "zh": "吞拿魚卷"
+            },
+            "description": {
+               "es": "Atún blue",
+               "cat": "Tonyina",
+               "en": "Tuna",
+               "it": "Tonno",
+               "zh": "吞拿魚"
+            },
+            "priceInCents": 600,
+            "photo": "hosomaki-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 93,
+            "name": {
+               "es": "Maki de ebi",
+               "cat": "Maki de Gambeta",
+               "en": "Shrimp Maki",
+               "it": "EBI MAKI",
+               "zh": "蝦卷"
+            },
+            "description": {
+               "es": "Gambas cocidas",
+               "cat": "Gambeta cuita",
+               "en": "Cooked shrimp",
+               "it": "Gambero* cotto",
+               "zh": "熟蝦"
+            },
+            "priceInCents": 450,
+            "photo": "hosomaki-ebi",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 94,
+            "name": {
+               "es": "Maki de aguacate",
+               "cat": "Maki d'Alvocat",
+               "en": "Avocado Maki",
+               "it": "AVOCADO MAKI",
+               "zh": "酪梨卷"
+            },
+            "description": {
+               "es": "Aguacate",
+               "cat": "Alvocat",
+               "en": "Avocado",
+               "it": "Avocado",
+               "zh": "酪梨"
+            },
+            "priceInCents": 500,
+            "photo": "hosomaki-avocado",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 95,
+            "name": {
+               "es": "Maki de pepino",
+               "cat": "Maki de Cogombre",
+               "en": "Cucumber Maki",
+               "it": "KAPPA MAKI",
+               "zh": "黃瓜卷"
+            },
+            "description": {
+               "es": "Pepino",
+               "cat": "Cogombre",
+               "en": "Cucumber",
+               "it": "Cetriolo",
+               "zh": "黃瓜"
+            },
+            "priceInCents": 450,
+            "photo": "hosomaki-kappa",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 96,
+            "name": {
+               "es": "Maki Black Salmon",
+               "cat": "Maki de Salmó Negre"
+            },
+            "description": {
+               "es": "Salmón",
+               "cat": "Salmó"
+            },
+            "priceInCents": 500,
+            "photo": "image85",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 97,
+            "name": {
+               "es": "Maki de salmón con hoja",
+               "cat": "Maki de Salmó amb Salsa de Soja",
+               "en": "Salmon Soy Maki",
+               "it": "SOY MAKI SAKE",
+               "zh": "醬油三文魚卷"
+            },
+            "description": {
+               "es": "Salmón",
+               "cat": "Salmó",
+               "en": "Salmon",
+               "it": "Salmone",
+               "zh": "三文魚"
+            },
+            "priceInCents": 500,
+            "photo": "soy-maki-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 98,
+            "name": {
+               "es": "Hosomaki de salmón frito",
+               "cat": "Hosomaki de Salmó Fregit",
+               "en": "Fried Salmon Hosomaki",
+               "it": "HOSO FRY SAKE",
+               "zh": "炸三文魚細卷"
+            },
+            "description": {
+               "es": "Frito con salmón, queso crema Philadelphia y teriyaki",
+               "cat": "Fregit amb salmó, formatge crema Philadelphia i teriyaki",
+               "en": "Fried with salmon, Philadelphia cream cheese, and teriyaki",
+               "it": "Fritto con salmone, philadelphia e teriyaki",
+               "zh": "炸三文魚、費城奶酪和照燒醬"
+            },
+            "priceInCents": 600,
+            "photo": "hosomaki-fry-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 99,
+            "name": {
+               "es": "Maki de atún con hoja",
+               "cat": "Maki de Tonyina amb Salsa de Soja",
+               "en": "Tuna Soy Maki",
+               "it": "SOY MAKI TUNA",
+               "zh": "醬油吞拿魚卷"
+            },
+            "description": {
+               "es": "Atún blue",
+               "cat": "Tonyina",
+               "en": "Tuna",
+               "it": "Tonno",
+               "zh": "吞拿魚"
+            },
+            "priceInCents": 600,
+            "photo": "soy-maki-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 100,
+            "name": {
+               "es": "Hosomaki de gambas frito",
+               "cat": "Hosomaki de Gambeta Fregida",
+               "en": "Fried Shrimp Hosomaki",
+               "it": "HOSO FRY EBI",
+               "zh": "炸蝦細卷"
+            },
+            "description": {
+               "es": "Frito con gamba",
+               "cat": "Fregit amb gambeta*",
+               "en": "Fried with shrimp*",
+               "it": "Fritto con gambero*",
+               "zh": "炸蝦*"
+            },
+            "priceInCents": 600,
+            "photo": "hosomaki-fry-ebi",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 101,
+            "name": {
+               "es": "Hosomaki de mango frito",
+               "cat": "Hosomaki de Mango Fregit",
+               "en": "Fried Mango Hosomaki",
+               "it": "HOSO FRY MANGO",
+               "zh": "炸芒果細卷"
+            },
+            "description": {
+               "es": "Frito con salmón, mango, queso y salsa de mango",
+               "cat": "Fregit amb salmó, mango, formatge crema Philadelphia i salsa de mango",
+               "en": "Fried with salmon, mango, Philadelphia cream cheese, and mango sauce",
+               "it": "Fritto con salmone, mango, philadelphia e salsa di mango",
+               "zh": "炸三文魚、芒果、費城奶酪和芒果醬"
+            },
+            "priceInCents": 700,
+            "photo": "hosomaki-fry-mango",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 102,
+            "name": {
+               "es": "Hosomaki de fresa frito",
+               "cat": "Hosomaki de Maduixa Fregit",
+               "en": "Fried Strawberry Hosomaki",
+               "it": "HOSO FRY FRAGOLA",
+               "zh": "炸草莓細卷"
+            },
+            "description": {
+               "es": "Frito con salmón, queso crema Philadelphia de fresa y teriyaki",
+               "cat": "Fregit amb salmó, formatge crema Philadelphia de maduixa i teriyaki",
+               "en": "Fried with salmon, strawberry Philadelphia cream cheese, and teriyaki",
+               "it": "Fritto con salmone, fragola philadelphia, e teriyaki",
+               "zh": "炸三文魚、草莓費城奶酪和照燒醬"
+            },
+            "priceInCents": 700,
+            "photo": "hosomaki-fry-fragola",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 103,
+            "name": {
+               "es": "Nidos de salmón",
+               "cat": "Nius de Salmó",
+               "en": "Salmon Nests",
+               "it": "NIDI SAKE",
+               "zh": "三文魚巢"
+            },
+            "description": {
+               "es": "Envuelto con kataifi, tartar de salmón, aguacate, salsa mayonesa picante y teriyaki",
+               "cat": "Embolcallat amb kataifi, tàrtar de salmó, alvocat, salsa maionesa picant i teriyaki",
+               "en": "Wrapped with kataifi, salmon tartare, avocado, spicy mayo sauce, and teriyaki",
+               "it": "Avvolto con kataifi, tartare di salmone, avocado, salsa spicy maio e teriyaki",
+               "zh": "用卷心菜卷起來，三文魚塔塔、鱷梨、辣味蛋黃醬和照燒醬"
+            },
+            "priceInCents": 1000,
+            "photo": "hosomaki-nidi-sake",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 104,
+            "name": {
+               "es": "Nidos de atún",
+               "cat": "Nius de Tonyina",
+               "en": "Tuna Nests",
+               "it": "NIDI TUNA",
+               "zh": "鮪魚巢"
+            },
+            "description": {
+               "es": "Envuelto con kataifi, tartar de atún, aguacate, salsa mayonesa picante y teriyaki",
+               "cat": "Embolcallat amb kataifi, tàrtar de tonyina, alvocat, salsa maionesa picant i teriyaki",
+               "en": "Wrapped with kataifi, tuna tartare, avocado, spicy mayo sauce, and teriyaki",
+               "it": "Avvolto con kataifi, tartare di tonno, avocado, salsa spicy maio e teriyaki",
+               "zh": "用卷心菜卷起來，鮪魚塔塔、鱷梨、辣味蛋黃醬和照燒醬"
+            },
+            "priceInCents": 1100,
+            "photo": "hosomaki-nidi-tuna",
+            "isVegan": false,
+            "isSpicy": true
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Crispy",
+         "cat": "Crispy",
+         "en": "Crispy",
+         "it": "Crispy",
+         "zh": "脆卷"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 106,
+            "name": {
+               "es": "Banshun vegano",
+               "cat": "BANSHUN VEGÀ",
+               "en": "BANSHUN VEGAN",
+               "it": "BANSHUN VEGAN",
+               "zh": "BANSHUN VEGAN"
+            },
+            "description": {
+               "es": "Hojas de arroz con verduras mixtas y salsa teriyaki",
+               "cat": "Fulla de arròs amb verdures variades i salsa teriyaki",
+               "en": "Rice leaf with mixed vegetables and teriyaki sauce",
+               "it": "Foglia di riso con verdure miste e salsa teriyaki",
+               "zh": "带混合蔬菜和照烧酱的米叶卷"
+            },
+            "priceInCents": 600,
+            "photo": "banshun-vegan",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 107,
+            "name": {
+               "es": "Banshun Ebi",
+               "cat": "BANSHUN EBI",
+               "en": "BANSHUN EBI",
+               "it": "BANSHUN EBI",
+               "zh": "BANSHUN EBI"
+            },
+            "description": {
+               "es": "Hojas de arroz con gamba tempura, aguacate, lechuga, Philadelphia y salsa teriyaki",
+               "cat": "Fulla de arròs amb gambes* en tempura, alvocat, enciam, Philadelphia i salsa teriyaki",
+               "en": "Rice leaf with tempura shrimp*, avocado, lettuce, Philadelphia, and teriyaki sauce",
+               "it": "Foglia di riso con gambero* in tempura, avocado, lattuga, philadelphia e salsa teriyaki",
+               "zh": "带天妇罗虾仁*、鳄梨、生菜、费城奶酪和照烧酱的米叶卷"
+            },
+            "priceInCents": 600,
+            "photo": "banshun-tori",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 108,
+            "name": {
+               "es": "Banshun Sake",
+               "cat": "BANSHUN SAKE",
+               "en": "BANSHUN SAKE",
+               "it": "BANSHUN SAKE",
+               "zh": "BANSHUN SAKE"
+            },
+            "description": {
+               "es": "Hojas de arroz con salmón, mango, aguacate, Philadelphia y salsa de mango",
+               "cat": "Fulla de arròs amb salmó, mango, alvocat, Philadelphia i salsa de mango",
+               "en": "Rice leaf with salmon, mango, avocado, Philadelphia, and mango sauce",
+               "it": "Foglia di riso con salmone, mango, avocado, philadelphia e salsa mango",
+               "zh": "鲑鱼、芒果、鳄梨、费城奶酪和芒果酱的米叶卷"
+            },
+            "priceInCents": 700,
+            "photo": "banshun-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 109,
+            "name": {
+               "es": "Milhojas de salmón",
+               "cat": "Milfulls de Salmó",
+               "en": "Salmon Mille-Feuille",
+               "it": "MILLE FOGLIE SAKE",
+               "zh": "三文魚千層餅"
+            },
+            "description": {
+               "es": "Hojas de harina fritas con tartar de salmón, queso crema y teriyaki",
+               "cat": "Fulls de farina fregits amb tàrtar de salmó, formatge crema i teriyaki",
+               "en": "Fried flour leaves with salmon tartare, cream cheese, and teriyaki",
+               "it": "Foglie di farina fritto con tartare di salmone, philadelphia e teriyaki",
+               "zh": "炸麵粉葉與三文魚塔塔、奶油芝士和照燒醬"
+            },
+            "priceInCents": 600,
+            "photo": "mille-foglie-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 110,
+            "name": {
+               "es": "Milhojas de atún",
+               "cat": "Milfulls de Tonyina",
+               "en": "Tuna Mille-Feuille",
+               "it": "MILLE FOGLIE TUNA",
+               "zh": "鮪魚千層餅"
+            },
+            "description": {
+               "es": "Hojas de harina fritas con tartar de atún, queso crema y teriyaki",
+               "cat": "Fulls de farina fregits amb tàrtar de tonyina, formatge crema i teriyaki",
+               "en": "Fried flour leaves with tuna tartare, cream cheese, and teriyaki",
+               "it": "Foglie di farina fritto con tartare di salmone, philadelphia e teriyaki",
+               "zh": "炸麵粉葉與鮪魚塔塔、奶油芝士和照燒醬"
+            },
+            "priceInCents": 600,
+            "photo": "mille-foglie-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 111,
+            "name": {
+               "es": "Crunchy Truffle Sake",
+               "cat": "CRUNCHY TRUFFLE SAKE",
+               "en": "CRUNCHY TRUFFLE SAKE",
+               "it": "CRUNCHY TRUFFLE SAKE",
+               "zh": "CRUNCHY TRUFFLE SAKE"
+            },
+            "description": {
+               "es": "Hojas de alga nori fritas con tartar de salmón, salsa de trufa, queso crema y teriyaki",
+               "cat": "Fulls d'algues nori fregides amb tàrtar de salmó, salsa de tòfona, formatge crema i teriyaki",
+               "en": "Fried nori seaweed leaves with salmon tartare, truffle sauce, cream cheese, and teriyaki",
+               "it": "Foglie di alghe nori fritto con tartare di salmone, salsa di tartufo, philadelphia e teriyaki",
+               "zh": "炸海苔葉與鮭魚塔塔、松露醬、奶油芝士和照燒醬"
+            },
+            "priceInCents": 600,
+            "photo": "crunchy-truffle-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 112,
+            "name": {
+               "es": "Crunchy Truffle Tuna",
+               "cat": "CRUNCHY TRUFFLE TUNA",
+               "en": "CRUNCHY TRUFFLE TUNA",
+               "it": "CRUNCHY TRUFFLE TUNA",
+               "zh": "CRUNCHY TRUFFLE TUNA"
+            },
+            "description": {
+               "es": "Hojas de alga nori fritas con tartar de atún, salsa de trufa, queso crema y teriyaki",
+               "cat": "Fulls d'algues nori fregides amb tàrtar de tonyina, salsa de tòfona, formatge crema i teriyaki",
+               "en": "Fried nori seaweed leaves with tuna tartare, truffle sauce, cream cheese, and teriyaki",
+               "it": "Foglie di alghe nori fritto con tartare di tonno, salsa di tartufo, philadelphia e teriyaki",
+               "zh": "炸海苔葉與鮪魚塔塔、松露醬、奶油芝士和照燒醬"
+            },
+            "priceInCents": 600,
+            "photo": "crunchy-truffle-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 113,
+            "name": {
+               "es": "Crunch Tuna",
+               "cat": "Tonyina cruixent"
+            },
+            "description": {
+               "es": "Atún, aguacate y picante almendra",
+               "cat": "Tonyina, alvocat i ametlla picant"
+            },
+            "priceInCents": 600,
+            "photo": "image97",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 114,
+            "name": {
+               "es": "Crunch Sake",
+               "cat": "Sake cruixent"
+            },
+            "description": {
+               "es": "Salmón, mango, pistachos y salsa mango",
+               "cat": "Salmó, mango, festucs i salsa de mango"
+            },
+            "priceInCents": 550,
+            "photo": "image98",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 115,
+            "name": {
+               "es": "Tacos Sake",
+               "cat": "TACOS SAKE",
+               "en": "TACOS SAKE",
+               "it": "TACOS SAKE",
+               "zh": "TACOS SAKE"
+            },
+            "description": {
+               "es": "Con tartar de salmón, almendra, Philadelphia picante y teriyaki",
+               "cat": "Amb tàrtar de salmó, formatge crema picant i teriyaki",
+               "en": "With salmon tartare, spicy cream cheese, and teriyaki",
+               "it": "Con tartare di salmone, philadelphia spicy e teriyaki",
+               "zh": "配鮭魚塔塔、辣味奶油芝士和照燒醬"
+            },
+            "priceInCents": 500,
+            "photo": "tacos-sake",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 116,
+            "name": {
+               "es": "Tacos de atún",
+               "cat": "Tacos de Tonyina",
+               "en": "Tuna Tacos",
+               "it": "TACOS TUNA",
+               "zh": "金枪鱼玉米饼"
+            },
+            "description": {
+               "es": "Con tartar de atún, Philadelphia picante y teriyaki",
+               "cat": "Amb tàrtar de tonyina, philadelphia picant i teriyaki",
+               "en": "With tuna tartare, spicy Philadelphia, and teriyaki",
+               "it": "Con tartare di tonno, philadelphia spicy e teriyaki",
+               "zh": "配金枪鱼鞑靼、辣味费城奶酪和照烧酱"
+            },
+            "priceInCents": 500,
+            "photo": "tacos-tuna",
+            "isVegan": false,
+            "isSpicy": true
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Uramaki",
+         "cat": "Uramaki",
+         "en": "Uramaki",
+         "it": "Uramaki",
+         "zh": "裏巻き"
+      },
+      "note": {
+         "es": "(8 unidades)",
+         "cat": "(8 unitats)",
+         "en": "(8 pieces)",
+         "it": "(8 pezzi)",
+         "zh": "(8个)"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 117,
+            "name": {
+               "es": "Sake Phila",
+               "cat": "Uramaki de Salmó Philadelphia",
+               "en": "Salmon Philadelphia Uramaki",
+               "it": "URAMAKI SAKE PHILA",
+               "zh": "三文鱼费城裹卷"
+            },
+            "description": {
+               "es": "Salmón, aguacate y queso"
+            },
+            "priceInCents": 900,
+            "photo": "uramaki-sake-philadelphia",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 118,
+            "name": {
+               "es": "Uramaki Sake",
+               "cat": "Uramaki de Salmó",
+               "en": "Salmon Uramaki",
+               "it": "URAMAKI SALMONE",
+               "zh": "三文鱼裹卷"
+            },
+            "description": {
+               "es": "Salmón y aguacate",
+               "cat": "Salmó i alvocat",
+               "en": "Salmon and avocado",
+               "it": "Salmone e avocado",
+               "zh": "三文鱼和鳄梨"
+            },
+            "priceInCents": 800,
+            "photo": "uramaki-salmone",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 119,
+            "name": {
+               "es": "Torre Elfeel"
+            },
+            "description": {
+               "es": "Salmón, aguacate, vuelta pescado blanco y salsa ponzu, lima"
+            },
+            "priceInCents": 1200,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 120,
+            "name": {
+               "es": "Spicy Sake",
+               "cat": "Uramaki de Salmó Picant",
+               "en": "Spicy Salmon Uramaki",
+               "it": "URAMAKI SPICY SALMONE",
+               "zh": "辣鲑鱼裹卷"
+            },
+            "description": {
+               "es": "Salmón, aguacate, salsa spicy y almendra"
+            },
+            "priceInCents": 900,
+            "photo": "uramaki-spicy-salmone",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 121,
+            "name": {
+               "es": "Flambé Roll"
+            },
+            "description": {
+               "es": "Salmón, aguacate, tarta de salmón flameado con crema miso y pistacho"
+            },
+            "priceInCents": 1100,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 122,
+            "name": {
+               "es": "Ioyi Salmon"
+            },
+            "description": {
+               "es": "Salmón, aguacate, vuelta salmón flameado, teriyaki y kataifi"
+            },
+            "priceInCents": 1000,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 123,
+            "name": {
+               "es": "Hotate"
+            },
+            "description": {
+               "es": "Salmón, aguacate, vuelta vieira, trufa negra y teriyaki"
+            },
+            "priceInCents": 1800,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 124,
+            "name": {
+               "es": "Miami",
+               "cat": "Uramaki Miami",
+               "en": "Miami Uramaki",
+               "it": "URAMAKI MIAMI",
+               "zh": "迈阿密卷"
+            },
+            "description": {
+               "es": "Salmón, aguacate, queso, mango fresco y salsa mango"
+            },
+            "priceInCents": 1100,
+            "photo": "uramaki-miami",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 125,
+            "name": {
+               "es": "Mexico",
+               "cat": "Uramaki Mexicà",
+               "en": "Mexican Uramaki",
+               "it": "URAMAKI MEXICAN",
+               "zh": "墨西哥裹卷"
+            },
+            "description": {
+               "es": "Salmón, aguacate con nachos y salsa mexicana"
+            },
+            "priceInCents": 1000,
+            "photo": "uramaki-mexican",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 126,
+            "name": {
+               "es": "Asia Roll"
+            },
+            "description": {
+               "es": "Salmón cocido, aguacate, queso con tarta de salmón y picante"
+            },
+            "priceInCents": 1100,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 127,
+            "name": {
+               "es": "New Future"
+            },
+            "description": {
+               "es": "Salmón cocido, aguacate, vuelta pescado blanco y salsa burrata pistacho"
+            },
+            "priceInCents": 1100,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 128,
+            "name": {
+               "es": "Tiger",
+               "cat": "Uramaki Tiger",
+               "en": "Tiger Uramaki",
+               "it": "URAMAKI TIGER",
+               "zh": "虎裹卷"
+            },
+            "description": {
+               "es": "Gamba frita, vuelta salmón y patata dulce"
+            },
+            "priceInCents": 1000,
+            "photo": "uramaki-tiger",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 129,
+            "name": {
+               "es": "Especial Burn"
+            },
+            "description": {
+               "es": "Gamba frita, vuelta salmón flameado, queso y pistacho"
+            },
+            "priceInCents": 1200,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 130,
+            "name": {
+               "es": "Ebi Flower"
+            },
+            "description": {
+               "es": "Gamba frita, queso, tarta de salmón con pesto"
+            },
+            "priceInCents": 1200,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 131,
+            "name": {
+               "es": "Angel Roll"
+            },
+            "description": {
+               "es": "Gamba frita, queso, tarta de salmón flameado y patata dulce"
+            },
+            "priceInCents": 1200,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 132,
+            "name": {
+               "es": "Ebiten",
+               "cat": "Uramaki Ebiten",
+               "en": "Ebiten Uramaki",
+               "it": "URAMAKI EBITEN",
+               "zh": "海老天裹卷"
+            },
+            "description": {
+               "es": "Gamba frita, mayonesa y kataifi"
+            },
+            "priceInCents": 800,
+            "photo": "uramaki-ebiten",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 133,
+            "name": {
+               "es": "Ebiten Phila",
+               "cat": "Uramaki Ebitan Philadelphia",
+               "en": "Ebitan Philadelphia Uramaki",
+               "it": "URAMAKI EBITAN PHILA",
+               "zh": "海老天费城裹卷"
+            },
+            "description": {
+               "es": "Gamba frita, queso y cebolla frita"
+            },
+            "priceInCents": 900,
+            "photo": "uramaki-ebiten-philadelphia",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 134,
+            "name": {
+               "es": "Dragon",
+               "cat": "Uramaki Drac",
+               "en": "Dragon Uramaki",
+               "it": "URAMAKI DRAGON",
+               "zh": "龙裹卷"
+            },
+            "description": {
+               "es": "Gamba frita, vuelta aguacate y cebolla"
+            },
+            "priceInCents": 1100,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 135,
+            "name": {
+               "es": "Vintage",
+               "cat": "Uramaki Vintage",
+               "en": "Vintage Uramaki",
+               "it": "URAMAKI VINTAGE",
+               "zh": "复古卷"
+            },
+            "description": {
+               "es": "Gamba frita, gamba roja, burrata y pistacho"
+            },
+            "priceInCents": 1500,
+            "photo": "uramaki-vintage",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 136,
+            "name": {
+               "es": "Truffle Tuna",
+               "cat": "Uramaki de Tonyina amb Tòfona",
+               "en": "Truffle Tuna Uramaki",
+               "it": "URAMAKI TRUFFLE TUNA",
+               "zh": "松露金枪鱼卷"
+            },
+            "description": {
+               "es": "Gamba frita, tarta de atún flameado con burrata y trufa"
+            },
+            "priceInCents": 1500,
+            "photo": "uramaki-7",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 137,
+            "name": {
+               "es": "Sweet Hot"
+            },
+            "description": {
+               "es": "Gamba frita, tarta de salmón flameado, spicy y cebolla frita"
+            },
+            "priceInCents": 1300,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 138,
+            "name": {
+               "es": "Lobster Roll",
+               "cat": "Uramaki de Llagosta",
+               "en": "Lobster Roll",
+               "it": "LOBSTER ROLL",
+               "zh": "龙虾卷"
+            },
+            "description": {
+               "es": "Gamba frita, aguacate, tarta de langosta y teriyaki"
+            },
+            "priceInCents": 1800,
+            "photo": "lobster-roll",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 139,
+            "name": {
+               "es": "White Tiger"
+            },
+            "description": {
+               "es": "Gamba frita, aguacate, pescado blanco, burrata y patata dulce"
+            },
+            "priceInCents": 1300,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 140,
+            "name": {
+               "es": "Dynamite"
+            },
+            "description": {
+               "es": "Gamba frita, aguacate, vuelta salmón flameado, salsa pistacho"
+            },
+            "priceInCents": 1200,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 141,
+            "name": {
+               "es": "Burrata Roll"
+            },
+            "description": {
+               "es": "Gamba frita, aguacate, trufa negra y teriyaki"
+            },
+            "priceInCents": 1300,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 142,
+            "name": {
+               "es": "Anguila Roll"
+            },
+            "description": {
+               "es": "Gamba frita, aguacate, queso, anguila"
+            },
+            "priceInCents": 1500,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 143,
+            "name": {
+               "es": "Samba Roll"
+            },
+            "description": {
+               "es": "Aguacate, queso, tarta de salmón con salsa mango y almendra"
+            },
+            "priceInCents": 1100,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 144,
+            "name": {
+               "es": "Tuna Phila",
+               "cat": "Uramaki de Tonyina Philadelphia",
+               "en": "Tuna Philadelphia Uramaki",
+               "it": "URAMAKI TUNA PHILA",
+               "zh": "金枪鱼费城裹卷"
+            },
+            "description": {
+               "es": "Atún cocido, queso y pistacho"
+            },
+            "priceInCents": 800,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 145,
+            "name": {
+               "es": "Tuna Roll",
+               "cat": "Uramaki de Tonyina",
+               "en": "Tuna Uramaki",
+               "it": "URAMAKI TUNA",
+               "zh": "金枪鱼裹卷"
+            },
+            "description": {
+               "es": "Atún, aguacate",
+               "cat": "Tonyina i alvocat",
+               "en": "Tuna and avocado",
+               "it": "Tonno e avocado",
+               "zh": "金枪鱼和牛油果"
+            },
+            "priceInCents": 900,
+            "photo": "uramaki-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 146,
+            "name": {
+               "es": "Spicy Tuna",
+               "cat": "Uramaki de Tonyina Picant",
+               "en": "Spicy Tuna Uramaki",
+               "it": "URAMAKI SPICY TUNA",
+               "zh": "辣吞拿鱼裹卷"
+            },
+            "description": {
+               "es": "Atún, aguacate, spicy y almendra"
+            },
+            "priceInCents": 1000,
+            "photo": "uramaki-spicy-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 147,
+            "name": {
+               "es": "Vegano",
+               "cat": "Uramaki Vegà",
+               "en": "Vegan Uramaki",
+               "it": "URAMAKI VEGAN",
+               "zh": "纯素裹卷"
+            },
+            "description": {
+               "es": "Aguacate, pepino y nabo"
+            },
+            "priceInCents": 700,
+            "photo": "uramaki-vegetarian",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 148,
+            "name": {
+               "es": "Crispy Vegetal",
+               "cat": "Uramaki d'Espàrrecs Cruixents",
+               "en": "Crispy Asparagus Uramaki",
+               "it": "URAMAKI CRISPY ASPARAGO",
+               "zh": "脆芦笋裹卷"
+            },
+            "description": {
+               "es": "Espárrago frito, aguacate y salsa sésamo"
+            },
+            "priceInCents": 1000,
+            "photo": "uramaki-crispy-asparago",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 149,
+            "name": {
+               "es": "Beef Roll",
+               "cat": "Roll de carn",
+               "en": "Beef Roll",
+               "it": "BEEF ROLL",
+               "zh": "牛肉卷"
+            },
+            "description": {
+               "es": "Espárrago frito, pepino, tarta de ternera con burrata"
+            },
+            "priceInCents": 1500,
+            "photo": "uramaki-beef",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 150,
+            "name": {
+               "es": "Crispy Green"
+            },
+            "description": {
+               "es": "Verdura mixta frita, aguacate con patata dulce"
+            },
+            "priceInCents": 1000,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 151,
+            "name": {
+               "es": "Miura",
+               "cat": "Uramaki Miura",
+               "en": "Miura Uramaki",
+               "it": "URAMAKI MIURA",
+               "zh": "三浦裹卷"
+            },
+            "description": {
+               "es": "Salmón frito, queso y pistacho"
+            },
+            "priceInCents": 800,
+            "photo": "uramaki-miura",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 152,
+            "name": {
+               "es": "Tori",
+               "cat": "Uramaki de Pollastre",
+               "en": "Tori Uramaki",
+               "it": "URAMAKI TORI",
+               "zh": "鸡肉裹卷"
+            },
+            "description": {
+               "es": "Pollo frito, aguacate con queso y pistacho"
+            },
+            "priceInCents": 800,
+            "photo": "uramaki-tori",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Venere",
+         "cat": "Venere",
+         "en": "Venere",
+         "it": "Venere",
+         "zh": "黑米卷"
+      },
+      "note": {
+         "es": "(8 unidades)",
+         "cat": "(8 unitats)",
+         "en": "(8 pieces)",
+         "it": "(8 pezzi)",
+         "zh": "(8个)"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 153,
+            "name": {
+               "es": "Venere Salmón Phila",
+               "cat": "Venere Salmó Phila",
+               "en": "Venere Salmon Phila",
+               "it": "VENERE SAKE PHILA",
+               "zh": "黑米鲑鱼菲拉"
+            },
+            "description": {
+               "es": "Arroz Venere, salmón, aguacate, burrata, pistacho y salsa teriyaki",
+               "cat": "Arròs Venere, salmó alvocat, burrata, pistatxo i salsa teriyaki",
+               "en": "Black Venus rice, salmon avocado, burrata, pistachio, and teriyaki sauce",
+               "it": "Riso venere, avocado salmone, burrata, pistacchio e salsa teriyaki",
+               "zh": "黑米鳕鱼、鳄梨、意大利奶酪、开心果和照烧酱"
+            },
+            "priceInCents": 1000,
+            "photo": "uramaki-black-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 154,
+            "name": {
+               "es": "Venere Atún Phila",
+               "cat": "Venere Tonyina Phila",
+               "en": "Venere Tuna Phila",
+               "it": "VENERE TUNA PHILA",
+               "zh": "黑米吞拿鱼菲拉"
+            },
+            "description": {
+               "es": "Arroz Venere, aguacate, atún cocido, Philadelphia y pistacho",
+               "cat": "Arròs Venere, alvocat, tonyina cuita, philadelphia i pistatxo",
+               "en": "Black Venus rice, avocado, cooked tuna, philadelphia, and pistachio",
+               "it": "Riso venere, avocado, tonno cotto, phila e pistacchio",
+               "zh": "黑米鳕鱼、鳄梨、熟金枪鱼、费城奶酪和开心果"
+            },
+            "priceInCents": 1000,
+            "photo": "uramaki-black-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 155,
+            "name": {
+               "es": "Venere Ebi Fusión",
+               "cat": "Venere Ebi Fusió",
+               "en": "Venere Ebi Fusion",
+               "it": "VENERE EBI FUSION",
+               "zh": "黑米虾融合"
+            },
+            "description": {
+               "es": "Arroz Venere, surimi, gamba cocida, aguacate, mayonesa y teriyaki",
+               "cat": "Arròs Venere, surimi*, llagostí* cuit, alvocat, maionesa i teriyaki",
+               "en": "Black Venus rice, surimi*, cooked shrimp*, avocado, mayo, and teriyaki",
+               "it": "Riso venere, surimi*, gambero* cotto, avocado, maio e teriyaki",
+               "zh": "黑米、蟹肉棒*、熟虾*、鳄梨、美乃滋和照烧酱"
+            },
+            "priceInCents": 1000,
+            "photo": "uramaki-black-ebi",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 156,
+            "name": {
+               "es": "Black Sweet Hot",
+               "cat": "Black Sweet Hot",
+               "en": "Black Sweet Hot",
+               "it": "BLACK SWEET HOT",
+               "zh": "黑甜辣"
+            },
+            "description": {
+               "es": "Arroz Venere, langostino tempura, pepino, envuelto en salmón sellado con salsa picante teriyaki y cebolla frita",
+               "cat": "Arròs Venere, llagostí* tempura, cogombre, envolt en salmó segellat amb salsa picant teriyaki i ceba fregida",
+               "en": "Black Venus rice, tempura shrimp*, cucumber, wrapped in seared salmon with spicy teriyaki sauce and fried onion",
+               "it": "Riso venere, gambero* in tempura, cetriolo, avvolto di salmone scottato con salsa piccante teriyaki e cipolla fritta",
+               "zh": "黑米、天妇罗虾*、黄瓜、煎三文鱼包裹，配辣照烧酱和炸洋葱"
+            },
+            "priceInCents": 1500,
+            "photo": "uramaki-black-sweet",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 157,
+            "name": {
+               "es": "Venere Tiger",
+               "cat": "Venere Tiger",
+               "en": "Venere Tiger",
+               "it": "VENERE TIGER",
+               "zh": "黑米虎卷"
+            },
+            "description": {
+               "es": "Arroz Venere, langostino tempura, mayonesa, envuelto en salmón y kataifi",
+               "cat": "Arròs Venere, llagostí* tempura, maionesa, envolt en salmó i kataifi",
+               "en": "Black Venus rice, tempura shrimp*, mayo, wrapped with salmon and kataifi",
+               "it": "Riso venere, gambero* in tempura, maio, avvolto esterno di salmone e kataifi",
+               "zh": "黑米、天妇罗虾*、美乃滋、鲑鱼和丝状面糊包裹"
+            },
+            "priceInCents": 1200,
+            "photo": "uramaki-black-tiger",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Nigiri",
+         "cat": "Nigiri",
+         "en": "Nigiri",
+         "it": "Nigiri",
+         "zh": "握寿司"
+      },
+      "note": {
+         "es": "(2 unidades)",
+         "cat": "(2 unitats)",
+         "en": "(2 pieces)",
+         "it": "(2 pezzi)",
+         "zh": "(2个)"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 158,
+            "name": {
+               "es": "Nigiri de salmón",
+               "cat": "Nigiri de salmó",
+               "en": "Salmon Nigiri",
+               "it": "NIGIRI SAKE",
+               "zh": "三文鱼握寿司"
+            },
+            "description": {
+               "es": "Salmón",
+               "cat": "Salmó",
+               "en": "Salmon",
+               "it": "Salmone",
+               "zh": "三文鱼"
+            },
+            "priceInCents": 350,
+            "photo": "nigiri-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 159,
+            "name": {
+               "es": "Nigiri de lubina",
+               "cat": "Nigiri de llobarro",
+               "en": "Sea Bass Nigiri",
+               "it": "NIGIRI SUZUKI",
+               "zh": "鲈鱼握寿司"
+            },
+            "description": {
+               "es": "Con ponzu"
+            },
+            "priceInCents": 350,
+            "photo": "nigiri-suzuki",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 160,
+            "name": {
+               "es": "Nigiri de gambas",
+               "cat": "Nigiri de gambeta",
+               "en": "Shrimp Nigiri",
+               "it": "NIGIRI EBI",
+               "zh": "虾握寿司"
+            },
+            "description": {
+               "es": "Gamba ebi",
+               "cat": "Gambeta cuita*",
+               "en": "Cooked shrimp*",
+               "it": "Gambero* cotto",
+               "zh": "熟虾*"
+            },
+            "priceInCents": 350,
+            "photo": "nigiri-ebi",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 161,
+            "name": {
+               "es": "Nigiri de salmón flambeado",
+               "cat": "Nigiri de salmó flambat",
+               "en": "Flambéed Salmon Nigiri",
+               "it": "NIGIRI SAKE FLAMBE",
+               "zh": "火焰炙烤三文鱼握寿司"
+            },
+            "description": {
+               "es": "Servido con salsa teriyaki",
+               "cat": "Servit amb salsa teriyaki",
+               "en": "Served with teriyaki sauce",
+               "it": "Servito con salsa teriyaki",
+               "zh": "配有照烧酱"
+            },
+            "priceInCents": 400,
+            "photo": "nigiri-flabe-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 162,
+            "name": {
+               "es": "Nigiri de atún",
+               "cat": "Nigiri de tonyina",
+               "en": "Tuna Nigiri",
+               "it": "NIGIRI TUNA",
+               "zh": "金枪鱼握寿司"
+            },
+            "description": {
+               "es": "Atún",
+               "cat": "Tonyina",
+               "en": "Tuna",
+               "it": "Tonno",
+               "zh": "金枪鱼"
+            },
+            "priceInCents": 400,
+            "photo": "nigiri-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 163,
+            "name": {
+               "es": "Nigiri de foie",
+               "cat": "Nigiri de foie"
+            },
+            "description": {
+               "es": "Foie gras flameado",
+               "cat": "Foie gras flambejat"
+            },
+            "priceInCents": 800,
+            "photo": "image141",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 164,
+            "name": {
+               "es": "Nigiri de mantequilla"
+            },
+            "description": {
+               "es": "Con trufa"
+            },
+            "priceInCents": 450,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 165,
+            "name": {
+               "es": "Nigiri de aguacate",
+               "cat": "Nigiri d'alvocat",
+               "en": "Avocado Nigiri",
+               "it": "NIGIRI AVOCADO",
+               "zh": "牛油果握寿司"
+            },
+            "description": {
+               "es": "Aguacate",
+               "cat": "Alvocat",
+               "en": "Avocado",
+               "it": "Avocado",
+               "zh": "牛油果"
+            },
+            "priceInCents": 350,
+            "photo": "nigiri-avocado",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 166,
+            "name": {
+               "es": "Nigiri de pulpo",
+               "cat": "Nigiri de pop",
+               "en": "Octopus Nigiri",
+               "it": "NIGIRI TAKO",
+               "zh": "章鱼握寿司"
+            },
+            "description": {
+               "es": "Pulpo",
+               "cat": "Pop*",
+               "en": "Octopus*",
+               "it": "Polipo*",
+               "zh": "章鱼*"
+            },
+            "priceInCents": 450,
+            "photo": "nigiri-tako",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 167,
+            "name": {
+               "es": "Nigiri de atún flambeado",
+               "cat": "Nigiri de tonyina flambat",
+               "en": "Flambéed Tuna Nigiri",
+               "it": "NIGIRI TUNA FLAMBE",
+               "zh": "火焰炙烤金枪鱼握寿司"
+            },
+            "description": {
+               "es": "Servido con salsa teriyaki",
+               "cat": "Servit amb salsa teriyaki",
+               "en": "Served with teriyaki sauce",
+               "it": "Servito con salsa teriyaki",
+               "zh": "配有照烧酱"
+            },
+            "priceInCents": 450,
+            "photo": "nigiri-flambe-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 168,
+            "name": {
+               "es": "Nigiri de anguila flambeada",
+               "cat": "Nigiri d'anguila flambada",
+               "en": "Flambéed Eel Nigiri",
+               "it": "NIGIRI ANGUILLA FLAMBE",
+               "zh": "火焰炙烤鳗鱼握寿司"
+            },
+            "description": {
+               "es": "Servido con salsa teriyaki",
+               "cat": "Servit amb salsa teriyaki",
+               "en": "Served with teriyaki sauce",
+               "it": "Servito con salsa teriyaki",
+               "zh": "配有照烧酱"
+            },
+            "priceInCents": 500,
+            "photo": "nigiri-anguilla-flambe",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 169,
+            "name": {
+               "es": "Nigiri de lubina flambeado",
+               "cat": "Nigiri de llobarro flambat",
+               "en": "Flambéed Sea Bass Nigiri",
+               "it": "NIGIRI SUZUKI FLAMBE",
+               "zh": "火焰炙烤鲈鱼握寿司"
+            },
+            "description": {
+               "es": "Servido con salsa teriyaki",
+               "cat": "Servit amb salsa teriyaki",
+               "en": "Served with teriyaki sauce",
+               "it": "Servito con salsa teriyaki",
+               "zh": "配有照烧酱"
+            },
+            "priceInCents": 450,
+            "photo": "nigiri-flambe-suzuki",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 170,
+            "name": {
+               "es": "Sake crujiente de mango",
+               "cat": "Sake cruixent de mango",
+               "en": "Crispy Mango Sake",
+               "it": "CRISPY MANGO SAKE",
+               "zh": "香脆芒果酒"
+            },
+            "description": {
+               "es": "Arroz frito, Philadelphia, tartar de salmón y salsa de mango",
+               "cat": "Arròs fregit, philadelphia, tàrtar de salmó i salsa de mango",
+               "en": "Fried rice, philadelphia, salmon tartare, and mango sauce",
+               "it": "Riso fritto, philadelphia, tartare di salmone e salsa mango",
+               "zh": "炒饭、费城奶酪、三文鱼鞑靼和芒果酱"
+            },
+            "priceInCents": 500,
+            "photo": "nigiri-crispy-mango-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 171,
+            "name": {
+               "es": "Salmón crujiente",
+               "cat": "Salmó cruixent",
+               "en": "Crispy Salmon",
+               "it": "CRISPY SAKE",
+               "zh": "香脆三文鱼"
+            },
+            "description": {
+               "es": "Arroz frito, Philadelphia, tartar de salmón, escamas de almendra y teriyaki",
+               "cat": "Arròs fregit, philadelphia, tàrtar de salmó, escates d'ametlla i teriyaki",
+               "en": "Fried rice, philadelphia, salmon tartare, almond flakes, and teriyaki",
+               "it": "Riso fritto, philadelphia, tartare di salmone, scaglie di mandorle e teriyaki",
+               "zh": "炒饭、费城奶酪、三文鱼鞑靼、杏仁片和照烧酱"
+            },
+            "priceInCents": 500,
+            "photo": "nigiri-crispy-sake",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Gunkan",
+         "cat": "Gunkan",
+         "en": "Gunkan",
+         "it": "Gunkan",
+         "zh": "军舰寿司"
+      },
+      "note": {
+         "es": "(2 unidades)",
+         "cat": "(2 unitats)",
+         "en": "(2 pieces)",
+         "it": "(2 pezzi)",
+         "zh": "(2个)"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 172,
+            "name": {
+               "es": "Gunkan de salmón",
+               "cat": "Gunkan de salmó",
+               "en": "Salmon Gunkan",
+               "it": "GUNKAN SAKE",
+               "zh": "三文鱼軍艦"
+            },
+            "description": {
+               "es": "Arroz envuelto en salmón, cubierto con tartar de salmón",
+               "cat": "Arròs envoltat de salmó, amb tàrtar de salmó",
+               "en": "Rice wrapped with salmon, topped with salmon tartare",
+               "it": "Riso avvolto da salmone, con tartare di salmone",
+               "zh": "米饭包裹三文鱼，配以三文鱼鞑靼"
+            },
+            "priceInCents": 450,
+            "photo": "gunkan-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 173,
+            "name": {
+               "es": "Gunkan de salmón y Philadelphia",
+               "cat": "Gunkan de salmó i philadelphia",
+               "en": "Salmon Philadelphia Gunkan",
+               "it": "GUNKAN SAKE PHILA",
+               "zh": "三文鱼费城奶酪軍艦"
+            },
+            "description": {
+               "es": "Arroz envuelto en salmón, queso crema Philadelphia y teriyaki",
+               "cat": "Arròs envoltat de salmó, formatge crema Philadelphia i teriyaki",
+               "en": "Rice wrapped with salmon, Philadelphia cream cheese, and teriyaki",
+               "it": "Riso avvolto da salmone, philadelphia e teriyaki",
+               "zh": "米饭包裹三文鱼、费城奶酪和照烧酱"
+            },
+            "priceInCents": 500,
+            "photo": "gunkan-sake-phila",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 174,
+            "name": {
+               "es": "Gunkan de atún",
+               "cat": "Gunkan de tonyina",
+               "en": "Tuna Gunkan",
+               "it": "GUNKAN TUNA",
+               "zh": "金枪鱼軍艦"
+            },
+            "description": {
+               "es": "Arroz envuelto en atún, cubierto con tartar de atún",
+               "cat": "Arròs envoltat de tonyina, amb tàrtar de tonyina",
+               "en": "Rice wrapped with tuna, topped with tuna tartare",
+               "it": "Riso avvolto da tonno, con tartare di tonno",
+               "zh": "米饭包裹金枪鱼，配以金枪鱼鞑靼"
+            },
+            "priceInCents": 500,
+            "photo": "gunkan-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 175,
+            "name": {
+               "es": "Gunkan de salmón picante",
+               "cat": "Gunkan de salmó picant",
+               "en": "Spicy Salmon Gunkan",
+               "it": "GUNKAN SPICY SAKE",
+               "zh": "辣三文鱼軍艦"
+            },
+            "description": {
+               "es": "Arroz envuelto en salmón, cubierto con tartar de salmón y mayonesa picante",
+               "cat": "Arròs envoltat de salmó, amb tàrtar de salmó i maionesa picant",
+               "en": "Rice wrapped with salmon, topped with salmon tartare and spicy mayo",
+               "it": "Riso avvolto da salmone, con tartare di salmone e spicy mayo",
+               "zh": "米饭包裹三文鱼，配以三文鱼鞑靼和辣味蛋黄酱"
+            },
+            "priceInCents": 500,
+            "photo": "gunkan-sake-spicy-mayo",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 176,
+            "name": {
+               "es": "Gunkan de atún picante",
+               "cat": "Gunkan de tonyina picant",
+               "en": "Spicy Tuna Gunkan",
+               "it": "GUNKAN SPICY TUNA",
+               "zh": "辣金枪鱼軍艦"
+            },
+            "description": {
+               "es": "Arroz envuelto en atún, cubierto con tartar de atún y mayonesa picante",
+               "cat": "Arròs envoltat de tonyina, amb tàrtar de tonyina i maionesa picant",
+               "en": "Rice wrapped with tuna, topped with tuna tartare and spicy mayo",
+               "it": "Riso avvolto da tonno, con tartare di tonno e spicy mayo",
+               "zh": "米饭包裹金枪鱼，配以金枪鱼鞑靼和辣味蛋黄酱"
+            },
+            "priceInCents": 500,
+            "photo": "gunkan-tuna-spicy-mayo",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 177,
+            "name": {
+               "es": "Gunkan de mango",
+               "cat": "Gunkan de mango",
+               "en": "Mango Gunkan",
+               "it": "GUNKAN MANGO",
+               "zh": "芒果軍艦"
+            },
+            "description": {
+               "es": "Arroz envuelto en salmón, queso crema Philadelphia y mango",
+               "cat": "Arròs envoltat de salmó, formatge crema Philadelphia i mango",
+               "en": "Rice wrapped with salmon, Philadelphia cream cheese, and mango",
+               "it": "Riso avvolto da salmone, philadelphia e mango",
+               "zh": "米饭包裹三文鱼、费城奶酪和芒果"
+            },
+            "priceInCents": 500,
+            "photo": "nigiri-sake-mango",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Temaki",
+         "cat": "Temaki",
+         "en": "Temaki",
+         "it": "Temaki",
+         "zh": "手卷"
+      },
+      "note": {
+         "es": "(1 unidad)",
+         "cat": "(1 unitat)",
+         "en": "(1 piece)",
+         "it": "(1 pezzo)",
+         "zh": "(1个)"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 180,
+            "name": {
+               "es": "Temaki California",
+               "cat": "Temaki California",
+               "en": "California Temaki",
+               "it": "TEMAKI CALIFORNIA",
+               "zh": "加州手卷"
+            },
+            "description": {
+               "es": "Surimi, aguacate, mayonesa, tobiko y teriyaki",
+               "cat": "Surimi*, alvocat, maionesa, tobiko i teriyaki",
+               "en": "Surimi*, avocado, mayonnaise, tobiko, and teriyaki",
+               "it": "Surimi*, avocado, maionese, tobiko e teriyaki",
+               "zh": "蟹肉棒*、鳄梨、蛋黄酱、飞鱼子和照烧酱"
+            },
+            "priceInCents": 450,
+            "photo": "temaki-california",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 181,
+            "name": {
+               "es": "Temaki de salmón",
+               "cat": "Temaki de salmó",
+               "en": "Salmon Temaki",
+               "it": "TEMAKI SAKE",
+               "zh": "三文鱼手卷"
+            },
+            "description": {
+               "es": "Salmón y aguacate",
+               "cat": "Salmó i alvocat",
+               "en": "Salmon and avocado",
+               "it": "Salmone e avocado",
+               "zh": "三文鱼和鳄梨"
+            },
+            "priceInCents": 500,
+            "photo": "temaki-sake",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 182,
+            "name": {
+               "es": "Temaki de atún",
+               "cat": "Temaki de tonyina",
+               "en": "Tuna Temaki",
+               "it": "TEMAKI TUNA",
+               "zh": "金枪鱼手卷"
+            },
+            "description": {
+               "es": "Atún y aguacate",
+               "cat": "Tonyina i alvocat",
+               "en": "Tuna and avocado",
+               "it": "Tonno e avocado",
+               "zh": "金枪鱼和鳄梨"
+            },
+            "priceInCents": 600,
+            "photo": "temaki-tuna",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 183,
+            "name": {
+               "es": "Temaki de salmón picante",
+               "cat": "Temaki de salmó picant",
+               "en": "Spicy Salmon Temaki",
+               "it": "TEMAKI SPICY SAKE",
+               "zh": "辣三文鱼手卷"
+            },
+            "description": {
+               "es": "Salmón, aguacate y mayonesa picante",
+               "cat": "Salmó, alvocat i maionesa picant",
+               "en": "Salmon, avocado, and spicy mayo",
+               "it": "Salmone, avocado e spicy maio",
+               "zh": "三文鱼、鳄梨和辣椒蛋黄酱"
+            },
+            "priceInCents": 550,
+            "photo": "temaki-sake-spicy-mayo",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 184,
+            "name": {
+               "es": "Temaki de atún picante",
+               "cat": "Temaki de tonyina picant",
+               "en": "Spicy Tuna Temaki",
+               "it": "TEMAKI SPICY TUNA",
+               "zh": "辣金枪鱼手卷"
+            },
+            "description": {
+               "es": "Atún, aguacate y mayonesa picante",
+               "cat": "Tonyina, alvocat i maionesa picant",
+               "en": "Tuna, avocado, and spicy mayo",
+               "it": "Tonno, avocado e spicy maio",
+               "zh": "金枪鱼、鳄梨和辣椒蛋黄酱"
+            },
+            "priceInCents": 650,
+            "photo": "temaki-tuna-spicy-mayo",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 185,
+            "name": {
+               "es": "Temaki salmón queso",
+               "cat": "Temaki de salmó amb Philadelphia",
+               "en": "Salmon Philadelphia Temaki",
+               "it": "TEMAKI SAKE PHILA",
+               "zh": "三文鱼费城手卷"
+            },
+            "description": {
+               "es": "Salmón, Philadelphia y teriyaki",
+               "cat": "Salmó, Philadelphia i teriyaki",
+               "en": "Salmon, Philadelphia, and teriyaki",
+               "it": "Salmone, philadelphia e teriyaki",
+               "zh": "三文鱼、费城奶酪和照烧酱"
+            },
+            "priceInCents": 500,
+            "photo": "temaki-sake-phila",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 186,
+            "name": {
+               "es": "Temaki de Ebiten",
+               "cat": "Temaki d'Ebiten",
+               "en": "Ebiten Temaki",
+               "it": "TEMAKI EBITEN",
+               "zh": "海老天手卷"
+            },
+            "description": {
+               "es": "Gambas fritas, mayonesa, lechuga y teriyaki",
+               "cat": "Gamba fregida, maionesa i teriyaki",
+               "en": "Deep-fried shrimp, mayo, and teriyaki",
+               "it": "Gambero fritto* maio e teriyaki",
+               "zh": "炸虾、蛋黄酱和照烧酱"
+            },
+            "priceInCents": 500,
+            "photo": "temaki-ebiten",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 187,
+            "name": {
+               "es": "Temaki vegano",
+               "cat": "Temaki vegà",
+               "en": "Vegan Temaki",
+               "it": "TEMAKI VEGAN",
+               "zh": "素食手卷"
+            },
+            "description": {
+               "es": "Vegetales variados",
+               "cat": "Verdures diverses",
+               "en": "Mixed vegetables",
+               "it": "Verdure miste",
+               "zh": "蔬菜拼盘"
+            },
+            "priceInCents": 450,
+            "photo": "temaki-vegan",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 190,
+            "name": {
+               "es": "Temaki de anguila",
+               "cat": "Temaki d'anguila",
+               "en": "Unagi Temaki",
+               "it": "TEMAKI UNAGI",
+               "zh": "鳗鱼手卷"
+            },
+            "description": {
+               "es": "Anguila, aguacate, Philadelphia y teriyaki",
+               "cat": "Anguila, alvocat, Philadelphia i teriyaki",
+               "en": "Eel, avocado, Philadelphia, and teriyaki",
+               "it": "Anguilla*, avocado, phila e teriyaki",
+               "zh": "鳗鱼、牛油果、费城奶酪和照烧酱"
+            },
+            "priceInCents": 600,
+            "photo": "temaki-anguilla",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Arroz",
+         "cat": "Arròs",
+         "en": "Rice",
+         "it": "Riso",
+         "zh": "米饭"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 192,
+            "name": {
+               "es": "Arroz verduras",
+               "cat": "Arròs saltat amb verdures i ou",
+               "en": "Stir-Fried Rice with Vegetables and Egg",
+               "it": "RISO SALTATO CON VERDURE E UOVA",
+               "zh": "炒饭配蔬菜和鸡蛋"
+            },
+            "description": {
+               "es": "Huevos y verduras",
+               "cat": "Ous i verdures"
+            },
+            "priceInCents": 550,
+            "photo": "riso-verdure",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 193,
+            "name": {
+               "es": "Arroz gamba",
+               "cat": "Arròs saltat amb marisc*, verdures i ou",
+               "en": "Stir-Fried Rice with Seafood*, Vegetables, and Egg",
+               "it": "RISO SALTATO CON FRUTTI DI MARE*, VERDURE E UOVA",
+               "zh": "炒饭配海鲜*、蔬菜和鸡蛋"
+            },
+            "description": {
+               "es": "Gambas, huevos, verduras",
+               "cat": "Gambes, ous, verdures"
+            },
+            "priceInCents": 600,
+            "photo": "riso-frutti-di-mare",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 194,
+            "name": {
+               "es": "Arroz cantonesa",
+               "cat": "Arròs Cantonès",
+               "en": "Cantonese Rice",
+               "it": "RISO CANTONESE",
+               "zh": "广东炒饭"
+            },
+            "description": {
+               "es": "Guisantes, jamón cocido y huevos",
+               "cat": "Pèsols*, pernil cuit i ous",
+               "en": "Peas*, cooked ham, and eggs",
+               "it": "Piselli*, prosciutto cotto e uova",
+               "zh": "豌豆*、煮火腿和鸡蛋"
+            },
+            "priceInCents": 550,
+            "photo": "riso-cantonese",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 195,
+            "name": {
+               "es": "Arroz tailandés",
+               "cat": "Arròs Tailandès",
+               "en": "Thai Rice",
+               "it": "RISO THAI",
+               "zh": "泰式炒饭"
+            },
+            "description": {
+               "es": "Mariscos, puerros, brotes de soja y salsa tailandesa picante",
+               "cat": "Marisc*, porros, brots de soia i salsa tailandesa picant",
+               "en": "Seafood*, leeks, bean sprouts, and spicy Thai sauce",
+               "it": "Frutti di mare*, porri, germogli di soia e salsa thai piccante",
+               "zh": "海鲜*、韭菜、豆芽和辣泰式酱"
+            },
+            "priceInCents": 600,
+            "photo": "riso-thai",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 196,
+            "name": {
+               "es": "Curry Gohan",
+               "cat": "Curry Gohan",
+               "en": "Curry Gohan",
+               "it": "CURRY GOHAN",
+               "zh": "咖喱御飯"
+            },
+            "description": {
+               "es": "Arroz, pollo con verduras mixtas y salsa de curry",
+               "cat": "Arròs, Pollastre* amb Verdures Variades i Salsa de Curré",
+               "en": "Rice, Chicken* with Mixed Vegetables and Curry Sauce",
+               "it": "Riso, pollo* con verdure miste e salsa curry",
+               "zh": "米饭，鸡肉*与杂菜和咖喱酱"
+            },
+            "priceInCents": 600,
+            "photo": "curry-gohan",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 197,
+            "name": {
+               "es": "Arroz blanco",
+               "cat": "Arròs Blanc",
+               "en": "White Rice",
+               "it": "RISO BIANCO",
+               "zh": "白米饭"
+            },
+            "priceInCents": 300,
+            "photo": "riso-bianco",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 198,
+            "name": {
+               "es": "Arroz pollo",
+               "cat": "Arròs saltat amb pollastre*, verdures i ou",
+               "en": "Stir-Fried Rice with Chicken*, Vegetables, and Egg",
+               "it": "RISO SALTATO CON POLLO*, VERDURE E UOVA",
+               "zh": "炒饭配鸡肉*、蔬菜和鸡蛋"
+            },
+            "description": {
+               "es": "Pollo, huevos y verduras",
+               "cat": "Pollastre, ous i verdures"
+            },
+            "priceInCents": 550,
+            "photo": "riso-con-pollo",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 199,
+            "name": {
+               "es": "Arroz ternera",
+               "cat": "Arròs saltat amb vedella*, verdures i ou",
+               "en": "Stir-Fried Rice with Beef*, Vegetables, and Egg",
+               "it": "RISO SALTATO CON MANZO*, VERDURE E UOVA",
+               "zh": "炒饭配牛肉*、蔬菜和鸡蛋"
+            },
+            "description": {
+               "es": "Ternera, huevos y verduras",
+               "cat": "Vedella, ous i verdures"
+            },
+            "priceInCents": 550,
+            "photo": "riso-manzo",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 200,
+            "name": {
+               "es": "Ñoquis de arroz",
+               "cat": "Nyocs de Riu",
+               "en": "Rice Gnocchi",
+               "it": "GNOCCHI DI RISO",
+               "zh": "米糍"
+            },
+            "description": {
+               "es": "Gambas y verduras mixtas",
+               "cat": "Gambes* i Verdures Variades",
+               "en": "Shrimp* and Mixed Vegetables",
+               "it": "Gamberi* e verdure miste",
+               "zh": "虾仁*和杂菜"
+            },
+            "priceInCents": 700,
+            "photo": "gnocchi-di-riso",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Tallarines",
+         "cat": "Fideus",
+         "en": "Noodles",
+         "it": "Spaghetti",
+         "zh": "面条"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 202,
+            "name": {
+               "es": "Yaki Soba"
+            },
+            "description": {
+               "es": "Tallarines de harina con verdura y pollo"
+            },
+            "priceInCents": 600,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 203,
+            "name": {
+               "es": "Yaki Udon",
+               "cat": "Yaki Udon",
+               "en": "Yaki Udon",
+               "it": "YAKI UDON",
+               "zh": "炒乌冬面"
+            },
+            "description": {
+               "es": "Fideos de trigo con gambas, verduras y huevos",
+               "cat": "Fideus de blat amb gambes*, verdures i ous",
+               "en": "Wheat noodles with shrimp*, vegetables, and eggs",
+               "it": "Spaghetti di frumento con gamberi*, verdure e uova",
+               "zh": "小麦面条与虾*，蔬菜和鸡蛋"
+            },
+            "priceInCents": 650,
+            "photo": "yaki-udon",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 204,
+            "name": {
+               "es": "Yaki Asia",
+               "cat": "Yaki Asia",
+               "en": "Yaki Asia",
+               "it": "YAKI ASIA",
+               "zh": "炒荞麦面"
+            },
+            "description": {
+               "es": "Fideos de trigo sarraceno con gambas, verduras y huevos",
+               "cat": "Fideus de blat sarracè amb gambes*, verdures i ous",
+               "en": "Buckwheat noodles with shrimp*, vegetables, and eggs",
+               "it": "Spaghetti di grano saraceno con gamberi*, verdure e uova",
+               "zh": "荞麦面条与虾*，蔬菜和鸡蛋"
+            },
+            "priceInCents": 650,
+            "photo": "yaki-soba",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 205,
+            "name": {
+               "es": "Espaguetis de fino",
+               "cat": "Espaguetis de soja",
+               "en": "Soy Spaghetti",
+               "it": "SPAGHETTI DI SOIA",
+               "zh": "大豆意面"
+            },
+            "description": {
+               "es": "Gambas, huevos y verduras mixtas",
+               "cat": "Gambes* i verdures variades",
+               "en": "Shrimp* and mixed vegetables",
+               "it": "Gamberi* e verdure miste",
+               "zh": "虾*和混合蔬菜"
+            },
+            "priceInCents": 600,
+            "photo": "spaghetti-di-soia",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 206,
+            "name": {
+               "es": "Espaguetis de arroz",
+               "cat": "Espaguetis de arròs",
+               "en": "Rice Spaghetti",
+               "it": "SPAGHETTI DI RISO",
+               "zh": "米意面"
+            },
+            "description": {
+               "es": "Gambas, verduras mixtas y huevos",
+               "cat": "Gambes*, verdures variades i ous",
+               "en": "Shrimp*, mixed vegetables, and eggs",
+               "it": "Gamberi*, verdure miste e uova",
+               "zh": "虾*，杂菜和鸡蛋"
+            },
+            "priceInCents": 600,
+            "photo": "spaghetti-di-riso",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 207,
+            "name": {
+               "es": "Espaguetis de fino picantes",
+               "cat": "Espaguetis de soja picants",
+               "en": "Spicy Soy Spaghetti",
+               "it": "SPAGHETTI DI SOIA PICCANTE",
+               "zh": "辣豆浆意面"
+            },
+            "description": {
+               "es": "Pollo, huevos con verduras mixtas y picante",
+               "cat": "Pollastre*, ous amb verdures variades i picant",
+               "en": "Chicken*, eggs with mixed vegetables and spicy",
+               "it": "Pollo*, uova, verdure miste e piccante",
+               "zh": "雞肉*、蛋與混合蔬菜和辣味"
+            },
+            "priceInCents": 600,
+            "photo": "spaghetti-di-soia-piccante",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 208,
+            "name": {
+               "es": "Pad Thai",
+               "cat": "Pad Thai",
+               "en": "Pad Thai",
+               "it": "PADTHAI",
+               "zh": "泰式炒河粉"
+            },
+            "description": {
+               "es": "Fideos de arroz con mariscos, brotes de soja, puerro, huevos y salsa tailandesa",
+               "cat": "Fideus de arròs amb mariscs*, brots de soja, porro, ous i salsa tailandesa",
+               "en": "Rice noodles with seafood*, bean sprouts, leeks, eggs, and Thai sauce",
+               "it": "Tagliolini di riso con frutti di mare*, germogli di soia, porro, uova e salsa thai",
+               "zh": "米粉配海鲜*，豆芽，韭葱，鸡蛋和泰式酱汁"
+            },
+            "priceInCents": 700,
+            "photo": "padthai",
+            "isVegan": false,
+            "isSpicy": true
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Ramen y Sopas",
+         "cat": "Ramen i Sopes",
+         "en": "Ramen & Soups",
+         "it": "Ramen & Zuppe",
+         "zh": "拉面和汤"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 210,
+            "name": {
+               "es": "Sopa de miso",
+               "cat": "Sopa de Miso",
+               "en": "Miso Soup",
+               "it": "ZUPPA DI MISO",
+               "zh": "味噌湯"
+            },
+            "description": {
+               "es": "Algas y tofu",
+               "cat": "Soja, algues* i tofu",
+               "en": "Soybean, seaweed*, and tofu",
+               "it": "Soia, alghe* e tofu",
+               "zh": "大豆，海藻*和豆腐"
+            },
+            "priceInCents": 400,
+            "photo": "zuppa-di-miso",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 211,
+            "name": {
+               "es": "Sopa Pekín",
+               "cat": "Sopa pekinesa",
+               "en": "Peking Soup",
+               "it": "ZUPPA PECCHINESE",
+               "zh": "北京湯"
+            },
+            "description": {
+               "es": "Huevos, verduras mixtas, tofu y picante",
+               "cat": "Ous, verdures variades, tofu i picant",
+               "en": "Eggs, mixed vegetables, tofu, and spicy",
+               "it": "Uova, verdure miste, tofu e piccante",
+               "zh": "蛋，綜合蔬菜，豆腐和辣味"
+            },
+            "priceInCents": 450,
+            "photo": "zuppa-pecchinese",
+            "isVegan": true,
+            "isSpicy": true
+         },
+         {
+            "number": 212,
+            "name": {
+               "es": "Sopa de maíz",
+               "cat": "Sopa de blat de moro",
+               "en": "Corn Soup",
+               "it": "ZUPPA MAIS",
+               "zh": "玉米湯"
+            },
+            "description": {
+               "es": "Pollo, huevos y maíz",
+               "cat": "Pollastre*, ous i blat de moro",
+               "en": "Chicken*, eggs, and corn",
+               "it": "Pollo*, uova e mais",
+               "zh": "雞肉*，蛋和玉米"
+            },
+            "priceInCents": 450,
+            "photo": "zuppa-pollo-e-mais",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 213,
+            "name": {
+               "es": "Sopa Osumashi",
+               "cat": "Sopa Osumashi",
+               "en": "Osumashi Soup",
+               "it": "ZUPPA OSUMASHI",
+               "zh": "御椀汤"
+            },
+            "description": {
+               "es": "Mariscos, huevos y alga",
+               "cat": "Marisc*, ous i espàrrecs",
+               "en": "Seafood*, eggs, and asparagus",
+               "it": "Frutti di mare*, uova e asparagi",
+               "zh": "海鮮*，雞蛋和蘆筍"
+            },
+            "priceInCents": 500,
+            "photo": "zuppa-osumashi",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 214,
+            "name": {
+               "es": "Ramen de ternera",
+               "cat": "Ramen de vedella",
+               "en": "Beef Ramen",
+               "it": "RAMEN BEEF",
+               "zh": "牛肉拉麵"
+            },
+            "description": {
+               "es": "Ternera, huevos y verduras mixtas",
+               "cat": "Vedella fumada*, ous i verdures mixtes",
+               "en": "Smoked beef*, eggs, and mixed vegetables",
+               "it": "Manzo* affumicato, uova e verdure miste",
+               "zh": "煙燻牛肉*，雞蛋和雜菜"
+            },
+            "priceInCents": 800,
+            "photo": "ramen-beef",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 215,
+            "name": {
+               "es": "Ramen de ebi",
+               "cat": "Ramen de gambes",
+               "en": "Shrimp Ramen",
+               "it": "RAMEN EBI",
+               "zh": "蝦拉麵"
+            },
+            "description": {
+               "es": "Gambas, huevos y verduras mixtas",
+               "cat": "Gamba jumbo*, ous i verdures mixtes",
+               "en": "Jumbo shrimp*, eggs, and mixed vegetables",
+               "it": "Gamberone*, uova e verdure miste",
+               "zh": "大蝦*，雞蛋和雜菜"
+            },
+            "priceInCents": 900,
+            "photo": "ramen-ebi",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Pollo",
+         "cat": "Pollastre",
+         "en": "Chicken",
+         "it": "Pollo",
+         "zh": "鸡肉"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 217,
+            "name": {
+               "es": "Pollo almendras",
+               "cat": "Pollastre amb ametlles i bambú",
+               "en": "Chicken with Almonds and Bamboo",
+               "it": "POLLO CON MANDORLE E BAMBU",
+               "zh": "杏仁竹筍雞"
+            },
+            "description": {
+               "es": "Pollo, almendras y bambú",
+               "cat": "Pollastre*, ametlles i bambú",
+               "en": "Chicken*, almonds, and bamboo",
+               "it": "Pollo*, mandorle e bambù",
+               "zh": "雞肉*, 杏仁和竹筍"
+            },
+            "priceInCents": 600,
+            "photo": "pollo-con-mandorle",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 218,
+            "name": {
+               "es": "Pollo verdura",
+               "cat": "Pollastre amb verdures diverses",
+               "en": "Chicken with Mixed Vegetables",
+               "it": "POLLO CON VERDURE MISTE",
+               "zh": "雞肉炒雜菜"
+            },
+            "description": {
+               "es": "Pollo, calabacín y zanahorias",
+               "cat": "Pollastre*, carbassó i pastanaga",
+               "en": "Chicken*, zucchini, and carrots",
+               "it": "Pollo*, zucchine e carote",
+               "zh": "雞肉*, 竹瓜和胡蘿蔔"
+            },
+            "priceInCents": 600,
+            "photo": "pollo-con-verdure",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 219,
+            "name": {
+               "es": "Pollo Tempayaki",
+               "cat": "Pollastre teppanyaki"
+            },
+            "description": {
+               "es": "Pollo con salsa chef",
+               "cat": "Pollastre amb salsa del xef"
+            },
+            "priceInCents": 800,
+            "photo": "img218",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 220,
+            "name": {
+               "es": "Pollo curry",
+               "cat": "Pollastre amb salsa de curry",
+               "en": "Chicken Curry",
+               "it": "POLLO SALSA CURRY",
+               "zh": "咖喱雞肉"
+            },
+            "description": {
+               "es": "Pollo, cebolla y pimiento",
+               "cat": "Pollastre*, ceba i pebrot",
+               "en": "Chicken*, onion, and bell pepper",
+               "it": "Pollo*, cipolla e peperone",
+               "zh": "雞肉*, 洋蔥和甜椒"
+            },
+            "priceInCents": 600,
+            "photo": "pollo-curry",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 221,
+            "name": {
+               "es": "Pollo en salsa picante",
+               "cat": "Pollastre amb salsa picant",
+               "en": "Spicy Chicken",
+               "it": "POLLO SALSA PICCANTE",
+               "zh": "辣味雞肉"
+            },
+            "description": {
+               "es": "Pollo, cebolla y pimiento",
+               "cat": "Pollastre*, ceba i pebrot",
+               "en": "Chicken*, onion, and bell pepper",
+               "it": "Pollo*, cipolla e peperone",
+               "zh": "雞肉*, 洋蔥和甜椒"
+            },
+            "priceInCents": 700,
+            "photo": "pollo-piccante",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 222,
+            "name": {
+               "es": "Pollo agridulce",
+               "cat": "Pollastre agredolça",
+               "en": "Sweet and Sour Chicken",
+               "it": "POLLO AGRODOLCE",
+               "zh": "酸甜雞肉"
+            },
+            "description": {
+               "es": "Pollo frito con salsa agridulce",
+               "cat": "Pollastre fregit amb salsa agredolça",
+               "en": "Fried chicken with sweet and sour sauce",
+               "it": "Pollo* fritto con salsa agrodolce",
+               "zh": "炸雞肉配酸甜醬"
+            },
+            "priceInCents": 700,
+            "photo": "pollo-agrodolce",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 223,
+            "name": {
+               "es": "Pollo en salsa de limón",
+               "cat": "Pollastre amb salsa de llimona",
+               "en": "Chicken in Lemon Sauce",
+               "it": "POLLO IN SALSA LIMONE",
+               "zh": "檸檬雞肉"
+            },
+            "description": {
+               "es": "Pollo frito con salsa de limón",
+               "cat": "Pollastre fregit amb salsa de llimona",
+               "en": "Fried chicken with lemon sauce",
+               "it": "Pollo* fritto con salsa limone",
+               "zh": "炸雞肉配檸檬醬"
+            },
+            "priceInCents": 700,
+            "photo": "pollo-limone",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Ternera",
+         "cat": "Vedella",
+         "en": "Beef",
+         "it": "Manzo",
+         "zh": "牛肉"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 225,
+            "name": {
+               "es": "Ternera picante",
+               "cat": "Carn de vedella amb salsa picant",
+               "en": "Spicy Beef",
+               "it": "MANZO SALSA PICCANTE",
+               "zh": "辣牛肉"
+            },
+            "description": {
+               "es": "Ternera, cebolla y pimiento",
+               "cat": "Carn de vedella*, ceba i pebrot",
+               "en": "Beef*, onion, and bell pepper",
+               "it": "Manzo*, cipolla e peperone",
+               "zh": "牛肉*, 洋蔥和甜椒"
+            },
+            "priceInCents": 700,
+            "photo": "manzo-piccante",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 226,
+            "name": {
+               "es": "Ternera verduras",
+               "cat": "Carn de vedella amb verdures diverses",
+               "en": "Beef with Mixed Vegetables",
+               "it": "MANZO VERDURE MISTE",
+               "zh": "牛肉炒雜菜"
+            },
+            "description": {
+               "es": "Ternera, calabacín y zanahorias",
+               "cat": "Carn de vedella*, carbassó i pastanaga",
+               "en": "Beef*, zucchini, and carrots",
+               "it": "Manzo*, zucchine e carote",
+               "zh": "牛肉*, 竹瓜和胡蘿蔔"
+            },
+            "priceInCents": 700,
+            "photo": "manzo-con-verdure",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 227,
+            "name": {
+               "es": "Ternera seta",
+               "cat": "Carn de vedella amb bolets i bambú",
+               "en": "Beef with Mushrooms and Bamboo",
+               "it": "MANZO FUNGHI BAMBU",
+               "zh": "牛肉炒蘑菇和竹筍"
+            },
+            "description": {
+               "es": "Ternera con seta y bambú",
+               "cat": "Carn de vedella*, bolets i bambú",
+               "en": "Beef*, mushrooms, and bamboo",
+               "it": "Manzo*, funghi e bambù",
+               "zh": "牛肉*, 蘑菇和竹筍"
+            },
+            "priceInCents": 700,
+            "photo": "manzo-bambu-e-funghi",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Cerdo",
+         "cat": "Porc",
+         "en": "Pork",
+         "it": "Maiale",
+         "zh": "猪肉"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 229,
+            "name": {
+               "es": "Cerdo frito en salsa agridulce",
+               "cat": "Porc fregit amb salsa agredolça",
+               "en": "Sweet and Sour Fried Pork",
+               "it": "MAIALE* FRITTO IN SALSA AGRODOLCE",
+               "zh": "炸豬肉配酸甜醬"
+            },
+            "priceInCents": 650,
+            "photo": "maiale-agrodolce",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 230,
+            "name": {
+               "es": "Cerdo frito con sal y pimienta",
+               "cat": "Porc fregit amb sal i pebre",
+               "en": "Fried Pork with Salt and Pepper",
+               "it": "MAIALE* FRITTO CON SALE E PEPE",
+               "zh": "鹽燒黑椒豬肉"
+            },
+            "priceInCents": 650,
+            "photo": "maiale-sale-e-pepe",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 231,
+            "name": {
+               "es": "Cerdo con seta y bambú",
+               "cat": "Porc amb bolets i bambú",
+               "en": "Pork with Mushrooms and Bamboo",
+               "it": "MAIALE* CON FUNGHI BAMBU",
+               "zh": "炒豬肉配蘑菇和竹筍"
+            },
+            "priceInCents": 650,
+            "photo": "maiale-funghi-e-bambu",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Pato",
+         "cat": "Ànec",
+         "en": "Duck",
+         "it": "Anatra",
+         "zh": "鸭肉"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 233,
+            "name": {
+               "es": "Pato frito con piña",
+               "cat": "Ànec fregit amb pinya",
+               "en": "Fried Duck with Pineapple",
+               "it": "ANATRA* FRITTA CON ANANAS",
+               "zh": "鹽燒鳥配菠蘿"
+            },
+            "priceInCents": 800,
+            "photo": "anatra-anans",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 234,
+            "name": {
+               "es": "Pato frito",
+               "cat": "Ànec fregit",
+               "en": "Fried Duck",
+               "it": "ANATRA* FRITTO",
+               "zh": "鹽燒鳥肉"
+            },
+            "priceInCents": 800,
+            "photo": "anatra-fritta",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 235,
+            "name": {
+               "es": "Pato con seta y bambú",
+               "cat": "Ànec amb bolets i bambú",
+               "en": "Duck with Mushrooms and Bamboo",
+               "it": "ANATRA* FUNGHI BAMBU",
+               "zh": "鹽燒鳥肉配蘑菇和竹筍"
+            },
+            "priceInCents": 800,
+            "photo": "anatra-con-funghi-e-bambu",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Marisco",
+         "cat": "Marisc",
+         "en": "Seafood",
+         "it": "Frutti di Mare",
+         "zh": "海鲜"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 238,
+            "name": {
+               "es": "Gambas con seta",
+               "cat": "Gambes amb bolets i bambú",
+               "en": "Shrimp with Mushrooms and Bamboo",
+               "it": "GAMBERI CON FUNGHI BAMBU",
+               "zh": "蝦仁炒蘑菇和竹筍"
+            },
+            "description": {
+               "es": "Gambas, seta y bambú",
+               "cat": "Gambes*, bolets i bambú",
+               "en": "Shrimp*, mushrooms, and bamboo",
+               "it": "Gamberi*, funghi e bambù",
+               "zh": "蝦仁*, 蘑菇和竹筍"
+            },
+            "priceInCents": 800,
+            "photo": "gamberi-funghi-e-bambu",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 239,
+            "name": {
+               "es": "Gambas curry rojo",
+               "cat": "Gambes amb salsa picant",
+               "en": "Shrimp with Spicy Sauce",
+               "it": "GAMBERI CON SALSA PICCANTE",
+               "zh": "辣椒蝦仁"
+            },
+            "description": {
+               "es": "Gambas, cebolla y pimiento",
+               "cat": "Gambes*, ceba i pebrot",
+               "en": "Shrimp*, onion, and bell pepper",
+               "it": "Gamberi*, cipolla e peperone",
+               "zh": "蝦仁*, 洋蔥和彩椒"
+            },
+            "priceInCents": 800,
+            "photo": "gamberi-piccanti",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 240,
+            "name": {
+               "es": "Gambas con sal y pimienta",
+               "cat": "Gambes amb sal i pebre",
+               "en": "Shrimp with Salt and Pepper",
+               "it": "GAMBERI SALE E PEPE",
+               "zh": "鹽椒蝦仁"
+            },
+            "description": {
+               "es": "Gambas con pimienta y cebolla",
+               "cat": "Gambes* i ceba",
+               "en": "Shrimp* and onion",
+               "it": "Gamberi* e cipolla",
+               "zh": "蝦仁*和洋蔥"
+            },
+            "priceInCents": 900,
+            "photo": "gamberi-sale-e-pepe",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 241,
+            "name": {
+               "es": "Gambas curry",
+               "cat": "Gambes amb salsa de curry",
+               "en": "Shrimp with Curry Sauce",
+               "it": "GAMBERI CON SALSA CURRY",
+               "zh": "咖喱蝦仁"
+            },
+            "description": {
+               "es": "Gambas, cebolla y pimiento",
+               "cat": "Gambes*, ceba i pebrot",
+               "en": "Shrimp*, onion, and bell pepper",
+               "it": "Gamberi*, cipolla e peperone",
+               "zh": "蝦仁*, 洋蔥和彩椒"
+            },
+            "priceInCents": 800,
+            "photo": "gamberi-curry",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 242,
+            "name": {
+               "es": "Gambas agridulce",
+               "cat": "Gambes amb salsa agredolça",
+               "en": "Shrimp with Sweet and Sour Sauce",
+               "it": "GAMBERI CON SALSA AGRODOLCE",
+               "zh": "甜酸蝦仁"
+            },
+            "description": {
+               "es": "Gambas fritas con piña y agridulce",
+               "cat": "Gambes* fregides amb pinya i tomàquet",
+               "en": "Fried shrimp with pineapple and tomato",
+               "it": "Gamberi* fritti con ananas e pomodoro",
+               "zh": "鹽燒蝦仁配菠蘿和蕃茄"
+            },
+            "priceInCents": 900,
+            "photo": "gambero-agrodolce",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 243,
+            "name": {
+               "es": "Gambas con salsa de limón",
+               "cat": "Gambes amb salsa de llimona",
+               "en": "Shrimp with Lemon Sauce",
+               "it": "GAMBERI CON SALSA LIMONE",
+               "zh": "檸檬蝦仁"
+            },
+            "description": {
+               "es": "Gambas fritas con salsa de limón",
+               "cat": "Gambes* fregides amb salsa de llimona",
+               "en": "Fried shrimp with lemon sauce",
+               "it": "Gamberi* fritti con salsa di limone",
+               "zh": "鹽燒蝦仁配檸檬醬"
+            },
+            "priceInCents": 900,
+            "photo": "gamberi-limone",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 244,
+            "name": {
+               "es": "Mariscos con salsa de curry",
+               "cat": "Marisc amb salsa de curry",
+               "en": "Seafood with Curry Sauce",
+               "it": "FRUTTI DI MARE SALSA CURRY",
+               "zh": "咖喱海鮮"
+            },
+            "description": {
+               "es": "Gambas, surimi, calamares, cebolla y pimiento",
+               "cat": "Gambes*, surimi*, calamars*, ceba i pebrot",
+               "en": "Shrimp*, surimi*, calamari*, onion, and bell pepper",
+               "it": "Gamberi*, surimi*, calamari*, cipolla e peperone",
+               "zh": "蝦仁*, 條狀魚漿*, 鮮魷*, 洋蔥和彩椒"
+            },
+            "priceInCents": 1000,
+            "photo": "frutti-di-mare-curry",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 245,
+            "name": {
+               "es": "Gambón con salsa tailandesa",
+               "cat": "Gambó amb salsa tailandesa",
+               "en": "Jumbo Shrimp with Thai Sauce",
+               "it": "GAMBERONE SALSA THAI",
+               "zh": "泰式大蝦仁"
+            },
+            "description": {
+               "es": "Gambas, cebolla y pimiento",
+               "cat": "Gambó*, ceba i pebrot",
+               "en": "Jumbo shrimp*, onion, and bell pepper",
+               "it": "Gameberoni*, cipolla e peperoni",
+               "zh": "大蝦仁*, 洋蔥和彩椒"
+            },
+            "priceInCents": 1200,
+            "photo": "gamberone-salsa-thai",
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 246,
+            "name": {
+               "es": "Vieiras al estilo cantonés",
+               "cat": "Vieires al estil cantonès",
+               "en": "Cantonese-style Scallops",
+               "it": "CAPESANTA* ALLA CANTONESE",
+               "zh": "廣式干貝"
+            },
+            "description": {
+               "es": "Servido con fideos de soja al ajo y salsa del chef",
+               "cat": "Servit amb fideus de soja amb all i porro",
+               "en": "Served with garlic and leek soy noodles",
+               "it": "Servito con spaghetti di soia aglio e porri",
+               "zh": "配蒜蓉韭菜豆皮面"
+            },
+            "priceInCents": 1200,
+            "photo": "capesante-cantonese",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 247,
+            "name": {
+               "es": "Gambón al estilo cantonés",
+               "cat": "Gambó al estil cantonès",
+               "en": "Cantonese-style Jumbo Shrimp",
+               "it": "GAMBERONE* ALLA CANTONESE",
+               "zh": "廣式大蝦"
+            },
+            "description": {
+               "es": "Servido con fideos de soja al ajo y salsa del chef",
+               "cat": "Servit amb fideus de soja amb all i porro",
+               "en": "Served with garlic and leek soy noodles",
+               "it": "Servito con spaghetti di soia aglio e porri",
+               "zh": "配蒜蓉韭菜豆皮面"
+            },
+            "priceInCents": 1200,
+            "photo": "gamberoni-cantonese",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 248,
+            "name": {
+               "es": "Pasión crujiente",
+               "cat": "Passió Cruixent",
+               "en": "Crunchy Passion",
+               "it": "CRUNCHY PASSION",
+               "zh": "香脆激情"
+            },
+            "description": {
+               "es": "Lubina entera frita con salsa agridulce",
+               "cat": "Llobarro sencer fregit amb salsa dolça i àcida",
+               "en": "Whole fried sea bass* with sweet and sour sauce",
+               "it": "Branzino* intero fritto con salsa agrodolce",
+               "zh": "整炸海鱸魚配甜酸醬"
+            },
+            "priceInCents": 1800,
+            "photo": "crunchy-passion",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Teppan Yaki",
+         "cat": "Teppan Yaki",
+         "en": "Teppan Yaki",
+         "it": "Teppan Yaki",
+         "zh": "铁板烧"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 249,
+            "name": {
+               "es": "Almejas a la plancha"
+            },
+            "description": {
+               "es": "Almejas"
+            },
+            "priceInCents": 800,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 250,
+            "name": {
+               "es": "Pulpito a la plancha"
+            },
+            "priceInCents": 1000,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 251,
+            "name": {
+               "es": "Yakitori",
+               "cat": "Yakitori",
+               "en": "Yakitori",
+               "it": "YAKITORI",
+               "zh": "燒烤雞肉串"
+            },
+            "description": {
+               "es": "Brochetas de pollo con salsa del chef",
+               "cat": "Espetecs de pollastre* amb salsa del xef",
+               "en": "Chicken skewers* with chef's sauce",
+               "it": "Spiedini di pollo* e salsa dello chef",
+               "zh": "雞肉串配廚師醬汁"
+            },
+            "priceInCents": 700,
+            "photo": "yakitori",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 252,
+            "name": {
+               "es": "Yakitori de gambas",
+               "cat": "Yakitori de gambes",
+               "en": "Yakitori Shrimp",
+               "it": "YAKITORI EBI",
+               "zh": "燒烤蝦肉串"
+            },
+            "description": {
+               "es": "Brochetas de gambas con salsa del chef",
+               "cat": "Espetecs de gambes* amb salsa del xef",
+               "en": "Shrimp skewers* with chef's sauce",
+               "it": "Spiedini di gamberi* e salsa dello chef",
+               "zh": "蝦肉串配廚師醬汁"
+            },
+            "priceInCents": 800,
+            "photo": "yakitori-ebi",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 253,
+            "name": {
+               "es": "Pollo plancha"
+            },
+            "description": {
+               "es": "Pollo con salsa chef"
+            },
+            "priceInCents": 800,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 254,
+            "name": {
+               "es": "Salmón a la parrilla",
+               "cat": "Salmó a la planxa",
+               "en": "Grilled Salmon",
+               "it": "SALMONE ALLA PIASTRA",
+               "zh": "燒烤鮭魚"
+            },
+            "description": {
+               "es": "Salmón a la parrilla con salsa del chef",
+               "cat": "Salmó a la planxa* amb salsa del xef",
+               "en": "Grilled salmon* with chef's sauce",
+               "it": "Salmone alla piastra* e salsa dello chef",
+               "zh": "燒烤鮭魚配廚師醬汁"
+            },
+            "priceInCents": 900,
+            "photo": "salmone-alla-piasra",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 255,
+            "name": {
+               "es": "Gamba a la parrilla",
+               "cat": "Gamba gegant a la planxa",
+               "en": "Grilled Giant Shrimp",
+               "it": "GAMBERONE ALLA PIASTRA",
+               "zh": "燒烤巨蝦"
+            },
+            "description": {
+               "es": "Gamba a la parrilla con salsa del chef",
+               "cat": "Gamba gegant a la planxa amb salsa del xef",
+               "en": "Grilled giant shrimp with chef's sauce",
+               "it": "Gamberone alla piastra e salsa dello chef",
+               "zh": "燒烤巨蝦配廚師醬汁"
+            },
+            "priceInCents": 1000,
+            "photo": "gamberoni-alla-piastra",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 257,
+            "name": {
+               "es": "Verduras a la plancha",
+               "cat": "Verdures a la planxa",
+               "en": "Grilled Vegetables",
+               "it": "VERDURE ALLA PIASTRA",
+               "zh": "燒烤蔬菜"
+            },
+            "priceInCents": 700,
+            "photo": "verdure-alla-piastra",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 258,
+            "name": {
+               "es": "Atún a la parrilla",
+               "cat": "Tonyina a la planxa",
+               "en": "Grilled Tuna",
+               "it": "TONNO ALLA PIASTRA",
+               "zh": "烤鮪魚"
+            },
+            "description": {
+               "es": "Atún a la parrilla con salsa del chef",
+               "cat": "Tonyina a la planxa amb salsa del xef",
+               "en": "Grilled tuna with chef's sauce",
+               "it": "Tonno alla piastra e salsa dello chef",
+               "zh": "烤鮪魚配廚師醬汁"
+            },
+            "priceInCents": 900,
+            "photo": "tonno-alla-piastra",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 259,
+            "name": {
+               "es": "Calamares a la parrilla",
+               "cat": "Calamars a la planxa",
+               "en": "Grilled Calamari",
+               "it": "CALAMARI ALLA PIASTRA",
+               "zh": "燒烤魷魚"
+            },
+            "description": {
+               "es": "Calamares a la parrilla con salsa del chef",
+               "cat": "Calamars a la planxa amb salsa del xef",
+               "en": "Grilled calamari with chef's sauce",
+               "it": "Calamari alla piastra e salsa dello chef",
+               "zh": "燒烤魷魚配廚師醬汁"
+            },
+            "priceInCents": 800,
+            "photo": "img259",
+            "isVegan": false,
+            "isSpicy": false
+         },
+         {
+            "number": 260,
+            "name": {
+               "es": "Pescado plancha",
+               "cat": "Peix a la planxa"
+            },
+            "description": {
+               "es": "Pescado blanco a la plancha",
+               "cat": "Peix blanc a la planxa"
+            },
+            "priceInCents": 800,
+            "photo": "img260",
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Vegano",
+         "cat": "Vegà",
+         "en": "Vegan",
+         "it": "Vegan",
+         "zh": "纯素"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 262,
+            "name": {
+               "es": "Verduras variadas",
+               "cat": "Verdures Variades",
+               "en": "Mixed Vegetables",
+               "it": "VERDURE MISTE",
+               "zh": "綜合蔬菜"
+            },
+            "description": {
+               "es": "Brotes de soja, zanahoria y calabacín",
+               "cat": "Brots de Soja, Pastanaga i Carbassó",
+               "en": "Bean Sprouts, Carrot, and Zucchini",
+               "it": "Germogli di soia, carota e zucchine",
+               "zh": "豆芽、胡萝卜和西葫芦"
+            },
+            "priceInCents": 500,
+            "photo": "verdure-miste",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 263,
+            "name": {
+               "es": "Brotes de soja",
+               "cat": "Brots de Soja",
+               "en": "Bean Sprouts",
+               "it": "GERMOGLI DI SOIA",
+               "zh": "豆芽"
+            },
+            "description": {
+               "es": "Brotes de soja salteados",
+               "cat": "Brots de Soja Saltejats",
+               "en": "Stir-fried Bean Sprouts",
+               "it": "Germogli di soia saltati",
+               "zh": "炒豆芽"
+            },
+            "priceInCents": 500,
+            "photo": "germogli-di-soia",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 264,
+            "name": {
+               "es": "Setas y brotes de bambú",
+               "cat": "Bolets i Brots de Bambú",
+               "en": "Mushrooms and Bamboo Shoots",
+               "it": "FUNGHI E BAMBU",
+               "zh": "蘑菇和竹筍"
+            },
+            "description": {
+               "es": "Salteado de setas y brotes de bambú",
+               "cat": "Saltat de Bolets i Brots de Bambú",
+               "en": "Stir-fried Mushrooms and Bamboo Shoots",
+               "it": "Funghi e bambù saltati",
+               "zh": "炒香菇和竹筍"
+            },
+            "priceInCents": 650,
+            "photo": "toufu-bambu",
+            "isVegan": true,
+            "isSpicy": false
+         },
+         {
+            "number": 265,
+            "name": {
+               "es": "Tofu picante",
+               "cat": "Tofu picant",
+               "en": "Spicy Tofu",
+               "it": "TOFU SALSA PICCANTE",
+               "zh": "辣豆腐"
+            },
+            "description": {
+               "es": "Tofu, cebolla y setas",
+               "cat": "Tofu, ceba i pebrot",
+               "en": "Tofu, onion, and bell pepper",
+               "it": "Tofu, cipolla e peperone",
+               "zh": "豆腐，洋蔥和彩椒"
+            },
+            "priceInCents": 600,
+            "photo": "tofu-piccante",
+            "isVegan": true,
+            "isSpicy": true
+         },
+         {
+            "number": 266,
+            "name": {
+               "es": "Tofu con verduras variadas",
+               "cat": "Tofu amb Verdures Variades",
+               "en": "Tofu with Mixed Vegetables",
+               "it": "TOFU CON VERDURE MISTE",
+               "zh": "豆腐炒杂菜"
+            },
+            "description": {
+               "es": "Tofu, calabacín y zanahorias",
+               "cat": "Tofu, carbassó i pastanagues",
+               "en": "Tofu, zucchini, and carrots",
+               "it": "Tofu, zucchine e carote",
+               "zh": "豆腐，西葫芦和胡萝卜"
+            },
+            "priceInCents": 600,
+            "photo": "tofu-con-verdure",
+            "isVegan": true,
+            "isSpicy": false
+         }
+      ]
+   },
+   {
+      "name": {
+         "es": "Spicy Pot",
+         "cat": "Spicy Pot",
+         "en": "Spicy Pot",
+         "it": "Spicy Pot",
+         "zh": "麻辣香锅"
+      },
+      "photo": null,
+      "dishes": [
+         {
+            "number": 267,
+            "name": {
+               "es": "Spicy Pot marisco"
+            },
+            "description": {
+               "es": "Marisco con verdura y salsa potpicante"
+            },
+            "priceInCents": 1200,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 268,
+            "name": {
+               "es": "Spicy Pot ternera"
+            },
+            "description": {
+               "es": "Ternera con verdura y salsa potpicante"
+            },
+            "priceInCents": 800,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 269,
+            "name": {
+               "es": "Spicy Pot coliflor"
+            },
+            "description": {
+               "es": "Coliflor con verdura y salsa potpicante"
+            },
+            "priceInCents": 600,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 270,
+            "name": {
+               "es": "Spicy Pot calamar"
+            },
+            "description": {
+               "es": "Calamar con verdura y salsa potpicante"
+            },
+            "priceInCents": 1000,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 271,
+            "name": {
+               "es": "Spicy Pot patata"
+            },
+            "description": {
+               "es": "Patata con verdura y salsa potpicante"
+            },
+            "priceInCents": 650,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": true
+         },
+         {
+            "number": 272,
+            "name": {
+               "es": "Patata pimienta"
+            },
+            "description": {
+               "es": "Patata con sal y pimienta"
+            },
+            "priceInCents": 650,
+            "photo": null,
+            "isVegan": false,
+            "isSpicy": false
+         }
+      ]
+   }
+]

@@ -1,0 +1,39 @@
+name: Pedir un cambio en un diseño
+description: Cambia uno de los otros diseños de la web (se abre desde el botón «Editar con IA» de ese diseño)
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Escribe el cambio como se lo dirías a alguien. Claude lo hace, lo publica y te contesta aquí en unos minutos.
+        Para seguir pidiendo cosas sobre el mismo cambio (corregir algo, deshacerlo), contesta en esta misma conversación.
+  # Navbar.js fills it from the URL (&diseno=<branch>); GitHub forms can't hide or lock a field
+  - type: input
+    id: diseno
+    attributes:
+      label: Diseño
+      description: Se rellena solo con el diseño desde el que has abierto este formulario. No lo cambies.
+    validations:
+      required: true
+  - type: dropdown
+    id: donde
+    attributes:
+      label: ¿Dónde?
+      description: |
+        Actual: el cambio se hace en el diseño de arriba, en su propia dirección.
+        Nuevo diseño: se crea otra versión de la web en su propia dirección y las demás no cambian.
+        Web principal: el cambio se publica en la web principal, no en este diseño.
+        Se hace siempre donde elijas aquí, diga lo que diga el texto. Para cambiarlo, abre otra petición.
+      options:
+        - Actual
+        - Nuevo diseño
+        - Web principal
+    validations:
+      required: true
+  - type: textarea
+    id: cambio
+    attributes:
+      label: ¿Qué quieres cambiar?
+      description: Si es un texto, pon el texto nuevo tal cual. Si es un precio, el plato y el precio nuevo.
+      placeholder: "Ejemplo: en el menú del mediodía, cambiar el precio de 14,50 € a 15,90 €"
+    validations:
+      required: true

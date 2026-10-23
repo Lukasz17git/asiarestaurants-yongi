@@ -1,0 +1,19 @@
+{
+  "framework": "create-react-app",
+  "installCommand": "npm install",
+  "buildCommand": "printf '{\"sha\":\"%s\",\"ref\":\"%s\"}' \"$VERCEL_GIT_COMMIT_SHA\" \"$VERCEL_GIT_COMMIT_REF\" > public/version.json && CI=false npm run build && (node src/_new/scripts/build-versions.js || true)",
+  "outputDirectory": "build",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/:path*" },
+    { "source": "/versiones/:version/pdfs/:file", "destination": "/pdfs/:file" },
+    { "source": "/versiones/:version", "destination": "/versiones/:version/index.html" },
+    { "source": "/versiones/:version/(.*)", "destination": "/versiones/:version/index.html" },
+    { "source": "/(.*)", "destination": "/" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    }
+  ]
+}

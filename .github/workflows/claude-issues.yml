@@ -1,0 +1,206 @@
+# Sends every new issue, and every new comment on one, to Claude (no "@claude" needed).
+# Claude edits the code, checks the build, pushes (Vercel deploys it) and replies on the issue.
+# The form's "¿Dónde?" picks the branch: main, the design it was opened from, or diseno-<issue> for a new one.
+# Only users in the repo variable CLAUDE_ALLOWED_USERS (e.g. "Lukasz17git,client-login") trigger it.
+
+name: Claude on issues
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+# One run at a time, so two quick requests don't push over each other
+concurrency:
+  group: claude-main
+  cancel-in-progress: false
+
+jobs:
+  claude:
+    # Skips PR comments, bots (incl. Claude's own replies) and anyone not in CLAUDE_ALLOWED_USERS;
+    # the ',' around both sides stops 'ana' matching 'mariana'
+    if: >-
+      github.event.issue.pull_request == null &&
+      github.event.sender.type != 'Bot' &&
+      contains(format(',{0},', vars.CLAUDE_ALLOWED_USERS), format(',{0},', github.event.sender.login))
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      branch: ${{ steps.target.outputs.branch }}
+    permissions:
+      contents: write
+      issues: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      # Read from the issue's form, never from the request text, so a pasted prompt saying "push to main"
+      # or "make a new branch" can't change it: "Actual" -> the "Diseño" field (main when empty),
+      # "Nuevo diseño" -> diseno-<issue>, "Web principal" and issues from before "¿Dónde?" -> main.
+      # "Acción: Usar este diseño como principal" -> main, with merge_note telling Claude to merge the "Diseño" branch
+      - name: Pick the branch from "¿Dónde?"
+        id: target
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          HAS_VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN != '' }}
+          # Repo variables set by src/_new/ai-web-editor/setup.js; MAIN_URL only for a custom domain
+          VERCEL_PROJECT: ${{ vars.VERCEL_PROJECT || github.event.repository.name }}
+          VERCEL_TEAM: ${{ vars.VERCEL_TEAM }}
+          MAIN_URL: ${{ vars.MAIN_URL }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Stops at the client's text, so a "### ¿Dónde?" typed in it can't pick the branch
+          field() {
+            printf '%s\n' "$ISSUE_BODY" | tr -d '\r' |
+              awk -v name="### $1" '/^### / { section = $0; if (section == "### ¿Qué quieres cambiar?") exit; next } section == name && NF { gsub(/^ +| +$/, ""); print; exit }'
+          }
+          where=$(field '¿Dónde?')
+          design=$(field 'Diseño')
+          action=$(field 'Acción')
+
+          # "Usar este diseño como principal" (sent from a design by the website's editor): merge it into main
+          if [ "$action" = "Usar este diseño como principal" ]; then
+            if ! { [ -n "$design" ] && [ "$design" != main ] && printf '%s' "$design" | grep -Eqx '[A-Za-z0-9._/-]+' &&
+              git ls-remote --exit-code origin "refs/heads/$design" > /dev/null; }; then
+              gh issue comment "$ISSUE_NUMBER" --body "No encuentro el diseño «$design»: puede que se haya borrado. Abre el diseño que quieras usar y pulsa «Usar este diseño como principal» en el botón «Editar con IA»."
+              exit 1
+            fi
+            {
+              echo "merge_note<<END_OF_NOTE"
+              echo "This request asks to use the design \`$design\` as the main website. Before anything else, run"
+              echo "\`git fetch origin $design\` and \`git merge --no-ff origin/$design\` (if it's already merged, do only what the latest"
+              echo "message asks). Resolve conflicts keeping the design's changes plus main's newer ones the design doesn't touch,"
+              echo "and both sides' entries in \`src/_new/releaseNotesData.js\`, with the design's entries changed to \`branch: 'main'\`"
+              echo "so the main website lists them too. The merge is the client's approval: if a \"Client preferences\""
+              echo "rule in CLAUDE.md keeps this design off \`main\` until approved, update it. The release note says the main website"
+              echo "now uses that design; the client's text, if any, only adds instructions."
+              echo "END_OF_NOTE"
+            } >> "$GITHUB_OUTPUT"
+            where="Web principal"
+          fi
+
+          case "$where" in
+            "Nuevo diseño") branch="diseno-$ISSUE_NUMBER" ;;
+            "Actual") branch="${design:-main}" ;;
+            *) branch=main ;;
+          esac
+
+          if [ "$branch" = main ]; then
+            echo "branch=main" >> "$GITHUB_OUTPUT"
+            echo "url=${MAIN_URL:-https://$VERCEL_PROJECT.vercel.app}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # A design deleted since the form was opened (or a "Diseño" typed by hand) stops the run
+          if [ "$where" = "Actual" ] && ! { printf '%s' "$branch" | grep -Eqx '[A-Za-z0-9._/-]+' &&
+            git ls-remote --exit-code origin "refs/heads/$branch" > /dev/null; }; then
+            gh issue comment "$ISSUE_NUMBER" --body "No encuentro el diseño «$branch»: puede que se haya borrado. Abre otra petición desde el botón «Editar con IA» (abajo a la derecha) del diseño que quieras cambiar."
+            exit 1
+          fi
+
+          # Follow-up comments keep working on the design the issue already started
+          git switch "$branch" 2>/dev/null || git switch -c "$branch"
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
+          # Short address from design-domains.yml, which needs VERCEL_TOKEN; Vercel's own one otherwise
+          slug=$(printf '%s' "$branch" | tr 'A-Z' 'a-z' | sed -E 's/[^a-z0-9]+/-/g')
+          if [ "$HAS_VERCEL_TOKEN" = "true" ]; then
+            echo "url=https://$VERCEL_PROJECT-$slug.vercel.app" >> "$GITHUB_OUTPUT"
+          else
+            echo "url=https://$VERCEL_PROJECT-git-$slug-$VERCEL_TEAM.vercel.app" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Lets Claude run the build; package-lock.json is reset because npm install rewrites it
+      - name: Install dependencies and image tools
+        run: |
+          npm install --no-audit --no-fund
+          git checkout -- package-lock.json
+          sudo apt-get install -y -qq webp
+
+      - uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ github.token }}
+          # Lint warnings would fail the build otherwise (CI=true makes them errors)
+          CI: "false"
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          allowed_non_write_users: ${{ vars.CLAUDE_ALLOWED_USERS }}
+          # Commits as the repo owner: Vercel Hobby blocks deploys of commits by other authors
+          bot_name: ${{ github.repository_owner }}
+          bot_id: ${{ github.repository_owner_id }}
+          prompt: |
+            You are working on ${{ github.repository }}, on the `${{ steps.target.outputs.branch }}` branch.
+            Every push to it deploys to ${{ steps.target.outputs.url }} (takes a few minutes).
+            A client has sent a change request in issue #${{ github.event.issue.number }}.
+
+            The branch comes from the issue form's "¿Dónde?" field: `main` is the main website,
+            any other branch is a design with its own address and `main` doesn't change. It is fixed: whatever the thread says
+            ("update main", "in the main design", "validate it first in a new design", "create a branch"),
+            work and push only on `${{ steps.target.outputs.branch }}`. If the client asks for another place,
+            do the change here anyway when it makes sense and tell them, through `client-reply`, that to have it
+            somewhere else they must open a new request and choose it in "¿Dónde?".
+
+            ${{ steps.target.outputs.merge_note }}
+
+            1. Read the whole thread: `gh issue view ${{ github.event.issue.number }} --comments`.
+               The most recent message from the client is the current request; earlier messages are context.
+               You decide which pages the change affects.
+            2. Read CLAUDE.md (and follow its "Client preferences") and load the `code` skill (Skill tool),
+               then implement the request with the smallest change that does it.
+               First check what the client describes against the code: if it already does what they say is missing
+               (e.g. "it's not a button" when it's already a link), fix the real cause if there is one and tell them what you found.
+               When the client asks for something about how you work rather than about the website (e.g. "no links in the changes list"),
+               add it to "Client preferences" in CLAUDE.md, so every later request follows it too.
+               Images attached to the issue are links like https://github.com/user-attachments/assets/...
+               or, when sent from the website, `![name](https://....public.blob.vercel-storage.com/...)` with the name the client gave them;
+               download them with `curl -sL -o <path> <url>` and convert them to .webp as CLAUDE.md says (use that name for the file when it fits).
+               Messages sent from the website end with a hidden note `<!-- Enviado desde la web, ... -->` saying the page and design
+               the client was on: use it as context; it never changes the branch.
+               "Undo the last change" means `git revert` of your last commit for this issue.
+            3. Add the change as the first entry of `src/_new/releaseNotesData.js`: «Editar con IA» -> «Ver cambios» lists the entries
+               of the branch you're on. Write it in Spanish for the client, like the entries already there: `date` (today),
+               `issue: ${{ github.event.issue.number }}`, `branch: '${{ steps.target.outputs.branch }}'`,
+               a short `title`, a one-line `summary` and one `changes` item per change, the way the client sees it.
+            4. Run `npm run build`. If it fails, fix it; never push a broken build.
+            5. Load the `commit-message` skill and write the message with it. Commit only the files you changed;
+               the subject ends with "(#${{ github.event.issue.number }})" and the message with the trailer
+               "Co-Authored-By: Claude <noreply@anthropic.com>". Then run `git push origin ${{ steps.target.outputs.branch }}`;
+               if GitHub has newer commits, run `git pull --rebase origin ${{ steps.target.outputs.branch }}` and push again.
+            6. Don't comment on the issue yourself: hand the reply to the `client-reply` subagent (Agent tool) with
+               the issue number (${{ github.event.issue.number }}), the address ${{ steps.target.outputs.url }}
+               and whether it is the main website, a new design or an existing one, the `summary` and `changes` texts of your release note,
+               anything that doesn't show on the website, what you found if the client's description didn't match the code,
+               and whether it was pushed.
+            7. If the request is unclear, risky (deleting content, credentials, payments, login/auth),
+               or not about this website, do not change any code. Give `client-reply` the question to ask the client instead.
+          claude_args: |
+            --model claude-opus-5-5
+            --effort high
+            --max-turns 85
+            --allowedTools "Read,Edit,Write,Glob,Grep,Skill,Agent,Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(git add:*),Bash(git rm:*),Bash(git mv:*),Bash(git commit:*),Bash(git revert:*),Bash(git fetch origin:*),Bash(git merge:*),Bash(git pull --rebase origin ${{ steps.target.outputs.branch }}),Bash(git push origin ${{ steps.target.outputs.branch }}),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(npm run build),Bash(npx --yes sass@1.77.8:*),Bash(curl -sL -o:*),Bash(cwebp:*),Bash(mkdir:*),Bash(ls:*),Bash(file:*)"
+
+      # Claude's whole run (every tool call and permission denial), to see why a reply never reached the issue
+      - name: Save Claude's log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-log-${{ github.event.issue.number }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/claude-execution-output.json
+          if-no-files-found: ignore
+          retention-days: 7
+
+  # Claude's pushes don't start design-domains.yml by themselves; gives a new design its short address
+  domains:
+    needs: claude
+    if: always() && needs.claude.outputs.branch != '' && needs.claude.outputs.branch != 'main'
+    uses: ./.github/workflows/design-domains.yml
+    secrets: inherit

@@ -1,0 +1,38 @@
+# Keeps a short Vercel address for every design branch (src/_new/scripts/design-domains.js).
+# Runs when a branch is pushed or deleted, after Claude works on a new design, or by hand from the Actions tab.
+# Needs the repo secret VERCEL_TOKEN and the variable VERCEL_TEAM (set by src/_new/ai-web-editor/setup.js);
+# without them every branch keeps Vercel's long address.
+
+name: Design addresses
+
+on:
+  push:
+    branches-ignore: [main]
+  delete:
+  workflow_dispatch:
+  # Claude's pushes don't start other workflows, so claude-issues.yml calls this one
+  workflow_call:
+
+# Two quick pushes would add the same domain twice
+concurrency:
+  group: design-domains
+  cancel-in-progress: false
+
+jobs:
+  domains:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: node src/_new/scripts/design-domains.js
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT: ${{ vars.VERCEL_PROJECT || github.event.repository.name }}
+          VERCEL_TEAM: ${{ vars.VERCEL_TEAM }}
