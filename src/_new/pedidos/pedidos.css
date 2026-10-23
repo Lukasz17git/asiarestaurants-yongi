@@ -465,14 +465,13 @@
   border-bottom: 1px solid rgba(201, 171, 129, 0.16);
 }
 .pedidos-sheet-header h2 {
-  background: radial-gradient(#b88746, #fdf5a6);
-  background: -webkit-linear-gradient(top, #b88746, #fdf5a6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "AsianHiro", serif;
-  font-weight: 400;
-  font-size: 28px;
+  color: #c9ab81;
+  font-family: "CondLight", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 3px;
   line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .pedidos-sheet-close {

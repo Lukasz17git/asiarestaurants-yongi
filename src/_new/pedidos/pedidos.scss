@@ -512,11 +512,13 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
     border-bottom: 1px solid $cardBorder;
 
     h2 {
-        @include gold;
-        font-family: 'AsianHiro', serif;
-        font-weight: 400;
-        font-size: 28px;
+        color: $textColor2;
+        font-family: 'CondLight', sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 3px;
         line-height: 1.1;
+        text-transform: uppercase;
     }
 }
 

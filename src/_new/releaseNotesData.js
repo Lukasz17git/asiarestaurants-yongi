@@ -14,6 +14,7 @@ const releaseNotes = [
             { text: 'En «Pedir online» el número y el nombre del plato están justo encima de la foto, en una o dos líneas.' },
             { text: 'Caben 4 platos por fila en el ordenador, 3 en la tableta y 2 en el móvil.' },
             { text: 'El botón para añadir un plato está en la esquina de abajo a la derecha de la foto, y el precio debajo de ella.' },
+            { text: 'El título «Tu pedido» usa la misma letra que «¿Cómo lo quieres?» y «Tus datos».' },
         ],
     },
     {
