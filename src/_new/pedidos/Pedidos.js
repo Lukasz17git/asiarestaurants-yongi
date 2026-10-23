@@ -2,8 +2,10 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import Footer from '../../Footer'
 import DishCard from './DishCard'
 import OrderSheet from './OrderSheet'
+import { updateQuantities } from './cart'
 import { formatPrice } from './deliveryRules'
 import { dishesByNumber, filterSections } from './takeawayMenu'
+import { scrollToSection, useActiveSection } from './useSectionNav'
 import { usePersistentState } from './usePersistentState'
 import './pedidos.css'
 
@@ -14,54 +16,6 @@ const getCartItems = (quantities) => Object.entries(quantities)
     .map(([number, quantity]) => ({ dish: dishesByNumber[number], quantity }))
     .filter(({ dish, quantity }) => dish && quantity > 0)
     .sort((a, b) => a.dish.number - b.dish.number)
-
-const updateQuantities = (quantities, number, change) => {
-    const quantity = (quantities[number] ?? 0) + change
-    const { [number]: _removed, ...otherQuantities } = quantities
-    return quantity > 0 ? { ...otherQuantities, [number]: quantity } : otherQuantities
-}
-
-const getSectionElement = (id) => document.getElementById(`seccion-${id}`)
-
-// Highlights the chip of the last section whose top has passed under the search bar, and scrolls the chip into view
-const useActiveSection = (sectionIds, toolbarRef, chipsRef) => {
-    const [activeId, setActiveId] = useState(sectionIds[0])
-
-    useEffect(() => {
-        let frame = null
-        let idleTimer = null
-
-        const getActiveId = () => {
-            const toolbarBottom = toolbarRef.current.getBoundingClientRect().bottom
-            const passedIds = sectionIds.filter((id) => getSectionElement(id)?.getBoundingClientRect().top <= toolbarBottom + 8)
-            return passedIds[passedIds.length - 1] ?? sectionIds[0]
-        }
-        const scrollChipIntoView = () => {
-            const chips = chipsRef.current
-            const chip = chips?.querySelector(`[data-section='${getActiveId()}']`)
-            if (chip) chips.scrollTo({ left: chip.offsetLeft - 16, behavior: 'smooth' })
-        }
-        const onScroll = () => {
-            frame ??= requestAnimationFrame(() => {
-                frame = null
-                setActiveId(getActiveId())
-            })
-            // Waits until the page stops: in Chrome a smooth scroll of the chip row stops the page's smooth scroll
-            clearTimeout(idleTimer)
-            idleTimer = setTimeout(scrollChipIntoView, 150)
-        }
-
-        setActiveId(getActiveId())
-        window.addEventListener('scroll', onScroll, { passive: true })
-        return () => {
-            window.removeEventListener('scroll', onScroll)
-            if (frame) cancelAnimationFrame(frame)
-            clearTimeout(idleTimer)
-        }
-    }, [sectionIds, toolbarRef, chipsRef])
-
-    return activeId
-}
 
 const Pedidos = () => {
     const [search, setSearch] = useState('')
@@ -87,14 +41,6 @@ const Pedidos = () => {
         return () => document.body.classList.remove('pedidos-sheet-open')
     }, [isSheetOpen])
 
-    // Puts the section's title right under the search bar, which is sticky and so not counted by scrollIntoView.
-    // Jumps of more than 3 screens are instant: a smooth one over the whole menu takes about 3s
-    const goToSection = (id) => {
-        const distance = getSectionElement(id).getBoundingClientRect().top - toolbarRef.current.getBoundingClientRect().bottom
-        const behavior = Math.abs(distance) > window.innerHeight * 3 ? 'auto' : 'smooth'
-        window.scrollTo({ top: window.scrollY + distance, behavior })
-    }
-
     return (
         <>
             <div className='pedidos'>
@@ -119,7 +65,7 @@ const Pedidos = () => {
                     </div>
                     <nav className='pedidos-chips' ref={chipsRef} aria-label='Secciones de la carta'>
                         {sections.map((section) => (
-                            <button type='button' key={section.id} data-section={section.id} className={section.id === activeId ? 'selected' : ''} onClick={() => goToSection(section.id)}>
+                            <button type='button' key={section.id} data-section={section.id} className={section.id === activeId ? 'selected' : ''} onClick={() => scrollToSection(section.id, toolbarRef)}>
                                 {section.name}
                             </button>
                         ))}
