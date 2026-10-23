@@ -44,9 +44,11 @@ Lasting wishes from the client; follow them in every change and add new ones her
   asks for a new commit with one's files);
   the button spins while the Claude workflow runs or Vercel hasn't served the branch's latest commit. Its only Vercel
   function is `api/ai-editor.js`
-  (`?action=status|requests|request|designs|versions|history|access|upload`, code in `src/_new/ai-web-editor/server/`). Env vars:
-  `EDITOR_CODE` (asked once per browser), `GITHUB_TOKEN` (Issues read/write, Actions and Contents read),
-  `BLOB_READ_WRITE_TOKEN` (a Blob store shared by every site, images under `<repo>/peticiones/`), `EDITOR_VERCEL_TOKEN`,
+  (`?action=status|requests|request|designs|versions|history|access|upload|cleanup`, code in `src/_new/ai-web-editor/server/`).
+  Images come in two kinds: «Imágenes de referencia» (only for the AI, under `<repo>/referencias/`, deleted after 7 days by
+  the daily cron in `vercel.json`) and «Imágenes para la web» (under `<repo>/peticiones/`, hidden for now in `Composer.js`).
+  Env vars: `EDITOR_CODE` (asked once per browser), `GITHUB_TOKEN` (Issues read/write, Actions and Contents read),
+  `BLOB_READ_WRITE_TOKEN` (a Blob store shared by every site), `CRON_SECRET` (the cleanup cron's), `EDITOR_VERCEL_TOKEN`,
   `EDITOR_VERCEL_TEAM` and `EDITOR_VERCEL_PROJECT` (the versions list). All of them, and the
   GitHub secrets and variables the workflows use, are set by `node src/_new/ai-web-editor/setup.js` from `~/.ai-web-editor.env`;
   the same script installs the editor on another repo

@@ -17,7 +17,7 @@ const PromoteDialog = ({ open, onClose, onSent }) => {
         setSending(true)
         setError('')
         try {
-            const { number } = await createRequest(code, { type: 'promote', text: note, ref, page: getPagePath(), images: [] })
+            const { number } = await createRequest(code, { type: 'promote', text: note, ref, page: getPagePath() })
             setNote('')
             onSent(number)
         } catch (sendError) {

@@ -189,8 +189,12 @@ jobs:
                When the client asks for something about how you work rather than about the website (e.g. "no links in the changes list"),
                add it to "Client preferences" in CLAUDE.md, so every later request follows it too.
                Images attached to the issue are links like https://github.com/user-attachments/assets/...
-               or, when sent from the website, `![name](https://....public.blob.vercel-storage.com/...)` with the name the client gave them;
-               download them with `curl -sL -o <path> <url>` and convert them to .webp as CLAUDE.md says (use that name for the file when it fits).
+               or, when sent from the website, `![name](https://....public.blob.vercel-storage.com/...)` with the name the client gave them,
+               under "Imágenes de referencia" or "Imágenes para la web".
+               Reference images only show you what the client means (a style, a layout, a mistake on the page): look at them
+               (`curl -sL -o <path> <url>` into /tmp, then Read), never put them in the repo or link them, since they are deleted after 7 days.
+               Images for the web, GitHub attachments and old issues' "Imágenes" go on the site: download them with `curl -sL -o <path> <url>`
+               and convert them to .webp as CLAUDE.md says (use that name for the file when it fits).
                Messages sent from the website end with a hidden note `<!-- Enviado desde la web, ... -->` saying the page and design
                the client was on: use it as context; it never changes the branch.
                "Undo the last change" means `git revert` of your last commit for this issue.

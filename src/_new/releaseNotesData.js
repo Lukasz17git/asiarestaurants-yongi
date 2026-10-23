@@ -5,6 +5,16 @@ const releaseNotes = [
     {
         date: '2026-10-24',
         branch: 'main',
+        title: 'Imágenes de referencia para la IA',
+        summary: 'Las imágenes que envías en una petición sirven ahora de referencia para la IA y se borran solas a los 7 días.',
+        changes: [
+            { text: 'El cuadro de imágenes de cada petición y respuesta se llama ahora «Imágenes de referencia»: sirven para que la IA vea lo que quieres decir (un estilo, una idea, un fallo en la página), pero no las pone en la web.' },
+            { text: 'Las imágenes de referencia se borran solas a los 7 días; en el chat de la petición sale «Imagen borrada» en su lugar.' },
+        ],
+    },
+    {
+        date: '2026-10-24',
+        branch: 'main',
         title: 'Las versiones anteriores se abren en la misma dirección',
         summary: 'Al abrir una versión anterior sigues en la dirección de la web, con /_history/ y su número al final.',
         changes: [

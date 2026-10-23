@@ -11,8 +11,12 @@ From the button's panel:
 - **Ver cambios** (with `changes`): the `changes` entries of the branch you're on
 - **Diseños**: the 4 most recently updated branches (`main` included), each opened on the page you're on; **Ver todos** lists
   `main` and the 10 latest designs
-- **Tus peticiones**: the requests of the branch you're on as chats, with replies and up to 20 images (compressed to WebP
-  before upload). Replies only from that branch's newest version: elsewhere the chat links to it
+- **Tus peticiones**: the requests of the branch you're on as chats, with replies. Replies only from that branch's newest
+  version: elsewhere the chat links to it
+- **Images**, up to 20 of each kind per message, compressed to WebP before upload (`imageBoxes` in `Composer.js`):
+  - **Imágenes de referencia**: only for the AI to look at; deleted after 7 days by a daily Vercel cron
+    (`?action=cleanup`, in `vercel.json`), and shown as «Imagen borrada» in the chat after that
+  - **Imágenes para la web** (hidden for now, commented out in `imageBoxes`): the AI puts them on the site; kept for good
 - **Versions** (under the address): the branch's last 10 Vercel deploys since the tag `v0` (`EDITOR_HISTORY_TAG`), one per
   commit and numbered from 1. Each opens on the page you're on at `/_history/<number>` of the site's address:
   `middleware.js` serves it from that deploy, so nothing is rebuilt or copied and visitors keep the newest. Numbers stay
@@ -41,7 +45,8 @@ Needs a React 18 app deployed on Vercel from a GitHub repo. `setup.js` does the 
    | `BLOB_READ_WRITE_TOKEN`   | One Blob store for every site (https://vercel.com/dashboard/stores), its ".env.local" tab   |
    | `CLAUDE_ALLOWED_USERS`    | Your GitHub login (comma-separated if more)                                                 |
 
-   Each site's images go to `<repo>/peticiones/` in the shared store.
+   Each site's images go to `<repo>/referencias/` (deleted after 7 days) and `<repo>/peticiones/` (for the web) in the
+   shared store.
 
 ### Per site
 
@@ -54,13 +59,14 @@ Needs a React 18 app deployed on Vercel from a GitHub repo. `setup.js` does the 
 
    It copies this folder (always, so the site gets the editor's updates) and, only when missing, `api/ai-editor.js`, `middleware.js`,
    the workflows, `src/_new/scripts/design-domains.js`, the issue templates, `.claude/agents/client-reply.md`, the
-   skills the workflow loads and an empty `src/_new/releaseNotesData.js`. Then it installs the dependencies and sets:
+   skills the workflow loads and an empty `src/_new/releaseNotesData.js`, and adds the cleanup cron to `vercel.json`.
+   Then it installs the dependencies and sets:
 
    - GitHub: secrets `CLAUDE_CODE_OAUTH_TOKEN` and `VERCEL_TOKEN`, variables `CLAUDE_ALLOWED_USERS` (yours,
      `--client` and the ones already there), `VERCEL_PROJECT` and `VERCEL_TEAM`
    - Vercel (production and preview): `GITHUB_TOKEN`, `BLOB_READ_WRITE_TOKEN`, `EDITOR_VERCEL_TOKEN`, `EDITOR_VERCEL_TEAM` and
-     `EDITOR_VERCEL_PROJECT` (for the versions list) and a new `EDITOR_CODE`, printed for the
-     client; an existing one is kept. Preview only: `VERCEL_PREVIEW_FEEDBACK_ENABLED=0`, which hides the Vercel Toolbar
+     `EDITOR_VERCEL_PROJECT` (for the versions list), a new `EDITOR_CODE`, printed for the
+     client, and a new `CRON_SECRET` (the cleanup cron's); existing ones are kept. Preview only: `VERCEL_PREVIEW_FEEDBACK_ENABLED=0`, which hides the Vercel Toolbar
      on the designs
 
    Without a folder it sets up the repo it's in and redeploys it. Run it again whenever a token changes.
@@ -123,7 +129,9 @@ The workflow picks the branch from these sections only, up to "¿Qué quieres ca
 | `### Acción`                | `Usar este diseño como principal`: merge the "Diseño" branch into `main`; `Volver a una versión anterior`: a new commit on the "Diseño" branch with the files of `### Versión` |
 | `### Versión`               | Only for `Volver a una versión anterior`: the sha of an earlier commit of that branch |
 | `### ¿Qué quieres cambiar?` | The client's text                                                           |
-| `### Imágenes`              | `![name](url)` per uploaded image                                           |
+| `### Imágenes de referencia` | `![name](url)` per image only for the AI to look at (also in replies)     |
+| `### Imágenes para la web`  | `![name](url)` per image to put on the site (also in replies)              |
+| `### Imágenes`              | Issues from before the two kinds: images to put on the site                 |
 
 ## Theme
 
@@ -150,7 +158,7 @@ npx --yes sass@1.77.8 --no-source-map src/_new/ai-web-editor/ai-web-editor.scss 
 - `index.js`: the only export, `AiWebEditor`
 - `AiWebEditor.js`: the button and status; lazy-loads `Panel.js` (the views, dialogs and shared `EditorContext`)
 - `api.js`: calls to the function, the saved code and image uploads
-- `server/`: the Vercel function (`?action=status|requests|request|designs|versions|history|access|upload`), CommonJS;
+- `server/`: the Vercel function (`?action=status|requests|request|designs|versions|history|access|upload|cleanup`), CommonJS;
   `historyMiddleware.js` (ESM) is the site's `middleware.js`
 - `versionPath.js`: the `/_history/<number>` an older version is opened at
 - `setup.js`: installs and configures the editor on a repo (Node, not bundled)

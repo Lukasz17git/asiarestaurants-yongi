@@ -1,12 +1,14 @@
 // The editor's only Vercel function: the site's api/ai-editor.js re-exports it, and `?action=` picks the handler.
 // Vercel's CDN keeps the GET answers a few seconds (s-maxage), so every visitor polling shares one call to GitHub
+const { list, del } = require('@vercel/blob')
 const { handleUpload } = require('@vercel/blob/client')
 const {
     mainBranch,
     mainUrl,
     deployment,
     historyTag,
-    uploadFolder,
+    uploadFolders,
+    referenceDays,
     getBranchUrl,
     github,
     vercelSettings,
@@ -71,7 +73,7 @@ const getStatus = async (req, res) => {
         sha: deployment.sha,
         branchSha: branch?.commit.sha ?? null,
         working,
-        uploadFolder,
+        uploadFolders,
     })
 }
 
@@ -108,7 +110,8 @@ const findEarlierVersion = async (sha, ref) => {
 const createRequest = async (req, res) => {
     if (!hasEditorCode(req)) return rejectCode(res)
 
-    const { type, name: givenName, text = '', ref, version: versionSha, page, images = [] } = req.body ?? {}
+    const { type, name: givenName, text = '', ref, version: versionSha, page, references = [], assets = [] } = req.body ?? {}
+    const images = { references, assets }
     const name = type === 'new' ? cleanName(givenName) : ''
     const requestError = await getRequestError({ type, name, text, ref, images })
     if (requestError) return res.status(400).json({ error: requestError })
@@ -151,7 +154,8 @@ const addReply = async (req, res) => {
     if (!number) return res.status(400).json({ error: 'Invalid request number' })
     if (!hasEditorCode(req)) return rejectCode(res)
 
-    const { text, page, images = [] } = req.body ?? {}
+    const { text, page, references = [], assets = [] } = req.body ?? {}
+    const images = { references, assets }
     const payloadError = getPayloadError({ text, images })
     if (payloadError) return res.status(400).json({ error: payloadError })
 
@@ -281,7 +285,7 @@ const upload = async (req, res) => {
             // upload() can't send headers, so the editor code comes as clientPayload
             onBeforeGenerateToken: async (pathname, clientPayload) => {
                 if (!isEditorCode(clientPayload)) throw new Error('Código de acceso incorrecto.')
-                if (!pathname.startsWith(`${uploadFolder}/`)) throw new Error(`Invalid pathname: ${pathname}`)
+                if (!Object.values(uploadFolders).some((folder) => pathname.startsWith(`${folder}/`))) throw new Error(`Invalid pathname: ${pathname}`)
                 return { allowedContentTypes: ['image/webp', 'image/jpeg', 'image/png'], maximumSizeInBytes: maxImageBytes, addRandomSuffix: true }
             },
         })
@@ -289,6 +293,23 @@ const upload = async (req, res) => {
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
+}
+
+// Deletes the reference images older than referenceDays (7); vercel.json's cron calls it daily with CRON_SECRET
+const deleteOldReferences = async (req, res) => {
+    const secret = process.env.CRON_SECRET
+    if (secret && req.headers.authorization !== `Bearer ${secret}`) return res.status(401).json({ error: 'Unauthorized' })
+
+    const oldestKept = Date.now() - referenceDays * 24 * 3600 * 1000
+    const oldUrls = []
+    let cursor
+    do {
+        const page = await list({ prefix: `${uploadFolders.references}/`, cursor, limit: 1000 })
+        oldUrls.push(...page.blobs.filter((blob) => new Date(blob.uploadedAt).getTime() < oldestKept).map((blob) => blob.url))
+        cursor = page.hasMore ? page.cursor : null
+    } while (cursor)
+    if (oldUrls.length) await del(oldUrls)
+    res.json({ deleted: oldUrls.length })
 }
 
 const handlers = {
@@ -302,6 +323,7 @@ const handlers = {
     'GET history': getHistoryDeploy,
     'POST access': checkAccess,
     'POST upload': upload,
+    'GET cleanup': deleteOldReferences,
 }
 
 module.exports = async (req, res) => {

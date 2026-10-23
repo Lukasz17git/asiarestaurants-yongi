@@ -17,8 +17,8 @@ const RequestForm = ({ type, onSent }) => {
     const { code, ref, status } = useEditor()
     const [name, setName] = useState('')
 
-    const send = async ({ text, images }) => {
-        const { number } = await createRequest(code, { type, name, text, ref, page: getPagePath(), images })
+    const send = async ({ text, references, assets }) => {
+        const { number } = await createRequest(code, { type, name, text, ref, page: getPagePath(), references, assets })
         onSent(number)
     }
 

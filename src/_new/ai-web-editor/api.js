@@ -85,25 +85,25 @@ const toFileName = (name) => name
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '') || 'imagen'
 
-// Uploads one compressed image under the name the client gave it, in this repo's folder of the shared Blob store
-// ('asiarestaurants-yongi/peticiones'); Blob adds a random suffix
-const uploadImage = async (code, folder, { file, name }) => {
+// Uploads one compressed image under the name the client gave it, in its kind's folder of this repo in the shared
+// Blob store (references -> 'asiarestaurants-yongi/referencias'); Blob adds a random suffix
+const uploadImage = async (code, folders, { kind, file, name }) => {
     const { upload } = await import('@vercel/blob/client')
     const extension = file.type.split('/')[1] ?? 'webp'
-    const { url } = await upload(`${folder}/${toFileName(name)}.${extension}`, file, {
+    const { url } = await upload(`${folders[kind]}/${toFileName(name)}.${extension}`, file, {
         access: 'public',
         handleUploadUrl: `${apiUrl}?action=upload`,
         clientPayload: code,
     })
-    return { name, url }
+    return { kind, name, url }
 }
 
 // One at a time, calling onProgress(1..n) before each
-export const uploadImages = async (code, folder, images, onProgress) => {
+export const uploadImages = async (code, folders, images, onProgress) => {
     const uploaded = []
     for (const [index, image] of images.entries()) {
         onProgress(index + 1)
-        const result = await uploadImage(code, folder, image).catch(() => {
+        const result = await uploadImage(code, folders, image).catch(() => {
             throw new Error(`No se ha podido subir «${image.name}». Prueba de nuevo.`)
         })
         uploaded.push(result)

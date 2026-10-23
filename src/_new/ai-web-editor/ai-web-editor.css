@@ -880,6 +880,17 @@ li:last-child > .aiwe-version {
   gap: 12px;
 }
 
+.aiwe-uploader-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aiwe-uploader-note {
+  color: var(--aiwe-muted);
+  font-size: 12px;
+}
+
 .aiwe-dropzone {
   all: unset;
   box-sizing: border-box;
@@ -1314,6 +1325,19 @@ li:last-child > .aiwe-version {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.aiwe-message-image-missing {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--aiwe-line);
+  border-radius: 4px;
+  color: var(--aiwe-muted);
+  font-size: 11px;
+  text-align: center;
 }
 
 @keyframes aiwe-spin {

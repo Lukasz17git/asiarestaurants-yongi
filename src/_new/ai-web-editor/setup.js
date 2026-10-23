@@ -120,6 +120,19 @@ const copyFiles = (targetRoot) => {
     }
 }
 
+// Vercel calls '?action=cleanup' daily at 4:00 UTC, which deletes the reference images older than 7 days
+const cleanupCron = { path: '/api/ai-editor?action=cleanup', schedule: '0 4 * * *' }
+
+// Adds cleanupCron to the site's vercel.json, keeping the rest
+const addCleanupCron = (targetRoot) => {
+    const file = path.join(targetRoot, 'vercel.json')
+    const config = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {}
+    if (config.crons?.some(({ path: cronPath }) => cronPath === cleanupCron.path)) return console.log('Kept the cleanup cron in vercel.json')
+    config.crons = [...(config.crons ?? []), cleanupCron]
+    fs.writeFileSync(file, `${JSON.stringify(config, null, 2)}\n`)
+    console.log('Added the cleanup cron to vercel.json')
+}
+
 // Same versions as this repo, exact, so every site runs the editor it was tested with
 const installDependencies = (targetRoot) => {
     const readDependencies = (root) => JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8')).dependencies ?? {}
@@ -217,8 +230,8 @@ const hideToolbar = { key: 'VERCEL_PREVIEW_FEEDBACK_ENABLED', value: '0', type: 
 // Production and preview, so the designs (other branches) get them too
 const setVercelEnv = async (vercel, project, settings) => {
     const { envs } = await vercel('GET', `/v10/projects/${project.id}/env`)
-    const hasEditorCode = envs.some(({ key }) => key === 'EDITOR_CODE')
-    const editorCode = hasEditorCode ? null : createEditorCode()
+    const hasEnv = (name) => envs.some(({ key }) => key === name)
+    const editorCode = hasEnv('EDITOR_CODE') ? null : createEditorCode()
     const values = {
         GITHUB_TOKEN: settings.GITHUB_TOKEN,
         BLOB_READ_WRITE_TOKEN: settings.BLOB_READ_WRITE_TOKEN,
@@ -227,6 +240,8 @@ const setVercelEnv = async (vercel, project, settings) => {
         EDITOR_VERCEL_TEAM: settings.VERCEL_TEAM,
         EDITOR_VERCEL_PROJECT: project.id,
         ...(editorCode && { EDITOR_CODE: editorCode }),
+        // Vercel sends it to the cleanup cron, so nobody else can call it
+        ...(!hasEnv('CRON_SECRET') && { CRON_SECRET: crypto.randomBytes(24).toString('hex') }),
     }
     await vercel('POST', `/v10/projects/${project.id}/env?upsert=true`, [
         ...Object.entries(values).map(([key, value]) => ({ key, value, type: 'encrypted', target: ['production', 'preview'] })),
@@ -259,6 +274,7 @@ const setup = async () => {
     const isOtherRepo = path.relative(sourceRoot, targetRoot) !== ''
     if (isOtherRepo) {
         copyFiles(targetRoot)
+        addCleanupCron(targetRoot)
         installDependencies(targetRoot)
     }
 

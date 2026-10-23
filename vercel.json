@@ -3,6 +3,7 @@
   "installCommand": "npm install",
   "buildCommand": "printf '{\"sha\":\"%s\",\"ref\":\"%s\"}' \"$VERCEL_GIT_COMMIT_SHA\" \"$VERCEL_GIT_COMMIT_REF\" > public/version.json && CI=false npm run build",
   "outputDirectory": "build",
+  "crons": [{ "path": "/api/ai-editor?action=cleanup", "schedule": "0 4 * * *" }],
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api/:path*" },
     { "source": "/(.*)", "destination": "/" }

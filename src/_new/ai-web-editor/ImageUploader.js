@@ -51,7 +51,7 @@ const RemoveDialog = ({ image, onConfirm, onCancel }) => (
 )
 
 // Drop zone and grid of up to 20 images, each compressed as soon as it's added, with its own name
-const ImageUploader = ({ images, setImages, compact }) => {
+const ImageUploader = ({ title, note, images, setImages, compact }) => {
     const inputRef = useRef(null)
     const [dragging, setDragging] = useState(false)
     const [notice, setNotice] = useState('')
@@ -110,6 +110,12 @@ const ImageUploader = ({ images, setImages, compact }) => {
 
     return (
         <div className={compact ? 'aiwe-uploader compact' : 'aiwe-uploader'}>
+            {title && (
+                <div className='aiwe-uploader-heading'>
+                    <span className='aiwe-field-label'>{title}</span>
+                    {note && <span className='aiwe-uploader-note'>{note}</span>}
+                </div>
+            )}
             <input
                 ref={inputRef}
                 type='file'

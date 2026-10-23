@@ -36,6 +36,17 @@ const MessageText = ({ text }) => text.split(/\n{2,}/).map((block, blockIndex) =
     )
 })
 
+// Reference images are deleted after 7 days, so a missing one shows as a note
+const MessageImage = ({ image, onOpen }) => {
+    const [missing, setMissing] = useState(false)
+    if (missing) return <span className='aiwe-message-image-missing'>Imagen borrada</span>
+    return (
+        <button type='button' onClick={onOpen} aria-label={`Ver ${image.name}`}>
+            <img src={image.url} alt={image.name} loading='lazy' onError={() => setMissing(true)} />
+        </button>
+    )
+}
+
 const Message = ({ message, onOpenImage }) => (
     <li className={`aiwe-message ${message.from}`}>
         <span className='aiwe-message-meta'>{message.from === 'ai' ? 'IA' : 'Tú'} · {formatAgo(message.createdAt)}</span>
@@ -44,9 +55,7 @@ const Message = ({ message, onOpenImage }) => (
             {message.images.length > 0 && (
                 <div className='aiwe-message-images'>
                     {message.images.map((image, index) => (
-                        <button key={image.url} type='button' onClick={() => onOpenImage(message.images, index)} aria-label={`Ver ${image.name}`}>
-                            <img src={image.url} alt={image.name} loading='lazy' />
-                        </button>
+                        <MessageImage key={image.url} image={image} onOpen={() => onOpenImage(message.images, index)} />
                     ))}
                 </div>
             )}
@@ -106,8 +115,8 @@ const Thread = ({ number, active }) => {
     if (!thread) return error ? <p className='aiwe-error'>{error}</p> : <p className='aiwe-empty'>Cargando la conversación...</p>
 
     const progress = getProgress(thread)
-    const reply = async ({ text, images }) => {
-        await replyToRequest(code, number, { text, page: getPagePath(), images })
+    const reply = async ({ text, references, assets }) => {
+        await replyToRequest(code, number, { text, page: getPagePath(), references, assets })
         await load()
     }
 

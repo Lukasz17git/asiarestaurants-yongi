@@ -19,8 +19,11 @@ const historyTag = env.EDITOR_HISTORY_TAG || 'v0'
 
 const toSlug = (branch) => branch.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 
-// Each site's images go under its own folder, so several sites can share one Blob store
-const uploadFolder = `${toSlug(repo.split('/')[1] ?? 'site')}/peticiones`
+// Each site's images go under its own folder, so several sites can share one Blob store. References only show
+// the AI what the client means and are deleted after `referenceDays`; assets go on the website and are kept
+const siteFolder = toSlug(repo.split('/')[1] ?? 'site')
+const uploadFolders = { references: `${siteFolder}/referencias`, assets: `${siteFolder}/peticiones` }
+const referenceDays = 7
 
 const getBranchUrl =(branch) => (branch === mainBranch ? mainUrl : designUrl.replace('{branch}', toSlug(branch)))
 
@@ -77,7 +80,8 @@ module.exports = {
     mainUrl,
     deployment,
     historyTag,
-    uploadFolder,
+    uploadFolders,
+    referenceDays,
     getBranchUrl,
     github,
     vercelSettings,

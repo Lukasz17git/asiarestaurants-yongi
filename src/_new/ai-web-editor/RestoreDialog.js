@@ -17,7 +17,7 @@ const RestoreDialog = ({ open, onClose, onSent }) => {
         setSending(true)
         setError('')
         try {
-            const { number } = await createRequest(code, { type: 'restore', version: oldVersion.sha, text: '', ref, page: getPagePath(), images: [] })
+            const { number } = await createRequest(code, { type: 'restore', version: oldVersion.sha, text: '', ref, page: getPagePath() })
             onSent(number)
         } catch (sendError) {
             setError(sendError.message)

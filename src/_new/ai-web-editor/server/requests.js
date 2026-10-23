@@ -27,8 +27,12 @@ const requestTypes = {
     },
 }
 
+// Each kind of image (keys of the payload and of uploadFolders) -> its section in the issue
+const imageSections = { references: 'Imágenes de referencia', assets: 'Imágenes para la web' }
+
 const maxTextLength = 5000
 const maxNameLength = 60
+// Per kind
 const maxImages = 20
 const imageUrlPattern = /^https:\/\/[a-z0-9]+\.public\.blob\.vercel-storage\.com\/\S+$/i
 const imagePatterns = [
@@ -44,17 +48,26 @@ const escapeHeadings = (text) => text.replace(/^(\s*)#/gm, '$1\\#')
 
 const toImagesMarkdown = (images) => images.map(({ name, url }) => `![${name}](${url})`).join('\n')
 
-// '' when the text and images are valid, else what's wrong (in Spanish, shown as is); `optional`: '' text is fine
+// '### Imágenes de referencia' and its '![name](url)' lines, for each kind with images
+const toImageSections = (images) => Object.entries(imageSections)
+    .filter(([kind]) => images[kind].length)
+    .flatMap(([kind, title]) => [`### ${title}`, toImagesMarkdown(images[kind])])
+
+// '' when the text and images ({ references, assets }) are valid, else what's wrong (in Spanish, shown as is);
+// `optional`: '' text is fine
 const getPayloadError = ({ text, images }, { optional = false } = {}) => {
     if (typeof text !== 'string' || (!optional && !text.trim())) return 'Escribe qué quieres cambiar.'
     if (text.length > maxTextLength) return `El texto pasa de ${maxTextLength} caracteres.`
-    if (!Array.isArray(images) || images.length > maxImages) return `Puedes enviar hasta ${maxImages} imágenes.`
-    if (images.some(({ url }) => !imageUrlPattern.test(url))) return 'Alguna imagen no se ha subido bien. Vuelve a añadirla.'
+    const groups = Object.keys(imageSections).map((kind) => images[kind])
+    if (groups.some((group) => !Array.isArray(group) || group.length > maxImages)) return `Puedes enviar hasta ${maxImages} imágenes de cada tipo.`
+    if (groups.flat().some((image) => !imageUrlPattern.test(image?.url))) return 'Alguna imagen no se ha subido bien. Vuelve a añadirla.'
     return ''
 }
 
 // Without '[', ']', '(' and ')', which would break the '![name](url)' link
-const cleanImages = (images) => images.map(({ name, url }) => ({ name: String(name ?? '').replace(/[[\]()\n]/g, '').trim().slice(0, 80) || 'imagen', url }))
+const cleanImage = ({ name, url }) => ({ name: String(name ?? '').replace(/[[\]()\n]/g, '').trim().slice(0, 80) || 'imagen', url })
+
+const cleanImages = (images) => Object.fromEntries(Object.keys(imageSections).map((kind) => [kind, images[kind].map(cleanImage)]))
 
 // One line, so it can't add a '### ' section of its own
 const cleanName = (name) => String(name ?? '').replace(/\s+/g, ' ').trim().slice(0, maxNameLength)
@@ -84,14 +97,14 @@ const buildIssueBody = ({ type, name, text, ref, version, page, images }) => {
         ...(action ? ['### Acción', action] : []),
         ...(version ? ['### Versión', version.sha] : []),
         '### ¿Qué quieres cambiar?', escapeHeadings(getChangeText({ type, text, ref, version })),
-        ...(images.length ? ['### Imágenes', toImagesMarkdown(images)] : []),
+        ...toImageSections(images),
         `<!-- Enviado desde la web, en la página ${page} ${getSiteName(ref)}. ${note(ref)} -->`,
     ].join('\n\n')
 }
 
 const buildCommentBody = ({ text, page, images }) => [
     escapeHeadings(text.trim()),
-    ...(images.length ? [toImagesMarkdown(images)] : []),
+    ...toImageSections(images),
     `<!-- Enviado desde la web, en la página ${page} -->`,
 ].join('\n\n')
 
@@ -131,21 +144,23 @@ const getBranch = (issue) => {
     return mainBranch
 }
 
-// Text without HTML comments and '\#', and the images it links, each once
+// Text without HTML comments, '\#' and the images' '### ' headings, and the images it links, each once
 const toMessageContent = (markdown) => {
     const images = []
     const text = imagePatterns.reduce((rest, pattern) => rest.replace(pattern, (match, name, url) => {
         if (!images.some((image) => image.url === url)) images.push({ name, url })
         return ''
-    }), markdown.replace(/<!--[\s\S]*?-->/g, ''))
+    }), markdown.replace(/<!--[\s\S]*?-->/g, '').replace(/^### Imágenes.*$/gm, ''))
     return { text: text.replace(/^(\s*)\\#/gm, '$1#').replace(/\n{3,}/g, '\n\n').trim(), images }
 }
 
-// The request as the client wrote it: its "¿Qué quieres cambiar?" and "Imágenes" (the whole body in old issues)
+// The request as the client wrote it: its "¿Qué quieres cambiar?" and images (the whole body in old issues;
+// "Imágenes" in issues from before the two kinds)
 const getRequestContent = (body) => {
     const sections = getSections(body ?? '')
     const change = sections['¿Qué quieres cambiar?'] ?? body ?? ''
-    return toMessageContent(`${change}\n${sections['Imágenes'] ?? ''}`)
+    const images = [...Object.values(imageSections), 'Imágenes'].map((title) => sections[title] ?? '')
+    return toMessageContent([change, ...images].join('\n'))
 }
 
 const toSummary = (issue, workingTitles) => {
