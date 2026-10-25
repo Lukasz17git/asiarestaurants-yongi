@@ -8,7 +8,7 @@ https://asiarestaurants-yongi.vercel.app in a few minutes.
 Lasting wishes from the client; follow them in every change and add new ones here.
 
 - No `link`/`linkText` on the release-note changes (#3)
-- Dish photos: only reuse photos already on the website or the restaurant's own ones in `src/_new/images/menuMaker/`,
+- Dish photos: only reuse photos already on the website or the restaurant's own ones in the assets site (see Images),
   one per dish and only when the match is sure; dishes without one stay without a photo, uncertain matches wait
   for the client's confirmation (#7)
 
@@ -32,7 +32,7 @@ Lasting wishes from the client; follow them in every change and add new ones her
   - `src/qr/qrData.js`: PDFs on the `/qr` page
   - `src/_new/pedidos/takeaway-menu.json`: takeaway dish database, used by `/pedidos`. Numbers, Spanish texts, prices
     (`priceInCents`) and vegan/spicy come from `public/pdfs/CartaLlevar2024_compressed.pdf`; the other languages
-    (`cat`/`en`/`it`/`zh`) and `photo: 'uramaki-tiger'` -> `src/_new/images/menuMaker/uramaki-tiger.webp` from the same
+    (`cat`/`en`/`it`/`zh`) and `photo: 'uramaki-tiger'` (a photo of the assets site, see Images) from the same
     dish in the `restaurant_menu_maker` repo. Dishes it doesn't have (new uramaki, Spicy Pot...) have only `es` and no
     photo
   - `src/_new/releaseNotesData.js`: the changes listed in «Editar con IA» -> «Ver cambios», newest entry first (one entry
@@ -65,8 +65,11 @@ Lasting wishes from the client; follow them in every change and add new ones her
 
 ## Images
 
-- Live in `src/images/` (`home/`, `menus/`, `restaurants/`, `mealsNoBg/`), all `.webp`; the takeaway photos in
-  `src/_new/images/menuMaker/`
+- Live in `src/images/` (`home/`, `menus/`, `restaurants/`, `mealsNoBg/`), all `.webp`
+- The takeaway photos are not in this repo: `photo: 'uramaki-tiger'` loads
+  https://asiarestaurants-assets-and-data.vercel.app/images/meals/optimized/webp/uramaki-tiger.webp (`takeawayMenu.js`),
+  from the private repo `asiarestaurants-assets-and-data`. Before setting a `photo`, check its URL answers 200
+  (`curl -sI <url>`): a wrong name only shows as a broken image. A photo it doesn't have waits for the client (#7)
 - Dish photos must be `.webp`: `Dish.js` loads `mealsNoBg/${photo}.webp`. Convert others with
   `cwebp -q 80 -resize 500 0 in.jpg -o out.webp` (`-resize 800 0` outside `mealsNoBg/`, like the existing ones)
 - Home, menu and restaurant images are set in the CSS (`content:url("../images/home/home1.webp")`)
