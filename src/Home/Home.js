@@ -19,8 +19,8 @@ const Home = () => {
   return (
     <div className='home' ref={homeRef}>
       <Front />
-      <Section2 />
       <Marquee />
+      <Section2 />
       <Section1 />
       <Section3 />
       <Gallery />

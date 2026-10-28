@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom'
 import gold from '../generateGold'
 import { reservationWhatsappUrl } from '../_new/sections/reservation'
 
+// Golden Roll, Rainbow Roll and Ramen on the left; Nigiri, Tartar and Gua Bao on the right
+const floatingDishes = ['meal10', 'meal12', 'meal27', 'meal25', 'meal21', 'meal22']
+
 const Front = () => {
   return (
     <section className='front'>
       <div className='front-bg' />
       <div className='front-sun' />
-      <img className='front-float front-float-right' src={require('../images/mealsNoBg/meal12.webp')} alt='' />
-      <img className='front-float front-float-left' src={require('../images/mealsNoBg/meal25.webp')} alt='' />
+      {floatingDishes.map((photo, index) => (
+        <img key={photo} className={`front-float front-float-${index + 1}`} src={require(`../images/mealsNoBg/${photo}.webp`)} alt='' />
+      ))}
       <div className='front-content'>
         <div className='front-logo' />
         <div className='front-brand'>{gold('Asia Oriental Taste')}</div>

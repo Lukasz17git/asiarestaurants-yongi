@@ -4,6 +4,20 @@
 const releaseNotes = [
     {
         date: '2026-10-28',
+        issue: 16,
+        branch: 'diseno-14',
+        title: 'Inicio: más platos en la portada y fondos con dibujos',
+        summary: 'En Inicio, la franja roja sube justo debajo de la portada, la portada lleva seis platos flotando, los números de los favoritos son blancos y varias secciones tienen fondos con dibujos como la web original.',
+        changes: [
+            { text: 'La franja roja con nombres de platos sale ahora justo debajo de la portada, antes de «¿Antojo ahora? Te lo llevamos», como en Menús.' },
+            { text: 'La portada tiene seis platos flotando en vez de dos, tres a cada lado del título: Golden Roll, Rainbow Roll, Ramen, Nigiri de salmón, Tartar y Gua Bao (en pantallas estrechas se ocultan para no tapar el texto).' },
+            { text: 'Los números 01, 02, 03 y 04 de «Los favoritos que todo el mundo repite» son ahora blancos.' },
+            { text: 'El fondo de Inicio lleva la textura suave de la web original, y «Un viaje por Asia en cada bocado» también.' },
+            { text: '«Los favoritos que todo el mundo repite» y «¿Antojo ahora? Te lo llevamos» tienen detrás, muy suaves, las ramas con flores de la web original.' },
+        ],
+    },
+    {
+        date: '2026-10-28',
         issue: 15,
         branch: 'diseno-14',
         title: 'Menos rojo y más dorado en Inicio y Menús',

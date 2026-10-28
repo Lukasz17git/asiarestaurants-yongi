@@ -2,6 +2,18 @@
 
 $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
 
+// The flower vines of the original site, faded behind a section
+@mixin vines($opacity) {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-image: url('../images/cherry2.webp');
+  background-repeat: repeat;
+  opacity: $opacity;
+  filter: saturate(0.4);
+  pointer-events: none;
+}
+
 
 .home {
   position: relative;
@@ -9,6 +21,8 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
   overflow-x: hidden;
   color: $textColor1;
   background-color: $backgroundColor2;
+  background-image: url('../images/texture.svg');
+  background-size: 400px 400px;
 
   section {
     position: relative;
@@ -73,15 +87,43 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     animation: front-float 7s ease-in-out infinite;
   }
 
-  .front-float-right {
-    right: 3vw;
-    bottom: 12vh;
+  // Three dishes on each side, the middle ones smaller and half out of the screen
+  .front-float-1 {
+    left: 2vw;
+    top: 11vh;
+    width: clamp(170px, 17vw, 290px);
   }
 
-  .front-float-left {
-    left: 2vw;
-    top: 14vh;
+  .front-float-2 {
+    left: -2vw;
+    top: 42vh;
+    width: clamp(120px, 11vw, 190px);
+    animation-delay: -2.3s;
+  }
+
+  .front-float-3 {
+    left: 4vw;
+    bottom: 6vh;
+    animation-delay: -4.6s;
+  }
+
+  .front-float-4 {
+    right: 3vw;
+    top: 12vh;
+    animation-delay: -1.2s;
+  }
+
+  .front-float-5 {
+    right: -1vw;
+    top: 43vh;
+    width: clamp(120px, 11vw, 190px);
     animation-delay: -3.5s;
+  }
+
+  .front-float-6 {
+    right: 4vw;
+    bottom: 8vh;
+    animation-delay: -5.8s;
   }
 
   .front-content {
@@ -206,7 +248,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     gap: 70px;
     max-width: 1200px;
     margin: auto;
-    padding: 140px 30px 110px;
+    padding: 40px 30px 110px;
 
     .intro {
       display: flex;
@@ -331,6 +373,18 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
 
   .section3 {
     padding: 80px 24px 60px;
+    overflow: hidden;
+    isolation: isolate;
+
+    &::before {
+      @include vines(0.07);
+      top: 20px;
+      left: -43%;
+      width: 200%;
+      min-width: 1800px;
+      height: 150%;
+      transform: rotate(-30deg);
+    }
 
     .dishes-container {
       display: grid;
@@ -403,11 +457,11 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .dish-number {
-      @include red();
       position: absolute;
       right: 16px;
       bottom: 6px;
       z-index: 1;
+      color: #fff;
       font-family: 'AsianHiro', serif;
       font-size: 54px;
       filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.7));
@@ -455,6 +509,8 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
   .section4 {
     padding: 110px 24px;
     background-color: $backgroundColor3;
+    background-image: url('../images/texture.svg');
+    background-size: 400px 400px;
 
     .container {
       display: grid;
@@ -557,6 +613,18 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
   .section2 {
     padding: 120px 30px;
     overflow: hidden;
+    isolation: isolate;
+
+    // One vine coming down from the top left corner
+    &::before {
+      @include vines(0.09);
+      top: -40px;
+      left: -60px;
+      width: 660px;
+      height: 940px;
+      background-repeat: no-repeat;
+      transform: scaleX(-1) rotate(-12deg);
+    }
 
     .container {
       display: grid;
@@ -769,7 +837,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .section1 {
-      padding: 110px 24px 80px;
+      padding: 20px 24px 80px;
 
       .intro {
         align-items: center;
