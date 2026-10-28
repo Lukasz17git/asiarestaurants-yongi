@@ -34,7 +34,7 @@ const Navbar = () => {
                         <div className='underline' />
                     </Link>
                 </div>
-                <div className={path === '/pedidos' ? 'link selected' : 'link'} onClick={hideMenu}>
+                <div className={path === '/pedidos' ? 'link link-order selected' : 'link link-order'} onClick={hideMenu}>
                     <Link to='/pedidos'>
                         {pedidosName[language]}
                         <div className='underline' />

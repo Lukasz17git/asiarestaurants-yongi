@@ -3,16 +3,15 @@
 /*grey*/
 /*brown-gold*/
 /*gold line*/
+/*red of the logo*/
 .navbar {
-  -webkit-box-shadow: 0px 1px 8px 1px #080808;
-          box-shadow: 0px 1px 8px 1px #080808;
+  box-shadow: 0px 1px 8px 1px #080808;
   position: fixed;
   z-index: 11;
   width: 100%;
   height: 68px;
   border-bottom: 1px solid #c9ab81;
 }
-
 .navbar .bg-opacity {
   position: absolute;
   width: 100%;
@@ -21,8 +20,17 @@
   top: 0px;
   background-color: #01090B;
   opacity: 0.55;
+  backdrop-filter: blur(10px);
 }
-
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #a8292e 25%, #d2383d 50%, #a8292e 75%, transparent);
+}
 .navbar .main-logo {
   background-image: url("../images/LogoRed.webp");
   position: absolute;
@@ -34,15 +42,12 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-
 .navbar .main-logo span {
   opacity: 0;
 }
-
 .navbar .main-logo:hover {
   cursor: pointer;
 }
-
 .navbar .menu-icon {
   position: absolute;
   right: 10px;
@@ -54,44 +59,51 @@
   background-position: center;
   visibility: hidden;
 }
-
 .navbar .menu-icon:hover {
   cursor: pointer;
 }
-
 .navbar .menu {
   position: absolute;
   height: 100%;
   right: 20px;
   top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 40px;
   color: #c9ab81;
   font-weight: 600;
-  font-family: 'CondLight';
+  font-family: "CondLight";
   letter-spacing: 3px;
 }
-
 .navbar .menu .selected .underline {
-  background-color: #eda77e !important;
+  background-color: #d2383d !important;
 }
-
 .navbar .menu .selected .underline::after {
-  background-color: #eda77e !important;
+  background-color: #d2383d !important;
 }
-
+.navbar .menu .link-order a {
+  display: block;
+  padding: 9px 18px;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, #d2383d, #a8292e);
+  box-shadow: 0px 8px 20px -10px #d2383d;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.navbar .menu .link-order .underline {
+  display: none;
+}
+.navbar .menu .link-order:hover {
+  color: #fff;
+}
+.navbar .menu .link-order:hover a {
+  transform: translateY(-2px);
+  box-shadow: 0px 12px 26px -10px #d2383d;
+}
 .navbar .menu .link {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
+  align-self: center;
+  justify-self: center;
+  transform: translateY(-3px);
 }
-
 .navbar .menu .link .underline {
   position: relative;
   width: calc(100% - 4px);
@@ -99,29 +111,24 @@
   background-color: #ead1af;
   margin: auto;
 }
-
 .navbar .menu .link .underline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 60%;
   height: 1px;
   top: 4px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   background-color: #ead1af;
 }
-
 .navbar .menu .link:hover {
-  color: #eda77e;
+  color: #d2383d;
   cursor: pointer;
 }
-
 .navbar .menu .link:hover .underline {
-  background-color: #eda77e;
+  background-color: #d2383d;
 }
-
 .navbar .menu .link:hover .underline::after {
-  background-color: #eda77e;
+  background-color: #d2383d;
 }
 
 @media (max-width: 700px) {
@@ -130,14 +137,10 @@
   }
   .navbar .menu {
     height: auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     background-color: #121518;
     right: 0px;
-    -webkit-transform: translateX(110%);
-            transform: translateX(110%);
+    transform: translateX(110%);
     top: calc(100% + 2px);
     padding: 40px 24px;
     background-color: #01090B;
@@ -145,7 +148,6 @@
     border-bottom: 2px solid #c9ab81;
     border-left: 2px solid #c9ab81;
     border-bottom-left-radius: 6px;
-    -webkit-transition: 0.5s;
     transition: 0.5s;
   }
 }

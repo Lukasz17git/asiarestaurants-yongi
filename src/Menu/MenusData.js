@@ -1,3 +1,4 @@
+// image: path under src/images, without .webp
 const menus = {
     day: {
         name: {
@@ -5,7 +6,7 @@ const menus = {
             cat: ''
         },
         description: {
-            es: 'Nuestros menús del mediodía',
+            es: 'Tu pausa de mediodía, a lo grande: sushi, cocina japonesa y china para disfrutar sin prisa.',
             cat: ''
         },
         time: {
@@ -17,6 +18,7 @@ const menus = {
             es: 'Ver Carta',
             cat: ''
         },
+        image: 'home/home1',
         pdf: './pdfs/CartaDia2024_compressed.pdf'
     },
     night: {
@@ -25,7 +27,7 @@ const menus = {
             cat: ''
         },
         description: {
-            es: 'Nuestros menús nocturnos',
+            es: 'La noche es para darse un homenaje: especiales, sushi y platos calientes para compartir.',
             cat: ''
         },
         time: {
@@ -33,11 +35,12 @@ const menus = {
             cat: ''
         },
         price: '21,90€',
-        price2: '- viernes y  festivos + 1€ -',
+        price2: 'Viernes y festivos +1€',
         button: {
             es: 'Ver Carta',
             cat: ''
         },
+        image: 'home/home3',
         pdf: './pdfs/CartaNoche2024_compressed.pdf'
     },
     festive: {
@@ -56,13 +59,14 @@ const menus = {
             cat: ''
         },
         description: {
-            es: 'Nuestros platos disponibles para poder ser llevados a tu casa o al sitio que prefieras',
+            es: 'Todos tus favoritos recién hechos, para llevar a casa o al sitio que prefieras.',
             cat: ''
         },
         button: {
             es: 'Ver Carta',
             cat: ''
         },
+        image: 'menus/takeAway',
         pdf: './pdfs/CartaLlevar2024_compressed.pdf'
     }
 }

@@ -2,6 +2,12 @@ const examples = [
     {
         name: 'Uramaki Asia',
         photo: '_uramaki',
+        tag: {
+            es: 'El clásico de la casa',
+            cat: '',
+            en: '',
+            it: ''
+        },
         description: {
             es: 'Rollo de sushi con salmón cocido, aguacate, philadelphia y salmón picante.',
             cat: '',
@@ -12,6 +18,12 @@ const examples = [
     {
         name: 'Golden Lobster Roll',
         photo: '_golden',
+        tag: {
+            es: 'Con hojas de oro',
+            cat: '',
+            en: '',
+            it: ''
+        },
         description: {
             es: 'Uramaki Especial con langosta a temperatura ambiente, aguacate, trufa y hojas de oro comestibles.',
             cat: '',
@@ -22,6 +34,12 @@ const examples = [
     {
         name: 'Poke Bowls Vegeta',
         photo: '_poke',
+        tag: {
+            es: 'Fresco y vegetal',
+            cat: '',
+            en: '',
+            it: ''
+        },
         description: {
             es: 'Edamame, Aguacate, Zanahorias, Mango y Pepinos.',
             cat: '',
@@ -32,6 +50,12 @@ const examples = [
     {
         name: 'Samba',
         photo: '_samba',
+        tag: {
+            es: 'Flambeado',
+            cat: '',
+            en: '',
+            it: ''
+        },
         description: {
             es: 'Gunkan especial coronado con salmón, lima y alcohol flambeado.',
             cat: '',

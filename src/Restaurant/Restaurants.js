@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Footer from '../Footer'
 import '../css/Restaurant.css'
 import restaurants from './restaurantsData'
 import Restaurant from './Restaurant'
+import { useReveal } from '../_new/reveal/useReveal'
 
 const Restaurants = () => {
   const language = 'es'
+  const pageRef = useRef(null)
+  useReveal(pageRef)
   const name = 'Asia Restaurantes'.toUpperCase().split('')
   const { corregio, reggioEmilia, ravenna, orientalTaste } = restaurants
 
@@ -16,7 +19,7 @@ const Restaurants = () => {
   }
 
   return (
-    <div className='main-restaurant'>
+    <div className='main-restaurant' ref={pageRef}>
       <div className='bg-wrapper'>
         <div className='title-menu'>
           {name.map((letter, index) => <div key={index} className='letter' style={{ transform: `translate(-50%,-50%) rotate(${index * (160 / (name.length - 1)) - 80}deg)` }}>{letter}</div>)}

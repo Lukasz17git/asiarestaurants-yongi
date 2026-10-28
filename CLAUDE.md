@@ -25,8 +25,8 @@ Lasting wishes from the client; follow them in every change and add new ones her
   fee and minimum order by postal code are in `deliveryRules.js`
 - Texts and data, one file per section:
   - `src/Home/examplesData.js`: featured dishes on Home (`photo: '_uramaki'` is a CSS class, see Images)
-  - `src/Home/cocinaData.js`: the 4 cuisines on Home
-  - `src/Menu/MenusData.js`: menus (name, hours, price, PDF)
+  - `src/Home/cocinaData.js`: the 4 cuisines on Home (`photo: 'home/home12'` -> `src/images/home/home12.webp`)
+  - `src/Menu/MenusData.js`: menus (name, hours, price, PDF, `image` like `photo` above)
   - `src/Menu/MealsData.js`: dish gallery by category (`photo: 'meal21'` -> `src/images/mealsNoBg/meal21.webp`)
   - `src/Restaurant/restaurantsData.js`: restaurants (address, phone, maps, WhatsApp)
   - `src/qr/qrData.js`: PDFs on the `/qr` page
@@ -37,6 +37,10 @@ Lasting wishes from the client; follow them in every change and add new ones her
     photo
   - `src/_new/releaseNotesData.js`: the changes listed in «Editar con IA» -> «Ver cambios», newest entry first (one entry
     per change request, in Spanish for the client); each shows only on its `branch`
+- Sections shared by Home and Menus (`src/_new/sections/`): the red `Marquee`, the photo `Gallery`, `MenusTeaser`,
+  `FinalCall` and `reservation.js` (the WhatsApp booking link). Scroll animations (`src/_new/reveal/`): `useReveal(pageRef)`
+  fades in every `data-reveal='up|left|right|zoom'` of the page when it comes into view; `CountUp` counts a number up.
+  Shared buttons and titles (`cta cta-red`, `cta cta-gold`, `kicker`, `heading` with `<em>` in red, `lead`) are in `App.scss`
 - "Editar con IA" is the floating button at the bottom right: `src/_new/ai-web-editor/`, a self-contained module mounted once
   as `<AiWebEditor />` in `App.js` (see its `README.md`). Its panel edits this site, starts a new design, uses a design
   as the main web, lists the changes, the designs, the branch's requests (chat and images per request) and its last 10

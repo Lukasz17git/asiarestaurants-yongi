@@ -1,62 +1,72 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../Footer'
 import '../css/Menu.css'
 import Menu from './Menu'
 import menus from './MenusData'
 import meals from './MealsData'
-import Roulette from '../Roulette'
-import Category from './Category'
 import Dish from './Dish'
-import gold from '../generateGold'
+import Marquee from '../_new/sections/Marquee'
+import FinalCall from '../_new/sections/FinalCall'
+import { revealDelay, useReveal } from '../_new/reveal/useReveal'
+import { reservationWhatsappUrl } from '../_new/sections/reservation'
+
+const allCategoriesName = 'Todos'
+
+const getVisibleMeals = (categoryName, language) => {
+  if (categoryName === allCategoriesName) return meals.flatMap((category) => category.meals)
+  return meals.find((category) => category.name[language] === categoryName).meals
+}
+
+// The page's own base href ('/') would turn '#menus' into the Home page, so the shortcuts scroll by hand
+const scrollToSection = (id) => document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
 
 const Menus = () => {
   const language = 'es'
-  const name = 'Asia Oriental Taste'.toUpperCase().split('')
+  const pageRef = useRef(null)
+  const [categoryName, setCategoryName] = useState(allCategoriesName)
+  useReveal(pageRef)
+
+  const visibleMeals = getVisibleMeals(categoryName, language)
+  const categoryNames = [allCategoriesName, ...meals.map((category) => category.name[language])]
+  const { day, night, pedidos } = menus
+
   const restaurantsTitle = {
-    es: 'Prueba todos nuestros platos y menús ahora!',
+    es: 'Más de 200 platos para pedir sin parar: elige tu menú, pide otra ronda y deja hueco para el postre.',
     cat: '',
     it: 'Prova subito tutti i nostri piatti e menù!'
   }
-  const menusTitle = {
-    es: 'Nuestros Menús',
-    cat: '',
-    it: 'I nostri menù'
-  }
-  const { day, night, pedidos } = menus
-
-  const acompañamientosTitle = {
-    es: 'Para Acompañar',
-    cat: '',
-    it: ''
-  }
+  const sectionLinks = [
+    { id: 'menus', name: { es: 'Menús' } },
+    { id: 'todo', name: { es: 'Todo lo que puedas comer' } },
+    { id: 'platos', name: { es: 'Platos' } },
+    { id: 'llevar', name: { es: 'Para llevar' } },
+    { id: 'acompanar', name: { es: 'Postres y vinos' } },
+  ]
+  const menusWords = ['Menú Mediodía', 'Menú Noche', 'Sushi', 'Cocina japonesa', 'Comida china', 'Para llevar', 'A domicilio']
 
   const allYouCanEat = {
-    es: 'Todo lo que puedas comer',
-    cat: '',
-    it: ''
+    es: ['Todo lo que puedas', 'comer'],
+    cat: ['', ''],
+    it: ['', '']
   }
   const allYouCanEatDescription = {
-    es: 'Elige lo que quieras, saborea y disfruta todos nuestros deliciosos platos sin límites',
+    es: 'Elige lo que quieras, saborea y disfruta todos nuestros deliciosos platos sin límites. Uramakis, nigiris, ramen, gua bao... y otra ronda, ¿por qué no?',
     cat: '',
     it: 'Scegli quello che vuoi, senza limiti e assapora tutti i nostri piatti'
   }
   const takeAway = {
-    es: 'Para llevar',
-    cat: '',
-    it: '',
-    en: 'Take Away'
+    es: ['Tus favoritos,', 'donde quieras'],
+    cat: ['', ''],
+    it: ['', ''],
+    en: ['', '']
   }
   const takeAwayDescription = {
-    es: 'Escoge entre los numerosos platos que tenemos disponibles para ti para poder ser disfrutados en el lugar que quieras',
+    es: 'Escoge entre los numerosos platos que tenemos para llevar y disfrútalos en casa, en la oficina o donde te apetezca. Pide online en un minuto y te lo llevamos.',
     cat: '',
     it: ''
   }
 
-  const mealsTitle = {
-    es: 'Algunos de Nuestros Platos',
-    cat: '',
-    it: ''
-  }
   const dulcesTitle = {
     es: 'Nuestros Dulces',
     cat: '',
@@ -78,104 +88,114 @@ const Menus = () => {
     it: ''
   }
 
-
   return (
-    <div className='main-menu'>
-      <div className='bg-wrapper'>
-        <div className='title-menu'>
-          {name.map((letter, index) => <div key={index} className='letter' style={{ transform: `translate(-50%,-50%) rotate(${index * (160 / (name.length - 1)) - 80}deg)` }}>{letter}</div>)}
-          <div className='logo' />
+    <div className='main-menu' ref={pageRef}>
+      <header className='menus-hero'>
+        <img className='menus-hero-bg' src={require('../images/home/home15.webp')} alt='' />
+        <div className='menus-hero-content'>
+          <p className='kicker'>Carta y menús</p>
+          <h1 className='heading'>Nuestra carta de <em>sushi</em>, cocina japonesa y china</h1>
+          <p className='lead'>{restaurantsTitle[language]}</p>
+          <nav className='menus-chips'>
+            {sectionLinks.map(({ id, name }) => (
+              <button key={id} type='button' onClick={() => scrollToSection(id)}>{name[language]}</button>
+            ))}
+          </nav>
         </div>
-        <div className='restaurant-title'>{restaurantsTitle[language]}</div>
-        <div className='menu-top'>
-          <div className='line' />
-          <div className='icon' />
-          <div className='line' />
-        </div>
-      </div>
-      <div className='menus-container'>
-        <div className='menus-section'>{gold(menusTitle[language])}</div>
-        <div className='wrapper'>
-          <Menu menu={day} />
-          <Menu menu={night} />
-          <Menu menu={pedidos} />
-          {/* <Menu menu={festive} /> */}
-        </div>
-      </div>
+      </header>
 
-      <div className='cartas'>
-        <div className='menu-top'>
-          <div className='line' />
-          <div className='name font1'>Asia Oriental Taste</div>
-          <div className='line' />
-        </div>
-        <div className='menus-section'>{gold(acompañamientosTitle[language])}</div>
-        <div className='wrapper'>
-          <div className='carta'>
-            <div className='carta-bg'>
-              <div className='carta-title'>{dulcesTitle[language]}</div>
-              <div className='carta-button'>
-                <a target='blank' >
-                  {dulcesButton[language]}
-                </a>
-              </div>
-              <div className='carta-image carta-dulces' />
-            </div>
-          </div>
-          <div className='carta'>
-            <div className='carta-bg'>
-              <div className='carta-title'>{vinosTitle[language]}</div>
-              <div className='carta-button'>
-                <a href='./pdfs/CartaVinos2024v2_compressed.pdf' target='blank' >
-                  {vinosButton[language]}
-                </a></div>
-              <div className='carta-image carta-vinos' />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Marquee words={menusWords} />
 
-      <div className='allYouCan'>
+      <section id='menus' className='menus-container'>
+        <div className='section-header' data-reveal='up'>
+          <p className='kicker'>Nuestros menús</p>
+          <h2 className='heading'>Elige tu <em>momento</em></h2>
+          <p className='lead'>A mediodía, por la noche o en casa: siempre hay una buena excusa para comer asiático.</p>
+        </div>
+        <div className='wrapper'>
+          {[day, night, pedidos].map((menu, index) => <Menu key={menu.pdf} menu={menu} index={index} />)}
+        </div>
+      </section>
+
+      <section id='todo' className='allYouCan'>
         <div className='container'>
-          <div className='left'>
-            <div className='name font1'>Asia Oriental Taste</div>
-            <div className='title'>{gold(allYouCanEat[language])}</div>
-            <div className='description font4'>{allYouCanEatDescription[language]}</div>
-          </div>
-          <div className='right' >
-            <Roulette />
-          </div>
-        </div>
-      </div>
-
-      <div className='takeaway'>
-        <div className='main-title'>{gold(takeAway[language])}</div>
-        <img alt='restaurant' />
-        <div className='promo'>{takeAwayDescription[language]}</div>
-        <div className='wrapper'>
-          <Menu menu={pedidos} />
-        </div>
-      </div>
-
-      <div className='meals'>
-        <div className='fan' />
-        <div className='main-title'>{gold(mealsTitle[language])}</div>
-        {meals.map((category =>
-          <Category key={category.name[language]} name={category.name[language]}>
-            {category.meals.map(meal => <Dish key={meal.name} dish={meal} />)}
-          </Category>))}
-        <div className='wrapper'>
-          <a href='./pdfs/CartaNoche2024_compressed.pdf' target='blank'>
-            <div className='menus'>
-              <div className='name'>Ver Todo</div>
-              <div className='arrow' />
+          <div className='left' data-reveal='left'>
+            <p className='kicker'>Asia Oriental Taste</p>
+            <h2 className='heading'>{allYouCanEat[language][0]} <em>{allYouCanEat[language][1]}</em></h2>
+            <p className='lead'>{allYouCanEatDescription[language]}</p>
+            <div className='cta-buttons'>
+              <a className='cta cta-red' href={reservationWhatsappUrl} target='_blank' rel='noreferrer'>Reservar mesa</a>
             </div>
-          </a>
+          </div>
+          <div className='mosaic' data-reveal='right'>
+            {[1, 2, 3, 4].map((number) => (
+              <img key={number} src={require(`../images/menus/allyoucaneat${number}.webp`)} alt='Platos del menú todo lo que puedas comer' loading='lazy' />
+            ))}
+          </div>
         </div>
-        <div className='fan2' />
-      </div>
+      </section>
 
+      <section id='platos' className='meals'>
+        <div className='section-header' data-reveal='up'>
+          <p className='kicker'>Algunos de nuestros platos</p>
+          <h2 className='heading'>Elige tu <em>antojo</em></h2>
+        </div>
+        <div className='meals-chips' data-reveal='up'>
+          {categoryNames.map((name) => (
+            <button key={name} type='button' className={name === categoryName ? 'is-selected' : undefined} onClick={() => setCategoryName(name)}>{name}</button>
+          ))}
+        </div>
+        <div key={categoryName} className='meals-grid'>
+          {visibleMeals.map((meal, index) => <Dish key={meal.photo} dish={meal} index={index} />)}
+        </div>
+        <div className='cta-buttons'>
+          <a className='cta cta-red' href='./pdfs/CartaNoche2024_compressed.pdf' target='_blank' rel='noreferrer'>Ver toda la carta</a>
+        </div>
+      </section>
 
+      <section id='llevar' className='takeaway'>
+        <div className='container'>
+          <img data-reveal='left' src={require('../images/menus/takeAway.webp')} alt='Sushi para llevar' loading='lazy' />
+          <div className='right' data-reveal='right'>
+            <p className='kicker'>Para llevar</p>
+            <h2 className='heading'>{takeAway[language][0]} <em>{takeAway[language][1]}</em></h2>
+            <p className='lead'>{takeAwayDescription[language]}</p>
+            <div className='cta-buttons'>
+              <Link className='cta cta-red' to='/pedidos'>Pedir online</Link>
+              <a className='cta cta-gold' href={pedidos.pdf} target='_blank' rel='noreferrer'>Carta para llevar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id='acompanar' className='cartas'>
+        <div className='section-header' data-reveal='up'>
+          <p className='kicker'>Para acompañar</p>
+          <h2 className='heading'>El broche <em>perfecto</em></h2>
+        </div>
+        <div className='wrapper'>
+          <div className='carta' data-reveal='up' style={revealDelay(0)}>
+            <div className='carta-image carta-dulces' />
+            <div className='carta-title'>{dulcesTitle[language]}</div>
+            <div className='carta-button'>
+              <a target='blank' >
+                {dulcesButton[language]}
+              </a>
+            </div>
+          </div>
+          <div className='carta' data-reveal='up' style={revealDelay(1)}>
+            <div className='carta-image carta-vinos' />
+            <div className='carta-title'>{vinosTitle[language]}</div>
+            <div className='carta-button'>
+              <a href='./pdfs/CartaVinos2024v2_compressed.pdf' target='blank' >
+                {vinosButton[language]}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FinalCall />
       <Footer />
     </div>
   )

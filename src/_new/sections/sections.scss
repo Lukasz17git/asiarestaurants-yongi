@@ -1,0 +1,293 @@
+// Compile with: npx --yes sass@1.77.8 --no-source-map src/_new/sections/sections.scss src/_new/sections/sections.css
+@import '../../css/theme';
+
+$easeOut: cubic-bezier(0.22, 1, 0.36, 1);
+
+@keyframes slide-loop {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/*
+ * Marquee
+ */
+
+.marquee {
+    position: relative;
+    z-index: 2;
+    width: 104%;
+    margin-left: -2%;
+    padding: 16px 0px;
+    overflow: hidden;
+    background: linear-gradient(90deg, $redDark, $red 30%, $red 70%, $redDark);
+    box-shadow: 0px 18px 40px -18px #000;
+    transform: rotate(-1.6deg);
+
+    &:hover .marquee-track {
+        animation-play-state: paused;
+    }
+
+    .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: slide-loop 38s linear infinite;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        padding-left: 40px;
+        color: #fff;
+        font-family: 'AsianHiro', serif;
+        font-size: clamp(22px, 3vw, 34px);
+        white-space: nowrap;
+
+        &::after {
+            content: '✦';
+            color: $lineColor2;
+            font-size: 0.55em;
+        }
+    }
+}
+
+/*
+ * Gallery
+ */
+
+.gallery {
+    padding: 110px 0px 100px;
+    overflow: hidden;
+
+    .gallery-row {
+        overflow: hidden;
+        padding: 10px 0px;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+
+        &:hover .gallery-track {
+            animation-play-state: paused;
+        }
+    }
+
+    .is-reverse .gallery-track {
+        animation-direction: reverse;
+    }
+
+    .gallery-track {
+        display: flex;
+        width: max-content;
+        animation: slide-loop 70s linear infinite;
+    }
+
+    img {
+        display: block;
+        width: clamp(220px, 26vw, 340px);
+        height: auto;
+        aspect-ratio: 3 / 2;
+        margin-right: 18px;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0px 10px 24px -12px #000;
+        filter: saturate(0.95) brightness(0.92);
+        transition: transform 0.5s $easeOut, filter 0.5s;
+
+        &:hover {
+            transform: scale(1.05) rotate(-1.2deg);
+            filter: saturate(1.15) brightness(1.05);
+        }
+    }
+}
+
+/*
+ * Menus teaser
+ */
+
+.menus-teaser {
+    position: relative;
+    padding: 110px 24px;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(168, 41, 46, 0.22), transparent 60%),
+        $backgroundColor3;
+
+    .menus-teaser-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 28px;
+        max-width: 860px;
+        margin: 0px auto 52px;
+    }
+
+    .menus-teaser-card {
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding: 40px 24px 34px;
+        border: 1px solid rgba(201, 171, 129, 0.22);
+        border-radius: 26px;
+        background: linear-gradient(160deg, #1f252b, #14181c);
+        cursor: pointer;
+        // Keeps the data-reveal transitions (reveal.scss), which this one would replace
+        transition: opacity 0.9s $easeOut var(--reveal-delay, 0s), transform 0.9s $easeOut var(--reveal-delay, 0s), translate 0.45s $easeOut, border-color 0.45s, box-shadow 0.45s;
+
+        // `translate`, as `transform` is the one data-reveal animates
+        &:hover {
+            translate: 0px -8px;
+            border-color: rgba(210, 56, 61, 0.7);
+            box-shadow: 0px 24px 50px -24px $redLight;
+
+            .menus-teaser-link {
+                color: #fff;
+                background-color: $red;
+            }
+        }
+    }
+
+    .menus-teaser-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 8px;
+        background-color: $textColor2;
+        -webkit-mask: center / contain no-repeat;
+        mask: center / contain no-repeat;
+
+        &.is-day {
+            -webkit-mask-image: url('../../images/iconAlmuerzo.svg');
+            mask-image: url('../../images/iconAlmuerzo.svg');
+        }
+
+        &.is-night {
+            -webkit-mask-image: url('../../images/iconCena.svg');
+            mask-image: url('../../images/iconCena.svg');
+        }
+    }
+
+    .menus-teaser-name {
+        color: $textColor2;
+        font-family: 'Italianno', serif;
+        font-size: 48px;
+        line-height: 1;
+    }
+
+    .menus-teaser-time {
+        color: $textColor3;
+        font-family: 'CondLight', sans-serif;
+        font-weight: 700;
+        letter-spacing: 3px;
+    }
+
+    .menus-teaser-price {
+        @include red();
+        padding: 6px 0px;
+        font-family: 'AsianHiro', serif;
+        font-size: 64px;
+        line-height: 1.1;
+    }
+
+    .menus-teaser-note {
+        color: $textColor4;
+        font-size: 14px;
+    }
+
+    .menus-teaser-link {
+        margin-top: 14px;
+        padding: 8px 22px;
+        border: 1px solid $red;
+        border-radius: 999px;
+        color: $redLight;
+        font-family: 'CondLight', sans-serif;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: color 0.3s, background-color 0.3s;
+    }
+}
+
+/*
+ * Final call
+ */
+
+.final-call {
+    position: relative;
+    padding: 140px 24px;
+    overflow: hidden;
+    isolation: isolate;
+    background: url('../../images/home/home18.webp') center / cover no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+            radial-gradient(circle at 50% 50%, rgba(110, 21, 25, 0.55), transparent 65%),
+            linear-gradient(to bottom, $backgroundColor2, rgba(18, 21, 24, 0.72) 30%, rgba(18, 21, 24, 0.72) 70%, $backgroundColor2);
+    }
+
+    .final-call-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        max-width: 760px;
+        margin: auto;
+    }
+
+    .heading {
+        font-size: clamp(46px, 8vw, 92px);
+    }
+
+    .lead {
+        color: #d6d6d6;
+    }
+
+    .final-call-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        color: $textColor3;
+        font-size: 15px;
+
+        a {
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: rgba(201, 171, 129, 0.5);
+
+            &:hover {
+                color: $textColor2;
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .final-call .final-call-links span {
+        display: none;
+    }
+
+    .final-call .final-call-links {
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee .marquee-track,
+    .gallery .gallery-track {
+        animation: none;
+    }
+
+    .gallery .gallery-row {
+        overflow-x: auto;
+    }
+}

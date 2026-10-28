@@ -12,6 +12,17 @@
     justify-content: center;
     color: $textColor1;
 
+    // Red line of the logo above the footer
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, $red 25%, $redLight 50%, $red 75%, transparent);
+    }
+
     img {
         width: 104px;
         content: url('../images/LogoRed.webp');

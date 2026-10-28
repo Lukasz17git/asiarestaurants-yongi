@@ -3,31 +3,30 @@
 /*grey*/
 /*brown-gold*/
 /*gold line*/
+/*red of the logo*/
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @font-face {
-  font-family: 'Afterglow';
+  font-family: "Afterglow";
   src: local("Afterglow"), url("../../public/Fonts/Afterglow.ttf") format("truetype");
   font-display: swap;
 }
-
 a {
   all: unset;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .App {
@@ -44,7 +43,7 @@ code {
 .font1 {
   padding: 12px;
   font-size: 40px;
-  font-family: 'Italianno';
+  font-family: "Italianno";
 }
 
 .font2 {
@@ -52,7 +51,7 @@ code {
   padding-bottom: 16px;
   font-size: 72px;
   line-height: 1em;
-  font-family: 'Italiana';
+  font-family: "Italiana";
 }
 
 .font3 {
@@ -63,4 +62,154 @@ code {
 .font4 {
   padding: 12px;
   font-size: 15px;
+}
+
+/*
+ * Shared by the pages: buttons, section titles and the red dot
+ */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.cta {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0px 30px;
+  border-radius: 999px;
+  font-family: "CondLight", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s, background-color 0.35s, color 0.35s;
+}
+.cta:hover {
+  transform: translateY(-3px);
+}
+.cta:active {
+  transform: translateY(0px) scale(0.97);
+}
+.cta:focus-visible {
+  outline: 2px solid #ead1af;
+  outline-offset: 3px;
+}
+
+.cta-red {
+  color: #fff;
+  background: linear-gradient(135deg, #d2383d, #a8292e);
+  box-shadow: 0px 12px 30px -12px #d2383d;
+}
+.cta-red::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cta-red:hover {
+  box-shadow: 0px 16px 40px -10px #d2383d;
+}
+.cta-red:hover::before {
+  transform: translateX(120%);
+}
+
+.cta-gold {
+  color: #c9ab81;
+  border: 1.5px solid #c9ab81;
+  background-color: rgba(18, 21, 24, 0.4);
+  backdrop-filter: blur(6px);
+}
+.cta-gold:hover {
+  color: #121518;
+  background-color: #c9ab81;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: #d2383d;
+  font-family: "CondLight", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.kicker::before, .kicker::after {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.7;
+}
+
+.heading {
+  color: #eee;
+  font-family: "AsianHiro", serif;
+  font-size: clamp(40px, 6vw, 70px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+.heading em {
+  background: linear-gradient(to bottom, #e0484d, #a8292e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: normal;
+}
+
+.lead {
+  max-width: 640px;
+  margin: 0px auto;
+  color: #b3b2b2;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 0px 24px;
+  margin-bottom: 48px;
+}
+
+.pulse-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d2383d;
+  animation: pulse-dot 1.8s infinite;
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(210, 56, 61, 0.7);
+  }
+  70% {
+    box-shadow: 0px 0px 0px 12px rgba(210, 56, 61, 0);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 0px rgba(210, 56, 61, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot {
+    animation: none;
+  }
 }

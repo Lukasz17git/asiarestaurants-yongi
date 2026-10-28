@@ -13,6 +13,12 @@ $lineColor3: #856B48;
 $lineColor4: #8F795C;
 $lineColor5: #99866a;
 
+/*red of the logo*/
+$red: #a8292e;
+$redLight: #d2383d;
+$redDark: #6e1519;
+$redGlow: rgba(210, 56, 61, 0.35);
+
 $lineColorHover: #fff;
 $black: #01090B;
 $underline: rgb(237, 167, 126);
@@ -21,6 +27,13 @@ $underline: rgb(237, 167, 126);
     background: radial-gradient(#b88746, #fdf5a6);
     background: -webkit-linear-gradient(top , #b88746, #fdf5a6);
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin red{
+    background: linear-gradient(to bottom, #e0484d, $red);
+    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

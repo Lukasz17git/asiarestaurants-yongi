@@ -3,6 +3,7 @@
 /*grey*/
 /*brown-gold*/
 /*gold line*/
+/*red of the logo*/
 .pedidos {
   padding-top: 68px;
   color: #eee;
@@ -22,7 +23,7 @@
 .pedidos-hero {
   padding: 40px 20px 28px;
   text-align: center;
-  background: radial-gradient(ellipse at top, rgba(201, 171, 129, 0.16), transparent 70%), #121518;
+  background: radial-gradient(ellipse at top, rgba(168, 41, 46, 0.3), transparent 70%), #121518;
 }
 .pedidos-hero h1 {
   background: radial-gradient(#b88746, #fdf5a6);

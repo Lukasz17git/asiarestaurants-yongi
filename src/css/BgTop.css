@@ -3,15 +3,14 @@
 /*grey*/
 /*brown-gold*/
 /*gold line*/
-.main-restaurant .bg-wrapper,
-.main-menu .bg-wrapper {
+/*red of the logo*/
+.main-restaurant .bg-wrapper {
   position: relative;
   z-index: 1;
+  padding-top: 40px;
 }
-
-.main-restaurant .bg-wrapper::before,
-.main-menu .bg-wrapper::before {
-  content: '';
+.main-restaurant .bg-wrapper::before {
+  content: "";
   position: absolute;
   width: 100%;
   max-width: 1122px;
@@ -19,85 +18,81 @@
   height: calc(100% - 34px);
   left: 50%;
   top: 0%;
-  -webkit-transform: translate(-50%, 0%);
-          transform: translate(-50%, 0%);
-  opacity: 0.7;
+  transform: translate(-50%, 0%);
+  opacity: 0.5;
   background-image: url("../images/restaurantBackground.svg");
-  background-size: calc(max(100%, 800px)) 100%;
+  background-size: max(100%, 800px) 100%;
   z-index: -1;
 }
-
-.main-restaurant .title-menu,
-.main-menu .title-menu {
+.main-restaurant .bg-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 270px;
+  left: 50%;
+  width: min(80vw, 460px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 32%, #d2383d, #a8292e 55%, #6e1519);
+  box-shadow: 0px 0px 120px 20px rgba(210, 56, 61, 0.35);
+  opacity: 0.22;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.main-restaurant .title-menu {
   position: relative;
   height: 460px;
   width: 100%;
   overflow: hidden;
 }
-
-.main-restaurant .title-menu .letter,
-.main-menu .title-menu .letter {
+.main-restaurant .title-menu .letter {
   position: absolute;
   height: 160px;
   top: 50%;
   left: 50%;
-  -webkit-transform-origin: bottom center;
-          transform-origin: bottom center;
+  transform-origin: bottom center;
   color: #eee;
   font-size: 40px;
-  font-family: 'Italiana';
+  font-family: "AsianHiro";
 }
-
-.main-restaurant .title-menu .logo,
-.main-menu .title-menu .logo {
+.main-restaurant .title-menu .logo {
   position: absolute;
   height: 190px;
   width: 180px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -11%);
-          transform: translate(-50%, -11%);
+  transform: translate(-50%, -11%);
   background-image: url("../images/LogoRedIcon.webp");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
-
-.main-restaurant .restaurant-title,
-.main-menu .restaurant-title {
+.main-restaurant .restaurant-title {
   padding: 0px 40px 20px;
   color: #c9ab81;
   font-size: 60px;
-  font-family: 'Italianno';
+  font-family: "Italianno";
   max-width: 800px;
   margin: auto;
 }
-
-.main-restaurant .menu-top,
-.main-menu .menu-top {
+.main-restaurant .menu-top {
   height: 100px;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 200px auto;
-      grid-template-columns: auto 200px auto;
+  grid-template-columns: auto 200px auto;
   max-width: 1200px;
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 40px 30px;
   margin: auto;
 }
-
-.main-restaurant .menu-top .line,
-.main-menu .menu-top .line {
-  height: 1px;
+.main-restaurant .menu-top .line {
+  height: 2px;
   width: 100%;
-  background-color: #c9ab81;
+  background: linear-gradient(90deg, transparent, #a8292e 40%, #c9ab81);
 }
-
-.main-restaurant .menu-top .icon,
-.main-menu .menu-top .icon {
+.main-restaurant .menu-top .line:last-child {
+  background: linear-gradient(90deg, #c9ab81, #a8292e 60%, transparent);
+}
+.main-restaurant .menu-top .icon {
   width: 54px;
   height: 54px;
   background-image: url("../images/LogoRedIcon.webp");

@@ -16,6 +16,18 @@
         top: 0px;
         background-color: $black;
         opacity: 0.55;
+        backdrop-filter: blur(10px);
+    }
+
+    // Red line of the logo under the bar
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, $red 25%, $redLight 50%, $red 75%, transparent);
     }
 
     .main-logo {
@@ -69,10 +81,36 @@
 
         .selected {
             .underline {
-                background-color: $underline  !important;
+                background-color: $redLight  !important;
 
                 &::after {
-                    background-color: $underline  !important;
+                    background-color: $redLight  !important;
+                }
+            }
+        }
+
+        // «Pedir online» is a red button
+        .link-order {
+            a {
+                display: block;
+                padding: 9px 18px;
+                border-radius: 999px;
+                color: #fff;
+                background: linear-gradient(135deg, $redLight, $red);
+                box-shadow: 0px 8px 20px -10px $redLight;
+                transition: box-shadow 0.3s, transform 0.3s;
+            }
+
+            .underline {
+                display: none;
+            }
+
+            &:hover {
+                color: #fff;
+
+                a {
+                    transform: translateY(-2px);
+                    box-shadow: 0px 12px 26px -10px $redLight;
                 }
             }
         }
@@ -101,14 +139,14 @@
             }
 
             &:hover {
-                color: $underline;
+                color: $redLight;
                 cursor: pointer;
 
                 .underline {
-                    background-color: $underline;
+                    background-color: $redLight;
 
                     &::after {
-                        background-color: $underline;
+                        background-color: $redLight;
                     }
 
                 }

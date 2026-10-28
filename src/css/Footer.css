@@ -3,72 +3,57 @@
 /*grey*/
 /*brown-gold*/
 /*gold line*/
+/*red of the logo*/
 .footer {
   position: relative;
   padding: 80px 30px 140px;
   background-color: #121518;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 104px minmax(334px, 800px) auto;
-      grid-template-columns: 104px minmax(334px, 800px) auto;
+  grid-template-columns: 104px minmax(334px, 800px) auto;
   gap: 4vw;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   color: #eee;
 }
-
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #a8292e 25%, #d2383d 50%, #a8292e 75%, transparent);
+}
 .footer img {
   width: 104px;
   content: url("../images/LogoRed.webp");
 }
-
 .footer .restaurant {
   text-align: left;
 }
-
 .footer .restaurant .name {
   font-size: 44px;
   padding-bottom: 0px;
 }
-
 .footer .buttons {
   width: 100%;
   height: 100%;
   text-align: left;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   max-height: 120px;
 }
-
 .footer .buttons .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   color: #ddd;
 }
-
 .footer .buttons .button:hover {
   cursor: pointer;
-  -webkit-filter: brightness(1.33);
-          filter: brightness(1.33);
+  filter: brightness(1.33);
   color: #fff;
 }
-
 .footer .buttons .instagram,
 .footer .buttons .facebook,
 .footer .buttons .twitter {
@@ -78,28 +63,23 @@
   background-repeat: no-repeat;
   margin-right: 8px;
 }
-
 .footer .buttons .instagram {
   background-image: url("../images/instagramIcon.svg");
   background-size: 30px 30px;
 }
-
 .footer .buttons .facebook {
   background-image: url("../images/facebookIcon.svg");
   background-size: 27px 27px;
 }
-
 .footer .buttons .twitter {
   background-image: url("../images/twitterIcon.svg");
   background-size: 31px 31px;
 }
-
 .footer .buttons .text {
   display: inline-block;
   font-size: 14px;
   font-weight: 600;
 }
-
 .footer .copy {
   position: absolute;
   width: 100%;
@@ -109,39 +89,27 @@
 
 @media (max-width: 650px) {
   .footer {
-    -ms-grid-columns: minmax(74px, 1fr) 1fr 1fr 1fr;
-        grid-template-columns: minmax(74px, 1fr) 1fr 1fr 1fr;
-    -ms-grid-rows: 1fr auto;
-        grid-template-rows: 1fr auto;
+    grid-template-columns: minmax(74px, 1fr) 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
   }
   .footer img {
     margin-left: 10px;
   }
   .footer .buttons {
     width: auto;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 3;
     grid-column: 2/5;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
     grid-row: 1/2;
     margin-left: auto;
     padding-right: 20px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     gap: 30px;
   }
   .footer .restaurant {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 4;
     grid-column: 1/5;
     text-align: center;
     margin-top: 30px;
   }
 }
-
 @media (max-width: 550px) {
   .footer {
     gap: 20px;
@@ -152,21 +120,14 @@
   }
   .footer .buttons {
     width: 100%;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     padding-right: 0px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     gap: 20px;
   }
   .footer .buttons .button {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     gap: 4px;
   }
   .footer .buttons .instagram,
@@ -184,11 +145,9 @@
     padding: 12px 6px;
   }
 }
-
 @media (max-width: 400px) {
   .footer {
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 6px !important;
     padding: 80px 20px 140px;
   }

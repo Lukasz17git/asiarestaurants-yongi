@@ -3,6 +3,32 @@
 // issue: GitHub issue number; no link/linkText on changes (the client asked for none in #3)
 const releaseNotes = [
     {
+        date: '2026-10-28',
+        issue: 14,
+        branch: 'diseno-14',
+        title: 'Nuevo diseño «lucas-2»: más rojo, más fotos y animaciones',
+        summary: 'Inicio y Menús rehechos con el rojo del logo, muchas más fotos, animaciones suaves y textos que abren el apetito; Restaurantes y Pedir online se adaptan al nuevo estilo.',
+        changes: [
+            { text: 'Se mantienen el fondo oscuro y el dorado, y se suma el rojo del logo en botones, títulos, líneas y detalles.' },
+            { text: 'Inicio empieza con una portada a pantalla completa: el nombre del restaurante aparece palabra a palabra sobre el sol rojo del logo, con dos platos flotando y los botones «Ver carta» y «Pedir online».' },
+            { text: 'Bajo la portada, un aviso con un punto rojo que late («Mesas limitadas el fin de semana: reserva la tuya») abre WhatsApp con el mensaje de reserva ya escrito.' },
+            { text: 'Una franja roja inclinada pasa los nombres de los platos (Sushi, Uramaki, Ramen, Gua Bao...) de lado a lado.' },
+            { text: '«Quiénes somos» tiene un collage de 3 fotos y cifras que cuentan solas al llegar a ellas: +200 platos, 4 restaurantes y desde 2006.' },
+            { text: 'Los platos más populares salen en tarjetas con foto grande, una etiqueta roja y un efecto al pasar el ratón.' },
+            { text: 'Una galería nueva, «Platos que entran por los ojos», pasa dos filas de fotos de platos en sentidos opuestos; se paran al pasar el ratón.' },
+            { text: 'Las 4 cocinas (japonesa, china, sushi y domicilio) son tarjetas con foto; su texto aparece al pasar el ratón y en el móvil se ve siempre.' },
+            { text: 'Inicio enseña también los menús de mediodía y noche con su horario y precio, la sección para pedir a domicilio y un cierre «Tu mesa te espera» para reservar por WhatsApp o llamar.' },
+            { text: 'Los textos son nuevos, más apetecibles, y hablan de sushi, cocina japonesa, comida china, restaurante asiático y Vilafranca del Penedès para salir en Google; también cambian el título y la descripción de la web en Google.' },
+            { text: 'Menús tiene una portada con foto y botones para saltar a cada parte: menús, «Todo lo que puedas comer», platos, para llevar y postres y vinos.' },
+            { text: 'Los menús son tarjetas con foto, horario, precio grande en rojo y el botón «Ver Carta».' },
+            { text: 'Los platos se pueden filtrar por tipo (Uramaki, Ramen, Gua Bao...) con unos botones; los platos aparecen con una pequeña animación.' },
+            { text: '«Todo lo que puedas comer» enseña 4 fotos a la vez y «Para llevar» tiene los botones «Pedir online» y «Carta para llevar».' },
+            { text: 'En Restaurantes se mantiene todo igual, con detalles en rojo, fotos que se acercan al pasar el ratón y apariciones suaves al bajar.' },
+            { text: 'En el menú de arriba, «Pedir online» es un botón rojo; el menú y el pie de página llevan una línea roja.' },
+            { text: 'Las animaciones se paran si el dispositivo tiene pedido reducir el movimiento.' },
+        ],
+    },
+    {
         date: '2026-10-24',
         branch: 'main',
         title: 'Imágenes de referencia para la IA',

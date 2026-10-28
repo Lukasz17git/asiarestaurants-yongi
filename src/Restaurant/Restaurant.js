@@ -30,13 +30,13 @@ const Restaurant = ({ data }) => {
 
     return (
         <div className='section'>
-            <div className='title'>{gold(restaurant[language] + ' ' + name)}</div>
-            <div className='description'>{description[language]}</div>
+            <div className='title' data-reveal='up'>{gold(restaurant[language] + ' ' + name)}</div>
+            <div className='description' data-reveal='up'>{description[language]}</div>
             <div className='section-container'>
-                <div className='wrapper1'>
+                <div className='wrapper1' data-reveal='left'>
                     <img alt='restaurant' src={images[image]} />
                 </div>
-                <div className='wrapper2'>
+                <div className='wrapper2' data-reveal='right'>
                     <div className='info'>
                         <div className={'country ' + country} />
                         <div className='wrapper'>
