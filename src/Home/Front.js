@@ -19,8 +19,8 @@ const Front = () => {
           Más de 200 platos de Asia para venir en pareja, con amigos o con toda la familia.
         </p>
         <div className='cta-buttons front-buttons'>
-          <Link className='cta cta-red' to='/menu'>Ver carta</Link>
-          <Link className='cta cta-gold' to='/pedidos'>Pedir online</Link>
+          <Link className='cta cta-gold' to='/menu'>Ver carta</Link>
+          <Link className='cta cta-red' to='/pedidos'>Pedir online</Link>
         </div>
         <a className='front-fomo' href={reservationWhatsappUrl} target='_blank' rel='noreferrer'>
           <span className='pulse-dot' />

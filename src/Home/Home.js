@@ -19,13 +19,13 @@ const Home = () => {
   return (
     <div className='home' ref={homeRef}>
       <Front />
+      <Section2 />
       <Marquee />
       <Section1 />
       <Section3 />
       <Gallery />
       <Section4 />
       <MenusTeaser />
-      <Section2 />
       <FinalCall />
       <Footer />
     </div>

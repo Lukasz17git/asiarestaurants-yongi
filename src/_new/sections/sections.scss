@@ -229,8 +229,8 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         inset: 0;
         z-index: -1;
         background:
-            radial-gradient(circle at 50% 50%, rgba(110, 21, 25, 0.55), transparent 65%),
-            linear-gradient(to bottom, $backgroundColor2, rgba(18, 21, 24, 0.72) 30%, rgba(18, 21, 24, 0.72) 70%, $backgroundColor2);
+            radial-gradient(circle at 50% 50%, rgba(110, 21, 25, 0.18), transparent 65%),
+            linear-gradient(to bottom, $backgroundColor2, rgba(18, 21, 24, 0.8) 30%, rgba(18, 21, 24, 0.8) 70%, $backgroundColor2);
     }
 
     .final-call-content {

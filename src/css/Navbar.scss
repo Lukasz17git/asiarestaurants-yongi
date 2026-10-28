@@ -79,13 +79,13 @@
         font-family: 'CondLight';
         letter-spacing: 3px;
 
+        // The lines only show under the page you are on
         .selected {
-            .underline {
-                background-color: $redLight  !important;
+            color: $lineColor2;
 
-                &::after {
-                    background-color: $redLight  !important;
-                }
+            .underline {
+                opacity: 1 !important;
+                transform: scaleX(1) !important;
             }
         }
 
@@ -126,6 +126,9 @@
                 height: 1px;
                 background-color: $lineColor2;
                 margin: auto;
+                opacity: 0;
+                transform: scaleX(0);
+                transition: opacity 0.3s, transform 0.3s;
 
                 &::after {
                     content: '';
@@ -139,16 +142,12 @@
             }
 
             &:hover {
-                color: $redLight;
+                color: $lineColor2;
                 cursor: pointer;
 
                 .underline {
-                    background-color: $redLight;
-
-                    &::after {
-                        background-color: $redLight;
-                    }
-
+                    opacity: 0.5;
+                    transform: scaleX(0.6);
                 }
             }
         }

@@ -11,12 +11,10 @@ import FinalCall from '../_new/sections/FinalCall'
 import { revealDelay, useReveal } from '../_new/reveal/useReveal'
 import { reservationWhatsappUrl } from '../_new/sections/reservation'
 
-const allCategoriesName = 'Todos'
+// The category with most dishes; each one fills two rows at most
+const defaultCategoryName = 'Uramaki'
 
-const getVisibleMeals = (categoryName, language) => {
-  if (categoryName === allCategoriesName) return meals.flatMap((category) => category.meals)
-  return meals.find((category) => category.name[language] === categoryName).meals
-}
+const getVisibleMeals = (categoryName, language) => meals.find((category) => category.name[language] === categoryName).meals
 
 // The page's own base href ('/') would turn '#menus' into the Home page, so the shortcuts scroll by hand
 const scrollToSection = (id) => document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
@@ -24,11 +22,10 @@ const scrollToSection = (id) => document.getElementById(id).scrollIntoView({ beh
 const Menus = () => {
   const language = 'es'
   const pageRef = useRef(null)
-  const [categoryName, setCategoryName] = useState(allCategoriesName)
+  const [categoryName, setCategoryName] = useState(defaultCategoryName)
   useReveal(pageRef)
 
   const visibleMeals = getVisibleMeals(categoryName, language)
-  const categoryNames = [allCategoriesName, ...meals.map((category) => category.name[language])]
   const { day, night, pedidos } = menus
 
   const restaurantsTitle = {
@@ -91,16 +88,22 @@ const Menus = () => {
   return (
     <div className='main-menu' ref={pageRef}>
       <header className='menus-hero'>
-        <img className='menus-hero-bg' src={require('../images/home/home15.webp')} alt='' />
+        <img className='menus-hero-bg' src={require('../images/home/home17.webp')} alt='' />
         <div className='menus-hero-content'>
           <p className='kicker'>Carta y menús</p>
           <h1 className='heading'>Nuestra carta de <em>sushi</em>, cocina japonesa y china</h1>
-          <p className='lead'>{restaurantsTitle[language]}</p>
-          <nav className='menus-chips'>
-            {sectionLinks.map(({ id, name }) => (
-              <button key={id} type='button' onClick={() => scrollToSection(id)}>{name[language]}</button>
-            ))}
-          </nav>
+          <div className='menus-shortcuts'>
+            <p className='menus-shortcuts-text'>{restaurantsTitle[language]}</p>
+            <nav className='menus-shortcuts-links'>
+              {sectionLinks.map(({ id, name }, index) => (
+                <button key={id} type='button' onClick={() => scrollToSection(id)}>
+                  <span className='menus-shortcut-number'>0{index + 1}</span>
+                  <span className='menus-shortcut-name'>{name[language]}</span>
+                  <span className='menus-shortcut-arrow'>↓</span>
+                </button>
+              ))}
+            </nav>
+          </div>
         </div>
       </header>
 
@@ -140,9 +143,12 @@ const Menus = () => {
           <p className='kicker'>Algunos de nuestros platos</p>
           <h2 className='heading'>Elige tu <em>antojo</em></h2>
         </div>
-        <div className='meals-chips' data-reveal='up'>
-          {categoryNames.map((name) => (
-            <button key={name} type='button' className={name === categoryName ? 'is-selected' : undefined} onClick={() => setCategoryName(name)}>{name}</button>
+        <div className='meals-tabs' data-reveal='up'>
+          {meals.map((category) => (
+            <button key={category.name[language]} type='button' className={category.name[language] === categoryName ? 'is-selected' : undefined} onClick={() => setCategoryName(category.name[language])}>
+              <img src={require(`../images/mealsNoBg/${category.meals[0].photo}.webp`)} alt='' loading='lazy' />
+              <span>{category.name[language]}</span>
+            </button>
           ))}
         </div>
         <div key={categoryName} className='meals-grid'>

@@ -4,6 +4,27 @@
 const releaseNotes = [
     {
         date: '2026-10-28',
+        issue: 15,
+        branch: 'diseno-14',
+        title: 'Menos rojo y más dorado en Inicio y Menús',
+        summary: 'El dorado y el negro sustituyen al rojo en muchos detalles de Inicio, Menús y el menú de arriba; la sección de pedir a domicilio sube justo debajo de la portada.',
+        changes: [
+            { text: 'El círculo de la portada de Inicio es ahora dorado y mucho más suave.' },
+            { text: 'En la portada, «Pedir online» es el botón rojo y «Ver carta» el dorado.' },
+            { text: 'Los textos pequeños sobre cada título («Quiénes somos», «Los más pedidos», «Carta y menús»...) son dorados en Inicio y Menús.' },
+            { text: 'En las tarjetas de «Los favoritos que todo el mundo repite», el número sale en rojo y la etiqueta es negra con texto blanco.' },
+            { text: 'En las tarjetas de «Un viaje por Asia en cada bocado», la línea sobre el título es dorada.' },
+            { text: '«¿Antojo ahora? Te lo llevamos» es ahora la primera sección, justo después de la portada.' },
+            { text: '«Tu mesa te espera» tiene mucho menos rojo de fondo.' },
+            { text: 'En el menú de arriba, las líneas solo aparecen bajo la página en la que estás, en dorado, y el nombre se ilumina; al pasar el ratón sale dorado en vez de rojo.' },
+            { text: 'Menús ya no tiene el tono rojizo: la portada lleva la foto del Golden Lobster Roll con hojas de oro, y los fondos y los precios de los menús pasan a dorado.' },
+            { text: 'El texto «Más de 200 platos...» y los botones para saltar a cada parte de Menús son ahora un panel con cada parte numerada (01 Menús, 02 Todo lo que puedas comer...) y una flecha.' },
+            { text: 'Al pasar el ratón por un plato o un menú, el borde y la luz salen dorados en vez de rojos.' },
+            { text: 'Los botones de tipo de plato son ahora pequeñas tarjetas como las de los platos, con la foto de un plato de ese tipo, en dos filas (en el móvil se deslizan de lado); se quita «Todos» y se empieza por Uramaki, así en el ordenador nunca salen más de dos filas de platos.' },
+        ],
+    },
+    {
+        date: '2026-10-28',
         issue: 14,
         branch: 'diseno-14',
         title: 'Nuevo diseño «lucas-2»: más rojo, más fotos y animaciones',

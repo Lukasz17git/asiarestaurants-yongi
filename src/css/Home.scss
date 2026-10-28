@@ -50,7 +50,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     animation: front-zoom 24s ease-in-out infinite alternate;
   }
 
-  // The red sun of the logo
+  // A soft gold sun behind the title
   .front-sun {
     position: absolute;
     top: 46%;
@@ -59,9 +59,8 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     width: min(70vw, 600px);
     aspect-ratio: 1;
     border-radius: 50%;
-    background: radial-gradient(circle at 38% 32%, $redLight, $red 55%, $redDark);
-    box-shadow: 0px 0px 140px 30px $redGlow;
-    opacity: 0.32;
+    background: radial-gradient(circle at 50% 45%, rgba(253, 245, 166, 0.55), rgba(201, 171, 129, 0.35) 45%, rgba(184, 135, 70, 0) 72%);
+    opacity: 0.4;
     transform: translate(-50%, -50%);
     animation: front-sun 9s ease-in-out infinite;
   }
@@ -391,25 +390,27 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
       left: 14px;
       z-index: 1;
       padding: 6px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 999px;
-      color: #fff;
+      color: #e6e6e6;
       font-family: 'CondLight', sans-serif;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      background-color: $red;
+      background-color: rgba(12, 14, 16, 0.85);
+      backdrop-filter: blur(6px);
     }
 
     .dish-number {
+      @include red();
       position: absolute;
       right: 16px;
       bottom: 6px;
       z-index: 1;
-      color: rgba(255, 255, 255, 0.85);
       font-family: 'AsianHiro', serif;
       font-size: 54px;
-      text-shadow: 0px 4px 14px rgba(0, 0, 0, 0.6);
+      filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.7));
     }
 
     .dish-title {
@@ -521,7 +522,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         height: 3px;
         margin-bottom: 14px;
         border-radius: 2px;
-        background-color: $redLight;
+        background: linear-gradient(90deg, #b88746, #fdf5a6);
         transition: width 0.5s $easeOut;
       }
     }

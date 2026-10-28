@@ -46,7 +46,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(circle at 50% 50%, rgba(110, 21, 25, 0.45), transparent 60%), linear-gradient(to bottom, rgba(18, 21, 24, 0.8), rgba(18, 21, 24, 0.7) 50%, #121518);
+  background: radial-gradient(ellipse at 50% 45%, rgba(18, 21, 24, 0.35), rgba(18, 21, 24, 0.75) 75%), linear-gradient(to bottom, rgba(18, 21, 24, 0.7), transparent 30%, transparent 65%, #121518);
 }
 .main-menu .menus-hero-bg {
   position: absolute;
@@ -55,6 +55,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 60%;
+  filter: saturate(1.15) contrast(1.05);
   animation: menus-hero-zoom 24s ease-in-out infinite alternate;
 }
 .main-menu .menus-hero-content {
@@ -81,47 +83,76 @@
 }
 .main-menu .menus-hero-content .heading {
   font-size: clamp(42px, 7vw, 84px);
+  text-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6);
 }
-.main-menu .menus-hero-content .lead {
+.main-menu .menus-shortcuts {
+  width: min(100%, 980px);
+  margin-top: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 171, 129, 0.3);
+  border-radius: 26px;
+  background-color: rgba(12, 14, 16, 0.62);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 30px 60px -30px #000;
+}
+.main-menu .menus-shortcuts-text {
+  padding: 20px 28px 18px;
+  border-bottom: 1px solid rgba(201, 171, 129, 0.2);
   color: #d2d2d2;
+  font-size: 16px;
+  line-height: 1.6;
 }
-.main-menu .menus-chips,
-.main-menu .meals-chips {
+.main-menu .menus-shortcuts-links {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.main-menu .menus-shortcuts-links button {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 18px 10px 16px;
+  border: none;
+  border-left: 1px solid rgba(201, 171, 129, 0.2);
+  color: #eee;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
-.main-menu .menus-chips button,
-.main-menu .meals-chips button {
-  padding: 10px 20px;
-  border: 1px solid rgba(201, 171, 129, 0.45);
-  border-radius: 999px;
-  color: #c9ab81;
+.main-menu .menus-shortcuts-links button:first-child {
+  border-left: none;
+}
+.main-menu .menus-shortcuts-links button:hover {
+  background-color: rgba(201, 171, 129, 0.1);
+}
+.main-menu .menus-shortcuts-links button:hover .menus-shortcut-arrow {
+  transform: translateY(4px);
+  opacity: 1;
+}
+.main-menu .menus-shortcuts-links button:focus-visible {
+  outline: 2px solid #ead1af;
+  outline-offset: -2px;
+}
+.main-menu .menus-shortcut-number {
+  background: radial-gradient(#b88746, #fdf5a6);
+  background: -webkit-linear-gradient(top, #b88746, #fdf5a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "AsianHiro", serif;
+  font-size: 30px;
+  line-height: 1;
+}
+.main-menu .menus-shortcut-name {
   font-family: "CondLight", sans-serif;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  background-color: rgba(18, 21, 24, 0.55);
-  backdrop-filter: blur(6px);
-  cursor: pointer;
-  transition: color 0.3s, background-color 0.3s, border-color 0.3s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  text-transform: uppercase;
 }
-.main-menu .menus-chips button:hover,
-.main-menu .meals-chips button:hover {
-  transform: translateY(-2px);
-  border-color: #d2383d;
-}
-.main-menu .menus-chips button:focus-visible,
-.main-menu .meals-chips button:focus-visible {
-  outline: 2px solid #ead1af;
-  outline-offset: 2px;
-}
-.main-menu .menus-chips .is-selected,
-.main-menu .meals-chips .is-selected {
-  color: #fff;
-  border-color: #a8292e;
-  background-color: #a8292e;
+.main-menu .menus-shortcut-arrow {
+  color: #c9ab81;
+  opacity: 0.6;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s;
 }
 .main-menu .menus-container {
   padding: 120px 24px 100px;
@@ -144,8 +175,8 @@
 }
 .main-menu .menu-card:hover {
   translate: 0px -8px;
-  border-color: rgba(210, 56, 61, 0.7);
-  box-shadow: 0px 26px 50px -26px #d2383d;
+  border-color: rgba(201, 171, 129, 0.75);
+  box-shadow: 0px 26px 50px -26px #c9ab81;
 }
 .main-menu .menu-card:hover .menu-photo img {
   transform: scale(1.08);
@@ -172,7 +203,8 @@
   font-family: "CondLight", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
-  background-color: rgba(168, 41, 46, 0.92);
+  background-color: rgba(12, 14, 16, 0.85);
+  backdrop-filter: blur(6px);
 }
 .main-menu .menu-body {
   display: flex;
@@ -190,9 +222,9 @@
   line-height: 1;
 }
 .main-menu .menu-price {
-  background: linear-gradient(to bottom, #e0484d, #a8292e);
+  background: radial-gradient(#b88746, #fdf5a6);
+  background: -webkit-linear-gradient(top, #b88746, #fdf5a6);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "AsianHiro", serif;
   font-size: 60px;
@@ -213,7 +245,7 @@
 }
 .main-menu .allYouCan {
   padding: 110px 30px;
-  background: radial-gradient(ellipse at 80% 50%, rgba(168, 41, 46, 0.2), transparent 60%), #191D22;
+  background: radial-gradient(ellipse at 80% 50%, rgba(201, 171, 129, 0.1), transparent 60%), #191D22;
 }
 .main-menu .allYouCan .container {
   display: grid;
@@ -257,13 +289,54 @@
 .main-menu .meals {
   padding: 120px 24px 100px;
 }
-.main-menu .meals .meals-chips {
-  max-width: 1000px;
+.main-menu .meals-tabs {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  max-width: 1200px;
   margin: -12px auto 44px;
 }
-.main-menu .meals .meals-chips button {
-  padding: 8px 16px;
+.main-menu .meals-tabs button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px 12px;
+  border: 1px solid rgba(201, 171, 129, 0.16);
+  border-radius: 18px;
+  color: #eee;
+  font-family: "CondLight", sans-serif;
   font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: radial-gradient(circle at 50% 40%, #262d34, #171b1f 70%);
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.main-menu .meals-tabs button img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.6));
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.main-menu .meals-tabs button:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201, 171, 129, 0.6);
+}
+.main-menu .meals-tabs button:hover img {
+  transform: scale(1.1) rotate(-6deg);
+}
+.main-menu .meals-tabs button:focus-visible {
+  outline: 2px solid #ead1af;
+  outline-offset: 2px;
+}
+.main-menu .meals-tabs .is-selected {
+  color: #ead1af;
+  border-color: #c9ab81;
+  background: radial-gradient(circle at 50% 40%, rgba(201, 171, 129, 0.22), #171b1f 75%);
+  box-shadow: 0px 14px 30px -18px #c9ab81;
 }
 .main-menu .meals-grid {
   display: grid;
@@ -308,8 +381,8 @@
   text-transform: uppercase;
 }
 .main-menu .dish-container:hover .dish-bg {
-  border-color: rgba(210, 56, 61, 0.7);
-  box-shadow: 0px 20px 40px -24px #d2383d;
+  border-color: rgba(201, 171, 129, 0.75);
+  box-shadow: 0px 20px 40px -24px #c9ab81;
 }
 .main-menu .dish-container:hover .photo img {
   transform: scale(1.12) rotate(-6deg);
@@ -363,7 +436,7 @@
   padding: 34px 24px 32px;
   border: 1px solid rgba(201, 171, 129, 0.2);
   border-radius: 26px;
-  background: radial-gradient(circle at 50% 35%, rgba(168, 41, 46, 0.25), transparent 60%), #171b1f;
+  background: radial-gradient(circle at 50% 35%, rgba(201, 171, 129, 0.14), transparent 60%), #171b1f;
 }
 .main-menu .cartas .carta:hover .carta-image {
   transform: translateY(-10px) rotate(-4deg) scale(1.05);
@@ -458,22 +531,45 @@
     max-width: 600px;
     margin: auto;
   }
+  .main-menu .meals-tabs {
+    display: flex;
+    margin: -12px -24px 36px;
+    padding: 4px 24px 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .main-menu .meals-tabs button {
+    flex-shrink: 0;
+    width: 112px;
+  }
 }
 @media (max-width: 640px) {
   .main-menu .menus-hero {
     min-height: 0;
     padding: 120px 18px 80px;
   }
-  .main-menu .meals .meals-chips {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    margin: -12px -24px 36px;
-    padding: 4px 24px;
-    overflow-x: auto;
-    scrollbar-width: none;
+  .main-menu .menus-shortcuts-text {
+    padding: 16px 18px 14px;
+    font-size: 15px;
   }
-  .main-menu .meals .meals-chips button {
-    flex-shrink: 0;
+  .main-menu .menus-shortcuts-links {
+    grid-template-columns: none;
+  }
+  .main-menu .menus-shortcuts-links button {
+    flex-direction: row;
+    gap: 14px;
+    padding: 14px 20px;
+    border-left: none;
+    border-top: 1px solid rgba(201, 171, 129, 0.2);
+  }
+  .main-menu .menus-shortcuts-links button:first-child {
+    border-top: none;
+  }
+  .main-menu .menus-shortcut-number {
+    font-size: 24px;
+  }
+  .main-menu .menus-shortcut-arrow {
+    margin-left: auto;
   }
   .main-menu .meals-grid {
     grid-template-columns: repeat(2, 1fr);
