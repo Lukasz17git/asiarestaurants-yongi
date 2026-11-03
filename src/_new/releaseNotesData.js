@@ -23,6 +23,7 @@ const releaseNotes = [
             { text: 'Carta: las pestañas de los platos llevan su nombre en japonés como en «Pedir online», «Tu ramen, donde quieras» pasa a fondo rojo con 持ち帰り («para llevar») escrito a pincel y los platos ya no tienen el botón «Pedir para llevar» debajo.' },
             { text: 'Carta: en «Elige tu momento» el precio pasa a un sello rojo sobre la foto de cada menú, y «Para llevar» lleva 持ち帰り.' },
             { text: 'Carta: «El broche perfecto» pasa a fondo de papel, con los postres (甘味) y las bebidas (飲物) en dos columnas con sus precios.' },
+            { text: 'Nueva página «Reservar» en el menú de arriba, y «Restaurante» pasa a «Restaurantes». En «Reservar», un formulario sobre cristal oscuro donde se elige cuántos sois (de 1 a 6 o más de 6), el día (hoy y los 5 siguientes, o otro), la hora (cada media hora del horario; las de hoy que ya han pasado no se pueden elegir), nombre y teléfono, y la reserva se envía escrita por WhatsApp. Al lado, una foto de IOYI, el horario y el teléfono para grupos grandes o reservas para hoy; en el móvil la foto y el horario van primero.' },
             { text: 'Revisados los 44 platos con la carta de IOYI en Glovo: nombres, precios y fotos coinciden; el karaage y el Ebi no Kumo completan su descripción.' },
             { text: 'Logo, icono de la pestaña y pie de página de IOYI.' },
         ],

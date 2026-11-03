@@ -1,0 +1,422 @@
+// Compile with: npx --yes sass@1.77.8 --no-source-map src/_new/reservar/reservar.scss src/_new/reservar/reservar.css
+@import '../../css/theme';
+
+$reservarLine: rgba(227, 163, 63, 0.22);
+$whatsappIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1a15 15 0 0 1-1.5-.6 12 12 0 0 1-4.6-4.1c-.4-.5-1-1.5-1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.1z'/%3E%3C/svg%3E");
+
+// The page, under the 68px navbar
+.reservar {
+    position: relative;
+    padding: 150px 24px 120px;
+    overflow: hidden;
+    isolation: isolate;
+    background: url('../images/ioyi/place/shop-night.webp') center / cover no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+            radial-gradient(circle at 50% 50%, rgba(110, 21, 25, 0.18), transparent 65%),
+            linear-gradient(to bottom, $backgroundColor2, rgba(20, 18, 16, 0.8) 30%, rgba(20, 18, 16, 0.8) 70%, $backgroundColor2);
+    }
+
+    .reservar-head {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .heading {
+        font-size: clamp(46px, 8vw, 92px);
+    }
+
+    // Smoked glass over the photo: questions on the left, photo, hours and button on the right
+    .reservar-sheet {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: 'form info' 'form send';
+        max-width: 1140px;
+        margin: auto;
+        overflow: hidden;
+        border: 1px solid rgba(227, 163, 63, 0.3);
+        border-radius: 28px;
+        color: $textColor1;
+        font-family: $fontBody;
+        text-align: left;
+        background: rgba(20, 17, 15, 0.62);
+        box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(16px) saturate(140%);
+        -webkit-backdrop-filter: blur(16px) saturate(140%);
+    }
+
+    .reservar-form {
+        grid-area: form;
+        padding: 20px 40px 18px;
+    }
+
+    .reservar-info,
+    .reservar-send {
+        border-left: 1.5px dashed $reservarLine;
+        background: rgba(0, 0, 0, 0.22);
+    }
+
+    .reservar-info {
+        grid-area: info;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 26px;
+        padding: 40px 36px 26px;
+    }
+
+    .reservar-send {
+        grid-area: send;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding: 24px 36px 40px;
+        border-top: 1px dashed $reservarLine;
+
+        .cta {
+            gap: 10px;
+            width: 100%;
+            padding: 0 16px;
+            border: none;
+        }
+    }
+
+    .reservar-group {
+        padding: 22px 0;
+        border-top: 1px dashed $reservarLine;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    .reservar-label {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin: 0 0 12px;
+        font-family: $fontDisplay;
+        font-size: 20px;
+        font-weight: 700;
+
+        i {
+            color: $redLight;
+            font-family: $fontBrush;
+            font-style: normal;
+            font-size: 16px;
+        }
+    }
+
+    .reservar-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .reservar-chip,
+    .reservar-day {
+        border: 1.5px solid rgba(242, 234, 220, 0.2);
+        color: $textColor1;
+        font-family: $fontBody;
+        background: rgba(255, 255, 255, 0.05);
+        cursor: pointer;
+        transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+
+        &:hover:not(:disabled) {
+            border-color: rgba(242, 234, 220, 0.5);
+        }
+
+        &.is-on {
+            border-color: $red;
+            color: #fff;
+            background: $red;
+            box-shadow: 0 8px 18px -8px $red;
+        }
+
+        &:disabled {
+            opacity: 0.3;
+            text-decoration: line-through;
+            cursor: not-allowed;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $amberLight;
+            outline-offset: 2px;
+        }
+    }
+
+    .reservar-chip {
+        min-width: 46px;
+        padding: 9px 14px;
+        border-radius: 999px;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .reservar-day {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        min-width: 58px;
+        padding: 8px 10px;
+        border-radius: 14px;
+
+        small {
+            color: $textColor3;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        b {
+            font-family: $fontDisplay;
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        &.is-on small {
+            color: #ffd9d9;
+        }
+    }
+
+    .reservar-other-day {
+        border-style: dashed;
+    }
+
+    .reservar-month {
+        margin: -4px 0 10px;
+        color: $amberLight;
+        font-family: $fontBrush;
+        font-size: 17px;
+    }
+
+    .reservar-slots {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 10px;
+
+        > span {
+            flex-shrink: 0;
+            width: 74px;
+            color: $textColor3;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+    }
+
+    .reservar-fields {
+        display: flex;
+        gap: 14px;
+    }
+
+    .reservar-field {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 6px;
+        min-width: 0;
+
+        span {
+            color: $textColor3;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        small {
+            color: #ff9a9a;
+            font-size: 13px;
+        }
+
+        &.invalid input {
+            border-color: $redLight;
+        }
+    }
+
+    .reservar-field input,
+    .reservar-date {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 12px 14px;
+        border: 1.5px solid rgba(242, 234, 220, 0.2);
+        border-radius: 12px;
+        color: $textColor1;
+        font-family: $fontBody;
+        font-size: 16px;
+        background: rgba(0, 0, 0, 0.35);
+        color-scheme: dark;
+
+        &:focus {
+            border-color: $amberLight;
+            outline: none;
+        }
+    }
+
+    .reservar-date {
+        width: auto;
+        margin-top: 12px;
+    }
+
+    .reservar-photo {
+        margin: 0;
+
+        img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.7);
+        }
+
+        figcaption {
+            margin-top: 10px;
+            color: $textColor3;
+            font-family: $fontBrush;
+            font-size: 16px;
+        }
+    }
+
+    .reservar-mini {
+        display: block;
+        margin-bottom: 10px;
+        color: $amberLight;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .reservar-hours p {
+        margin: 0 0 6px;
+        font-family: $fontDisplay;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .reservar-hours-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 9px 0;
+        border-bottom: 1px dashed $reservarLine;
+        font-size: 16px;
+
+        span {
+            color: $textColor3;
+        }
+
+        b {
+            font-family: $fontDisplay;
+            font-size: 18px;
+        }
+    }
+
+    .reservar-whatsapp-icon {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        -webkit-mask: $whatsappIcon center / contain no-repeat;
+        mask: $whatsappIcon center / contain no-repeat;
+        background-color: currentColor;
+    }
+
+    .reservar-warning {
+        margin: 0;
+        color: #ff9a9a;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .reservar-note {
+        margin: 0;
+        color: $textColor3;
+        font-size: 13.5px;
+        line-height: 1.6;
+
+        a {
+            color: $amberLight;
+            font-weight: 700;
+        }
+    }
+}
+
+// Phone and tablet: photo and hours first, then the questions and the button
+@media (max-width: 960px) {
+    .reservar .reservar-sheet {
+        grid-template-columns: none;
+        grid-template-rows: none;
+        grid-template-areas: 'info' 'form' 'send';
+    }
+
+    .reservar .reservar-info,
+    .reservar .reservar-send {
+        border-left: none;
+    }
+
+    .reservar .reservar-info {
+        border-bottom: 1.5px dashed $reservarLine;
+    }
+
+    .reservar .reservar-photo img {
+        aspect-ratio: 16 / 7;
+    }
+}
+
+@media (max-width: 560px) {
+    .reservar {
+        padding: 120px 16px 90px;
+
+        .reservar-sheet {
+            border-radius: 22px;
+        }
+
+        .reservar-form {
+            padding: 8px 20px;
+        }
+
+        .reservar-info {
+            padding: 24px 20px 20px;
+        }
+
+        .reservar-send {
+            padding: 22px 20px 28px;
+        }
+
+        .reservar-photo img {
+            aspect-ratio: 16 / 10;
+        }
+
+        .reservar-slots {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .reservar-fields {
+            flex-direction: column;
+        }
+
+        .reservar-slots .reservar-row {
+            width: 100%;
+        }
+
+        .reservar-day,
+        .reservar-slots .reservar-chip {
+            min-width: 0;
+            flex: 0 0 calc(25% - 6px);
+            box-sizing: border-box;
+        }
+    }
+}
+

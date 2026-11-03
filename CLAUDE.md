@@ -20,7 +20,10 @@ Lasting wishes from the client; follow them in every change and add new ones her
   pages and texts stay in their files. Only what a tool reads from a fixed place stays outside: `api/ai-editor.js`
   and `middleware.js` (Vercel), `.github/` (GitHub), `.claude/` and this file (Claude), `vercel.json`, `package.json` and `.gitignore`
 - Pages (`src/App.js`): `/` Home, `/restaurant` Restaurants, `/menu` Menus, `/qr` and `/qr-new` QR menu pages,
-  `/pedidos` «Pedir online»
+  `/pedidos` «Pedir online», `/reservar` «Reservar»
+- «Reservar» (`src/_new/reservar/`): a booking form (people, the next 6 days from the visitor's clock or another day,
+  a time from IOYI's hours, name and phone) that opens WhatsApp with the reservation written (`createReservationUrl`
+  in `src/_new/sections/reservation.js`)
 - «Pedir online» (`src/_new/pedidos/`): the takeaway dishes from `takeaway-menu.json` (`takeawayMenu.js`), a cart kept in
   localStorage and a button that opens WhatsApp (`34644645938`) with the order written (`whatsappOrder.js`). Delivery
   fee and minimum order by postal code are in `deliveryRules.js`
@@ -40,7 +43,7 @@ Lasting wishes from the client; follow them in every change and add new ones her
   - `src/_new/releaseNotesData.js`: the changes listed in «Editar con IA» -> «Ver cambios», newest entry first (one entry
     per change request, in Spanish for the client); each shows only on its `branch`
 - Sections shared by Home and Menus (`src/_new/sections/`): the red `Marquee`, the photo `Gallery`, `MenusTeaser`,
-  `FinalCall` and `reservation.js` (the WhatsApp booking link). Scroll animations (`src/_new/reveal/`): `useReveal(pageRef)`
+  `FinalCall` and `reservation.js` (the WhatsApp booking link, and the message and time slots of `/reservar`). Scroll animations (`src/_new/reveal/`): `useReveal(pageRef)`
   fades in every `data-reveal='up|left|right|zoom'` of the page when it comes into view; `CountUp` counts a number up.
   Shared buttons and titles (`cta cta-red`, `cta cta-gold`, `kicker`, `heading` with `<em>` in red, `lead`) are in `App.scss`
 - "Editar con IA" is the floating button at the bottom right: `src/_new/ai-web-editor/`, a self-contained module mounted once

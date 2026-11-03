@@ -15,6 +15,7 @@ import AiWebEditor, { historyBasename } from './_new/ai-web-editor'
 import releaseNotes from './_new/releaseNotesData'
 
 const Pedidos = lazy(() => import('./_new/pedidos/Pedidos'))
+const Reservar = lazy(() => import('./_new/reservar/Reservar'))
 
 function App() {
   console.log('Made by Lukasz Maraj')
@@ -27,6 +28,7 @@ function App() {
           <Route exact path='/restaurant' element={<><Navbar /><Restaurant /></>} />
           <Route exact path='/menu' element={<><Navbar /><Menus /></>} />
           <Route exact path='/pedidos' element={<><Navbar /><Suspense fallback={null}><Pedidos /></Suspense></>} />
+          <Route exact path='/reservar' element={<><Navbar /><Suspense fallback={null}><Reservar /></Suspense></>} />
           <Route exact path='/qr' element={<><Qr /></>} />
           <Route exact path='/qr-new' element={<><QrNew /></>} />
           <Route path="*" element={<Navigate to="/" replace />} />

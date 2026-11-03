@@ -9,7 +9,8 @@ const Navbar = () => {
 
     const homeName = { es: 'HOME', cat: 'HOME' }
     const menuName = { es: 'CARTA', cat: 'CARTA' }
-    const restaurantsName = { es: 'RESTAURANTE', cat: 'RESTAURANT' }
+    const restaurantsName = { es: 'RESTAURANTES', cat: 'RESTAURANTS' }
+    const reservarName = { es: 'RESERVAR', cat: 'RESERVAR' }
     const pedidosName = { es: 'PEDIR ONLINE', cat: 'DEMANAR ONLINE' }
 
     const [menu, setMenu] = useState(false)
@@ -31,6 +32,12 @@ const Navbar = () => {
                 <div className={path === '/menu' ? 'link selected' : 'link'} onClick={hideMenu}>
                     <Link to='/menu'>
                         {menuName[language]}
+                        <div className='underline' />
+                    </Link>
+                </div>
+                <div className={path === '/reservar' ? 'link selected' : 'link'} onClick={hideMenu}>
+                    <Link to='/reservar'>
+                        {reservarName[language]}
                         <div className='underline' />
                     </Link>
                 </div>

@@ -1,0 +1,363 @@
+/*sumi: the dark of the noodle bar*/
+/*sumi grey, for cards*/
+/*cream*/
+/*amber, the lantern light*/
+/*grey*/
+/*dark amber*/
+/*amber line*/
+/*red of the hanko seal*/
+/*washi paper, where the dish photos (white background) sit*/
+.reservar {
+  position: relative;
+  padding: 150px 24px 120px;
+  overflow: hidden;
+  isolation: isolate;
+  background: url("../images/ioyi/place/shop-night.webp") center/cover no-repeat;
+}
+.reservar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, rgba(110, 21, 25, 0.18), transparent 65%), linear-gradient(to bottom, #141210, rgba(20, 18, 16, 0.8) 30%, rgba(20, 18, 16, 0.8) 70%, #141210);
+}
+.reservar .reservar-head {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.reservar .heading {
+  font-size: clamp(46px, 8vw, 92px);
+}
+.reservar .reservar-sheet {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "form info" "form send";
+  max-width: 1140px;
+  margin: auto;
+  overflow: hidden;
+  border: 1px solid rgba(227, 163, 63, 0.3);
+  border-radius: 28px;
+  color: #f2eadc;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  text-align: left;
+  background: rgba(20, 17, 15, 0.62);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+.reservar .reservar-form {
+  grid-area: form;
+  padding: 20px 40px 18px;
+}
+.reservar .reservar-info,
+.reservar .reservar-send {
+  border-left: 1.5px dashed rgba(227, 163, 63, 0.22);
+  background: rgba(0, 0, 0, 0.22);
+}
+.reservar .reservar-info {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 40px 36px 26px;
+}
+.reservar .reservar-send {
+  grid-area: send;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 36px 40px;
+  border-top: 1px dashed rgba(227, 163, 63, 0.22);
+}
+.reservar .reservar-send .cta {
+  gap: 10px;
+  width: 100%;
+  padding: 0 16px;
+  border: none;
+}
+.reservar .reservar-group {
+  padding: 22px 0;
+  border-top: 1px dashed rgba(227, 163, 63, 0.22);
+}
+.reservar .reservar-group:first-child {
+  border-top: none;
+}
+.reservar .reservar-label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.reservar .reservar-label i {
+  color: #e0393f;
+  font-family: "Yuji Syuku", serif;
+  font-style: normal;
+  font-size: 16px;
+}
+.reservar .reservar-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.reservar .reservar-chip,
+.reservar .reservar-day {
+  border: 1.5px solid rgba(242, 234, 220, 0.2);
+  color: #f2eadc;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+.reservar .reservar-chip:hover:not(:disabled),
+.reservar .reservar-day:hover:not(:disabled) {
+  border-color: rgba(242, 234, 220, 0.5);
+}
+.reservar .reservar-chip.is-on,
+.reservar .reservar-day.is-on {
+  border-color: #c8242b;
+  color: #fff;
+  background: #c8242b;
+  box-shadow: 0 8px 18px -8px #c8242b;
+}
+.reservar .reservar-chip:disabled,
+.reservar .reservar-day:disabled {
+  opacity: 0.3;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+.reservar .reservar-chip:focus-visible,
+.reservar .reservar-day:focus-visible {
+  outline: 2px solid #f2c477;
+  outline-offset: 2px;
+}
+.reservar .reservar-chip {
+  min-width: 46px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.reservar .reservar-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 58px;
+  padding: 8px 10px;
+  border-radius: 14px;
+}
+.reservar .reservar-day small {
+  color: #b2a998;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.reservar .reservar-day b {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.reservar .reservar-day.is-on small {
+  color: #ffd9d9;
+}
+.reservar .reservar-other-day {
+  border-style: dashed;
+}
+.reservar .reservar-month {
+  margin: -4px 0 10px;
+  color: #f2c477;
+  font-family: "Yuji Syuku", serif;
+  font-size: 17px;
+}
+.reservar .reservar-slots {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.reservar .reservar-slots > span {
+  flex-shrink: 0;
+  width: 74px;
+  color: #b2a998;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.reservar .reservar-fields {
+  display: flex;
+  gap: 14px;
+}
+.reservar .reservar-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 6px;
+  min-width: 0;
+}
+.reservar .reservar-field span {
+  color: #b2a998;
+  font-size: 13px;
+  font-weight: 700;
+}
+.reservar .reservar-field small {
+  color: #ff9a9a;
+  font-size: 13px;
+}
+.reservar .reservar-field.invalid input {
+  border-color: #e0393f;
+}
+.reservar .reservar-field input,
+.reservar .reservar-date {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid rgba(242, 234, 220, 0.2);
+  border-radius: 12px;
+  color: #f2eadc;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+.reservar .reservar-field input:focus,
+.reservar .reservar-date:focus {
+  border-color: #f2c477;
+  outline: none;
+}
+.reservar .reservar-date {
+  width: auto;
+  margin-top: 12px;
+}
+.reservar .reservar-photo {
+  margin: 0;
+}
+.reservar .reservar-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.7);
+}
+.reservar .reservar-photo figcaption {
+  margin-top: 10px;
+  color: #b2a998;
+  font-family: "Yuji Syuku", serif;
+  font-size: 16px;
+}
+.reservar .reservar-mini {
+  display: block;
+  margin-bottom: 10px;
+  color: #f2c477;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.reservar .reservar-hours p {
+  margin: 0 0 6px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.reservar .reservar-hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px dashed rgba(227, 163, 63, 0.22);
+  font-size: 16px;
+}
+.reservar .reservar-hours-row span {
+  color: #b2a998;
+}
+.reservar .reservar-hours-row b {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 18px;
+}
+.reservar .reservar-whatsapp-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1a15 15 0 0 1-1.5-.6 12 12 0 0 1-4.6-4.1c-.4-.5-1-1.5-1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.1z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1a15 15 0 0 1-1.5-.6 12 12 0 0 1-4.6-4.1c-.4-.5-1-1.5-1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.1z'/%3E%3C/svg%3E") center/contain no-repeat;
+  background-color: currentColor;
+}
+.reservar .reservar-warning {
+  margin: 0;
+  color: #ff9a9a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.reservar .reservar-note {
+  margin: 0;
+  color: #b2a998;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.reservar .reservar-note a {
+  color: #f2c477;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  .reservar .reservar-sheet {
+    grid-template-columns: none;
+    grid-template-rows: none;
+    grid-template-areas: "info" "form" "send";
+  }
+  .reservar .reservar-info,
+  .reservar .reservar-send {
+    border-left: none;
+  }
+  .reservar .reservar-info {
+    border-bottom: 1.5px dashed rgba(227, 163, 63, 0.22);
+  }
+  .reservar .reservar-photo img {
+    aspect-ratio: 16/7;
+  }
+}
+@media (max-width: 560px) {
+  .reservar {
+    padding: 120px 16px 90px;
+  }
+  .reservar .reservar-sheet {
+    border-radius: 22px;
+  }
+  .reservar .reservar-form {
+    padding: 8px 20px;
+  }
+  .reservar .reservar-info {
+    padding: 24px 20px 20px;
+  }
+  .reservar .reservar-send {
+    padding: 22px 20px 28px;
+  }
+  .reservar .reservar-photo img {
+    aspect-ratio: 16/10;
+  }
+  .reservar .reservar-slots {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .reservar .reservar-fields {
+    flex-direction: column;
+  }
+  .reservar .reservar-slots .reservar-row {
+    width: 100%;
+  }
+  .reservar .reservar-day,
+  .reservar .reservar-slots .reservar-chip {
+    min-width: 0;
+    flex: 0 0 calc(25% - 6px);
+    box-sizing: border-box;
+  }
+}

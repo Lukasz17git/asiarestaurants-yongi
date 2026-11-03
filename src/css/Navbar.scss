@@ -152,7 +152,8 @@
     }
 }
 
-@media (max-width: 700px) {
+// The 5 links need about 920px next to the logo
+@media (max-width: 940px) {
     .navbar {
         .menu-icon {
             visibility: visible;
