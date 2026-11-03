@@ -45,18 +45,15 @@ const Pedidos = () => {
         <>
             <div className='pedidos'>
                 <header className='pedidos-hero'>
+                    <span className='pedidos-hero-kanji' aria-hidden='true'>持ち帰り</span>
                     <p className='pedidos-kicker'>IOYI Ramen · Vilafranca del Penedès</p>
-                    <h1>Ramen para llevar</h1>
+                    <h1>Ramen para <em>llevar</em></h1>
                     <p className='pedidos-intro'>Elige tus ramen, donburis y entrantes y envíanos el pedido por WhatsApp. Lo preparamos al momento para que lo recojas o te lo llevemos.</p>
                     <ol className='pedidos-steps'>
-                        <li><span>1</span>Elige tus platos</li>
-                        <li><span>2</span>Pon tus datos</li>
-                        <li><span>3</span>Envíalo por WhatsApp</li>
+                        <li><span>一</span>Elige tus platos</li>
+                        <li><span>二</span>Pon tus datos</li>
+                        <li><span>三</span>Envíalo por WhatsApp</li>
                     </ol>
-                    <p className='pedidos-perks'>
-                        <span>Recogida en Carrer de la Indústria, 7</span>
-                        <span>Envío a domicilio: te confirmamos el precio por WhatsApp</span>
-                    </p>
                 </header>
 
                 <div className='pedidos-toolbar' ref={toolbarRef}>
@@ -66,6 +63,7 @@ const Pedidos = () => {
                     <nav className='pedidos-chips' ref={chipsRef} aria-label='Secciones de la carta'>
                         {sections.map((section) => (
                             <button type='button' key={section.id} data-section={section.id} className={section.id === activeId ? 'selected' : ''} onClick={() => scrollToSection(section.id, toolbarRef)}>
+                                {section.kanji && <span className='pedidos-chip-kanji' aria-hidden='true'>{section.kanji}</span>}
                                 {section.name}
                             </button>
                         ))}
@@ -79,10 +77,12 @@ const Pedidos = () => {
                             <section key={section.id} id={`seccion-${section.id}`} className='pedidos-section'>
                                 <div className='pedidos-section-header'>
                                     {section.photoUrl && <img src={section.photoUrl} alt='' loading='lazy' />}
+                                    {section.kanji && <b aria-hidden='true'>{section.kanji}</b>}
                                     <h2>{section.name}</h2>
                                     {section.note && <span>{section.note}</span>}
                                 </div>
-                                <div className='pedidos-dishes'>
+                                {/* A section without any photo (drinks) shows its dishes as text-only cards */}
+                                <div className={section.dishes.some((dish) => dish.photoUrl) ? 'pedidos-dishes' : 'pedidos-dishes no-photos'}>
                                     {section.dishes.map((dish) => (
                                         <DishCard key={dish.number} dish={dish} quantity={quantities[dish.number] ?? 0} onChange={(change) => changeQuantity(dish.number, change)} />
                                     ))}

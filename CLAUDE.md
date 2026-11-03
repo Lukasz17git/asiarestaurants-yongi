@@ -35,7 +35,7 @@ Lasting wishes from the client; follow them in every change and add new ones her
   - `src/Restaurant/restaurantsData.js`: restaurants (address, phone, maps, WhatsApp)
   - `src/qr/qrData.js`: PDFs on the `/qr` page
   - `src/_new/pedidos/takeaway-menu.json`: IOYI's dishes by section (ramen, arroces, entrantes, baos, sandos, bebidas),
-    used by `/pedidos`, Menus and the ramen guide on Home. Only `es`; `photo: 'akamaru'` ->
+    used by `/pedidos`, Menus and the ramen guide on Home. Only `es`; each section's `kanji` goes on its button in `/pedidos`; `photo: 'akamaru'` ->
     `src/_new/images/ioyi/dishes/akamaru.webp`, `null` when IOYI has no photo of it
   - `src/_new/releaseNotesData.js`: the changes listed in «Editar con IA» -> «Ver cambios», newest entry first (one entry
     per change request, in Spanish for the client); each shows only on its `branch`

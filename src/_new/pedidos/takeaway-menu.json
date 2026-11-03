@@ -1,6 +1,7 @@
 [
    {
       "name": { "es": "Ramen" },
+      "kanji": "拉麺",
       "note": { "es": "Todos con cebolla tierna y alga nori" },
       "photo": null,
       "dishes": [
@@ -98,6 +99,7 @@
    },
    {
       "name": { "es": "Arroces" },
+      "kanji": "飯",
       "note": { "es": "Con sopa de miso" },
       "photo": null,
       "dishes": [
@@ -141,6 +143,7 @@
    },
    {
       "name": { "es": "Entrantes" },
+      "kanji": "前菜",
       "photo": null,
       "dishes": [
          {
@@ -164,7 +167,7 @@
          {
             "number": 17,
             "name": { "es": "Karaage" },
-            "description": { "es": "Pollo japonés marinado y frito." },
+            "description": { "es": "Pollo japonés marinado y frito, crujiente por fuera y jugoso por dentro." },
             "priceInCents": 700,
             "photo": "karaage",
             "isVegan": false,
@@ -236,7 +239,7 @@
          {
             "number": 25,
             "name": { "es": "Ebi no Kumo" },
-            "description": { "es": "Churro japonés crujiente relleno de gamba y carne." },
+            "description": { "es": "Churro japonés crujiente relleno de gamba y carne mechada seca." },
             "priceInCents": 750,
             "photo": "ebi-no-kumo",
             "isVegan": false,
@@ -246,6 +249,7 @@
    },
    {
       "name": { "es": "Baos y onigiri" },
+      "kanji": "包",
       "photo": null,
       "dishes": [
          {
@@ -288,6 +292,7 @@
    },
    {
       "name": { "es": "Sandos y burger" },
+      "kanji": "サンド",
       "photo": null,
       "dishes": [
          {
@@ -312,6 +317,7 @@
    },
    {
       "name": { "es": "Bebidas" },
+      "kanji": "飲物",
       "photo": null,
       "dishes": [
          { "number": 32, "name": { "es": "Botella de sake (750 ml)" }, "description": { "es": "" }, "priceInCents": 1500, "photo": null, "isVegan": false, "isSpicy": false },
