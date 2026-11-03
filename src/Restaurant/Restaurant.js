@@ -1,16 +1,9 @@
 import React from 'react'
-import asiaCorreggio from '../images/restaurants/asiaCorreggio.webp'
-import asiaRavenna from '../images/restaurants/asiaRavenna.webp'
-import asiaReggioEmilia from '../images/restaurants/asiaReggioEmilia.webp'
-import asiaOrientalTaste from '../images/restaurants/asiaOrientalTaste.webp'
 import gold from '../generateGold'
+import { ioyiPhoto } from '../_new/images/ioyi/photos'
 
 const Restaurant = ({ data }) => {
     const language = 'es'
-    const restaurant = {
-        es: 'Restaurante',
-        cat: 'Restaurante'
-    }
     const streetLabel = {
         es: 'C:',
         cat: 'C:'
@@ -23,33 +16,41 @@ const Restaurant = ({ data }) => {
         es: 'Háblanos',
         cat: 'Hablanos'
     }
-    const images = { asiaCorreggio, asiaRavenna, asiaReggioEmilia, asiaOrientalTaste }
 
-    const { name, country, street, phone, maps, whatsapp, image, description } = data
-    const openWhatsApp = () => window.open(whatsapp, '_blank')
+    const { name, street, city, phone, maps, whatsapp, instagram, image, hours, description } = data
 
     return (
         <div className='section'>
-            <div className='title' data-reveal='up'>{gold(restaurant[language] + ' ' + name)}</div>
+            <div className='title' data-reveal='up'>{gold(name)}</div>
             <div className='description' data-reveal='up'>{description[language]}</div>
             <div className='section-container'>
                 <div className='wrapper1' data-reveal='left'>
-                    <img alt='restaurant' src={images[image]} />
+                    <img alt={name} src={ioyiPhoto(`place/${image}`)} />
                 </div>
                 <div className='wrapper2' data-reveal='right'>
                     <div className='info'>
-                        <div className={'country ' + country} />
                         <div className='wrapper'>
-                            <div className='street'>{streetLabel[language] + ' ' + street}</div>
+                            <div className='street'>{`${streetLabel[language]} ${street}, ${city}`}</div>
                             <div className='phone'>{phoneLabel[language] + ' ' + phone}</div>
+                            <ul className='hours'>
+                                {hours.map(({ days, time }) => (
+                                    <li key={time}><span>{days[language]}</span>{time}</li>
+                                ))}
+                            </ul>
                         </div>
-                        <div onClick={openWhatsApp} className='whatsapp' >
-                            <div className='icon'></div>
-                            <div>{whatsappLabel[language]}</div>
+                        <div className='buttons'>
+                            <a href={whatsapp} target='_blank' rel='noreferrer' className='whatsapp'>
+                                <div className='icon'></div>
+                                <div>{whatsappLabel[language]}</div>
+                            </a>
+                            <a href={instagram} target='_blank' rel='noreferrer' className='whatsapp is-instagram'>
+                                <div className='icon'></div>
+                                <div>Instagram</div>
+                            </a>
                         </div>
                     </div>
                     <div className='maps'>
-                        <iframe title='Correggio' width="400" height="300" src={maps} frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
+                        <iframe title={name} width="400" height="300" src={maps} frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
                     </div>
                 </div>
             </div>

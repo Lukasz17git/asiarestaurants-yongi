@@ -1,19 +1,21 @@
-/*white*/
-/*gold*/
+/*sumi: the dark of the noodle bar*/
+/*cream*/
+/*amber, the lantern light*/
 /*grey*/
-/*brown-gold*/
-/*gold line*/
-/*red of the logo*/
+/*dark amber*/
+/*amber line*/
+/*red of the hanko seal*/
+/*washi paper, where the dish photos (white background) sit*/
 .footer {
   position: relative;
   padding: 80px 30px 140px;
-  background-color: #121518;
+  background-color: #141210;
   display: grid;
   grid-template-columns: 104px minmax(334px, 800px) auto;
   gap: 4vw;
   align-items: center;
   justify-content: center;
-  color: #eee;
+  color: #f2eadc;
 }
 .footer::before {
   content: "";
@@ -22,11 +24,11 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #a8292e 25%, #d2383d 50%, #a8292e 75%, transparent);
+  background: linear-gradient(90deg, transparent, #c8242b 25%, #e0393f 50%, #c8242b 75%, transparent);
 }
 .footer img {
-  width: 104px;
-  content: url("../images/LogoRed.webp");
+  width: 150px;
+  content: url("../_new/images/ioyi/logo-cream.webp");
 }
 .footer .restaurant {
   text-align: left;
@@ -54,9 +56,7 @@
   filter: brightness(1.33);
   color: #fff;
 }
-.footer .buttons .instagram,
-.footer .buttons .facebook,
-.footer .buttons .twitter {
+.footer .buttons .instagram {
   width: 32px;
   height: 32px;
   background-position: center;
@@ -66,14 +66,6 @@
 .footer .buttons .instagram {
   background-image: url("../images/instagramIcon.svg");
   background-size: 30px 30px;
-}
-.footer .buttons .facebook {
-  background-image: url("../images/facebookIcon.svg");
-  background-size: 27px 27px;
-}
-.footer .buttons .twitter {
-  background-image: url("../images/twitterIcon.svg");
-  background-size: 31px 31px;
 }
 .footer .buttons .text {
   display: inline-block;
@@ -130,9 +122,7 @@
     flex-direction: column;
     gap: 4px;
   }
-  .footer .buttons .instagram,
-  .footer .buttons .facebook,
-  .footer .buttons .twitter {
+  .footer .buttons .instagram {
     margin-right: 0 !important;
     width: 38px;
     height: 38px;
@@ -160,9 +150,7 @@
   .buttons .button {
     gap: 2px !important;
   }
-  .buttons .instagram,
-  .buttons .facebook,
-  .buttons .twitter {
+  .buttons .instagram {
     width: 32px !important;
     height: 32px !important;
   }

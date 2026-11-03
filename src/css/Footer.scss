@@ -24,8 +24,8 @@
     }
 
     img {
-        width: 104px;
-        content: url('../images/LogoRed.webp');
+        width: 150px;
+        content: url('../_new/images/ioyi/logo-cream.webp');
     }
 
     .restaurant {
@@ -58,9 +58,7 @@
             }
         }
 
-        .instagram,
-        .facebook,
-        .twitter {
+        .instagram {
             width: 32px;
             height: 32px;
             background-position: center;
@@ -71,16 +69,6 @@
         .instagram {
             background-image: url('../images/instagramIcon.svg');
             background-size: 30px 30px;
-        }
-
-        .facebook {
-            background-image: url('../images/facebookIcon.svg');
-            background-size: 27px 27px;
-        }
-
-        .twitter {
-            background-image: url('../images/twitterIcon.svg');
-            background-size: 31px 31px;
         }
 
         .text {
@@ -148,9 +136,7 @@
             gap: 4px;
         }
 
-        .instagram,
-        .facebook,
-        .twitter {
+        .instagram {
             margin-right: 0 !important;
             width: 38px;
             height: 38px;
@@ -186,9 +172,7 @@
             gap: 2px !important;
         }
 
-        .instagram,
-        .facebook,
-        .twitter {
+        .instagram {
             width: 32px !important;;
             height: 32px !important;;
         }

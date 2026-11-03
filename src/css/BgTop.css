@@ -1,9 +1,11 @@
-/*white*/
-/*gold*/
+/*sumi: the dark of the noodle bar*/
+/*cream*/
+/*amber, the lantern light*/
 /*grey*/
-/*brown-gold*/
-/*gold line*/
-/*red of the logo*/
+/*dark amber*/
+/*amber line*/
+/*red of the hanko seal*/
+/*washi paper, where the dish photos (white background) sit*/
 .main-restaurant .bg-wrapper {
   position: relative;
   z-index: 1;
@@ -32,8 +34,8 @@
   width: min(80vw, 460px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 38% 32%, #d2383d, #a8292e 55%, #6e1519);
-  box-shadow: 0px 0px 120px 20px rgba(210, 56, 61, 0.35);
+  background: radial-gradient(circle at 38% 32%, #e0393f, #c8242b 55%, #8d171c);
+  box-shadow: 0px 0px 120px 20px rgba(224, 57, 63, 0.35);
   opacity: 0.22;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -50,9 +52,9 @@
   top: 50%;
   left: 50%;
   transform-origin: bottom center;
-  color: #eee;
+  color: #f2eadc;
   font-size: 40px;
-  font-family: "AsianHiro";
+  font-family: "Shippori Mincho B1", serif;
 }
 .main-restaurant .title-menu .logo {
   position: absolute;
@@ -61,16 +63,16 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -11%);
-  background-image: url("../images/LogoRedIcon.webp");
+  background-image: url("../_new/images/ioyi/seal.webp");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 .main-restaurant .restaurant-title {
   padding: 0px 40px 20px;
-  color: #c9ab81;
+  color: #e3a33f;
   font-size: 60px;
-  font-family: "Italianno";
+  font-family: "Yuji Syuku", serif;
   max-width: 800px;
   margin: auto;
 }
@@ -87,15 +89,15 @@
 .main-restaurant .menu-top .line {
   height: 2px;
   width: 100%;
-  background: linear-gradient(90deg, transparent, #a8292e 40%, #c9ab81);
+  background: linear-gradient(90deg, transparent, #c8242b 40%, #e3a33f);
 }
 .main-restaurant .menu-top .line:last-child {
-  background: linear-gradient(90deg, #c9ab81, #a8292e 60%, transparent);
+  background: linear-gradient(90deg, #e3a33f, #c8242b 60%, transparent);
 }
 .main-restaurant .menu-top .icon {
   width: 54px;
   height: 54px;
-  background-image: url("../images/LogoRedIcon.webp");
+  background-image: url("../_new/images/ioyi/seal.webp");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

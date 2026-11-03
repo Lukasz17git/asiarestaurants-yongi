@@ -31,12 +31,12 @@
     }
 
     .main-logo {
-        background-image: url('../images/LogoRed.webp');
+        background-image: url('../_new/images/ioyi/logo-cream.webp');
         position: absolute;
-        left: 0px;
-        top: 2px;
-        height: 100%;
-        width: 100px;
+        left: 24px;
+        top: 12px;
+        height: calc(100% - 24px);
+        width: 120px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -76,7 +76,7 @@
         gap: 40px;
         color: $textColor2;
         font-weight: 600;
-        font-family: 'CondLight';
+        font-family: $fontBody;
         letter-spacing: 3px;
 
         // The lines only show under the page you are on

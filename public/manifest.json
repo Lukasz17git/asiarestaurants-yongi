@@ -1,20 +1,15 @@
 {
-  "short_name": "Asia Oriental Taste",
-  "name": "Asia Oriental Taste - Asia Restaurants",
+  "short_name": "IOYI Ramen",
+  "name": "IOYI Ramen - Vilafranca del Penedès",
   "icons": [
     {
-      "src": "LogoRedIcon.webp",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
-    },
-    {
-      "src": "LogoRedIcon.webp",
-      "sizes": "80x80 64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "src": "ioyi-icon.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#c9ab81",
-  "background_color": "#121518"
+  "theme_color": "#141210",
+  "background_color": "#141210"
 }

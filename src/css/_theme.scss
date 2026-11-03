@@ -1,42 +1,57 @@
-$backgroundColor1: #171c20;
-$backgroundColor2:#121518;
-$backgroundColor3: #191D22;
-$textColor1: #eee; /*white*/
-$textColor2: #c9ab81; /*gold*/
-$textColor3:#b3b2b2; /*grey*/
-$textColor4: #959494;
-$textColor5: #ad8b5e; /*brown-gold*/
+/*sumi: the dark of the noodle bar*/
+$backgroundColor1: #1c1916;
+$backgroundColor2: #141210;
+$backgroundColor3: #24201c;
+$textColor1: #f2eadc; /*cream*/
+$textColor2: #e3a33f; /*amber, the lantern light*/
+$textColor3: #b2a998; /*grey*/
+$textColor4: #8a8174;
+$textColor5: #c47f22; /*dark amber*/
 
-$lineColor1: #c9ab81; /*gold line*/
-$lineColor2: #ead1af;
-$lineColor3: #856B48;
-$lineColor4: #8F795C;
-$lineColor5: #99866a;
+$lineColor1: #e3a33f; /*amber line*/
+$lineColor2: #f2c477;
+$lineColor3: #8a5e1f;
+$lineColor4: #9a7a4a;
+$lineColor5: #a88a5c;
 
-/*red of the logo*/
-$red: #a8292e;
-$redLight: #d2383d;
-$redDark: #6e1519;
-$redGlow: rgba(210, 56, 61, 0.35);
+/*red of the hanko seal*/
+$red: #c8242b;
+$redLight: #e0393f;
+$redDark: #8d171c;
+$redGlow: rgba(224, 57, 63, 0.35);
+
+/*washi paper, where the dish photos (white background) sit*/
+$washi: #f4ede1;
+$washi2: #e9dfcd;
+$ink: #1a1714;
+$inkGrey: #5d554b;
+
+$amber: #e3a33f;
+$amberLight: #f2c477;
+$amberGlow: rgba(227, 163, 63, 0.35);
 
 $lineColorHover: #fff;
-$black: #01090B;
-$underline: rgb(237, 167, 126);
+$black: #0d0b0a;
+$underline: #f2c477;
+
+$fontDisplay: 'Shippori Mincho B1', serif;
+$fontBody: 'Zen Kaku Gothic New', sans-serif;
+$fontBrush: 'Yuji Syuku', serif;
 
 @mixin gold{
-    background: radial-gradient(#b88746, #fdf5a6);
-    background: -webkit-linear-gradient(top , #b88746, #fdf5a6);
+    background: radial-gradient(#d48a2a, #f6d08a);
+    background: -webkit-linear-gradient(top , #f6d08a, #d48a2a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 @mixin red{
-    background: linear-gradient(to bottom, #e0484d, $red);
+    background: linear-gradient(to bottom, #f04a50, $red);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 @mixin shadowNavbar{
-    box-shadow: 0px 1px 8px 1px #080808;
+    box-shadow: 0px 1px 8px 1px #080706;
 }

@@ -8,8 +8,8 @@ const Navbar = () => {
     const path = useLocation().pathname
 
     const homeName = { es: 'HOME', cat: 'HOME' }
-    const menuName = { es: 'MENUS', cat: 'MENUS' }
-    const restaurantsName = { es: 'RESTAURANTES', cat: 'RESTAURANTES' }
+    const menuName = { es: 'CARTA', cat: 'CARTA' }
+    const restaurantsName = { es: 'RESTAURANTE', cat: 'RESTAURANT' }
     const pedidosName = { es: 'PEDIR ONLINE', cat: 'DEMANAR ONLINE' }
 
     const [menu, setMenu] = useState(false)

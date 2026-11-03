@@ -9,13 +9,12 @@ const Restaurants = () => {
   const language = 'es'
   const pageRef = useRef(null)
   useReveal(pageRef)
-  const name = 'Asia Restaurantes'.toUpperCase().split('')
-  const { corregio, reggioEmilia, ravenna, orientalTaste } = restaurants
+  const name = 'IOYI Ramen'.toUpperCase().split('')
 
   const restaurantsTitle = {
-    es: 'Con pasión y cuidadoso detalle desde el 2006',
+    es: 'Un pequeño ramen-ya en el centro de Vilafranca del Penedès',
     cat: '',
-    it: 'Passione e cura del dettaglio dal 2006'
+    it: ''
   }
 
   return (
@@ -32,13 +31,7 @@ const Restaurants = () => {
           <div className='line' />
         </div>
       </div>
-      <Restaurant data={orientalTaste}/>
-      <div className='section-line' /><span />
-      <Restaurant data={reggioEmilia} />
-      <div className='section-line' /><span />
-      <Restaurant data={ravenna} />
-      <div className='section-line' /><span />
-      <Restaurant data={corregio} />
+      <Restaurant data={restaurants.ioyi} />
       <Footer />
     </div>
   )

@@ -1,16 +1,18 @@
-/*white*/
-/*gold*/
+/*sumi: the dark of the noodle bar*/
+/*cream*/
+/*amber, the lantern light*/
 /*grey*/
-/*brown-gold*/
-/*gold line*/
-/*red of the logo*/
+/*dark amber*/
+/*amber line*/
+/*red of the hanko seal*/
+/*washi paper, where the dish photos (white background) sit*/
 .navbar {
-  box-shadow: 0px 1px 8px 1px #080808;
+  box-shadow: 0px 1px 8px 1px #080706;
   position: fixed;
   z-index: 11;
   width: 100%;
   height: 68px;
-  border-bottom: 1px solid #c9ab81;
+  border-bottom: 1px solid #e3a33f;
 }
 .navbar .bg-opacity {
   position: absolute;
@@ -18,7 +20,7 @@
   height: 100%;
   left: 0px;
   top: 0px;
-  background-color: #01090B;
+  background-color: #0d0b0a;
   opacity: 0.55;
   backdrop-filter: blur(10px);
 }
@@ -29,15 +31,15 @@
   right: 0;
   bottom: -1px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #a8292e 25%, #d2383d 50%, #a8292e 75%, transparent);
+  background: linear-gradient(90deg, transparent, #c8242b 25%, #e0393f 50%, #c8242b 75%, transparent);
 }
 .navbar .main-logo {
-  background-image: url("../images/LogoRed.webp");
+  background-image: url("../_new/images/ioyi/logo-cream.webp");
   position: absolute;
-  left: 0px;
-  top: 2px;
-  height: 100%;
-  width: 100px;
+  left: 24px;
+  top: 12px;
+  height: calc(100% - 24px);
+  width: 120px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -69,13 +71,13 @@
   top: 0;
   display: flex;
   gap: 40px;
-  color: #c9ab81;
+  color: #e3a33f;
   font-weight: 600;
-  font-family: "CondLight";
+  font-family: "Zen Kaku Gothic New", sans-serif;
   letter-spacing: 3px;
 }
 .navbar .menu .selected {
-  color: #ead1af;
+  color: #f2c477;
 }
 .navbar .menu .selected .underline {
   opacity: 1 !important;
@@ -86,8 +88,8 @@
   padding: 9px 18px;
   border-radius: 999px;
   color: #fff;
-  background: linear-gradient(135deg, #d2383d, #a8292e);
-  box-shadow: 0px 8px 20px -10px #d2383d;
+  background: linear-gradient(135deg, #e0393f, #c8242b);
+  box-shadow: 0px 8px 20px -10px #e0393f;
   transition: box-shadow 0.3s, transform 0.3s;
 }
 .navbar .menu .link-order .underline {
@@ -98,7 +100,7 @@
 }
 .navbar .menu .link-order:hover a {
   transform: translateY(-2px);
-  box-shadow: 0px 12px 26px -10px #d2383d;
+  box-shadow: 0px 12px 26px -10px #e0393f;
 }
 .navbar .menu .link {
   align-self: center;
@@ -109,7 +111,7 @@
   position: relative;
   width: calc(100% - 4px);
   height: 1px;
-  background-color: #ead1af;
+  background-color: #f2c477;
   margin: auto;
   opacity: 0;
   transform: scaleX(0);
@@ -122,10 +124,10 @@
   height: 1px;
   top: 4px;
   transform: translateX(-50%);
-  background-color: #ead1af;
+  background-color: #f2c477;
 }
 .navbar .menu .link:hover {
-  color: #ead1af;
+  color: #f2c477;
   cursor: pointer;
 }
 .navbar .menu .link:hover .underline {
@@ -140,15 +142,15 @@
   .navbar .menu {
     height: auto;
     flex-direction: column;
-    background-color: #121518;
+    background-color: #141210;
     right: 0px;
     transform: translateX(110%);
     top: calc(100% + 2px);
     padding: 40px 24px;
-    background-color: #01090B;
+    background-color: #0d0b0a;
     opacity: 0.85;
-    border-bottom: 2px solid #c9ab81;
-    border-left: 2px solid #c9ab81;
+    border-bottom: 2px solid #e3a33f;
+    border-left: 2px solid #e3a33f;
     border-bottom-left-radius: 6px;
     transition: 0.5s;
   }

@@ -1,11 +1,13 @@
-/*white*/
-/*gold*/
+/*sumi: the dark of the noodle bar*/
+/*cream*/
+/*amber, the lantern light*/
 /*grey*/
-/*brown-gold*/
-/*gold line*/
-/*red of the logo*/
+/*dark amber*/
+/*amber line*/
+/*red of the hanko seal*/
+/*washi paper, where the dish photos (white background) sit*/
 .main-restaurant {
-  background-color: #121518;
+  background-color: #141210;
   position: relative;
   overflow: hidden;
 }
@@ -37,13 +39,13 @@
 }
 .main-restaurant .section .title {
   font-size: 60px;
-  font-family: "AsianHiro";
+  font-family: "Shippori Mincho B1", serif;
   margin-top: 40px;
   margin-bottom: 20px;
 }
 .main-restaurant .section .title span {
-  background: radial-gradient(#b88746, #fdf5a6);
-  background: -webkit-linear-gradient(top, #b88746, #fdf5a6);
+  background: radial-gradient(#d48a2a, #f6d08a);
+  background: -webkit-linear-gradient(top, #f6d08a, #d48a2a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -54,12 +56,12 @@
   height: 3px;
   margin-top: 12px;
   border-radius: 2px;
-  background-color: #d2383d;
+  background-color: #e0393f;
 }
 .main-restaurant .section .description {
   font-size: 16px;
   margin: 10px;
-  color: #b3b2b2;
+  color: #b2a998;
   font-weight: bold;
   margin-bottom: 40px;
   padding-right: 10%;
@@ -73,7 +75,8 @@
   padding: 0px 2px;
 }
 .main-restaurant .section .section-container .wrapper2 {
-  grid-template-rows: 80px auto;
+  grid-template-rows: auto 1fr;
+  gap: 24px;
 }
 .main-restaurant .section .section-container .wrapper1 {
   overflow: hidden;
@@ -105,46 +108,50 @@
   display: flex;
   align-items: center;
   text-align: left;
+  gap: 20px;
   padding: 0px 20px;
-}
-.main-restaurant .section .section-container .wrapper1 .info .country,
-.main-restaurant .section .section-container .wrapper2 .info .country {
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.main-restaurant .section .section-container .wrapper1 .info .spain,
-.main-restaurant .section .section-container .wrapper2 .info .spain {
-  content: url("../images/spainIcon.svg");
-}
-.main-restaurant .section .section-container .wrapper1 .info .italy,
-.main-restaurant .section .section-container .wrapper2 .info .italy {
-  content: url("../images/italyIcon.svg");
 }
 .main-restaurant .section .section-container .wrapper1 .info .wrapper,
 .main-restaurant .section .section-container .wrapper2 .info .wrapper {
-  height: 100%;
-  margin-left: 30px;
-  margin-right: 4px;
-  font-size: 16px;
-  color: #b3b2b2;
-  font-weight: bold;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  text-indent: -1em;
-  padding-left: 0.5em;
+  gap: 8px;
+  font-size: 16px;
+  color: #b2a998;
+  font-weight: bold;
+}
+.main-restaurant .section .section-container .wrapper1 .info .hours,
+.main-restaurant .section .section-container .wrapper2 .info .hours {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+  list-style: none;
+}
+.main-restaurant .section .section-container .wrapper1 .info .hours li,
+.main-restaurant .section .section-container .wrapper2 .info .hours li {
+  display: flex;
+  gap: 12px;
+  color: #f2eadc;
+}
+.main-restaurant .section .section-container .wrapper1 .info .hours span,
+.main-restaurant .section .section-container .wrapper2 .info .hours span {
+  min-width: 80px;
+  color: #e3a33f;
+  font-family: "Yuji Syuku", serif;
+  font-weight: normal;
+}
+.main-restaurant .section .section-container .wrapper1 .info .buttons,
+.main-restaurant .section .section-container .wrapper2 .info .buttons {
+  display: flex;
+  gap: 18px;
+  margin-left: auto;
 }
 .main-restaurant .section .section-container .wrapper1 .info .whatsapp,
 .main-restaurant .section .section-container .wrapper2 .info .whatsapp {
-  height: 100%;
-  margin-left: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 2px;
   color: #42ff63;
   font-weight: bold;
   font-size: 16px;
@@ -160,6 +167,16 @@
   background-size: contain;
   filter: brightness(1.5);
 }
+.main-restaurant .section .section-container .wrapper1 .info .whatsapp.is-instagram,
+.main-restaurant .section .section-container .wrapper2 .info .whatsapp.is-instagram {
+  color: #f2eadc;
+}
+.main-restaurant .section .section-container .wrapper1 .info .whatsapp.is-instagram .icon,
+.main-restaurant .section .section-container .wrapper2 .info .whatsapp.is-instagram .icon {
+  background-image: url("../images/instagramIcon.svg");
+  background-size: 40px;
+  filter: none;
+}
 .main-restaurant .section .section-container .wrapper1 .info .whatsapp:hover,
 .main-restaurant .section .section-container .wrapper2 .info .whatsapp:hover {
   cursor: pointer;
@@ -168,7 +185,7 @@
 .main-restaurant .section .section-container .wrapper2 .maps {
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(201, 171, 129, 0.25);
+  border: 1px solid rgba(227, 163, 63, 0.25);
   border-radius: 20px;
   box-shadow: 0px 24px 44px -24px #000;
 }
@@ -194,14 +211,6 @@
 .main-restaurant .section:nth-child(odd) .section-container .wrapper1 {
   grid-column: 2/3;
 }
-.main-restaurant .section-line {
-  height: 2px;
-  width: calc(100% - 60px);
-  max-width: 1142px;
-  margin: auto;
-  margin-bottom: 60px;
-  background: linear-gradient(90deg, transparent, #a8292e 20%, #c9ab81 50%, #a8292e 80%, transparent);
-}
 
 @media (max-width: 820px) {
   .main-restaurant .section .title {
@@ -217,7 +226,7 @@
   }
   .main-restaurant .section .section-container {
     grid-template-columns: none;
-    grid-template-rows: 1fr 1.2fr;
+    grid-template-rows: none;
     max-width: 540px;
     margin: 0px auto 80px;
     gap: 40px;
@@ -233,21 +242,20 @@
   .main-restaurant .bg-wrapper .menu-top {
     grid-template-columns: auto 110px auto;
   }
-  .main-restaurant .section-line {
-    margin-bottom: 30px;
-  }
   .main-restaurant .section .title {
     font-size: 50px;
   }
-  .main-restaurant .section .section-container {
-    grid-template-rows: 1fr 1.33fr;
+  .main-restaurant .section .section-container .wrapper1 {
+    aspect-ratio: 4/3;
   }
   .main-restaurant .section .section-container .wrapper2 .info {
     padding: 0px;
   }
   .main-restaurant .section .section-container .wrapper2 .info .wrapper {
-    margin-left: 14px;
     font-size: 15px;
+  }
+  .main-restaurant .section .section-container .maps {
+    height: 300px;
   }
 }
 @media (max-width: 450px) {
@@ -256,14 +264,12 @@
   }
 }
 @media (max-width: 400px) {
-  .main-restaurant .section .section-container .wrapper2 .info .country {
-    width: 60px;
-    height: 60px;
+  .main-restaurant .section .section-container .wrapper2 .info {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .main-restaurant .section .section-container .wrapper2 .info .whatsapp {
-    width: 60px;
-    height: 70px;
-    padding-bottom: 0;
+  .main-restaurant .section .section-container .wrapper2 .info .buttons {
+    margin-left: 0px;
   }
   .main-restaurant .section .section-container .wrapper2 .info .wrapper {
     font-size: 14px;
