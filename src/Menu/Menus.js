@@ -7,8 +7,8 @@ import menus from './MenusData'
 import Dish from './Dish'
 import Marquee from '../_new/sections/Marquee'
 import FinalCall from '../_new/sections/FinalCall'
-import { revealDelay, useReveal } from '../_new/reveal/useReveal'
-import { phoneText, phoneUrl } from '../_new/sections/reservation'
+import { useReveal } from '../_new/reveal/useReveal'
+import { hoursText, phoneText, phoneUrl } from '../_new/sections/reservation'
 import { menuSections } from '../_new/pedidos/takeawayMenu'
 import { formatPrice } from '../_new/pedidos/deliveryRules'
 import { ioyiPhoto } from '../_new/images/ioyi/photos'
@@ -16,9 +16,8 @@ import { ioyiPhoto } from '../_new/images/ioyi/photos'
 const drinksSectionId = 'bebidas'
 const dishSections = menuSections.filter(({ id }) => id !== drinksSectionId)
 const drinks = menuSections.find(({ id }) => id === drinksSectionId).dishes
-
-// Each tab's icon: the first dish of the section with a photo
-const getTabPhotoUrl = (section) => section.dishes.find((dish) => dish.photoUrl).photoUrl
+// On phones the line breaks only at '·'
+const [hoursDays, hoursTimes] = hoursText.split(' · ')
 
 // x/y: where each part sits on the Akamaru photo, in %
 const bowlParts = [
@@ -36,9 +35,6 @@ const desserts = [
   { name: 'Leche de coco con tapioca', text: 'Un final ligero después del ramen.' },
 ]
 
-// The page's own base href ('/') would turn '#menus' into the Home page, so the shortcuts scroll by hand
-const scrollToSection = (id) => document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
-
 const Menus = () => {
   const language = 'es'
   const pageRef = useRef(null)
@@ -48,18 +44,11 @@ const Menus = () => {
   const visibleSection = dishSections.find(({ id }) => id === sectionId)
   const { day, carta, pedidos } = menus
 
-  const restaurantsTitle = {
-    es: 'Diez ramen de caldo lento, donburis, baos y entrantes japoneses. Pide tu bol, comparte unas gyozas y deja hueco para el postre.',
+  const heroText = {
+    es: 'Diez ramen de caldo lento, donburis, baos y entrantes japoneses, hechos al momento en nuestra barra de Vilafranca. Pide tu bol, comparte unas gyozas y deja hueco para el postre.',
     cat: '',
     it: ''
   }
-  const sectionLinks = [
-    { id: 'menus', name: { es: 'Menú y carta' } },
-    { id: 'bol', name: { es: 'Anatomía del bol' } },
-    { id: 'platos', name: { es: 'Platos' } },
-    { id: 'llevar', name: { es: 'Para llevar' } },
-    { id: 'acompanar', name: { es: 'Postres y bebidas' } },
-  ]
   const menusWords = ['Menú del día', 'Ramen', 'Donburi', 'Gyozas', 'Baos', 'Onigiri', 'Para llevar', 'A domicilio']
 
   const anatomy = {
@@ -91,18 +80,8 @@ const Menus = () => {
         <div className='menus-hero-content'>
           <p className='kicker'>La carta</p>
           <h1 className='heading'>Ramen, donburis y <em>entrantes japoneses</em></h1>
-          <div className='menus-shortcuts'>
-            <p className='menus-shortcuts-text'>{restaurantsTitle[language]}</p>
-            <nav className='menus-shortcuts-links'>
-              {sectionLinks.map(({ id, name }, index) => (
-                <button key={id} type='button' onClick={() => scrollToSection(id)}>
-                  <span className='menus-shortcut-number'>0{index + 1}</span>
-                  <span className='menus-shortcut-name'>{name[language]}</span>
-                  <span className='menus-shortcut-arrow'>↓</span>
-                </button>
-              ))}
-            </nav>
-          </div>
+          <p className='lead'>{heroText[language]}</p>
+          <p className='menus-hero-hours'><span>{hoursDays}</span> · <span>{hoursTimes}</span></p>
         </div>
       </header>
 
@@ -151,7 +130,7 @@ const Menus = () => {
         <div className='meals-tabs' data-reveal='up'>
           {dishSections.map((section) => (
             <button key={section.id} type='button' className={section.id === sectionId ? 'is-selected' : undefined} onClick={() => setSectionId(section.id)}>
-              <img src={getTabPhotoUrl(section)} alt='' loading='lazy' />
+              <b aria-hidden='true'>{section.kanji}</b>
               <span>{section.name}</span>
             </button>
           ))}
@@ -159,9 +138,6 @@ const Menus = () => {
         {visibleSection.note && <p className='meals-note'>{visibleSection.note}</p>}
         <div key={sectionId} className='meals-grid'>
           {visibleSection.dishes.map((dish, index) => <Dish key={dish.number} dish={dish} index={index} />)}
-        </div>
-        <div className='cta-buttons'>
-          <Link className='cta cta-red' to='/pedidos'>Pedir para llevar</Link>
         </div>
       </section>
 
@@ -186,28 +162,24 @@ const Menus = () => {
           <h2 className='heading'>El broche <em>perfecto</em></h2>
         </div>
         <div className='wrapper'>
-          <div className='carta' data-reveal='up' style={revealDelay(0)}>
-            <div className='carta-title'>Postres</div>
-            <ul className='carta-list'>
-              {desserts.map(({ name, text }) => (
-                <li key={name}>
-                  <span className='carta-item-name'>{name}</span>
-                  <span className='carta-item-text'>{text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className='carta' data-reveal='up' style={revealDelay(1)}>
-            <div className='carta-title'>Bebidas</div>
-            <ul className='carta-list is-prices'>
-              {drinks.map(({ number, name, priceInCents }) => (
-                <li key={number}>
-                  <span className='carta-item-name'>{name.es}</span>
-                  <span className='carta-item-price'>{formatPrice(priceInCents)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className='carta-title' data-reveal='up'><b aria-hidden='true'>甘味</b><h3>Postres</h3></div>
+          <ul className='carta-list' data-reveal='up'>
+            {desserts.map(({ name, text }) => (
+              <li key={name}>
+                <span className='carta-item-name'>{name}</span>
+                <span className='carta-item-text'>{text}</span>
+              </li>
+            ))}
+          </ul>
+          <div className='carta-title' data-reveal='up'><b aria-hidden='true'>飲物</b><h3>Bebidas</h3></div>
+          <ul className='carta-list is-prices' data-reveal='up' style={{ '--rows': Math.ceil(drinks.length / 2) }}>
+            {drinks.map(({ number, name, priceInCents }) => (
+              <li key={number}>
+                <span className='carta-item-name'>{name.es}</span>
+                <span className='carta-item-price'>{formatPrice(priceInCents)}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

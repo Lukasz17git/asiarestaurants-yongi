@@ -1,4 +1,5 @@
 // image: path under src/_new/images/ioyi, without .webp; to: the page its button opens
+// stamp: the red seal on the photo; price and price2 are shown on Home's MenusTeaser
 const menus = {
     day: {
         name: {
@@ -15,6 +16,7 @@ const menus = {
         },
         price: '13,50€',
         price2: 'Plato, bebida y postre',
+        stamp: { value: '13,50€', note: 'Plato, bebida y postre' },
         button: {
             es: 'Cómo llegar',
             cat: ''
@@ -37,6 +39,7 @@ const menus = {
         },
         price: 'desde 12,95€',
         price2: 'Cada ramen',
+        stamp: { label: 'desde', value: '12,95€', note: 'Cada ramen' },
         button: {
             es: 'Ver platos',
             cat: ''
@@ -57,6 +60,7 @@ const menus = {
             es: 'Pedir online',
             cat: ''
         },
+        stamp: { kanji: '持ち帰り', note: 'WhatsApp' },
         image: 'dishes/katsu-sando',
         to: '/pedidos'
     }

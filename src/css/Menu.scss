@@ -78,82 +78,22 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         }
     }
 
-    // Glass panel with a numbered shortcut to each section
-    .menus-shortcuts {
-        width: min(100%, 980px);
-        margin-top: 10px;
-        overflow: hidden;
-        border: 1px solid rgba(227, 163, 63, 0.3);
-        border-radius: 26px;
-        background-color: rgba(13, 11, 10, 0.62);
-        backdrop-filter: blur(10px);
-        box-shadow: 0px 30px 60px -30px #000;
-    }
-
-    .menus-shortcuts-text {
-        padding: 20px 28px 18px;
-        border-bottom: 1px solid rgba(227, 163, 63, 0.2);
+    .menus-hero-content .lead {
+        max-width: 700px;
+        text-wrap: balance;
         color: #d2d2d2;
-        font-size: 16px;
-        line-height: 1.6;
+        text-shadow: 0px 2px 14px rgba(0, 0, 0, 0.8);
     }
 
-    .menus-shortcuts-links {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-
-        button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            padding: 18px 10px 16px;
-            border: none;
-            border-left: 1px solid rgba(227, 163, 63, 0.2);
-            color: $textColor1;
-            background: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-
-            &:first-child {
-                border-left: none;
-            }
-
-            &:hover {
-                background-color: rgba(227, 163, 63, 0.1);
-
-                .menus-shortcut-arrow {
-                    transform: translateY(4px);
-                    opacity: 1;
-                }
-            }
-
-            &:focus-visible {
-                outline: 2px solid $lineColor2;
-                outline-offset: -2px;
-            }
-        }
-    }
-
-    .menus-shortcut-number {
-        @include gold();
-        font-family: $fontDisplay;
-        font-size: 30px;
-        line-height: 1;
-    }
-
-    .menus-shortcut-name {
+    .menus-hero-hours {
+        color: $amberLight;
         font-family: $fontBody;
-        font-size: 15px;
         font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-    }
+        letter-spacing: 2px;
 
-    .menus-shortcut-arrow {
-        color: $textColor2;
-        opacity: 0.6;
-        transition: transform 0.3s $easeOut, opacity 0.3s;
+        span {
+            white-space: nowrap;
+        }
     }
 
     /*
@@ -238,17 +178,47 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         line-height: 1;
     }
 
-    .menu-price {
-        @include gold();
-        font-family: $fontDisplay;
-        font-size: 60px;
-        line-height: 1.1;
+    // A round red seal with the price, like IOYI's hanko
+    .menu-stamp {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        width: 118px;
+        height: 118px;
+        padding: 10px;
+        border: 2px solid rgba(244, 237, 225, 0.35);
+        border-radius: 50%;
+        color: $washi;
+        text-align: center;
+        background: radial-gradient(circle at 30% 20%, $redLight, $red 50%, $redDark);
+        box-shadow: 0px 14px 30px -12px #000;
+        rotate: -6deg;
+
+        b {
+            font-family: $fontDisplay;
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        small {
+            font-size: 10px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
     }
 
-    .menu-price2 {
-        margin-top: -6px;
-        color: $textColor4;
-        font-size: 14px;
+    .menu-stamp-kanji {
+        font-family: $fontBrush;
+        font-size: 22px;
+        line-height: 1.1;
+        white-space: nowrap;
     }
 
     .menu-description {
@@ -417,22 +387,19 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             cursor: pointer;
             transition: color 0.3s, border-color 0.3s, background-color 0.3s, transform 0.3s $easeOut;
 
-            img {
-                width: 60px;
-                height: 60px;
-                object-fit: cover;
-                border-radius: 50%;
-                mix-blend-mode: multiply;
-                transition: transform 0.4s $easeOut;
+            // The section's kanji, as on the buttons of «Pedir online»
+            b {
+                color: $red;
+                font-family: $fontBrush;
+                font-size: 30px;
+                font-weight: 400;
+                letter-spacing: 0px;
+                line-height: 1.2;
             }
 
             &:hover {
                 transform: translateY(-3px);
                 border-color: $ink;
-
-                img {
-                    transform: scale(1.1) rotate(-6deg);
-                }
             }
 
             &:focus-visible {
@@ -446,8 +413,8 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             border-color: $ink;
             background-color: $ink;
 
-            img {
-                mix-blend-mode: normal;
+            b {
+                color: $redLight;
             }
         }
     }
@@ -573,8 +540,59 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
      * Takeaway
      */
 
+    // On the seal's red, like «Tu ramen, también en casa» on Home
     .takeaway {
         padding: 110px 30px;
+        overflow: hidden;
+        isolation: isolate;
+        background: radial-gradient(circle at 75% 50%, $red, $redDark 55%, #5a0f12);
+
+        // 持ち帰り (takeaway) written big behind the text
+        &::after {
+            content: '持ち帰り';
+            position: absolute;
+            z-index: -1;
+            right: -4%;
+            bottom: -5%;
+            color: #000;
+            font-family: $fontBrush;
+            font-size: 260px;
+            line-height: 1;
+            opacity: 0.12;
+            pointer-events: none;
+        }
+
+        .kicker {
+            color: $amberLight;
+        }
+
+        .heading em {
+            background: none;
+            color: $amberLight;
+            -webkit-text-fill-color: $amberLight;
+        }
+
+        .lead {
+            color: $washi;
+            opacity: 0.85;
+        }
+
+        .cta-red {
+            color: $ink;
+            background: $washi;
+            box-shadow: 0px 10px 24px -10px #000;
+        }
+
+        .cta-gold {
+            color: $washi;
+            border-color: $washi;
+            background: transparent;
+
+            &:hover {
+                color: $redDark;
+                background-color: $washi;
+            }
+        }
 
         .container {
             display: grid;
@@ -614,42 +632,57 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
      * Desserts and drinks
      */
 
+    // On paper, like the washi sections of Home
     .cartas {
         padding: 110px 24px 120px;
-        background-color: $backgroundColor3;
+        color: $ink;
+        background: radial-gradient(circle at 15% 20%, rgba(200, 36, 43, 0.06), transparent 40%),
+            radial-gradient(circle at 85% 80%, rgba(227, 163, 63, 0.12), transparent 45%), $washi;
 
-        .wrapper {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0px, 440px));
-            justify-content: center;
-            align-items: start;
-            gap: 28px;
+        .kicker {
+            color: $red;
         }
 
-        .carta {
+        .heading {
+            color: $ink;
+        }
+
+        .wrapper {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
-            gap: 18px;
-            padding: 34px 30px 32px;
-            border: 1px solid rgba(227, 163, 63, 0.2);
-            border-radius: 26px;
-            background: radial-gradient(circle at 50% 0%, rgba(227, 163, 63, 0.12), transparent 60%), #1c1916;
+            gap: 22px;
+            max-width: 980px;
+            margin: auto;
+            text-align: left;
         }
 
         .carta-title {
-            color: $textColor2;
-            font-family: $fontBrush;
-            font-size: 44px;
-            line-height: 1.2;
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-top: 14px;
+            padding-bottom: 12px;
+            border-bottom: 1.5px solid rgba(26, 23, 20, 0.12);
+
+            b {
+                color: $red;
+                font-family: $fontBrush;
+                font-size: 26px;
+                font-weight: 400;
+            }
+
+            h3 {
+                color: $ink;
+                font-family: $fontDisplay;
+                font-size: 30px;
+            }
         }
 
         .carta-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 56px;
             list-style: none;
-            text-align: left;
 
             li {
                 display: flex;
@@ -657,37 +690,49 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
                 gap: 2px;
             }
 
-            &.is-prices li {
-                flex-direction: row;
-                align-items: baseline;
-                gap: 10px;
+            &.is-prices {
+                // Fills each column top to bottom, so beers, wines and sodas stay together
+                grid-auto-flow: column;
+                grid-template-rows: repeat(var(--rows), auto);
+                gap: 14px 56px;
 
-                // Dotted leader between the drink and its price
-                &::after {
-                    content: '';
-                    order: 1;
-                    flex: 1;
-                    border-bottom: 1px dotted rgba(227, 163, 63, 0.35);
+                li {
+                    flex-direction: row;
+                    align-items: baseline;
+                    gap: 10px;
+
+                    // Dotted leader between the drink and its price
+                    &::after {
+                        content: '';
+                        order: 1;
+                        flex: 1;
+                        border-bottom: 1px dotted rgba(26, 23, 20, 0.3);
+                    }
                 }
             }
         }
 
         .carta-item-name {
-            color: $textColor1;
+            color: $ink;
             font-family: $fontDisplay;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
         }
 
+        .is-prices .carta-item-name {
+            font-size: 17px;
+        }
+
         .carta-item-text {
-            color: $textColor3;
-            font-size: 14px;
+            color: $inkGrey;
+            font-size: 15px;
         }
 
         .carta-item-price {
             order: 2;
-            color: $amber;
+            color: $red;
             font-weight: 700;
+            white-space: nowrap;
         }
     }
 }
@@ -792,35 +837,6 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             padding: 120px 18px 80px;
         }
 
-        .menus-shortcuts-text {
-            padding: 16px 18px 14px;
-            font-size: 15px;
-        }
-
-        .menus-shortcuts-links {
-            grid-template-columns: none;
-
-            button {
-                flex-direction: row;
-                gap: 14px;
-                padding: 14px 20px;
-                border-left: none;
-                border-top: 1px solid rgba(227, 163, 63, 0.2);
-
-                &:first-child {
-                    border-top: none;
-                }
-            }
-        }
-
-        .menus-shortcut-number {
-            font-size: 24px;
-        }
-
-        .menus-shortcut-arrow {
-            margin-left: auto;
-        }
-
         .meals-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
@@ -846,8 +862,11 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             }
         }
 
-        .cartas .wrapper {
+        .cartas .carta-list,
+        .cartas .carta-list.is-prices {
+            grid-auto-flow: row;
             grid-template-columns: none;
+            grid-template-rows: none;
         }
 
     }
