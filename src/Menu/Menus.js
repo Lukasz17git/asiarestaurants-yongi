@@ -4,17 +4,37 @@ import Footer from '../Footer'
 import '../css/Menu.css'
 import Menu from './Menu'
 import menus from './MenusData'
-import meals from './MealsData'
 import Dish from './Dish'
 import Marquee from '../_new/sections/Marquee'
 import FinalCall from '../_new/sections/FinalCall'
 import { revealDelay, useReveal } from '../_new/reveal/useReveal'
-import { reservationWhatsappUrl } from '../_new/sections/reservation'
+import { phoneText, phoneUrl } from '../_new/sections/reservation'
+import { menuSections } from '../_new/pedidos/takeawayMenu'
+import { formatPrice } from '../_new/pedidos/deliveryRules'
+import { ioyiPhoto } from '../_new/images/ioyi/photos'
 
-// The category with most dishes; each one fills two rows at most
-const defaultCategoryName = 'Uramaki'
+const drinksSectionId = 'bebidas'
+const dishSections = menuSections.filter(({ id }) => id !== drinksSectionId)
+const drinks = menuSections.find(({ id }) => id === drinksSectionId).dishes
 
-const getVisibleMeals = (categoryName, language) => meals.find((category) => category.name[language] === categoryName).meals
+// Each tab's icon: the first dish of the section with a photo
+const getTabPhotoUrl = (section) => section.dishes.find((dish) => dish.photoUrl).photoUrl
+
+// x/y: where each part sits on the Akamaru photo, in %
+const bowlParts = [
+  { name: 'Alga nori', text: 'Crujiente al principio, se ablanda con el caldo.', x: 80, y: 26 },
+  { name: 'Cebolla tierna', text: 'Fresca, para cortar la grasa del caldo.', x: 50, y: 40 },
+  { name: 'Setas negras', text: 'Kikurage: textura crujiente y sabor suave.', x: 24, y: 44 },
+  { name: 'Huevo marinado', text: 'Ajitama con la yema melosa, marinado en soja.', x: 36, y: 64 },
+  { name: 'Chashu', text: 'Panceta de cerdo enrollada y estofada a fuego lento.', x: 66, y: 66 },
+  { name: 'Caldo tonkotsu', text: 'Hueso de cerdo cocinado durante horas, con aceite de ajo.', x: 30, y: 86 },
+]
+
+// Desserts aren't in takeaway-menu.json; the reviews name these two
+const desserts = [
+  { name: 'Mochi de Oreo', text: 'El mochi japonés, con galleta Oreo.' },
+  { name: 'Leche de coco con tapioca', text: 'Un final ligero después del ramen.' },
+]
 
 // The page's own base href ('/') would turn '#menus' into the Home page, so the shortcuts scroll by hand
 const scrollToSection = (id) => document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
@@ -22,65 +42,44 @@ const scrollToSection = (id) => document.getElementById(id).scrollIntoView({ beh
 const Menus = () => {
   const language = 'es'
   const pageRef = useRef(null)
-  const [categoryName, setCategoryName] = useState(defaultCategoryName)
+  const [sectionId, setSectionId] = useState(dishSections[0].id)
   useReveal(pageRef)
 
-  const visibleMeals = getVisibleMeals(categoryName, language)
-  const { day, night, pedidos } = menus
+  const visibleSection = dishSections.find(({ id }) => id === sectionId)
+  const { day, carta, pedidos } = menus
 
   const restaurantsTitle = {
-    es: 'Más de 200 platos para pedir sin parar: elige tu menú, pide otra ronda y deja hueco para el postre.',
+    es: 'Diez ramen de caldo lento, donburis, baos y entrantes japoneses. Pide tu bol, comparte unas gyozas y deja hueco para el postre.',
     cat: '',
-    it: 'Prova subito tutti i nostri piatti e menù!'
+    it: ''
   }
   const sectionLinks = [
-    { id: 'menus', name: { es: 'Menús' } },
-    { id: 'todo', name: { es: 'Todo lo que puedas comer' } },
+    { id: 'menus', name: { es: 'Menú y carta' } },
+    { id: 'bol', name: { es: 'Anatomía del bol' } },
     { id: 'platos', name: { es: 'Platos' } },
     { id: 'llevar', name: { es: 'Para llevar' } },
-    { id: 'acompanar', name: { es: 'Postres y vinos' } },
+    { id: 'acompanar', name: { es: 'Postres y bebidas' } },
   ]
-  const menusWords = ['Menú Mediodía', 'Menú Noche', 'Sushi', 'Cocina japonesa', 'Comida china', 'Para llevar', 'A domicilio']
+  const menusWords = ['Menú del día', 'Ramen', 'Donburi', 'Gyozas', 'Baos', 'Onigiri', 'Para llevar', 'A domicilio']
 
-  const allYouCanEat = {
-    es: ['Todo lo que puedas', 'comer'],
+  const anatomy = {
+    es: ['Anatomía de', 'un Akamaru'],
     cat: ['', ''],
     it: ['', '']
   }
-  const allYouCanEatDescription = {
-    es: 'Elige lo que quieras, saborea y disfruta todos nuestros deliciosos platos sin límites. Uramakis, nigiris, ramen, gua bao... y otra ronda, ¿por qué no?',
+  const anatomyDescription = {
+    es: 'Nuestro bol más aromático: caldo cremoso de cerdo con aceite de ajo. Cada ingrediente tiene su papel; así se come mejor.',
     cat: '',
-    it: 'Scegli quello che vuoi, senza limiti e assapora tutti i nostri piatti'
+    it: ''
   }
   const takeAway = {
-    es: ['Tus favoritos,', 'donde quieras'],
+    es: ['Tu ramen,', 'donde quieras'],
     cat: ['', ''],
     it: ['', ''],
     en: ['', '']
   }
   const takeAwayDescription = {
-    es: 'Escoge entre los numerosos platos que tenemos para llevar y disfrútalos en casa, en la oficina o donde te apetezca. Pide online en un minuto y te lo llevamos.',
-    cat: '',
-    it: ''
-  }
-
-  const dulcesTitle = {
-    es: 'Nuestros Dulces',
-    cat: '',
-    it: ''
-  }
-  const vinosTitle = {
-    es: 'Nuestros Vinos',
-    cat: '',
-    it: ''
-  }
-  const dulcesButton = {
-    es: 'Carta Dulces',
-    cat: '',
-    it: ''
-  }
-  const vinosButton = {
-    es: 'Carta Vinos',
+    es: 'Toda la carta para llevar: elige tus platos, envíanos el pedido por WhatsApp y pásate a recogerlo o te lo llevamos a casa.',
     cat: '',
     it: ''
   }
@@ -88,10 +87,10 @@ const Menus = () => {
   return (
     <div className='main-menu' ref={pageRef}>
       <header className='menus-hero'>
-        <img className='menus-hero-bg' src={require('../images/home/home17.webp')} alt='' />
+        <img className='menus-hero-bg' src={ioyiPhoto('place/ramen-bar')} alt='' />
         <div className='menus-hero-content'>
-          <p className='kicker'>Carta y menús</p>
-          <h1 className='heading'>Nuestra carta de <em>sushi</em>, cocina japonesa y china</h1>
+          <p className='kicker'>La carta</p>
+          <h1 className='heading'>Ramen, donburis y <em>entrantes japoneses</em></h1>
           <div className='menus-shortcuts'>
             <p className='menus-shortcuts-text'>{restaurantsTitle[language]}</p>
             <nav className='menus-shortcuts-links'>
@@ -111,28 +110,34 @@ const Menus = () => {
 
       <section id='menus' className='menus-container'>
         <div className='section-header' data-reveal='up'>
-          <p className='kicker'>Nuestros menús</p>
+          <p className='kicker'>Menú y carta</p>
           <h2 className='heading'>Elige tu <em>momento</em></h2>
-          <p className='lead'>A mediodía, por la noche o en casa: siempre hay una buena excusa para comer asiático.</p>
+          <p className='lead'>Menú del día entre semana, la carta a mediodía y por la noche, o tu ramen en casa.</p>
         </div>
         <div className='wrapper'>
-          {[day, night, pedidos].map((menu, index) => <Menu key={menu.pdf} menu={menu} index={index} />)}
+          {[day, carta, pedidos].map((menu, index) => <Menu key={menu.to} menu={menu} index={index} />)}
         </div>
       </section>
 
-      <section id='todo' className='allYouCan'>
+      <section id='bol' className='anatomy'>
         <div className='container'>
           <div className='left' data-reveal='left'>
-            <p className='kicker'>Asia Oriental Taste</p>
-            <h2 className='heading'>{allYouCanEat[language][0]} <em>{allYouCanEat[language][1]}</em></h2>
-            <p className='lead'>{allYouCanEatDescription[language]}</p>
-            <div className='cta-buttons'>
-              <a className='cta cta-red' href={reservationWhatsappUrl} target='_blank' rel='noreferrer'>Reservar mesa</a>
-            </div>
+            <p className='kicker'>Cómo es un ramen de IOYI</p>
+            <h2 className='heading'>{anatomy[language][0]} <em>{anatomy[language][1]}</em></h2>
+            <p className='lead'>{anatomyDescription[language]}</p>
+            <ol className='anatomy-parts'>
+              {bowlParts.map(({ name, text }) => (
+                <li key={name}>
+                  <strong>{name}</strong>
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ol>
           </div>
-          <div className='mosaic' data-reveal='right'>
-            {[1, 2, 3, 4].map((number) => (
-              <img key={number} src={require(`../images/menus/allyoucaneat${number}.webp`)} alt='Platos del menú todo lo que puedas comer' loading='lazy' />
+          <div className='anatomy-bowl' data-reveal='zoom'>
+            <img src={ioyiPhoto('dishes/akamaru')} alt='Ramen Akamaru de IOYI visto desde arriba' loading='lazy' />
+            {bowlParts.map(({ name, x, y }, index) => (
+              <span key={name} className='anatomy-dot' style={{ left: `${x}%`, top: `${y}%` }} title={name}>{index + 1}</span>
             ))}
           </div>
         </div>
@@ -140,35 +145,36 @@ const Menus = () => {
 
       <section id='platos' className='meals'>
         <div className='section-header' data-reveal='up'>
-          <p className='kicker'>Algunos de nuestros platos</p>
+          <p className='kicker'>Nuestros platos</p>
           <h2 className='heading'>Elige tu <em>antojo</em></h2>
         </div>
         <div className='meals-tabs' data-reveal='up'>
-          {meals.map((category) => (
-            <button key={category.name[language]} type='button' className={category.name[language] === categoryName ? 'is-selected' : undefined} onClick={() => setCategoryName(category.name[language])}>
-              <img src={require(`../images/mealsNoBg/${category.meals[0].photo}.webp`)} alt='' loading='lazy' />
-              <span>{category.name[language]}</span>
+          {dishSections.map((section) => (
+            <button key={section.id} type='button' className={section.id === sectionId ? 'is-selected' : undefined} onClick={() => setSectionId(section.id)}>
+              <img src={getTabPhotoUrl(section)} alt='' loading='lazy' />
+              <span>{section.name}</span>
             </button>
           ))}
         </div>
-        <div key={categoryName} className='meals-grid'>
-          {visibleMeals.map((meal, index) => <Dish key={meal.photo} dish={meal} index={index} />)}
+        {visibleSection.note && <p className='meals-note'>{visibleSection.note}</p>}
+        <div key={sectionId} className='meals-grid'>
+          {visibleSection.dishes.map((dish, index) => <Dish key={dish.number} dish={dish} index={index} />)}
         </div>
         <div className='cta-buttons'>
-          <a className='cta cta-red' href='./pdfs/CartaNoche2024_compressed.pdf' target='_blank' rel='noreferrer'>Ver toda la carta</a>
+          <Link className='cta cta-red' to='/pedidos'>Pedir para llevar</Link>
         </div>
       </section>
 
       <section id='llevar' className='takeaway'>
         <div className='container'>
-          <img data-reveal='left' src={require('../images/menus/takeAway.webp')} alt='Sushi para llevar' loading='lazy' />
+          <img data-reveal='left' src={ioyiPhoto('dishes/katsu-sando')} alt='Katsu Sando de IOYI' loading='lazy' />
           <div className='right' data-reveal='right'>
             <p className='kicker'>Para llevar</p>
             <h2 className='heading'>{takeAway[language][0]} <em>{takeAway[language][1]}</em></h2>
             <p className='lead'>{takeAwayDescription[language]}</p>
             <div className='cta-buttons'>
               <Link className='cta cta-red' to='/pedidos'>Pedir online</Link>
-              <a className='cta cta-gold' href={pedidos.pdf} target='_blank' rel='noreferrer'>Carta para llevar</a>
+              <a className='cta cta-gold' href={phoneUrl}>Llamar al {phoneText.replace('+34 ', '')}</a>
             </div>
           </div>
         </div>
@@ -181,22 +187,26 @@ const Menus = () => {
         </div>
         <div className='wrapper'>
           <div className='carta' data-reveal='up' style={revealDelay(0)}>
-            <div className='carta-image carta-dulces' />
-            <div className='carta-title'>{dulcesTitle[language]}</div>
-            <div className='carta-button'>
-              <a target='blank' >
-                {dulcesButton[language]}
-              </a>
-            </div>
+            <div className='carta-title'>Postres</div>
+            <ul className='carta-list'>
+              {desserts.map(({ name, text }) => (
+                <li key={name}>
+                  <span className='carta-item-name'>{name}</span>
+                  <span className='carta-item-text'>{text}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className='carta' data-reveal='up' style={revealDelay(1)}>
-            <div className='carta-image carta-vinos' />
-            <div className='carta-title'>{vinosTitle[language]}</div>
-            <div className='carta-button'>
-              <a href='./pdfs/CartaVinos2024v2_compressed.pdf' target='blank' >
-                {vinosButton[language]}
-              </a>
-            </div>
+            <div className='carta-title'>Bebidas</div>
+            <ul className='carta-list is-prices'>
+              {drinks.map(({ number, name, priceInCents }) => (
+                <li key={number}>
+                  <span className='carta-item-name'>{name.es}</span>
+                  <span className='carta-item-price'>{formatPrice(priceInCents)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

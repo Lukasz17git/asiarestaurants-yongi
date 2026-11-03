@@ -1,14 +1,16 @@
-/*white*/
-/*gold*/
+/*sumi: the dark of the noodle bar*/
+/*cream*/
+/*amber, the lantern light*/
 /*grey*/
-/*brown-gold*/
-/*gold line*/
-/*red of the logo*/
+/*dark amber*/
+/*amber line*/
+/*red of the hanko seal*/
+/*washi paper, where the dish photos (white background) sit*/
 .main-menu {
   position: relative;
   overflow-x: hidden;
-  color: #eee;
-  background-color: #121518;
+  color: #f2eadc;
+  background-color: #141210;
   /*
    * Hero
    */
@@ -16,16 +18,16 @@
    * Menus
    */
   /*
-   * All you can eat
+   * Anatomy of a bowl
    */
   /*
-   * Dishes
+   * Dishes: on washi paper, so the photos' white background blends in
    */
   /*
    * Takeaway
    */
   /*
-   * Desserts and wines
+   * Desserts and drinks
    */
 }
 .main-menu section {
@@ -46,7 +48,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(ellipse at 50% 45%, rgba(18, 21, 24, 0.35), rgba(18, 21, 24, 0.75) 75%), linear-gradient(to bottom, rgba(18, 21, 24, 0.7), transparent 30%, transparent 65%, #121518);
+  background: radial-gradient(ellipse at 50% 45%, rgba(20, 18, 16, 0.35), rgba(20, 18, 16, 0.75) 75%), linear-gradient(to bottom, rgba(20, 18, 16, 0.7), transparent 30%, transparent 65%, #141210);
 }
 .main-menu .menus-hero-bg {
   position: absolute;
@@ -85,19 +87,23 @@
   font-size: clamp(42px, 7vw, 84px);
   text-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6);
 }
+.main-menu .menus-hero-content .heading em {
+  text-shadow: none;
+  filter: drop-shadow(0px 6px 20px rgba(0, 0, 0, 0.7));
+}
 .main-menu .menus-shortcuts {
   width: min(100%, 980px);
   margin-top: 10px;
   overflow: hidden;
-  border: 1px solid rgba(201, 171, 129, 0.3);
+  border: 1px solid rgba(227, 163, 63, 0.3);
   border-radius: 26px;
-  background-color: rgba(12, 14, 16, 0.62);
+  background-color: rgba(13, 11, 10, 0.62);
   backdrop-filter: blur(10px);
   box-shadow: 0px 30px 60px -30px #000;
 }
 .main-menu .menus-shortcuts-text {
   padding: 20px 28px 18px;
-  border-bottom: 1px solid rgba(201, 171, 129, 0.2);
+  border-bottom: 1px solid rgba(227, 163, 63, 0.2);
   color: #d2d2d2;
   font-size: 16px;
   line-height: 1.6;
@@ -113,8 +119,8 @@
   gap: 6px;
   padding: 18px 10px 16px;
   border: none;
-  border-left: 1px solid rgba(201, 171, 129, 0.2);
-  color: #eee;
+  border-left: 1px solid rgba(227, 163, 63, 0.2);
+  color: #f2eadc;
   background: none;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -123,34 +129,34 @@
   border-left: none;
 }
 .main-menu .menus-shortcuts-links button:hover {
-  background-color: rgba(201, 171, 129, 0.1);
+  background-color: rgba(227, 163, 63, 0.1);
 }
 .main-menu .menus-shortcuts-links button:hover .menus-shortcut-arrow {
   transform: translateY(4px);
   opacity: 1;
 }
 .main-menu .menus-shortcuts-links button:focus-visible {
-  outline: 2px solid #ead1af;
+  outline: 2px solid #f2c477;
   outline-offset: -2px;
 }
 .main-menu .menus-shortcut-number {
-  background: radial-gradient(#b88746, #fdf5a6);
-  background: -webkit-linear-gradient(top, #b88746, #fdf5a6);
+  background: radial-gradient(#d48a2a, #f6d08a);
+  background: -webkit-linear-gradient(top, #f6d08a, #d48a2a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "AsianHiro", serif;
+  font-family: "Shippori Mincho B1", serif;
   font-size: 30px;
   line-height: 1;
 }
 .main-menu .menus-shortcut-name {
-  font-family: "CondLight", sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 .main-menu .menus-shortcut-arrow {
-  color: #c9ab81;
+  color: #e3a33f;
   opacity: 0.6;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s;
 }
@@ -168,15 +174,15 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid rgba(201, 171, 129, 0.2);
+  border: 1px solid rgba(227, 163, 63, 0.2);
   border-radius: 26px;
-  background: linear-gradient(160deg, #1f252b, #14181c);
+  background: linear-gradient(160deg, #221e1a, #171412);
   transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s), border-color 0.45s, box-shadow 0.45s, translate 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .main-menu .menu-card:hover {
   translate: 0px -8px;
-  border-color: rgba(201, 171, 129, 0.75);
-  box-shadow: 0px 26px 50px -26px #c9ab81;
+  border-color: rgba(227, 163, 63, 0.75);
+  box-shadow: 0px 26px 50px -26px #e3a33f;
 }
 .main-menu .menu-card:hover .menu-photo img {
   transform: scale(1.08);
@@ -200,10 +206,10 @@
   padding: 6px 14px;
   border-radius: 999px;
   color: #fff;
-  font-family: "CondLight", sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
-  background-color: rgba(12, 14, 16, 0.85);
+  background-color: rgba(13, 11, 10, 0.85);
   backdrop-filter: blur(6px);
 }
 .main-menu .menu-body {
@@ -215,86 +221,158 @@
   padding: 26px 24px 30px;
 }
 .main-menu .menu-title {
-  color: #c9ab81;
-  font-family: "Italianno", serif;
-  font-size: 52px;
+  color: #e3a33f;
+  font-family: "Yuji Syuku", serif;
+  font-size: 44px;
   font-weight: 400;
   line-height: 1;
 }
 .main-menu .menu-price {
-  background: radial-gradient(#b88746, #fdf5a6);
-  background: -webkit-linear-gradient(top, #b88746, #fdf5a6);
+  background: radial-gradient(#d48a2a, #f6d08a);
+  background: -webkit-linear-gradient(top, #f6d08a, #d48a2a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "AsianHiro", serif;
+  font-family: "Shippori Mincho B1", serif;
   font-size: 60px;
   line-height: 1.1;
 }
 .main-menu .menu-price2 {
   margin-top: -6px;
-  color: #959494;
+  color: #8a8174;
   font-size: 14px;
 }
 .main-menu .menu-description {
   flex: 1;
   max-width: 300px;
   margin-bottom: 14px;
-  color: #b3b2b2;
+  color: #b2a998;
   font-size: 15px;
   line-height: 1.6;
 }
-.main-menu .allYouCan {
+.main-menu .anatomy {
   padding: 110px 30px;
-  background: radial-gradient(ellipse at 80% 50%, rgba(201, 171, 129, 0.1), transparent 60%), #191D22;
+  background: radial-gradient(ellipse at 80% 50%, rgba(200, 36, 43, 0.14), transparent 60%), #24201c;
 }
-.main-menu .allYouCan .container {
+.main-menu .anatomy .container {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 70px;
   max-width: 1200px;
   margin: auto;
 }
-.main-menu .allYouCan .left {
+.main-menu .anatomy .left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 22px;
   text-align: left;
 }
-.main-menu .allYouCan .left .lead {
+.main-menu .anatomy .left .lead {
   margin: 0px;
 }
-.main-menu .mosaic {
+.main-menu .anatomy-parts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 14px 24px;
+  list-style: none;
+  counter-reset: part;
 }
-.main-menu .mosaic img {
+.main-menu .anatomy-parts li {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 2px 12px;
+  counter-increment: part;
+}
+.main-menu .anatomy-parts li::before {
+  content: counter(part);
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #c8242b;
+}
+.main-menu .anatomy-parts strong {
+  color: #f2eadc;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 18px;
+}
+.main-menu .anatomy-parts span {
+  color: #b2a998;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.main-menu .anatomy-bowl {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 500px);
+  aspect-ratio: 1;
+}
+.main-menu .anatomy-bowl img {
   display: block;
   width: 100%;
   height: 100%;
-  aspect-ratio: 3/2;
+  border-radius: 50%;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0px 20px 40px -24px #000;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0px 0px 0px 1px rgba(227, 163, 63, 0.45), 0px 0px 0px 14px #24201c, 0px 0px 0px 15px rgba(227, 163, 63, 0.2), 0px 40px 70px -30px #000;
 }
-.main-menu .mosaic img:nth-child(odd) {
-  transform: translateY(24px);
+.main-menu .anatomy-dot {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 700;
+  background-color: #c8242b;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.45);
+  transform: translate(-50%, -50%);
+  animation: dot-pulse 2.4s ease-in-out infinite;
 }
-.main-menu .mosaic img:hover {
-  transform: scale(1.05) rotate(-1deg);
+.main-menu .anatomy-dot:nth-of-type(1) {
+  animation-delay: 0.3s;
+}
+.main-menu .anatomy-dot:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+.main-menu .anatomy-dot:nth-of-type(3) {
+  animation-delay: 0.9s;
+}
+.main-menu .anatomy-dot:nth-of-type(4) {
+  animation-delay: 1.2s;
+}
+.main-menu .anatomy-dot:nth-of-type(5) {
+  animation-delay: 1.5s;
+}
+.main-menu .anatomy-dot:nth-of-type(6) {
+  animation-delay: 1.8s;
 }
 .main-menu .meals {
   padding: 120px 24px 100px;
+  color: #1a1714;
+  background-color: #f4ede1;
+}
+.main-menu .meals .kicker {
+  color: #c8242b;
+}
+.main-menu .meals .heading {
+  color: #1a1714;
 }
 .main-menu .meals-tabs {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 12px;
-  max-width: 1200px;
-  margin: -12px auto 44px;
+  max-width: 900px;
+  margin: -12px auto 24px;
 }
 .main-menu .meals-tabs button {
   display: flex;
@@ -302,90 +380,144 @@
   align-items: center;
   gap: 6px;
   padding: 12px 8px 12px;
-  border: 1px solid rgba(201, 171, 129, 0.16);
+  border: 1.5px solid rgba(26, 23, 20, 0.12);
   border-radius: 18px;
-  color: #eee;
-  font-family: "CondLight", sans-serif;
+  color: #5d554b;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  background: radial-gradient(circle at 50% 40%, #262d34, #171b1f 70%);
+  background-color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
-  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .main-menu .meals-tabs button img {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.6));
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .main-menu .meals-tabs button:hover {
   transform: translateY(-3px);
-  border-color: rgba(201, 171, 129, 0.6);
+  border-color: #1a1714;
 }
 .main-menu .meals-tabs button:hover img {
   transform: scale(1.1) rotate(-6deg);
 }
 .main-menu .meals-tabs button:focus-visible {
-  outline: 2px solid #ead1af;
+  outline: 2px solid #c8242b;
   outline-offset: 2px;
 }
 .main-menu .meals-tabs .is-selected {
-  color: #ead1af;
-  border-color: #c9ab81;
-  background: radial-gradient(circle at 50% 40%, rgba(201, 171, 129, 0.22), #171b1f 75%);
-  box-shadow: 0px 14px 30px -18px #c9ab81;
+  color: #f4ede1;
+  border-color: #1a1714;
+  background-color: #1a1714;
+}
+.main-menu .meals-tabs .is-selected img {
+  mix-blend-mode: normal;
+}
+.main-menu .meals-note {
+  margin-bottom: 30px;
+  color: #5d554b;
+  font-style: italic;
 }
 .main-menu .meals-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 28px 22px;
   max-width: 1200px;
   margin: 0px auto 52px;
 }
 .main-menu .dish-container {
-  animation: dish-pop 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.main-menu .dish-container .dish-bg {
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 100%;
-  padding: 18px 14px 20px;
-  border: 1px solid rgba(201, 171, 129, 0.16);
-  border-radius: 22px;
-  background: radial-gradient(circle at 50% 40%, #262d34, #171b1f 70%);
-  transition: border-color 0.4s, box-shadow 0.4s;
+  text-align: left;
+  animation: dish-pop 0.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 .main-menu .dish-container .photo {
+  display: grid;
+  place-items: center;
   width: 100%;
   aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 20px;
 }
 .main-menu .dish-container .photo img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0px 16px 16px rgba(0, 0, 0, 0.6));
+  object-fit: cover;
+  mix-blend-mode: multiply;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
+.main-menu .dish-container .photo-placeholder {
+  display: grid;
+  place-items: center;
+  width: 40%;
+  aspect-ratio: 1;
+  border: 3px solid rgba(200, 36, 43, 0.6);
+  border-radius: 12px;
+  color: rgba(200, 36, 43, 0.75);
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 40px;
+  font-weight: 800;
+  transform: rotate(-6deg);
+}
+.main-menu .dish-container .dish-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(26, 23, 20, 0.15);
+}
 .main-menu .dish-container .name {
-  color: #eee;
-  font-family: "CondLight", sans-serif;
-  font-size: 17px;
+  color: #1a1714;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  line-height: 1.25;
+}
+.main-menu .dish-container .dish-description {
+  color: #5d554b;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.main-menu .dish-container .dish-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.main-menu .dish-container .dish-price {
+  margin-right: auto;
+  color: #c8242b;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+.main-menu .dish-container .dish-tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
-.main-menu .dish-container:hover .dish-bg {
-  border-color: rgba(201, 171, 129, 0.75);
-  box-shadow: 0px 20px 40px -24px #c9ab81;
+.main-menu .dish-container .dish-tag.is-vegan {
+  color: #2f6b2a;
+  background-color: rgba(126, 190, 120, 0.25);
+}
+.main-menu .dish-container .dish-tag.is-spicy {
+  color: #8d171c;
+  background-color: rgba(224, 57, 63, 0.15);
 }
 .main-menu .dish-container:hover .photo img {
-  transform: scale(1.12) rotate(-6deg);
+  transform: scale(1.08) rotate(-4deg);
 }
 .main-menu .takeaway {
   padding: 110px 30px;
@@ -420,64 +552,68 @@
 }
 .main-menu .cartas {
   padding: 110px 24px 120px;
-  background-color: #191D22;
+  background-color: #24201c;
 }
 .main-menu .cartas .wrapper {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0px, 380px));
+  grid-template-columns: repeat(2, minmax(0px, 440px));
   justify-content: center;
+  align-items: start;
   gap: 28px;
 }
 .main-menu .cartas .carta {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  padding: 34px 24px 32px;
-  border: 1px solid rgba(201, 171, 129, 0.2);
+  align-items: stretch;
+  gap: 18px;
+  padding: 34px 30px 32px;
+  border: 1px solid rgba(227, 163, 63, 0.2);
   border-radius: 26px;
-  background: radial-gradient(circle at 50% 35%, rgba(201, 171, 129, 0.14), transparent 60%), #171b1f;
-}
-.main-menu .cartas .carta:hover .carta-image {
-  transform: translateY(-10px) rotate(-4deg) scale(1.05);
-}
-.main-menu .cartas .carta-image {
-  width: 200px;
-  height: 200px;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  filter: drop-shadow(0px 18px 18px rgba(0, 0, 0, 0.6));
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.main-menu .cartas .carta-dulces {
-  background-image: url("../images/menus/cartaDulces.webp");
-}
-.main-menu .cartas .carta-vinos {
-  background-image: url("../images/menus/cartaVinos.webp");
+  background: radial-gradient(circle at 50% 0%, rgba(227, 163, 63, 0.12), transparent 60%), #1c1916;
 }
 .main-menu .cartas .carta-title {
-  color: #c9ab81;
-  font-family: "Italianno", serif;
-  font-size: 50px;
-  line-height: 1;
+  color: #e3a33f;
+  font-family: "Yuji Syuku", serif;
+  font-size: 44px;
+  line-height: 1.2;
 }
-.main-menu .cartas .carta-button a {
-  display: inline-flex;
-  padding: 10px 24px;
-  border: 1.5px solid #c9ab81;
-  border-radius: 999px;
-  color: #c9ab81;
-  font-family: "CondLight", sans-serif;
+.main-menu .cartas .carta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  text-align: left;
+}
+.main-menu .cartas .carta-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.main-menu .cartas .carta-list.is-prices li {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+}
+.main-menu .cartas .carta-list.is-prices li::after {
+  content: "";
+  order: 1;
+  flex: 1;
+  border-bottom: 1px dotted rgba(227, 163, 63, 0.35);
+}
+.main-menu .cartas .carta-item-name {
+  color: #f2eadc;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: color 0.3s, background-color 0.3s;
 }
-.main-menu .cartas .carta-button a:hover {
-  color: #121518;
-  background-color: #c9ab81;
+.main-menu .cartas .carta-item-text {
+  color: #b2a998;
+  font-size: 14px;
+}
+.main-menu .cartas .carta-item-price {
+  order: 2;
+  color: #e3a33f;
+  font-weight: 700;
 }
 
 @keyframes menus-hero-zoom {
@@ -498,6 +634,14 @@
     transform: none;
   }
 }
+@keyframes dot-pulse {
+  0%, 100% {
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.45), 0px 0px 0px 0px rgba(200, 36, 43, 0.6);
+  }
+  50% {
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.45), 0px 0px 0px 10px rgba(200, 36, 43, 0);
+  }
+}
 @keyframes dish-pop {
   from {
     opacity: 0;
@@ -513,19 +657,22 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     max-width: 640px;
   }
-  .main-menu .allYouCan .container,
+  .main-menu .anatomy .container,
   .main-menu .takeaway .container {
     grid-template-columns: none;
     gap: 56px;
   }
-  .main-menu .allYouCan .left,
+  .main-menu .anatomy .left,
   .main-menu .takeaway .right {
     align-items: center;
     text-align: center;
   }
-  .main-menu .allYouCan .left .cta-buttons,
+  .main-menu .anatomy .left .cta-buttons,
   .main-menu .takeaway .right .cta-buttons {
     justify-content: center;
+  }
+  .main-menu .anatomy-bowl {
+    width: min(100%, 420px);
   }
   .main-menu .takeaway img {
     max-width: 600px;
@@ -560,7 +707,7 @@
     gap: 14px;
     padding: 14px 20px;
     border-left: none;
-    border-top: 1px solid rgba(201, 171, 129, 0.2);
+    border-top: 1px solid rgba(227, 163, 63, 0.2);
   }
   .main-menu .menus-shortcuts-links button:first-child {
     border-top: none;
@@ -575,21 +722,29 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
-  .main-menu .dish-container .name {
-    font-size: 14px;
+  .main-menu .anatomy-parts {
+    grid-template-columns: none;
+    text-align: left;
+  }
+  .main-menu .dish-container .name,
+  .main-menu .dish-container .dish-price {
+    font-size: 16px;
+  }
+  .main-menu .dish-container .dish-description {
+    font-size: 13px;
+  }
+  .main-menu .dish-container .dish-footer {
+    flex-wrap: wrap;
   }
   .main-menu .cartas .wrapper {
     grid-template-columns: none;
-  }
-  .main-menu .cartas .carta-image {
-    width: 160px;
-    height: 160px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .main-menu .menus-hero-bg,
   .main-menu .menus-hero-content > *,
-  .main-menu .dish-container {
+  .main-menu .dish-container,
+  .main-menu .anatomy-dot {
     animation: none;
   }
 }

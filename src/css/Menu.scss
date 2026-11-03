@@ -32,8 +32,8 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             inset: 0;
             z-index: -1;
             background:
-                radial-gradient(ellipse at 50% 45%, rgba(18, 21, 24, 0.35), rgba(18, 21, 24, 0.75) 75%),
-                linear-gradient(to bottom, rgba(18, 21, 24, 0.7), transparent 30%, transparent 65%, $backgroundColor2);
+                radial-gradient(ellipse at 50% 45%, rgba(20, 18, 16, 0.35), rgba(20, 18, 16, 0.75) 75%),
+                linear-gradient(to bottom, rgba(20, 18, 16, 0.7), transparent 30%, transparent 65%, $backgroundColor2);
         }
     }
 
@@ -69,6 +69,12 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         .heading {
             font-size: clamp(42px, 7vw, 84px);
             text-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6);
+
+            // A text-shadow shows through gradient text (transparent letters), so the red uses a filter
+            em {
+                text-shadow: none;
+                filter: drop-shadow(0px 6px 20px rgba(0, 0, 0, 0.7));
+            }
         }
     }
 
@@ -77,16 +83,16 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         width: min(100%, 980px);
         margin-top: 10px;
         overflow: hidden;
-        border: 1px solid rgba(201, 171, 129, 0.3);
+        border: 1px solid rgba(227, 163, 63, 0.3);
         border-radius: 26px;
-        background-color: rgba(12, 14, 16, 0.62);
+        background-color: rgba(13, 11, 10, 0.62);
         backdrop-filter: blur(10px);
         box-shadow: 0px 30px 60px -30px #000;
     }
 
     .menus-shortcuts-text {
         padding: 20px 28px 18px;
-        border-bottom: 1px solid rgba(201, 171, 129, 0.2);
+        border-bottom: 1px solid rgba(227, 163, 63, 0.2);
         color: #d2d2d2;
         font-size: 16px;
         line-height: 1.6;
@@ -103,7 +109,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             gap: 6px;
             padding: 18px 10px 16px;
             border: none;
-            border-left: 1px solid rgba(201, 171, 129, 0.2);
+            border-left: 1px solid rgba(227, 163, 63, 0.2);
             color: $textColor1;
             background: none;
             cursor: pointer;
@@ -114,7 +120,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             }
 
             &:hover {
-                background-color: rgba(201, 171, 129, 0.1);
+                background-color: rgba(227, 163, 63, 0.1);
 
                 .menus-shortcut-arrow {
                     transform: translateY(4px);
@@ -131,13 +137,13 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
 
     .menus-shortcut-number {
         @include gold();
-        font-family: 'AsianHiro', serif;
+        font-family: $fontDisplay;
         font-size: 30px;
         line-height: 1;
     }
 
     .menus-shortcut-name {
-        font-family: 'CondLight', sans-serif;
+        font-family: $fontBody;
         font-size: 15px;
         font-weight: 700;
         letter-spacing: 1.5px;
@@ -170,15 +176,15 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        border: 1px solid rgba(201, 171, 129, 0.2);
+        border: 1px solid rgba(227, 163, 63, 0.2);
         border-radius: 26px;
-        background: linear-gradient(160deg, #1f252b, #14181c);
+        background: linear-gradient(160deg, #221e1a, #171412);
         // Keeps the data-reveal transitions (reveal.scss), which this one would replace; the hover moves `translate`
         transition: opacity 0.9s $easeOut var(--reveal-delay, 0s), transform 0.9s $easeOut var(--reveal-delay, 0s), border-color 0.45s, box-shadow 0.45s, translate 0.45s $easeOut;
 
         &:hover {
             translate: 0px -8px;
-            border-color: rgba(201, 171, 129, 0.75);
+            border-color: rgba(227, 163, 63, 0.75);
             box-shadow: 0px 26px 50px -26px $textColor2;
 
             .menu-photo img {
@@ -208,10 +214,10 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         padding: 6px 14px;
         border-radius: 999px;
         color: #fff;
-        font-family: 'CondLight', sans-serif;
+        font-family: $fontBody;
         font-weight: 700;
         letter-spacing: 2px;
-        background-color: rgba(12, 14, 16, 0.85);
+        background-color: rgba(13, 11, 10, 0.85);
         backdrop-filter: blur(6px);
     }
 
@@ -226,15 +232,15 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
 
     .menu-title {
         color: $textColor2;
-        font-family: 'Italianno', serif;
-        font-size: 52px;
+        font-family: $fontBrush;
+        font-size: 44px;
         font-weight: 400;
         line-height: 1;
     }
 
     .menu-price {
         @include gold();
-        font-family: 'AsianHiro', serif;
+        font-family: $fontDisplay;
         font-size: 60px;
         line-height: 1.1;
     }
@@ -255,18 +261,18 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     /*
-     * All you can eat
+     * Anatomy of a bowl
      */
 
-    .allYouCan {
+    .anatomy {
         padding: 110px 30px;
         background:
-            radial-gradient(ellipse at 80% 50%, rgba(201, 171, 129, 0.1), transparent 60%),
+            radial-gradient(ellipse at 80% 50%, rgba(200, 36, 43, 0.14), transparent 60%),
             $backgroundColor3;
 
         .container {
             display: grid;
-            grid-template-columns: 1fr 1.1fr;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
             gap: 70px;
             max-width: 1200px;
@@ -286,46 +292,112 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         }
     }
 
-    .mosaic {
+    .anatomy-parts {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        gap: 14px 24px;
+        list-style: none;
+        counter-reset: part;
+
+        li {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 2px 12px;
+            counter-increment: part;
+
+            &::before {
+                content: counter(part);
+                grid-row: span 2;
+                display: grid;
+                place-items: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                color: #fff;
+                font-family: $fontBody;
+                font-size: 14px;
+                font-weight: 700;
+                background-color: $red;
+            }
+        }
+
+        strong {
+            color: $textColor1;
+            font-family: $fontDisplay;
+            font-size: 18px;
+        }
+
+        span {
+            color: $textColor3;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    }
+
+    // The photo as a round plate, with numbered dots on each part
+    .anatomy-bowl {
+        position: relative;
+        justify-self: center;
+        width: min(100%, 500px);
+        aspect-ratio: 1;
 
         img {
             display: block;
             width: 100%;
             height: 100%;
-            aspect-ratio: 3 / 2;
+            border-radius: 50%;
             object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0px 20px 40px -24px #000;
-            transition: transform 0.6s $easeOut;
+            box-shadow: 0px 0px 0px 1px rgba(227, 163, 63, 0.45), 0px 0px 0px 14px $backgroundColor3, 0px 0px 0px 15px rgba(227, 163, 63, 0.2), 0px 40px 70px -30px #000;
+        }
+    }
 
-            &:nth-child(odd) {
-                transform: translateY(24px);
-            }
+    .anatomy-dot {
+        position: absolute;
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        color: #fff;
+        font-family: $fontBody;
+        font-weight: 700;
+        background-color: $red;
+        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.45);
+        transform: translate(-50%, -50%);
+        animation: dot-pulse 2.4s ease-in-out infinite;
 
-            &:hover {
-                transform: scale(1.05) rotate(-1deg);
+        @for $index from 1 through 6 {
+            &:nth-of-type(#{$index}) {
+                animation-delay: $index * 0.3s;
             }
         }
     }
 
     /*
-     * Dishes
+     * Dishes: on washi paper, so the photos' white background blends in
      */
 
     .meals {
         padding: 120px 24px 100px;
+        color: $ink;
+        background-color: $washi;
+
+        .kicker {
+            color: $red;
+        }
+
+        .heading {
+            color: $ink;
+        }
     }
 
-    // Category tabs drawn like small dish cards: 14 categories in two rows of 7
     .meals-tabs {
         display: grid;
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 12px;
-        max-width: 1200px;
-        margin: -12px auto 44px;
+        max-width: 900px;
+        margin: -12px auto 24px;
 
         button {
             display: flex;
@@ -333,29 +405,30 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             align-items: center;
             gap: 6px;
             padding: 12px 8px 12px;
-            border: 1px solid rgba(201, 171, 129, 0.16);
+            border: 1.5px solid rgba(26, 23, 20, 0.12);
             border-radius: 18px;
-            color: $textColor1;
-            font-family: 'CondLight', sans-serif;
+            color: $inkGrey;
+            font-family: $fontBody;
             font-size: 14px;
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            background: radial-gradient(circle at 50% 40%, #262d34, #171b1f 70%);
+            background-color: rgba(255, 255, 255, 0.55);
             cursor: pointer;
-            transition: color 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s $easeOut;
+            transition: color 0.3s, border-color 0.3s, background-color 0.3s, transform 0.3s $easeOut;
 
             img {
-                width: 56px;
-                height: 56px;
-                object-fit: contain;
-                filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.6));
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+                border-radius: 50%;
+                mix-blend-mode: multiply;
                 transition: transform 0.4s $easeOut;
             }
 
             &:hover {
                 transform: translateY(-3px);
-                border-color: rgba(201, 171, 129, 0.6);
+                border-color: $ink;
 
                 img {
                     transform: scale(1.1) rotate(-6deg);
@@ -363,75 +436,136 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             }
 
             &:focus-visible {
-                outline: 2px solid $lineColor2;
+                outline: 2px solid $red;
                 outline-offset: 2px;
             }
         }
 
         .is-selected {
-            color: $lineColor2;
-            border-color: $textColor2;
-            background: radial-gradient(circle at 50% 40%, rgba(201, 171, 129, 0.22), #171b1f 75%);
-            box-shadow: 0px 14px 30px -18px $textColor2;
+            color: $washi;
+            border-color: $ink;
+            background-color: $ink;
+
+            img {
+                mix-blend-mode: normal;
+            }
         }
+    }
+
+    .meals-note {
+        margin-bottom: 30px;
+        color: $inkGrey;
+        font-style: italic;
     }
 
     .meals-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: 28px 22px;
         max-width: 1200px;
         margin: 0px auto 52px;
     }
 
     .dish-container {
-        animation: dish-pop 0.6s $easeOut both;
-
-        .dish-bg {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-            padding: 18px 14px 20px;
-            border: 1px solid rgba(201, 171, 129, 0.16);
-            border-radius: 22px;
-            background: radial-gradient(circle at 50% 40%, #262d34, #171b1f 70%);
-            transition: border-color 0.4s, box-shadow 0.4s;
-        }
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        // Not `both`: a kept transform isolates the card, so multiply can't blend the photo
+        animation: dish-pop 0.6s $easeOut backwards;
 
         .photo {
+            display: grid;
+            place-items: center;
             width: 100%;
             aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 20px;
 
             img {
                 display: block;
                 width: 100%;
                 height: 100%;
-                object-fit: contain;
-                filter: drop-shadow(0px 16px 16px rgba(0, 0, 0, 0.6));
+                object-fit: cover;
+                mix-blend-mode: multiply;
                 transition: transform 0.6s $easeOut;
             }
         }
 
-        .name {
-            color: $textColor1;
-            font-family: 'CondLight', sans-serif;
-            font-size: 17px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+        // Dishes without a photo show their number, like a hanko stamp
+        .photo-placeholder {
+            display: grid;
+            place-items: center;
+            width: 40%;
+            aspect-ratio: 1;
+            border: 3px solid rgba(200, 36, 43, 0.6);
+            border-radius: 12px;
+            color: rgba(200, 36, 43, 0.75);
+            font-family: $fontDisplay;
+            font-size: 40px;
+            font-weight: 800;
+            transform: rotate(-6deg);
         }
 
-        &:hover {
-            .dish-bg {
-                border-color: rgba(201, 171, 129, 0.75);
-                box-shadow: 0px 20px 40px -24px $textColor2;
+        .dish-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 6px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(26, 23, 20, 0.15);
+        }
+
+        .name {
+            color: $ink;
+            font-family: $fontDisplay;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .dish-description {
+            color: $inkGrey;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .dish-footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 4px;
+        }
+
+        .dish-price {
+            margin-right: auto;
+            color: $red;
+            font-family: $fontDisplay;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .dish-tag {
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            &.is-vegan {
+                color: #2f6b2a;
+                background-color: rgba(126, 190, 120, 0.25);
             }
 
-            .photo img {
-                transform: scale(1.12) rotate(-6deg);
+            &.is-spicy {
+                color: $redDark;
+                background-color: rgba(224, 57, 63, 0.15);
             }
+        }
+
+        &:hover .photo img {
+            transform: scale(1.08) rotate(-4deg);
         }
     }
 
@@ -477,7 +611,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     /*
-     * Desserts and wines
+     * Desserts and drinks
      */
 
     .cartas {
@@ -486,68 +620,74 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
 
         .wrapper {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0px, 380px));
+            grid-template-columns: repeat(2, minmax(0px, 440px));
             justify-content: center;
+            align-items: start;
             gap: 28px;
         }
 
         .carta {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 14px;
-            padding: 34px 24px 32px;
-            border: 1px solid rgba(201, 171, 129, 0.2);
+            align-items: stretch;
+            gap: 18px;
+            padding: 34px 30px 32px;
+            border: 1px solid rgba(227, 163, 63, 0.2);
             border-radius: 26px;
-            background: radial-gradient(circle at 50% 35%, rgba(201, 171, 129, 0.14), transparent 60%), #171b1f;
-
-            &:hover .carta-image {
-                transform: translateY(-10px) rotate(-4deg) scale(1.05);
-            }
-        }
-
-        .carta-image {
-            width: 200px;
-            height: 200px;
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            filter: drop-shadow(0px 18px 18px rgba(0, 0, 0, 0.6));
-            transition: transform 0.6s $easeOut;
-        }
-
-        .carta-dulces {
-            background-image: url('../images/menus/cartaDulces.webp');
-        }
-
-        .carta-vinos {
-            background-image: url('../images/menus/cartaVinos.webp');
+            background: radial-gradient(circle at 50% 0%, rgba(227, 163, 63, 0.12), transparent 60%), #1c1916;
         }
 
         .carta-title {
             color: $textColor2;
-            font-family: 'Italianno', serif;
-            font-size: 50px;
-            line-height: 1;
+            font-family: $fontBrush;
+            font-size: 44px;
+            line-height: 1.2;
         }
 
-        .carta-button a {
-            display: inline-flex;
-            padding: 10px 24px;
-            border: 1.5px solid $textColor2;
-            border-radius: 999px;
-            color: $textColor2;
-            font-family: 'CondLight', sans-serif;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: color 0.3s, background-color 0.3s;
+        .carta-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            list-style: none;
+            text-align: left;
 
-            &:hover {
-                color: $backgroundColor2;
-                background-color: $textColor2;
+            li {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
             }
+
+            &.is-prices li {
+                flex-direction: row;
+                align-items: baseline;
+                gap: 10px;
+
+                // Dotted leader between the drink and its price
+                &::after {
+                    content: '';
+                    order: 1;
+                    flex: 1;
+                    border-bottom: 1px dotted rgba(227, 163, 63, 0.35);
+                }
+            }
+        }
+
+        .carta-item-name {
+            color: $textColor1;
+            font-family: $fontDisplay;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .carta-item-text {
+            color: $textColor3;
+            font-size: 14px;
+        }
+
+        .carta-item-price {
+            order: 2;
+            color: $amber;
+            font-weight: 700;
         }
     }
 }
@@ -574,6 +714,17 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     }
 }
 
+@keyframes dot-pulse {
+    0%,
+    100% {
+        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.45), 0px 0px 0px 0px rgba(200, 36, 43, 0.6);
+    }
+
+    50% {
+        box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.45), 0px 0px 0px 10px rgba(200, 36, 43, 0);
+    }
+}
+
 @keyframes dish-pop {
     from {
         opacity: 0;
@@ -593,13 +744,13 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             max-width: 640px;
         }
 
-        .allYouCan .container,
+        .anatomy .container,
         .takeaway .container {
             grid-template-columns: none;
             gap: 56px;
         }
 
-        .allYouCan .left,
+        .anatomy .left,
         .takeaway .right {
             align-items: center;
             text-align: center;
@@ -607,6 +758,10 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             .cta-buttons {
                 justify-content: center;
             }
+        }
+
+        .anatomy-bowl {
+            width: min(100%, 420px);
         }
 
         .takeaway img {
@@ -650,7 +805,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
                 gap: 14px;
                 padding: 14px 20px;
                 border-left: none;
-                border-top: 1px solid rgba(201, 171, 129, 0.2);
+                border-top: 1px solid rgba(227, 163, 63, 0.2);
 
                 &:first-child {
                     border-top: none;
@@ -671,18 +826,30 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             gap: 12px;
         }
 
-        .dish-container .name {
-            font-size: 14px;
+        .anatomy-parts {
+            grid-template-columns: none;
+            text-align: left;
+        }
+
+        .dish-container {
+            .name,
+            .dish-price {
+                font-size: 16px;
+            }
+
+            .dish-description {
+                font-size: 13px;
+            }
+
+            .dish-footer {
+                flex-wrap: wrap;
+            }
         }
 
         .cartas .wrapper {
             grid-template-columns: none;
         }
 
-        .cartas .carta-image {
-            width: 160px;
-            height: 160px;
-        }
     }
 }
 
@@ -690,7 +857,8 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     .main-menu {
         .menus-hero-bg,
         .menus-hero-content > *,
-        .dish-container {
+        .dish-container,
+        .anatomy-dot {
             animation: none;
         }
     }

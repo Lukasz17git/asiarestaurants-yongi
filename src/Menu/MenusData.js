@@ -1,73 +1,64 @@
-// image: path under src/images, without .webp
+// image: path under src/_new/images/ioyi, without .webp; to: the page its button opens
 const menus = {
     day: {
         name: {
-            es: 'Menú Mediodía',
+            es: 'Menú del día',
             cat: ''
         },
         description: {
-            es: 'Tu pausa de mediodía, a lo grande: sushi, cocina japonesa y china para disfrutar sin prisa.',
+            es: 'Tu pausa de mediodía entre semana: plato principal, bebida y postre, con raciones generosas.',
             cat: ''
         },
         time: {
-            es: '12:30 - 16:00',
+            es: 'Lunes a viernes, mediodía',
             cat: ''
         },
-        price: '15,90€',
+        price: '13,50€',
+        price2: 'Plato, bebida y postre',
         button: {
-            es: 'Ver Carta',
+            es: 'Cómo llegar',
             cat: ''
         },
-        image: 'home/home1',
-        pdf: './pdfs/CartaDia2024_compressed.pdf'
+        image: 'dishes/tonkotsu-don',
+        to: '/restaurant'
     },
-    night: {
+    carta: {
         name: {
-            es: 'Menú Noche',
+            es: 'Carta',
             cat: ''
         },
         description: {
-            es: 'La noche es para darse un homenaje: especiales, sushi y platos calientes para compartir.',
+            es: 'Diez ramen, donburis, baos y entrantes japoneses para pedir a tu ritmo, a mediodía o por la noche.',
             cat: ''
         },
         time: {
-            es: '20:00 - 23:00',
+            es: '13:00 - 15:30 · 19:30 - 22:30',
             cat: ''
         },
-        price: '21,90€',
-        price2: 'Viernes y festivos +1€',
+        price: 'desde 12,95€',
+        price2: 'Cada ramen',
         button: {
-            es: 'Ver Carta',
+            es: 'Ver platos',
             cat: ''
         },
-        image: 'home/home3',
-        pdf: './pdfs/CartaNoche2024_compressed.pdf'
-    },
-    festive: {
-        name: {
-            es: 'Menú Festivos',
-            cat: ''
-        },
-        description: {
-            es: 'Nuestro menú nocturno pero con un precio adicional de 1€, viernes cuenta como festivo',
-            cat: ''
-        }
+        image: 'dishes/shoyu-tonkotsu',
+        to: '#platos'
     },
     pedidos: {
         name: {
-            es: 'Carta Pedidos',
+            es: 'Para llevar',
             cat: ''
         },
         description: {
-            es: 'Todos tus favoritos recién hechos, para llevar a casa o al sitio que prefieras.',
+            es: 'Toda la carta recién hecha, para recoger en el local o recibir en casa.',
             cat: ''
         },
         button: {
-            es: 'Ver Carta',
+            es: 'Pedir online',
             cat: ''
         },
-        image: 'menus/takeAway',
-        pdf: './pdfs/CartaLlevar2024_compressed.pdf'
+        image: 'dishes/katsu-sando',
+        to: '/pedidos'
     }
 }
 export default menus
