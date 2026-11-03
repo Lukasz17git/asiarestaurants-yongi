@@ -40,3 +40,19 @@ $underline: rgb(237, 167, 126);
 @mixin shadowNavbar{
     box-shadow: 0px 1px 8px 1px #080808;
 }
+
+/*washi paper and ink, for the light sections (from the IOYI design)*/
+$washi: #f4ede1;
+$washi2: #e9dfcd;
+$ink: #15191d;
+$inkGrey: #5a5d61;
+
+/*the gold of the logo, under the names the IOYI sections use*/
+$amber: #c9ab81;
+$amberLight: #ead1af;
+$amberGlow: rgba(201, 171, 129, 0.35);
+
+$fontDisplay: 'Shippori Mincho B1', serif;
+$fontBody: 'Zen Kaku Gothic New', sans-serif;
+$fontBrush: 'Yuji Syuku', serif;
+$fontAsia: 'AsianHiro', serif;

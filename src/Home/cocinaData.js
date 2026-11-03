@@ -1,4 +1,4 @@
-// photo: path under src/images, without .webp
+// photo: path under src/images, without .webp; kanji: shown over the name
 const cocina = [
     {
         name: {
@@ -7,6 +7,7 @@ const cocina = [
             en: '',
             it: 'Cucina Giapponese'
         },
+        kanji: '日本料理',
         photo: 'menus/allyoucaneat2',
         description: {
             es: 'Ramen de caldo intenso, tempura dorada y crujiente, onigiri y mucho más para viajar a Japón sin salir de Vilafranca.',
@@ -22,6 +23,7 @@ const cocina = [
             en: '',
             it: 'Cucina Cinese'
         },
+        kanji: '中華料理',
         photo: 'home/home12',
         description: {
             es: 'Gua bao esponjosos, fideos chinos salteados al wok y jiaozi recién hechos. Comida china de la de verdad.',
@@ -37,6 +39,7 @@ const cocina = [
             en: '',
             it: 'Sushi'
         },
+        kanji: '寿司',
         photo: 'home/home15',
         description: {
             es: 'Uramaki, nigiri y hosomaki, con pescado crudo o cocinado. Decenas de variedades para no repetir nunca.',
@@ -52,6 +55,7 @@ const cocina = [
             en: '',
             it: 'Domicilio'
         },
+        kanji: '出前',
         photo: 'menus/takeAway',
         description: {
             es: '¿No te apetece salir? Pide online y te llevamos tus platos favoritos a casa, o pasa a recogerlos.',

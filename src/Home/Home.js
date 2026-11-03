@@ -10,6 +10,8 @@ import Marquee from '../_new/sections/Marquee'
 import Gallery from '../_new/sections/Gallery'
 import MenusTeaser from '../_new/sections/MenusTeaser'
 import FinalCall from '../_new/sections/FinalCall'
+import SushiGuide from '../_new/sections/SushiGuide'
+import Reviews from '../_new/sections/Reviews'
 import { useReveal } from '../_new/reveal/useReveal'
 
 const Home = () => {
@@ -20,12 +22,14 @@ const Home = () => {
     <div className='home' ref={homeRef}>
       <Front />
       <Marquee />
-      <Section2 />
       <Section1 />
+      <SushiGuide />
       <Section3 />
-      <Gallery />
-      <Section4 />
       <MenusTeaser />
+      <Section4 />
+      <Section2 />
+      <Gallery />
+      <Reviews />
       <FinalCall />
       <Footer />
     </div>

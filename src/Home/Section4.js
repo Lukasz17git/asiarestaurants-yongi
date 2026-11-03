@@ -1,7 +1,6 @@
 import React from 'react'
 import cocina from './cocinaData'
 import { Link } from 'react-router-dom'
-import gold from '../generateGold'
 import { revealDelay } from '../_new/reveal/useReveal'
 
 const Section4 = () => {
@@ -26,11 +25,12 @@ const Section4 = () => {
         <h2 className='heading'>{name[language][0]} <em>{name[language][1]}</em></h2>
       </div>
       <div className='container'>
-        {cocina.map(({ name, description, photo }, index) => (
+        {cocina.map(({ name, kanji, description, photo }, index) => (
           <article key={index} className='cocina' data-reveal='up' style={revealDelay(index)}>
             <img src={require(`../images/${photo}.webp`)} alt={name[language]} loading='lazy' />
             <div className='cocina-text'>
-              <h3 className='title'>{gold(name[language])}</h3>
+              <span className='cocina-kanji' aria-hidden='true'>{kanji}</span>
+              <h3 className='title'>{name[language]}</h3>
               <p className='description'>{description[language]}</p>
             </div>
           </article>

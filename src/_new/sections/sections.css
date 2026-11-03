@@ -5,6 +5,8 @@
 /*brown-gold*/
 /*gold line*/
 /*red of the logo*/
+/*washi paper and ink, for the light sections (from the IOYI design)*/
+/*the gold of the logo, under the names the IOYI sections use*/
 @keyframes slide-loop {
   to {
     transform: translateX(-50%);
@@ -101,6 +103,11 @@
   padding: 110px 24px;
   background: radial-gradient(ellipse at 50% 0%, rgba(168, 41, 46, 0.22), transparent 60%), #191D22;
 }
+.menus-teaser .heading em {
+  color: #d2383d;
+  -webkit-text-fill-color: #d2383d;
+  background: linear-gradient(transparent 64%, rgba(210, 56, 61, 0.3) 64%);
+}
 .menus-teaser .menus-teaser-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -149,13 +156,13 @@
 }
 .menus-teaser .menus-teaser-name {
   color: #c9ab81;
-  font-family: "Italianno", serif;
-  font-size: 48px;
-  line-height: 1;
+  font-family: "Yuji Syuku", serif;
+  font-size: 40px;
+  line-height: 1.2;
 }
 .menus-teaser .menus-teaser-time {
   color: #b3b2b2;
-  font-family: "CondLight", sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 700;
   letter-spacing: 3px;
 }
@@ -165,8 +172,9 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 6px 0px;
-  font-family: "AsianHiro", serif;
-  font-size: 64px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: clamp(40px, 5vw, 54px);
+  font-weight: 800;
   line-height: 1.1;
 }
 .menus-teaser .menus-teaser-note {
@@ -179,7 +187,7 @@
   border: 1px solid #a8292e;
   border-radius: 999px;
   color: #d2383d;
-  font-family: "CondLight", sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -203,6 +211,15 @@
   z-index: -1;
   background: radial-gradient(circle at 50% 50%, rgba(110, 21, 25, 0.18), transparent 65%), linear-gradient(to bottom, #121518, rgba(18, 21, 24, 0.8) 30%, rgba(18, 21, 24, 0.8) 70%, #121518);
 }
+.final-call::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #a8292e 25%, #d2383d 50%, #a8292e 75%, transparent);
+}
 .final-call .final-call-content {
   display: flex;
   flex-direction: column;
@@ -216,6 +233,12 @@
 }
 .final-call .lead {
   color: #d6d6d6;
+}
+.final-call .final-call-hours {
+  color: #ead1af;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 .final-call .final-call-links {
   display: flex;
@@ -235,6 +258,303 @@
   color: #c9ab81;
 }
 
+.reviews, .sushi-guide {
+  color: #15191d;
+  background-color: #f4ede1;
+  background-image: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.7), transparent 40%), radial-gradient(circle at 80% 90%, rgba(201, 180, 140, 0.25), transparent 45%);
+}
+
+/*
+ * Sushi guide: on washi paper, like the dish photos of «Pedir online»
+ */
+.sushi-guide {
+  position: relative;
+  padding: 110px 24px 100px;
+}
+.sushi-guide .kicker {
+  color: #a8292e;
+}
+.sushi-guide .heading {
+  color: #15191d;
+}
+.sushi-guide .lead {
+  color: #5a5d61;
+}
+.sushi-guide .sushi-guide-kinds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+.sushi-guide .sushi-guide-kinds button {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 120px;
+  padding: 14px 18px;
+  border: 1.5px solid rgba(26, 23, 20, 0.15);
+  border-radius: 18px;
+  color: #5a5d61;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sushi-guide .sushi-guide-kinds button:hover {
+  transform: translateY(-3px);
+  border-color: #15191d;
+}
+.sushi-guide .sushi-guide-kinds button:focus-visible {
+  outline: 2px solid #a8292e;
+  outline-offset: 3px;
+}
+.sushi-guide .sushi-guide-kinds button.is-selected {
+  color: #f4ede1;
+  border-color: #15191d;
+  background-color: #15191d;
+}
+.sushi-guide .sushi-guide-kinds button.is-selected .sushi-guide-kanji {
+  color: #d2383d;
+}
+.sushi-guide .sushi-guide-kanji {
+  color: #a8292e;
+  font-family: "Yuji Syuku", serif;
+  font-size: 28px;
+  letter-spacing: 0px;
+  line-height: 1.2;
+}
+.sushi-guide .sushi-guide-text {
+  max-width: 560px;
+  margin: 0px auto 40px;
+  color: #5a5d61;
+  font-size: 16px;
+  font-style: italic;
+  animation: guide-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.sushi-guide .sushi-guide-dishes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 26px;
+  max-width: 1240px;
+  margin: 0px auto;
+}
+.sushi-guide .sushi-guide-dish {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  text-align: left;
+  animation: guide-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.sushi-guide .sushi-guide-dish img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 14px rgba(21, 25, 29, 0.25));
+  transform: scale(1.4);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sushi-guide .sushi-guide-dish:hover img {
+  transform: scale(1.48) rotate(-4deg);
+}
+.sushi-guide .sushi-guide-dish h3 {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+.sushi-guide .sushi-guide-dish p {
+  margin: 6px 0px 10px;
+  color: #5a5d61;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.sushi-guide .sushi-guide-dish-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 10px;
+  border-top: 1px solid rgba(26, 23, 20, 0.15);
+}
+.sushi-guide .sushi-guide-dish-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+}
+.sushi-guide .sushi-guide-price {
+  margin-right: auto;
+  color: #a8292e;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 22px;
+  font-weight: 800;
+}
+.sushi-guide .sushi-guide-tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.sushi-guide .sushi-guide-tag.is-vegan {
+  color: #2f6b2a;
+  background-color: rgba(126, 190, 120, 0.25);
+}
+.sushi-guide .sushi-guide-tag.is-spicy {
+  color: #6e1519;
+  background-color: rgba(210, 56, 61, 0.15);
+}
+
+@keyframes guide-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/*
+ * Reviews
+ */
+.reviews {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 110px max(30px, 50% - 570px);
+}
+.reviews .kicker {
+  color: #a8292e;
+}
+.reviews .heading {
+  color: #15191d;
+}
+.reviews .section-header {
+  align-items: flex-start;
+  padding: 0px;
+  margin-bottom: 36px;
+  text-align: left;
+}
+.reviews .reviews-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: #fff;
+  background: radial-gradient(circle at 35% 30%, #d2383d, #a8292e 60%, #6e1519);
+  box-shadow: 0px 30px 60px -30px #6e1519, 0px 0px 0px 14px rgba(168, 41, 46, 0.1);
+}
+.reviews .reviews-number {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 1;
+}
+.reviews .reviews-stars {
+  color: #ead1af;
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+.reviews .reviews-count {
+  max-width: 170px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.reviews .reviews-themes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  list-style: none;
+  text-align: left;
+}
+.reviews .reviews-themes li {
+  padding: 22px 20px;
+  border: 1.5px solid rgba(26, 23, 20, 0.12);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.reviews .reviews-themes h3 {
+  margin: 6px 0px 8px;
+  color: #15191d;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+.reviews .reviews-themes p {
+  color: #5a5d61;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.reviews .reviews-theme-number {
+  color: #a8292e;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.reviews .reviews-note {
+  margin-top: 18px;
+  color: #5a5d61;
+  font-size: 13px;
+  text-align: left;
+}
+
+@media (max-width: 1000px) {
+  .reviews {
+    grid-template-columns: none;
+    justify-items: center;
+    gap: 50px;
+  }
+  .reviews .reviews-score {
+    width: 240px;
+  }
+  .reviews .reviews-themes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .sushi-guide .sushi-guide-kinds button {
+    box-sizing: border-box;
+    min-width: 0;
+    flex: 1 1 calc(50% - 6px);
+  }
+  .sushi-guide .sushi-guide-dishes {
+    gap: 24px 14px;
+  }
+  .sushi-guide .sushi-guide-dish {
+    width: calc(50% - 7px);
+  }
+  .sushi-guide .sushi-guide-dish h3 {
+    font-size: 18px;
+  }
+  .sushi-guide .sushi-guide-dish p {
+    font-size: 13px;
+  }
+  .sushi-guide .sushi-guide-dish-footer {
+    flex-wrap: wrap;
+  }
+  .reviews {
+    padding: 90px 20px;
+  }
+  .reviews .reviews-themes {
+    grid-template-columns: none;
+  }
+  .reviews .reviews-number {
+    font-size: 76px;
+  }
+}
 @media (max-width: 560px) {
   .final-call .final-call-links span {
     display: none;

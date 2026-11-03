@@ -28,8 +28,8 @@ const Section1 = () => {
     en: ''
   }
   const stats = [
+    { number: '4,2', text: { es: 'de media en más de 500 reseñas' }, featured: true },
     { number: <CountUp to={200} prefix='+' />, text: { es: 'platos en carta' } },
-    { number: <CountUp to={4} />, text: { es: 'restaurantes Asia' } },
     { number: '2006', text: { es: 'cocinando desde' } },
   ]
 
@@ -47,8 +47,9 @@ const Section1 = () => {
         <p className='lead'>{description1[language]}</p>
         <p className='lead'>{description2[language]}</p>
         <div className='stats'>
-          {stats.map(({ number, text }, index) => (
-            <div key={index} className='stat' data-reveal='up' style={revealDelay(index, 0.15)}>
+          {stats.map(({ number, text, featured }, index) => (
+            <div key={index} className={featured ? 'stat stat-featured' : 'stat'} data-reveal='up' style={revealDelay(index, 0.15)}>
+              {featured && <div className='stat-stars' aria-hidden='true'>★★★★☆</div>}
               <div className='stat-number'>{number}</div>
               <div className='stat-text'>{text[language]}</div>
             </div>
