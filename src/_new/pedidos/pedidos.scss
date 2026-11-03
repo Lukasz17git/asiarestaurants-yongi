@@ -7,7 +7,7 @@ $sheetWidth: 400px;
 $wideScreen: 1100px;
 $radius: 14px;
 $card: #1a1f24;
-$cardBorder: rgba(201, 171, 129, 0.16);
+$cardBorder: rgba(227, 163, 63, 0.16);
 $whatsapp: #25d366;
 // Gold of the page's buttons, a bit softer than $textColor2
 $buttonColor: mix($textColor2, $backgroundColor2, 85%);
@@ -55,12 +55,12 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
     padding: 40px 20px 28px;
     text-align: center;
     background:
-        radial-gradient(ellipse at top, rgba(168, 41, 46, 0.3), transparent 70%),
+        radial-gradient(ellipse at top, rgba(200, 36, 43, 0.3), transparent 70%),
         $backgroundColor2;
 
     h1 {
         @include gold;
-        font-family: 'AsianHiro', serif;
+        font-family: $fontDisplay;
         font-weight: 400;
         font-size: 48px;
         line-height: 1.1;
@@ -70,7 +70,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 
 .pedidos-kicker {
     color: $textColor2;
-    font-family: 'CondLight', sans-serif;
+    font-family: $fontBody;
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -123,9 +123,9 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 
     span {
         padding: 8px 16px;
-        border: 1px solid rgba(201, 171, 129, 0.45);
+        border: 1px solid rgba(227, 163, 63, 0.45);
         border-radius: 99px;
-        background-color: rgba(201, 171, 129, 0.2);
+        background-color: rgba(227, 163, 63, 0.2);
         color: $lineColor2;
         font-size: 15px;
         font-weight: 600;
@@ -141,7 +141,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
     top: $navbarHeight;
     z-index: 10;
     padding: 12px 0 0;
-    background-color: rgba(18, 21, 24, 0.96);
+    background-color: rgba(20, 18, 16, 0.96);
     border-bottom: 1px solid $cardBorder;
     backdrop-filter: blur(8px);
 }
@@ -226,7 +226,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 
     h2 {
         color: $textColor2;
-        font-family: 'CondLight', sans-serif;
+        font-family: $fontBody;
         font-size: 22px;
         font-weight: 600;
         letter-spacing: 3px;
@@ -291,7 +291,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
     margin-right: 6px;
     padding: 1px 6px;
     border-radius: 6px;
-    background-color: rgba(201, 171, 129, 0.14);
+    background-color: rgba(227, 163, 63, 0.14);
     color: $textColor2;
     font-size: 12px;
     text-align: center;
@@ -356,7 +356,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
         place-items: center;
         border: 1px dashed $lineColor3;
         color: $lineColor3;
-        font-family: 'Italianno', serif;
+        font-family: $fontBrush;
         font-size: 44px;
     }
 
@@ -407,7 +407,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
     &.small {
         height: 28px;
         box-shadow: none;
-        background-color: rgba(201, 171, 129, 0.16);
+        background-color: rgba(227, 163, 63, 0.16);
         color: $lineColor2;
 
         button {
@@ -513,7 +513,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 
     h2 {
         color: $textColor2;
-        font-family: 'CondLight', sans-serif;
+        font-family: $fontBody;
         font-size: 22px;
         font-weight: 600;
         letter-spacing: 3px;
@@ -543,7 +543,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 .pedidos-sheet-title {
     margin: 22px 0 10px;
     color: $textColor2;
-    font-family: 'CondLight', sans-serif;
+    font-family: $fontBody;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 2px;
@@ -603,7 +603,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 
         &.selected {
             border-color: $textColor2;
-            background-color: rgba(201, 171, 129, 0.12);
+            background-color: rgba(227, 163, 63, 0.12);
             color: $lineColor2;
         }
     }
@@ -678,7 +678,7 @@ $pickupIcon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' v
 }
 
 .pedidos-note {
-    background-color: rgba(201, 171, 129, 0.1);
+    background-color: rgba(227, 163, 63, 0.1);
     color: $lineColor2;
 
     &.sent {

@@ -1,12 +1,11 @@
 import sections from './takeaway-menu.json'
+import { ioyiPhoto } from '../images/ioyi/photos'
 
 // 'Ramen y Sopas' -> 'ramen-y-sopas'
 const toSlug = (text) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 
-const ASSETS_URL = 'https://asiarestaurants-assets-and-data.vercel.app'
-
-// 'uramaki-tiger' -> <ASSETS_URL>/images/meals/optimized/webp/uramaki-tiger.webp; null without a photo
-const getPhotoUrl = (photo) => (photo ? `${ASSETS_URL}/images/meals/optimized/webp/${photo}.webp` : null)
+// 'akamaru' -> src/_new/images/ioyi/dishes/akamaru.webp; null without a photo
+const getPhotoUrl = (photo) => (photo ? ioyiPhoto(`dishes/${photo}`) : null)
 
 // Hides a description that only repeats the name ('Empanadillas de carne')
 const getDescription = (dish) => {

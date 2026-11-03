@@ -20,7 +20,7 @@ const getCartItems = (quantities) => Object.entries(quantities)
 const Pedidos = () => {
     const [search, setSearch] = useState('')
     const [isSheetOpen, setIsSheetOpen] = useState(false)
-    const [quantities, setQuantities] = usePersistentState('pedidos-carrito', {})
+    const [quantities, setQuantities] = usePersistentState('pedidos-carrito-ioyi', {})
     const [customer, setCustomer] = usePersistentState('pedidos-datos', emptyCustomer)
     const toolbarRef = useRef(null)
     const chipsRef = useRef(null)
@@ -45,17 +45,17 @@ const Pedidos = () => {
         <>
             <div className='pedidos'>
                 <header className='pedidos-hero'>
-                    <p className='pedidos-kicker'>IOYI Asia Delivery · Vilafranca del Penedès</p>
-                    <h1>Pide online</h1>
-                    <p className='pedidos-intro'>Elige tus platos de la carta para llevar y envíanos el pedido por WhatsApp en un momento.</p>
+                    <p className='pedidos-kicker'>IOYI Ramen · Vilafranca del Penedès</p>
+                    <h1>Ramen para llevar</h1>
+                    <p className='pedidos-intro'>Elige tus ramen, donburis y entrantes y envíanos el pedido por WhatsApp. Lo preparamos al momento para que lo recojas o te lo llevemos.</p>
                     <ol className='pedidos-steps'>
                         <li><span>1</span>Elige tus platos</li>
                         <li><span>2</span>Pon tus datos</li>
                         <li><span>3</span>Envíalo por WhatsApp</li>
                     </ol>
                     <p className='pedidos-perks'>
-                        <span>Envío gratis en Vilafranca (08720) desde 20 €</span>
-                        <span>Recogida sin pedido mínimo</span>
+                        <span>Recogida en Carrer de la Indústria, 7</span>
+                        <span>Envío a domicilio: te confirmamos el precio por WhatsApp</span>
                     </p>
                 </header>
 

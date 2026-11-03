@@ -1,15 +1,7 @@
-// Zones confirmed by the restaurant (#4); cents, so 15,00 € + 1,95 € is exactly 16,95 €
-export const deliveryZones = {
-    '08720': { minimumOrderInCents: 0, deliveryFeeInCents: 195, freeDeliveryFromInCents: 2000 },
-    '08734': { minimumOrderInCents: 4000, deliveryFeeInCents: 400 },
-    '08730': { minimumOrderInCents: 4000, deliveryFeeInCents: 500 },
-    '08799': { minimumOrderInCents: 4500, deliveryFeeInCents: 500 },
-    '08792': { minimumOrderInCents: 4000, deliveryFeeInCents: 500 },
-    '08794': { minimumOrderInCents: 4000, deliveryFeeInCents: 500 },
-    '08796': { minimumOrderInCents: 4000, deliveryFeeInCents: 500 },
-}
+// No zone confirmed by IOYI yet: every postal code gets 'unknownZone' (fee asked by WhatsApp)
+export const deliveryZones = {}
 
-export const pickupAddress = 'Carrer de la Font, 4, 08720 Vilafranca del Penedès'
+export const pickupAddress = 'Carrer de la Indústria, 7, 08720 Vilafranca del Penedès'
 
 // 1550 -> '15,50 €'
 export const formatPrice = (priceInCents) => `${Math.floor(priceInCents / 100)},${String(priceInCents % 100).padStart(2, '0')} €`

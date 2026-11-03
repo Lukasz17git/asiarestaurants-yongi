@@ -1,19 +1,21 @@
-/*white*/
-/*gold*/
+/*sumi: the dark of the noodle bar*/
+/*cream*/
+/*amber, the lantern light*/
 /*grey*/
-/*brown-gold*/
-/*gold line*/
-/*red of the logo*/
+/*dark amber*/
+/*amber line*/
+/*red of the hanko seal*/
+/*washi paper, where the dish photos (white background) sit*/
 .pedidos {
   padding-top: 68px;
-  color: #eee;
+  color: #f2eadc;
   text-align: left;
   font-size: 15px;
 }
 .pedidos button:focus-visible,
 .pedidos input:focus-visible,
 .pedidos textarea:focus-visible {
-  outline: 2px solid #ead1af;
+  outline: 2px solid #f2c477;
   outline-offset: 2px;
 }
 
@@ -23,14 +25,14 @@
 .pedidos-hero {
   padding: 40px 20px 28px;
   text-align: center;
-  background: radial-gradient(ellipse at top, rgba(168, 41, 46, 0.3), transparent 70%), #121518;
+  background: radial-gradient(ellipse at top, rgba(200, 36, 43, 0.3), transparent 70%), #141210;
 }
 .pedidos-hero h1 {
-  background: radial-gradient(#b88746, #fdf5a6);
-  background: -webkit-linear-gradient(top, #b88746, #fdf5a6);
+  background: radial-gradient(#d48a2a, #f6d08a);
+  background: -webkit-linear-gradient(top, #f6d08a, #d48a2a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "AsianHiro", serif;
+  font-family: "Shippori Mincho B1", serif;
   font-weight: 400;
   font-size: 48px;
   line-height: 1.1;
@@ -38,8 +40,8 @@
 }
 
 .pedidos-kicker {
-  color: #c9ab81;
-  font-family: "CondLight", sans-serif;
+  color: #e3a33f;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -49,7 +51,7 @@
 .pedidos-intro {
   max-width: 460px;
   margin: 0 auto;
-  color: #b3b2b2;
+  color: #b2a998;
   line-height: 1.5;
 }
 
@@ -68,16 +70,16 @@
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #b3b2b2;
+  color: #b2a998;
 }
 .pedidos-steps span {
   display: grid;
   place-items: center;
   width: 32px;
   height: 32px;
-  border: 1px solid #c9ab81;
+  border: 1px solid #e3a33f;
   border-radius: 50%;
-  color: #c9ab81;
+  color: #e3a33f;
   font-weight: 600;
 }
 
@@ -90,10 +92,10 @@
 }
 .pedidos-perks span {
   padding: 8px 16px;
-  border: 1px solid rgba(201, 171, 129, 0.45);
+  border: 1px solid rgba(227, 163, 63, 0.45);
   border-radius: 99px;
-  background-color: rgba(201, 171, 129, 0.2);
-  color: #ead1af;
+  background-color: rgba(227, 163, 63, 0.2);
+  color: #f2c477;
   font-size: 15px;
   font-weight: 600;
 }
@@ -106,8 +108,8 @@
   top: 68px;
   z-index: 10;
   padding: 12px 0 0;
-  background-color: rgba(18, 21, 24, 0.96);
-  border-bottom: 1px solid rgba(201, 171, 129, 0.16);
+  background-color: rgba(20, 18, 16, 0.96);
+  border-bottom: 1px solid rgba(227, 163, 63, 0.16);
   backdrop-filter: blur(8px);
 }
 
@@ -120,15 +122,15 @@
   width: 100%;
   height: 44px;
   padding: 0 16px 0 42px;
-  border: 1px solid rgba(201, 171, 129, 0.16);
+  border: 1px solid rgba(227, 163, 63, 0.16);
   border-radius: 99px;
   background: #1a1f24 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23959494' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E") 14px center/18px no-repeat;
-  color: #eee;
+  color: #f2eadc;
   font: inherit;
   font-size: 16px;
 }
 .pedidos-search input::placeholder {
-  color: #959494;
+  color: #8a8174;
 }
 
 .pedidos-chips {
@@ -152,17 +154,17 @@
   -webkit-tap-highlight-color: transparent;
   flex-shrink: 0;
   padding: 8px 14px;
-  border: 1px solid rgba(201, 171, 129, 0.16);
+  border: 1px solid rgba(227, 163, 63, 0.16);
   border-radius: 99px;
-  color: #b3b2b2;
+  color: #b2a998;
   font-size: 13px;
   white-space: nowrap;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 .pedidos-chips button.selected {
-  border-color: #ae9571;
-  background-color: #ae9571;
-  color: #01090B;
+  border-color: #c48d38;
+  background-color: #c48d38;
+  color: #0d0b0a;
 }
 
 .pedidos-layout {
@@ -186,18 +188,18 @@
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #c9ab81;
+  border: 1px solid #e3a33f;
 }
 .pedidos-section-header h2 {
-  color: #c9ab81;
-  font-family: "CondLight", sans-serif;
+  color: #e3a33f;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 .pedidos-section-header span {
-  color: #959494;
+  color: #8a8174;
   font-size: 13px;
 }
 
@@ -215,13 +217,13 @@
   flex-direction: column;
   gap: 8px;
   padding: 10px;
-  border: 1px solid rgba(201, 171, 129, 0.16);
+  border: 1px solid rgba(227, 163, 63, 0.16);
   border-radius: 14px;
   background-color: #1a1f24;
   transition: border-color 0.2s;
 }
 .pedidos-dish.in-cart {
-  border-color: #c9ab81;
+  border-color: #e3a33f;
 }
 
 .pedidos-dish-title {
@@ -248,15 +250,15 @@
   margin-right: 6px;
   padding: 1px 6px;
   border-radius: 6px;
-  background-color: rgba(201, 171, 129, 0.14);
-  color: #c9ab81;
+  background-color: rgba(227, 163, 63, 0.14);
+  color: #e3a33f;
   font-size: 12px;
   text-align: center;
   vertical-align: 2px;
 }
 
 .pedidos-dish-description {
-  color: #959494;
+  color: #8a8174;
   font-size: 12.5px;
   line-height: 1.45;
   display: -webkit-box;
@@ -274,7 +276,7 @@
 
 .pedidos-dish-price {
   margin-right: auto;
-  color: #ead1af;
+  color: #f2c477;
   font-weight: 600;
   font-size: 16px;
 }
@@ -308,9 +310,9 @@
 .pedidos-dish-media .pedidos-dish-placeholder {
   display: grid;
   place-items: center;
-  border: 1px dashed #856B48;
-  color: #856B48;
-  font-family: "Italianno", serif;
+  border: 1px dashed #8a5e1f;
+  color: #8a5e1f;
+  font-family: "Yuji Syuku", serif;
   font-size: 44px;
 }
 .pedidos-dish-media .pedidos-add,
@@ -330,7 +332,7 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(#01090B, #01090B) center/14px 2px no-repeat, linear-gradient(#01090B, #01090B) center/2px 14px no-repeat, #ae9571;
+  background: linear-gradient(#0d0b0a, #0d0b0a) center/14px 2px no-repeat, linear-gradient(#0d0b0a, #0d0b0a) center/2px 14px no-repeat, #c48d38;
   font-size: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
 }
@@ -340,8 +342,8 @@
   align-items: center;
   height: 38px;
   border-radius: 99px;
-  background-color: #ae9571;
-  color: #01090B;
+  background-color: #c48d38;
+  color: #0d0b0a;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
 }
 .pedidos-quantity button {
@@ -363,8 +365,8 @@
 .pedidos-quantity.small {
   height: 28px;
   box-shadow: none;
-  background-color: rgba(201, 171, 129, 0.16);
-  color: #ead1af;
+  background-color: rgba(227, 163, 63, 0.16);
+  color: #f2c477;
 }
 .pedidos-quantity.small button {
   width: 32px;
@@ -392,18 +394,18 @@
   max-width: 480px;
   padding: 0 18px 0 10px;
   border-radius: 99px;
-  background-color: #ae9571;
-  color: #01090B;
+  background-color: #c48d38;
+  color: #0d0b0a;
   font-weight: 600;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 .pedidos-cart-bar.empty {
   background-color: #2a3036;
-  color: #b3b2b2;
+  color: #b2a998;
 }
 .pedidos-cart-bar.empty .pedidos-cart-count {
   background-color: #3a4148;
-  color: #b3b2b2;
+  color: #b2a998;
 }
 
 .pedidos-cart-count {
@@ -413,8 +415,8 @@
   height: 36px;
   padding: 0 6px;
   border-radius: 99px;
-  background-color: #01090B;
-  color: #c9ab81;
+  background-color: #0d0b0a;
+  color: #e3a33f;
 }
 
 .pedidos-cart-price {
@@ -442,9 +444,9 @@
   bottom: 0;
   z-index: 40;
   height: min(92vh, 92dvh);
-  border-top: 1px solid #c9ab81;
+  border-top: 1px solid #e3a33f;
   border-radius: 20px 20px 0 0;
-  background-color: #171c20;
+  background-color: #1c1916;
   transform: translateY(105%);
   transition: transform 0.3s ease;
 }
@@ -463,11 +465,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  border-bottom: 1px solid rgba(201, 171, 129, 0.16);
+  border-bottom: 1px solid rgba(227, 163, 63, 0.16);
 }
 .pedidos-sheet-header h2 {
-  color: #c9ab81;
-  font-family: "CondLight", sans-serif;
+  color: #e3a33f;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 3px;
@@ -486,7 +488,7 @@
   height: 40px;
   border-radius: 50%;
   background-color: #242a30;
-  color: #eee;
+  color: #f2eadc;
   font-size: 24px;
   line-height: 1;
 }
@@ -500,8 +502,8 @@
 
 .pedidos-sheet-title {
   margin: 22px 0 10px;
-  color: #c9ab81;
-  font-family: "CondLight", sans-serif;
+  color: #e3a33f;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 2px;
@@ -517,7 +519,7 @@
   align-items: center;
   gap: 10px;
   padding: 6px 0;
-  border-bottom: 1px solid rgba(201, 171, 129, 0.16);
+  border-bottom: 1px solid rgba(227, 163, 63, 0.16);
 }
 
 .pedidos-cart-item-name {
@@ -527,13 +529,13 @@
   line-height: 1.3;
 }
 .pedidos-cart-item-name small {
-  color: #959494;
+  color: #8a8174;
 }
 
 .pedidos-cart-item-total {
   min-width: 58px;
   text-align: right;
-  color: #ead1af;
+  color: #f2c477;
   font-weight: 600;
 }
 
@@ -554,18 +556,18 @@
   align-items: center;
   gap: 6px;
   padding: 12px 8px;
-  border: 1px solid rgba(201, 171, 129, 0.16);
+  border: 1px solid rgba(227, 163, 63, 0.16);
   border-radius: 12px;
   background-color: #1a1f24;
-  color: #b3b2b2;
+  color: #b2a998;
   font-size: 13px;
   text-align: center;
   transition: border-color 0.2s, color 0.2s, background-color 0.2s;
 }
 .pedidos-types button.selected {
-  border-color: #c9ab81;
-  background-color: rgba(201, 171, 129, 0.12);
-  color: #ead1af;
+  border-color: #e3a33f;
+  background-color: rgba(227, 163, 63, 0.12);
+  color: #f2c477;
 }
 
 .pedidos-type-icon {
@@ -594,7 +596,7 @@
   gap: 6px;
 }
 .pedidos-field span {
-  color: #b3b2b2;
+  color: #b2a998;
   font-size: 13px;
 }
 .pedidos-field input,
@@ -604,7 +606,7 @@
   border: 1px solid #333a41;
   border-radius: 10px;
   background-color: #1a1f24;
-  color: #eee;
+  color: #f2eadc;
   font: inherit;
   font-size: 16px;
   resize: vertical;
@@ -632,8 +634,8 @@
 }
 
 .pedidos-note {
-  background-color: rgba(201, 171, 129, 0.1);
-  color: #ead1af;
+  background-color: rgba(227, 163, 63, 0.1);
+  color: #f2c477;
 }
 .pedidos-note.sent {
   background-color: rgba(37, 211, 102, 0.12);
@@ -647,8 +649,8 @@
 
 .pedidos-sheet-footer {
   padding: 14px 20px calc(16px + env(safe-area-inset-bottom));
-  border-top: 1px solid rgba(201, 171, 129, 0.16);
-  background-color: #121518;
+  border-top: 1px solid rgba(227, 163, 63, 0.16);
+  background-color: #141210;
 }
 .pedidos-sheet-footer .pedidos-warning,
 .pedidos-sheet-footer .pedidos-note {
@@ -666,7 +668,7 @@
 .pedidos-totals div {
   display: flex;
   justify-content: space-between;
-  color: #b3b2b2;
+  color: #b2a998;
   font-size: 14px;
 }
 .pedidos-totals dd {
@@ -674,7 +676,7 @@
 }
 .pedidos-totals .pedidos-total {
   margin-top: 4px;
-  color: #eee;
+  color: #f2eadc;
   font-size: 18px;
   font-weight: 700;
 }
@@ -724,7 +726,7 @@
 
 .pedidos-small {
   margin-top: 10px;
-  color: #959494;
+  color: #8a8174;
   font-size: 12px;
   line-height: 1.45;
 }
@@ -735,7 +737,7 @@
 
 .pedidos-empty {
   padding: 24px 0;
-  color: #959494;
+  color: #8a8174;
   text-align: center;
   line-height: 1.5;
 }
@@ -772,7 +774,7 @@
     height: auto;
     width: 400px;
     border-top: none;
-    border-left: 1px solid #c9ab81;
+    border-left: 1px solid #e3a33f;
     border-radius: 0;
     transform: translateX(105%);
   }
@@ -795,7 +797,7 @@
     width: auto;
     height: calc(100vh - 216px);
     margin-top: 24px;
-    border: 1px solid rgba(201, 171, 129, 0.16);
+    border: 1px solid rgba(227, 163, 63, 0.16);
     border-radius: 14px;
     overflow: hidden;
     transform: none;

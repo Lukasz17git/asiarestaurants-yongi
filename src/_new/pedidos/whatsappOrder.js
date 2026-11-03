@@ -1,7 +1,7 @@
 import { formatPrice } from './deliveryRules'
 
-// Asia Oriental Taste's WhatsApp (src/Restaurant/restaurantsData.js)
-const whatsappNumber = '34656181427'
+// IOYI Ramen's WhatsApp (src/Restaurant/restaurantsData.js)
+const whatsappNumber = '34644645938'
 
 const getDeliveryFeeText = (type, quote) => {
     if (quote.status === 'unknownZone') return 'a consultar'
@@ -22,7 +22,7 @@ export const createOrderMessage = ({ cartItems, customer, type, quote, subtotalI
     const notes = customer.notes.trim()
 
     return [
-        'NUEVO PEDIDO - IOYI Asia Delivery',
+        'NUEVO PEDIDO - IOYI Ramen',
         '',
         `Nombre: ${customer.name.trim()}`,
         `Teléfono: ${customer.phone.trim()}`,
