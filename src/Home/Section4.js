@@ -2,22 +2,23 @@ import React from 'react'
 import cocina from './cocinaData'
 import { Link } from 'react-router-dom'
 import gold from '../generateGold'
+import { ioyiPhoto } from '../_new/images/ioyi/photos'
 import { revealDelay } from '../_new/reveal/useReveal'
 
 const Section4 = () => {
   const language = 'es'
   const kicker = {
-    es: 'Nuestra cocina',
+    es: 'Para todos',
     cat: '',
-    it: 'Our Cuisine'
+    it: ''
   }
   // [text, highlighted end]
   const name = {
-    es: ['Un viaje por Asia en', 'cada bocado'],
+    es: ['Un bol para', 'cada uno'],
     cat: ['', ''],
     it: ['', '']
   }
-  const menus = 'Ver menús'
+  const menus = 'Ver la carta'
 
   return (
     <section className='section4'>
@@ -28,7 +29,7 @@ const Section4 = () => {
       <div className='container'>
         {cocina.map(({ name, description, photo }, index) => (
           <article key={index} className='cocina' data-reveal='up' style={revealDelay(index)}>
-            <img src={require(`../images/${photo}.webp`)} alt={name[language]} loading='lazy' />
+            <img src={ioyiPhoto(photo)} alt={name[language]} loading='lazy' />
             <div className='cocina-text'>
               <h3 className='title'>{gold(name[language])}</h3>
               <p className='description'>{description[language]}</p>

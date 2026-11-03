@@ -1,63 +1,63 @@
-// photo: path under src/images, without .webp
+// photo: path under src/_new/images/ioyi, without .webp
 const cocina = [
     {
         name: {
-            es: 'Cocina Japonesa',
+            es: 'Vegano',
             cat: '',
             en: '',
-            it: 'Cucina Giapponese'
+            it: ''
         },
-        photo: 'menus/allyoucaneat2',
+        photo: 'dishes/ramen-vegan',
         description: {
-            es: 'Ramen de caldo intenso, tempura dorada y crujiente, onigiri y mucho más para viajar a Japón sin salir de Vilafranca.',
+            es: 'Ramen con caldo de verduras, tofu frito y shiitake, además de edamame y otros entrantes sin nada de origen animal.',
             cat: '',
             en: '',
-            it: 'Prova i nostri piatti Giapponesi tra cui i Tempura, gli Onigiri, il Ramen e tanto altro.'
+            it: ''
         }
     },
     {
         name: {
-            es: 'Cocina China',
+            es: 'Sin gluten',
             cat: '',
             en: '',
-            it: 'Cucina Cinese'
+            it: ''
         },
-        photo: 'home/home12',
+        photo: 'dishes/tori-paitan',
         description: {
-            es: 'Gua bao esponjosos, fideos chinos salteados al wok y jiaozi recién hechos. Comida china de la de verdad.',
+            es: 'Opciones sin gluten preparadas con cuidado para evitar la contaminación cruzada. Avísanos al reservar.',
             cat: '',
             en: '',
-            it: 'Gua Bao, spaghetti cinesi, giaozi e tantissimo altro. Immergiti nella cultura culinaria Cinese.'
+            it: ''
         }
     },
     {
         name: {
-            es: 'Sushi',
+            es: 'Picante',
             cat: '',
             en: '',
-            it: 'Sushi'
+            it: ''
         },
-        photo: 'home/home15',
+        photo: 'dishes/tantanmen',
         description: {
-            es: 'Uramaki, nigiri y hosomaki, con pescado crudo o cocinado. Decenas de variedades para no repetir nunca.',
+            es: 'El Tantanmen: caldo tonkotsu picante con carne de cerdo especiada y huevo marinado.',
             cat: '',
             en: '',
-            it: 'Uramaki, Nigiri, Hosomaki sia cotti che con pesce crudo. Tantissime varietà da assaggiare.'
+            it: ''
         }
     },
     {
         name: {
-            es: 'Domicilio',
+            es: 'Sin caldo',
             cat: '',
             en: '',
-            it: 'Domicilio'
+            it: ''
         },
-        photo: 'menus/takeAway',
+        photo: 'dishes/mazesoba',
         description: {
-            es: '¿No te apetece salir? Pide online y te llevamos tus platos favoritos a casa, o pasa a recogerlos.',
+            es: 'Mazesoba para mezclar y Tsukemen para mojar: fideos japoneses cuando no te apetece sopa.',
             cat: '',
             en: '',
-            it: 'Se non puoi o vuoi uscire, veniamo noi da te! Non rinunciare alla cucina asiatica. Scegli Asia Restaurant'
+            it: ''
         }
     },
 ]

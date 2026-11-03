@@ -1,34 +1,32 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import gold from '../generateGold'
 import { reservationWhatsappUrl } from '../_new/sections/reservation'
-
-// Golden Roll, Rainbow Roll and Ramen on the left; Nigiri, Tartar and Gua Bao on the right
-const floatingDishes = ['meal10', 'meal12', 'meal27', 'meal25', 'meal21', 'meal22']
+import { ioyiPhoto } from '../_new/images/ioyi/photos'
 
 const Front = () => {
   return (
     <section className='front'>
       <div className='front-bg' />
-      <div className='front-sun' />
-      {floatingDishes.map((photo, index) => (
-        <img key={photo} className={`front-float front-float-${index + 1}`} src={require(`../images/mealsNoBg/${photo}.webp`)} alt='' />
-      ))}
+      <span className='front-kanji' aria-hidden='true'>ラーメン</span>
+      <div className='front-bowl' aria-hidden='true'>
+        <div className='front-sun' />
+        <img className='front-bowl-photo' src={ioyiPhoto('dishes/akamaru')} alt='' />
+        <img className='front-seal' src={ioyiPhoto('seal')} alt='' />
+      </div>
       <div className='front-content'>
-        <div className='front-logo' />
-        <div className='front-brand'>{gold('Asia Oriental Taste')}</div>
-        <h1 className='front-title'>Restaurante de <em>sushi</em>, cocina japonesa y china en Vilafranca del Penedès</h1>
+        <img className='front-logo' src={ioyiPhoto('logo-cream')} alt='IOYI Ramen' width='600' height='261' />
+        <h1 className='front-title'>Ramen japonés de <em>caldo lento</em> en Vilafranca del Penedès</h1>
         <p className='front-text'>
-          Uramakis que crujen, ramen humeante, gua bao esponjosos y un Golden Lobster Roll con hojas de oro.
-          Más de 200 platos de Asia para venir en pareja, con amigos o con toda la familia.
+          Tonkotsu cremoso, tori paitan de gallina de corral, tantanmen picante y ramen vegano.
+          Un pequeño local de 20 plazas que te sienta en una barra de ramen de Japón.
         </p>
         <div className='cta-buttons front-buttons'>
-          <Link className='cta cta-gold' to='/menu'>Ver carta</Link>
-          <Link className='cta cta-red' to='/pedidos'>Pedir online</Link>
+          <Link className='cta cta-red' to='/menu'>Ver carta</Link>
+          <a className='cta cta-gold' href={reservationWhatsappUrl} target='_blank' rel='noreferrer'>Reservar mesa</a>
         </div>
         <a className='front-fomo' href={reservationWhatsappUrl} target='_blank' rel='noreferrer'>
           <span className='pulse-dot' />
-          Mesas limitadas el fin de semana: <u>reserva la tuya</u>
+          Solo 20 plazas y se llena rápido: <u>reserva la tuya</u>
         </a>
       </div>
       <div className='front-scroll'><span /></div>

@@ -3,22 +3,23 @@ import { Link } from 'react-router-dom'
 import examples from './examplesData'
 import gold from '../generateGold'
 import { revealDelay } from '../_new/reveal/useReveal'
+import { ioyiPhoto } from '../_new/images/ioyi/photos'
 
 const Section3 = () => {
   const language = 'es'
   const kicker = {
-    es: 'Los más pedidos',
+    es: 'Para compartir',
     cat: '',
     it: ''
   }
   // [text, highlighted end]
   const name = {
-    es: ['Los favoritos que todo el mundo', 'repite'],
+    es: ['Más allá del', 'ramen'],
     cat: ['', ''],
     it: ['', '']
   }
   const description = {
-    es: 'Pídelos nada más sentarte: son nuestros platos más populares y los que todo el mundo vuelve a pedir.',
+    es: 'Donburis, baos y entrantes japoneses para abrir boca o pedir otra ronda mientras llega tu bol.',
     cat: '',
     it: ''
   }
@@ -34,7 +35,7 @@ const Section3 = () => {
         {examples.map(({ name, photo, tag, description }, index) => (
           <article key={name} className='dish' data-reveal='up' style={revealDelay(index)}>
             <div className='dish-photo'>
-              <img className={photo} alt={name} />
+              <img src={ioyiPhoto(`dishes/${photo}`)} alt={name} loading='lazy' />
               <span className='dish-tag'>{tag[language]}</span>
               <span className='dish-number'>0{index + 1}</span>
             </div>

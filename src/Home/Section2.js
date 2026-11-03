@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ioyiPhoto } from '../_new/images/ioyi/photos'
+import { glovoUrl } from './delivery-link'
 
 const Section2 = () => {
 
@@ -7,17 +9,17 @@ const Section2 = () => {
 
   // [text, highlighted end]
   const title = {
-    es: ['¿Antojo ahora?', 'Te lo llevamos'],
+    es: ['Tu ramen,', 'también en casa'],
     cat: ['', ''],
     it: ['', '']
   }
   const description = {
-    es: 'Pide online en un minuto y recibe en casa tu sushi, tus fideos y tus gua bao recién hechos. Comida asiática a domicilio en Vilafranca del Penedès o para recoger en el restaurante.',
+    es: 'Elige tus ramen, donburis y gyozas, y envíanos el pedido por WhatsApp en un minuto. Pásate a recogerlo o pídelo a domicilio, también desde Glovo.',
     cat: '',
-    it: 'Ordina e ricevi le nostre spcialita a casa tua!'
+    it: ''
   }
   const perks = {
-    es: ['Envío gratis en Vilafranca (08720) desde 20 €', 'Recogida sin pedido mínimo', 'Pedido directo por WhatsApp'],
+    es: ['Recogida en Carrer de la Indústria, 7', 'Pedido directo por WhatsApp', 'También en Glovo y Just Eat'],
     cat: [],
     it: []
   }
@@ -26,8 +28,8 @@ const Section2 = () => {
     cat: '',
     it: ''
   }
-  const buttonViewCard = {
-    es: 'Carta para llevar',
+  const buttonGlovo = {
+    es: 'Pedir en Glovo',
     cat: '',
     it: ''
   }
@@ -36,7 +38,7 @@ const Section2 = () => {
     <section className='section2'>
       <div className='container'>
         <div className='left' data-reveal='left'>
-          <p className='kicker'>Asia Delivery</p>
+          <p className='kicker'>Para llevar y a domicilio</p>
           <h2 className='heading'>{title[language][0]} <em>{title[language][1]}</em></h2>
           <p className='lead'>{description[language]}</p>
           <ul className='perks'>
@@ -44,14 +46,14 @@ const Section2 = () => {
           </ul>
           <div className='cta-buttons'>
             <Link className='cta cta-red' to='/pedidos'>{buttonOrderNow[language]}</Link>
-            <a className='cta cta-gold' href='./pdfs/CartaLlevar2024_compressed.pdf' target='_blank' rel='noreferrer'>{buttonViewCard[language]}</a>
+            <a className='cta cta-gold' href={glovoUrl} target='_blank' rel='noreferrer'>{buttonGlovo[language]}</a>
           </div>
         </div>
         <div className='right' data-reveal='right'>
-          <img src={require('../images/menus/takeAway.webp')} alt='Sushi para llevar de Asia Oriental Taste' loading='lazy' />
+          <img src={ioyiPhoto('dishes/teriyaki-don')} alt='Teriyaki Chicken Don con sopa de miso' loading='lazy' />
           <div className='badge'>
-            <span>Gratis</span>
-            envío desde 20 €
+            <span>持ち帰り</span>
+            para llevar
           </div>
         </div>
       </div>

@@ -7,30 +7,30 @@ import './sections.css'
 
 const MenusTeaser = () => {
     const language = 'es'
-    const { day, night } = menus
-    const teaserMenus = [{ ...day, icon: 'is-day' }, { ...night, icon: 'is-night' }]
+    const { day, carta } = menus
+    const teaserMenus = [{ ...day, icon: 'is-day' }, { ...carta, icon: 'is-night' }]
 
     return (
         <section className='menus-teaser'>
             <div className='section-header' data-reveal='up'>
-                <p className='kicker'>Nuestros menús</p>
-                <h2 className='heading'>Menús desde <em>{day.price}</em></h2>
-                <p className='lead'>Sushi, cocina japonesa y china para comer sin mirar el reloj. Elige tu momento y deja hueco para otra ronda.</p>
+                <p className='kicker'>Menú y carta</p>
+                <h2 className='heading'>Ramen desde <em>12,95€</em></h2>
+                <p className='lead'>Menú del día entre semana o la carta completa a mediodía y por la noche. Elige tu momento y deja hueco para el mochi.</p>
             </div>
             <div className='menus-teaser-cards'>
-                {teaserMenus.map(({ name, time, price, price2, pdf, icon }, index) => (
-                    <a key={pdf} className='menus-teaser-card' href={pdf} target='_blank' rel='noreferrer' data-reveal='up' style={revealDelay(index, 0.15)}>
+                {teaserMenus.map(({ name, time, price, price2, icon }, index) => (
+                    <Link key={icon} className='menus-teaser-card' to='/menu' data-reveal='up' style={revealDelay(index, 0.15)}>
                         <span className={'menus-teaser-icon ' + icon} />
                         <span className='menus-teaser-name'>{name[language]}</span>
                         <span className='menus-teaser-time'>{time[language]}</span>
                         <span className='menus-teaser-price'>{price}</span>
                         {price2 && <span className='menus-teaser-note'>{price2}</span>}
                         <span className='menus-teaser-link'>Ver carta</span>
-                    </a>
+                    </Link>
                 ))}
             </div>
             <div className='cta-buttons' data-reveal='up'>
-                <Link className='cta cta-red' to='/menu'>Ver menús</Link>
+                <Link className='cta cta-red' to='/menu'>Ver carta</Link>
                 <a className='cta cta-gold' href={reservationWhatsappUrl} target='_blank' rel='noreferrer'>Reservar mesa</a>
             </div>
         </section>

@@ -1,69 +1,69 @@
+// photo: a photo of src/_new/images/ioyi/dishes, without .webp
 const examples = [
     {
-        name: 'Uramaki Asia',
-        photo: '_uramaki',
+        name: 'Unagi Don',
+        photo: 'unagi-don',
         tag: {
-            es: 'El clásico de la casa',
+            es: 'De los más pedidos',
             cat: '',
             en: '',
             it: ''
         },
         description: {
-            es: 'Rollo de sushi con salmón cocido, aguacate, philadelphia y salmón picante.',
+            es: 'Anguila japonesa a la brasa con salsa dulce sobre arroz blanco, con su sopa de miso.',
             cat: '',
             en: '',
-            it: 'Involtino di sushi con salmone cotto, avocado, philadelphia e salmone piccante.'
+            it: ''
         }
     },
     {
-        name: 'Golden Lobster Roll',
-        photo: '_golden',
+        name: 'Bao de chashu',
+        photo: 'bao-chashu',
         tag: {
-            es: 'Con hojas de oro',
+            es: 'Bao negro',
             cat: '',
             en: '',
             it: ''
         },
         description: {
-            es: 'Uramaki Especial con langosta a temperatura ambiente, aguacate, trufa y hojas de oro comestibles.',
+            es: 'Pan bao negro al vapor relleno de chashu de cerdo estofado y lechuga.',
             cat: '',
             en: '',
-            it: 'Uramaki Speciale con astice in tempura, avocado, tartufo e foglie d’oro commestibile.'
+            it: ''
         }
     },
     {
-        name: 'Poke Bowls Vegeta',
-        photo: '_poke',
+        name: 'Takoyaki',
+        photo: 'takoyaki',
         tag: {
-            es: 'Fresco y vegetal',
+            es: 'Street food de Osaka',
             cat: '',
             en: '',
             it: ''
         },
         description: {
-            es: 'Edamame, Aguacate, Zanahorias, Mango y Pepinos.',
+            es: 'Bolitas de pulpo con salsa takoyaki, mayonesa japonesa y copos de bonito.',
             cat: '',
             en: '',
-            it: 'Edamame, Avocado, Carote, Mango e Cetrioli.'
+            it: ''
         }
     },
     {
-        name: 'Samba',
-        photo: '_samba',
+        name: 'Karaage',
+        photo: 'karaage',
         tag: {
-            es: 'Flambeado',
+            es: 'Para compartir',
             cat: '',
             en: '',
             it: ''
         },
         description: {
-            es: 'Gunkan especial coronado con salmón, lima y alcohol flambeado.',
+            es: 'Pollo japonés marinado y frito, crujiente por fuera y jugoso por dentro.',
             cat: '',
             en: '',
-            it: 'Gunkan speciale ricoperto di salmone, lime e alcool flambé.'
+            it: ''
         }
     },
-
 ]
 
 export default examples

@@ -1,7 +1,7 @@
 import React from 'react'
 import './sections.css'
 
-const defaultWords = ['Sushi', 'Uramaki', 'Ramen', 'Gua Bao', 'Nigiri', 'Dim Sum', 'Poke Bowl', 'Tempura', 'Tartar', 'Fideos chinos', 'Hosomaki', 'Pato']
+const defaultWords = ['Tonkotsu', 'Shoyu', 'Shio', 'Tori Paitan', 'Tantanmen', 'Tsukemen', 'Mazesoba', 'Akamaru', 'Gyozas', 'Takoyaki', 'Karaage', 'Bao', 'Donburi']
 
 // Red band of words moving sideways; the list is written twice so the loop has no gap, the copy hidden to screen readers
 const Marquee = ({ words = defaultWords }) => {
