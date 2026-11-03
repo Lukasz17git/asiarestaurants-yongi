@@ -7,6 +7,7 @@
          "it": "Dim Sum",
          "zh": "点心"
       },
+      "kanji": "点心",
       "photo": null,
       "dishes": [
          {
@@ -263,6 +264,7 @@
          "it": "Frittura & Tempura",
          "zh": "炸和天妇罗"
       },
+      "kanji": "天ぷら",
       "photo": null,
       "dishes": [
          {
@@ -585,6 +587,7 @@
          "it": "Insalate & Veggie",
          "zh": "沙拉和素食"
       },
+      "kanji": "野菜",
       "photo": null,
       "dishes": [
          {
@@ -702,6 +705,7 @@
          "it": "Onigiri",
          "zh": "饭团"
       },
+      "kanji": "おにぎり",
       "photo": "onigiri",
       "dishes": [
          {
@@ -819,6 +823,7 @@
          "it": "Carpaccio",
          "zh": "薄片"
       },
+      "kanji": "カルパッチョ",
       "photo": null,
       "dishes": [
          {
@@ -1029,6 +1034,7 @@
          "it": "Tartare",
          "zh": "鞑靼"
       },
+      "kanji": "タルタル",
       "photo": null,
       "dishes": [
          {
@@ -1194,6 +1200,7 @@
          "it": "Sashimi",
          "zh": "刺身"
       },
+      "kanji": "刺身",
       "photo": null,
       "dishes": [
          {
@@ -1290,6 +1297,7 @@
          "it": "Tataki",
          "zh": "拍炙"
       },
+      "kanji": "たたき",
       "photo": null,
       "dishes": [
          {
@@ -1386,6 +1394,7 @@
          "it": "Chirashi",
          "zh": "散寿司"
       },
+      "kanji": "ちらし",
       "photo": null,
       "dishes": [
          {
@@ -1482,6 +1491,7 @@
          "it": "Poke",
          "zh": "波奇饭"
       },
+      "kanji": "ポケ",
       "photo": null,
       "dishes": [
          {
@@ -1557,6 +1567,7 @@
          "it": "Hosomaki",
          "zh": "细卷"
       },
+      "kanji": "細巻",
       "note": {
          "es": "(6 unidades)",
          "cat": "(6 unitats)",
@@ -1864,6 +1875,7 @@
          "it": "Crispy",
          "zh": "脆卷"
       },
+      "kanji": "クリスピー",
       "photo": null,
       "dishes": [
          {
@@ -2095,6 +2107,7 @@
          "it": "Uramaki",
          "zh": "裏巻き"
       },
+      "kanji": "裏巻",
       "note": {
          "es": "(8 unidades)",
          "cat": "(8 unitats)",
@@ -2670,6 +2683,7 @@
          "it": "Venere",
          "zh": "黑米卷"
       },
+      "kanji": "黒米",
       "note": {
          "es": "(8 unidades)",
          "cat": "(8 unitats)",
@@ -2794,6 +2808,7 @@
          "it": "Nigiri",
          "zh": "握寿司"
       },
+      "kanji": "握り",
       "note": {
          "es": "(2 unidades)",
          "cat": "(2 unitats)",
@@ -3089,6 +3104,7 @@
          "it": "Gunkan",
          "zh": "军舰寿司"
       },
+      "kanji": "軍艦",
       "note": {
          "es": "(2 unidades)",
          "cat": "(2 unitats)",
@@ -3234,6 +3250,7 @@
          "it": "Temaki",
          "zh": "手卷"
       },
+      "kanji": "手巻",
       "note": {
          "es": "(1 unidad)",
          "cat": "(1 unitat)",
@@ -3442,6 +3459,7 @@
          "it": "Riso",
          "zh": "米饭"
       },
+      "kanji": "ご飯",
       "photo": null,
       "dishes": [
          {
@@ -3624,6 +3642,7 @@
          "it": "Spaghetti",
          "zh": "面条"
       },
+      "kanji": "麺",
       "photo": null,
       "dishes": [
          {
@@ -3775,6 +3794,7 @@
          "it": "Ramen & Zuppe",
          "zh": "拉面和汤"
       },
+      "kanji": "拉麺",
       "photo": null,
       "dishes": [
          {
@@ -3913,6 +3933,7 @@
          "it": "Pollo",
          "zh": "鸡肉"
       },
+      "kanji": "鶏",
       "photo": null,
       "dishes": [
          {
@@ -4066,6 +4087,7 @@
          "it": "Manzo",
          "zh": "牛肉"
       },
+      "kanji": "牛",
       "photo": null,
       "dishes": [
          {
@@ -4141,6 +4163,7 @@
          "it": "Maiale",
          "zh": "猪肉"
       },
+      "kanji": "豚",
       "photo": null,
       "dishes": [
          {
@@ -4195,6 +4218,7 @@
          "it": "Anatra",
          "zh": "鸭肉"
       },
+      "kanji": "鴨",
       "photo": null,
       "dishes": [
          {
@@ -4249,6 +4273,7 @@
          "it": "Frutti di Mare",
          "zh": "海鲜"
       },
+      "kanji": "海鮮",
       "photo": null,
       "dishes": [
          {
@@ -4492,6 +4517,7 @@
          "it": "Teppan Yaki",
          "zh": "铁板烧"
       },
+      "kanji": "鉄板焼",
       "photo": null,
       "dishes": [
          {
@@ -4695,6 +4721,7 @@
          "it": "Vegan",
          "zh": "纯素"
       },
+      "kanji": "菜食",
       "photo": null,
       "dishes": [
          {
@@ -4812,6 +4839,7 @@
          "it": "Spicy Pot",
          "zh": "麻辣香锅"
       },
+      "kanji": "麻辣",
       "photo": null,
       "dishes": [
          {

@@ -72,7 +72,7 @@ const OrderSheet = ({ cartItems, subtotalInCents, customer, setCustomer, onChang
     return (
         <div className='pedidos-sheet-content'>
             <div className='pedidos-sheet-header'>
-                <h2>Tu pedido</h2>
+                <h2><span aria-hidden='true'>注文</span>Tu pedido</h2>
                 <button type='button' className='pedidos-sheet-close' onClick={onClose} aria-label='Cerrar el pedido'>×</button>
             </div>
 
@@ -85,7 +85,8 @@ const OrderSheet = ({ cartItems, subtotalInCents, customer, setCustomer, onChang
                         {cartItems.map(({ dish, quantity }) => (
                             <li key={dish.number}>
                                 <div className='pedidos-cart-item-name'>
-                                    <span>{dish.number}. {dish.name.es}</span>
+                                    <small className='pedidos-cart-item-number'>Nº {dish.number}</small>
+                                    <span>{dish.name.es}</span>
                                     <small>{formatPrice(dish.priceInCents)}</small>
                                 </div>
                                 <QuantityControl quantity={quantity} name={dish.name.es} size='small' onChange={(change) => onChangeQuantity(dish.number, change)} />
@@ -99,11 +100,13 @@ const OrderSheet = ({ cartItems, subtotalInCents, customer, setCustomer, onChang
                 <div className='pedidos-types' role='radiogroup' aria-label='Tipo de pedido'>
                     <button type='button' role='radio' aria-checked={type === 'delivery'} className={type === 'delivery' ? 'selected' : ''} onClick={() => setCustomer({ ...customer, type: 'delivery' })}>
                         <span className='pedidos-type-icon delivery' aria-hidden='true' />
-                        Entrega a domicilio
+                        <strong>Entrega a domicilio</strong>
+                        <small>Gratis en Vilafranca desde 20 €</small>
                     </button>
                     <button type='button' role='radio' aria-checked={type === 'pickup'} className={type === 'pickup' ? 'selected' : ''} onClick={() => setCustomer({ ...customer, type: 'pickup' })}>
                         <span className='pedidos-type-icon pickup' aria-hidden='true' />
-                        Recoger en el restaurante
+                        <strong>Recoger en el restaurante</strong>
+                        <small>Carrer de la Font, 4 · sin pedido mínimo</small>
                     </button>
                 </div>
 

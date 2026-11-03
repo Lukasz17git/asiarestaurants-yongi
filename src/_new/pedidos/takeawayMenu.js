@@ -18,6 +18,7 @@ export const menuSections = sections.map((section) => ({
     id: toSlug(section.name.es),
     name: section.name.es,
     note: section.note?.es ?? '',
+    kanji: section.kanji ?? '',
     photoUrl: getPhotoUrl(section.photo),
     dishes: section.dishes.map((dish) => ({ ...dish, description: getDescription(dish), photoUrl: getPhotoUrl(dish.photo) })),
 }))
