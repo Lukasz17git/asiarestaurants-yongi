@@ -246,7 +246,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
       border: 1px solid rgba(227, 163, 63, 0.2);
       border-radius: 18px;
       text-align: center;
-      background-color: rgba(255, 255, 255, 0.02);
+      background-color: $backgroundColor2; // the page's colour without its texture
     }
 
     .stat-number {
@@ -263,6 +263,29 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
+    }
+
+    // The reviews score, on the seal's red so it reads first
+    .stat-featured {
+      border-color: $redLight;
+      background: radial-gradient(circle at 30% 0%, $redLight, $red 45%, $redDark);
+      box-shadow: 0 16px 34px -14px rgba(200, 36, 43, 0.8);
+
+      .stat-number {
+        background: none;
+        color: $washi;
+        -webkit-text-fill-color: $washi;
+      }
+
+      .stat-text {
+        color: rgba(244, 237, 225, 0.85);
+      }
+    }
+
+    .stat-stars {
+      color: $amberLight;
+      font-size: 13px;
+      letter-spacing: 3px;
     }
   }
 
@@ -346,6 +369,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     padding: 80px 24px 60px;
     overflow: hidden;
     isolation: isolate;
+    background-color: $backgroundColor2; // hides the page texture, so only its waves show
 
     &::before {
       @include waves(0.05);
@@ -460,102 +484,71 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
    */
 
   .section4 {
-    padding: 110px 24px;
+    padding: 80px 24px 120px;
     background-color: $backgroundColor3;
     background-image: url('../images/texture.svg');
     background-size: 400px 400px;
 
     .container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      max-width: 1240px;
-      margin: 0px auto 52px;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 56px;
+      max-width: 1080px;
+      margin: 0px auto;
     }
 
+    // Square framed photo next to its text, no card
     .cocina {
-      position: relative;
-      min-height: 440px;
-      overflow: hidden;
-      border-radius: 24px;
-      isolation: isolate;
-      box-shadow: 0px 24px 44px -26px #000;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      padding: 30px 0px;
+      text-align: left;
+
+      // Only the first row has a line under it, between the two rows
+      &:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(227, 163, 63, 0.16);
+      }
 
       img {
-        position: absolute;
-        inset: 0;
-        z-index: -2;
-        width: 100%;
-        height: 100%;
+        flex: none;
+        box-sizing: border-box;
+        width: 170px;
+        height: 170px;
+        padding: 6px;
+        border: 1px solid rgba(227, 163, 63, 0.45);
+        border-radius: 20px;
         object-fit: cover;
-        transition: transform 1s $easeOut;
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        background: linear-gradient(to top, rgba(13, 11, 10, 0.96) 20%, rgba(13, 11, 10, 0.25) 70%, transparent);
-        transition: background-color 0.6s;
-      }
-
-      &:hover {
-        img {
-          transform: scale(1.1);
-        }
-
-        .description {
-          max-height: 160px;
-          opacity: 1;
-        }
-
-        .cocina-text::before {
-          width: 64px;
-        }
+        background-color: $backgroundColor2;
+        box-shadow: 0px 18px 30px -16px #000;
       }
     }
 
     .cocina-text {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 26px 24px;
-      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-      &::before {
-        content: '';
-        display: block;
-        width: 34px;
-        height: 3px;
-        margin-bottom: 14px;
-        border-radius: 2px;
-        background: linear-gradient(90deg, #d48a2a, #f6d08a);
-        transition: width 0.5s $easeOut;
-      }
+    .cocina-kanji {
+      color: $redLight;
+      font-family: $fontBrush;
+      font-size: 22px;
+      line-height: 1;
     }
 
     .title {
+      color: $amberLight;
       font-family: $fontDisplay;
-      font-size: 36px;
-      font-weight: 400;
+      font-size: 28px;
+      font-weight: 700;
       line-height: 1.1;
-
-      span {
-        @include gold();
-      }
     }
 
     .description {
-      max-height: 0;
-      overflow: hidden;
-      padding-top: 10px;
-      color: #cfcfcf;
+      color: $textColor3;
       font-size: 15px;
       line-height: 1.6;
-      opacity: 0;
-      transition: max-height 0.6s $easeOut, opacity 0.6s;
     }
   }
 
@@ -563,19 +556,68 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
    * Section2: delivery
    */
 
+  // On the seal's red, so it breaks the run of dark sections
   .section2 {
     padding: 120px 30px;
     overflow: hidden;
     isolation: isolate;
+    background: radial-gradient(circle at 75% 50%, $red, $redDark 55%, #5a0f12);
 
     // Waves fading out from the top left corner
     &::before {
-      @include waves(0.07);
+      @include waves(0.08);
       top: 0px;
       left: 0px;
       width: 60%;
       height: 70%;
       mask-image: radial-gradient(circle at 0% 0%, #000, transparent 70%);
+    }
+
+    // 出前 (delivery) written big behind the photo
+    &::after {
+      content: '出前';
+      position: absolute;
+      z-index: -1;
+      right: -2%;
+      bottom: -12%;
+      color: #000;
+      font-family: $fontBrush;
+      font-size: 420px;
+      line-height: 1;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .kicker {
+      color: $amberLight;
+    }
+
+    .heading em {
+      background: none;
+      color: $amberLight;
+      -webkit-text-fill-color: $amberLight;
+    }
+
+    .lead {
+      color: $washi;
+      opacity: 0.85;
+    }
+
+    .cta-red {
+      color: $ink;
+      background: $washi;
+      box-shadow: 0px 10px 24px -10px #000;
+    }
+
+    .cta-gold {
+      color: $washi;
+      border-color: $washi;
+      background: transparent;
+
+      &:hover {
+        color: $redDark;
+        background-color: $washi;
+      }
     }
 
     .container {
@@ -624,9 +666,9 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
           width: 24px;
           height: 24px;
           border-radius: 50%;
-          color: #fff;
+          color: $red;
           font-size: 13px;
-          background-color: $red;
+          background-color: $washi;
         }
       }
     }
@@ -665,8 +707,9 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
       font-size: 13px;
       font-weight: 600;
       line-height: 1.25;
-      background: radial-gradient(circle at 35% 30%, $redLight, $red 60%, $redDark);
-      box-shadow: 0px 14px 30px -10px $redLight;
+      background: radial-gradient(circle at 35% 30%, #2a2522, $black);
+      box-shadow: 0px 14px 30px -10px #000;
+      border: 2px solid $amber;
       animation: front-float 6s ease-in-out infinite;
 
       span {
@@ -790,13 +833,8 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
 
 @media (max-width: 1100px) {
   .home {
-    .section3 .dishes-container,
-    .section4 .container {
+    .section3 .dishes-container {
       grid-template-columns: repeat(2, 1fr);
-    }
-
-    .section4 .cocina {
-      min-height: 380px;
     }
   }
 }
@@ -821,6 +859,10 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     .section2 {
       padding: 90px 24px;
 
+      &::after {
+        font-size: 220px;
+      }
+
       .left {
         align-items: center;
         text-align: center;
@@ -838,11 +880,16 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 
-// Without hover, the cuisines show their text all the time
-@media (hover: none), (max-width: 700px) {
-  .home .section4 .description {
-    max-height: none;
-    opacity: 1;
+// One column: every cuisine but the last gets the line under it
+@media (max-width: 900px) {
+  .home .section4 {
+    .container {
+      grid-template-columns: none;
+    }
+
+    .cocina:not(:last-child) {
+      border-bottom: 1px solid rgba(227, 163, 63, 0.16);
+    }
   }
 }
 
@@ -856,8 +903,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
       font-size: 13px;
     }
 
-    .section3 .dishes-container,
-    .section4 .container {
+    .section3 .dishes-container {
       grid-template-columns: none;
     }
 
@@ -866,7 +912,12 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .section4 .cocina {
-      min-height: 340px;
+      gap: 18px;
+
+      img {
+        width: 110px;
+        height: 110px;
+      }
     }
 
     .section1 .stats {

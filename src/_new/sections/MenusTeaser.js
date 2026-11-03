@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import menus from '../../Menu/MenusData'
 import { revealDelay } from '../reveal/useReveal'
-import { reservationWhatsappUrl } from './reservation'
 import './sections.css'
 
 const MenusTeaser = () => {
@@ -28,10 +27,6 @@ const MenusTeaser = () => {
                         <span className='menus-teaser-link'>Ver carta</span>
                     </Link>
                 ))}
-            </div>
-            <div className='cta-buttons' data-reveal='up'>
-                <Link className='cta cta-red' to='/menu'>Ver carta</Link>
-                <a className='cta cta-gold' href={reservationWhatsappUrl} target='_blank' rel='noreferrer'>Reservar mesa</a>
             </div>
         </section>
     )

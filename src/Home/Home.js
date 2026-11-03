@@ -25,11 +25,11 @@ const Home = () => {
       <Section1 />
       <RamenGuide />
       <Section3 />
-      <Gallery />
-      <Section2 />
-      <Reviews />
-      <Section4 />
       <MenusTeaser />
+      <Section4 />
+      <Section2 />
+      <Gallery />
+      <Reviews />
       <FinalCall />
       <Footer />
     </div>

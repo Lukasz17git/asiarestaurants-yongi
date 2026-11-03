@@ -1,4 +1,5 @@
 /*sumi: the dark of the noodle bar*/
+/*sumi grey, for cards*/
 /*cream*/
 /*amber, the lantern light*/
 /*grey*/
@@ -137,15 +138,6 @@ code {
 .cta-gold:hover {
   color: #141210;
   background-color: #e3a33f;
-}
-
-.cta-ink {
-  color: #1a1714;
-  border: 1.5px solid #1a1714;
-}
-.cta-ink:hover {
-  color: #f4ede1;
-  background-color: #1a1714;
 }
 
 .kicker {

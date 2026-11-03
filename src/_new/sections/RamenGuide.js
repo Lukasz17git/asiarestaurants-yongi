@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { dishesByNumber } from '../pedidos/takeawayMenu'
 import { formatPrice } from '../pedidos/deliveryRules'
 import './sections.css'
@@ -51,10 +50,6 @@ const RamenGuide = () => {
                         </article>
                     )
                 })}
-            </div>
-            <div className='cta-buttons' data-reveal='up'>
-                <Link className='cta cta-red' to='/menu'>Ver toda la carta</Link>
-                <Link className='cta cta-ink' to='/pedidos'>Pedir para llevar</Link>
             </div>
         </section>
     )

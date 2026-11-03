@@ -169,17 +169,6 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     }
 }
 
-// For the washi (light) sections
-.cta-ink {
-    color: $ink;
-    border: 1.5px solid $ink;
-
-    &:hover {
-        color: $washi;
-        background-color: $ink;
-    }
-}
-
 .kicker {
     display: inline-flex;
     align-items: center;
