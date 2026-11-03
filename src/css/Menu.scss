@@ -69,86 +69,33 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         .heading {
             font-size: clamp(42px, 7vw, 84px);
             text-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6);
+
+            // A text-shadow shows through gradient text (transparent letters), so the red uses a filter
+            em {
+                text-shadow: none;
+                filter: drop-shadow(0px 6px 20px rgba(0, 0, 0, 0.7));
+            }
         }
     }
 
-    // Glass panel with a numbered shortcut to each section
-    .menus-shortcuts {
-        width: min(100%, 980px);
-        margin-top: 10px;
-        overflow: hidden;
-        border: 1px solid rgba(201, 171, 129, 0.3);
-        border-radius: 26px;
-        background-color: rgba(12, 14, 16, 0.62);
-        backdrop-filter: blur(10px);
-        box-shadow: 0px 30px 60px -30px #000;
-    }
-
-    .menus-shortcuts-text {
-        padding: 20px 28px 18px;
-        border-bottom: 1px solid rgba(201, 171, 129, 0.2);
+    .menus-hero-content .lead {
+        max-width: 700px;
+        text-wrap: balance;
         color: #d2d2d2;
-        font-size: 16px;
-        line-height: 1.6;
+        text-shadow: 0px 2px 14px rgba(0, 0, 0, 0.8);
     }
 
-    .menus-shortcuts-links {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+    .menus-hero-hours {
+        color: $amberLight;
+        font-family: $fontBody;
+        font-weight: 700;
+        letter-spacing: 2px;
 
-        button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            padding: 18px 10px 16px;
-            border: none;
-            border-left: 1px solid rgba(201, 171, 129, 0.2);
-            color: $textColor1;
-            background: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-
-            &:first-child {
-                border-left: none;
-            }
-
-            &:hover {
-                background-color: rgba(201, 171, 129, 0.1);
-
-                .menus-shortcut-arrow {
-                    transform: translateY(4px);
-                    opacity: 1;
-                }
-            }
-
-            &:focus-visible {
-                outline: 2px solid $lineColor2;
-                outline-offset: -2px;
-            }
+        span {
+            white-space: nowrap;
         }
     }
 
-    .menus-shortcut-number {
-        @include gold();
-        font-family: 'AsianHiro', serif;
-        font-size: 30px;
-        line-height: 1;
-    }
-
-    .menus-shortcut-name {
-        font-family: 'CondLight', sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-    }
-
-    .menus-shortcut-arrow {
-        color: $textColor2;
-        opacity: 0.6;
-        transition: transform 0.3s $easeOut, opacity 0.3s;
-    }
 
     /*
      * Menus
@@ -208,7 +155,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         padding: 6px 14px;
         border-radius: 999px;
         color: #fff;
-        font-family: 'CondLight', sans-serif;
+        font-family: $fontBody;
         font-weight: 700;
         letter-spacing: 2px;
         background-color: rgba(12, 14, 16, 0.85);
@@ -226,23 +173,53 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
 
     .menu-title {
         color: $textColor2;
-        font-family: 'Italianno', serif;
-        font-size: 52px;
+        font-family: $fontBrush;
+        font-size: 44px;
         font-weight: 400;
         line-height: 1;
     }
 
-    .menu-price {
-        @include gold();
-        font-family: 'AsianHiro', serif;
-        font-size: 60px;
-        line-height: 1.1;
+    // A round red seal with the price, like a hanko
+    .menu-stamp {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        width: 118px;
+        height: 118px;
+        padding: 10px;
+        border: 2px solid rgba(244, 237, 225, 0.35);
+        border-radius: 50%;
+        color: $washi;
+        text-align: center;
+        background: radial-gradient(circle at 30% 20%, $redLight, $red 50%, $redDark);
+        box-shadow: 0px 14px 30px -12px #000;
+        rotate: -6deg;
+
+        b {
+            font-family: $fontDisplay;
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        small {
+            font-size: 10px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
     }
 
-    .menu-price2 {
-        margin-top: -6px;
-        color: $textColor4;
-        font-size: 14px;
+    .menu-stamp-kanji {
+        font-family: $fontBrush;
+        font-size: 22px;
+        line-height: 1.1;
+        white-space: nowrap;
     }
 
     .menu-description {
@@ -336,7 +313,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             border: 1px solid rgba(201, 171, 129, 0.16);
             border-radius: 18px;
             color: $textColor1;
-            font-family: 'CondLight', sans-serif;
+            font-family: $fontBody;
             font-size: 14px;
             font-weight: 700;
             letter-spacing: 1.5px;
@@ -416,7 +393,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
 
         .name {
             color: $textColor1;
-            font-family: 'CondLight', sans-serif;
+            font-family: $fontBody;
             font-size: 17px;
             font-weight: 700;
             letter-spacing: 1.5px;
@@ -439,8 +416,60 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
      * Takeaway
      */
 
+    // On the logo's red, like «¿Antojo ahora?» on Home
     .takeaway {
         padding: 110px 30px;
+        overflow: hidden;
+        isolation: isolate;
+        background: radial-gradient(circle at 75% 50%, $red, $redDark 55%, #4a0d10);
+
+        // 持ち帰り (takeaway) written big behind the text
+        &::after {
+            content: '持ち帰り';
+            position: absolute;
+            z-index: -1;
+            right: -4%;
+            bottom: -5%;
+            color: #000;
+            font-family: $fontBrush;
+            font-size: 260px;
+            line-height: 1;
+            opacity: 0.12;
+            pointer-events: none;
+        }
+
+        .kicker {
+            color: $amberLight;
+        }
+
+        .heading em {
+            background: none;
+            color: $amberLight;
+            -webkit-text-fill-color: $amberLight;
+        }
+
+        .lead {
+            color: $washi;
+            opacity: 0.85;
+        }
+
+        .cta-red {
+            color: $ink;
+            background: $washi;
+            box-shadow: 0px 10px 24px -10px #000;
+        }
+
+        .cta-gold {
+            color: $washi;
+            border-color: $washi;
+            background: transparent;
+
+            &:hover {
+                color: $redDark;
+                background-color: $washi;
+            }
+        }
+
 
         .container {
             display: grid;
@@ -480,9 +509,20 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
      * Desserts and wines
      */
 
+    // On paper, like the washi sections of Home
     .cartas {
         padding: 110px 24px 120px;
-        background-color: $backgroundColor3;
+        color: $ink;
+        background: radial-gradient(circle at 15% 20%, rgba(168, 41, 46, 0.06), transparent 40%),
+            radial-gradient(circle at 85% 80%, rgba(201, 171, 129, 0.16), transparent 45%), $washi;
+
+        .kicker {
+            color: $red;
+        }
+
+        .heading {
+            color: $ink;
+        }
 
         .wrapper {
             display: grid;
@@ -497,9 +537,9 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             align-items: center;
             gap: 14px;
             padding: 34px 24px 32px;
-            border: 1px solid rgba(201, 171, 129, 0.2);
+            border: 1.5px solid rgba(21, 25, 29, 0.12);
             border-radius: 26px;
-            background: radial-gradient(circle at 50% 35%, rgba(201, 171, 129, 0.14), transparent 60%), #171b1f;
+            background-color: rgba(255, 255, 255, 0.55);
 
             &:hover .carta-image {
                 transform: translateY(-10px) rotate(-4deg) scale(1.05);
@@ -512,7 +552,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            filter: drop-shadow(0px 18px 18px rgba(0, 0, 0, 0.6));
+            filter: drop-shadow(0px 18px 18px rgba(21, 25, 29, 0.35));
             transition: transform 0.6s $easeOut;
         }
 
@@ -524,20 +564,33 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             background-image: url('../images/menus/cartaVinos.webp');
         }
 
-        .carta-title {
-            color: $textColor2;
-            font-family: 'Italianno', serif;
-            font-size: 50px;
+        .carta-kanji {
+            color: $red;
+            font-family: $fontBrush;
+            font-size: 26px;
             line-height: 1;
+        }
+
+        .carta-title {
+            color: $ink;
+            font-family: $fontDisplay;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .carta-text {
+            color: $inkGrey;
+            font-size: 15px;
         }
 
         .carta-button a {
             display: inline-flex;
             padding: 10px 24px;
-            border: 1.5px solid $textColor2;
+            border: 1.5px solid $red;
             border-radius: 999px;
-            color: $textColor2;
-            font-family: 'CondLight', sans-serif;
+            color: $red;
+            font-family: $fontBody;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -545,8 +598,8 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             transition: color 0.3s, background-color 0.3s;
 
             &:hover {
-                color: $backgroundColor2;
-                background-color: $textColor2;
+                color: $washi;
+                background-color: $red;
             }
         }
     }
@@ -635,35 +688,6 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         .menus-hero {
             min-height: 0;
             padding: 120px 18px 80px;
-        }
-
-        .menus-shortcuts-text {
-            padding: 16px 18px 14px;
-            font-size: 15px;
-        }
-
-        .menus-shortcuts-links {
-            grid-template-columns: none;
-
-            button {
-                flex-direction: row;
-                gap: 14px;
-                padding: 14px 20px;
-                border-left: none;
-                border-top: 1px solid rgba(201, 171, 129, 0.2);
-
-                &:first-child {
-                    border-top: none;
-                }
-            }
-        }
-
-        .menus-shortcut-number {
-            font-size: 24px;
-        }
-
-        .menus-shortcut-arrow {
-            margin-left: auto;
         }
 
         .meals-grid {

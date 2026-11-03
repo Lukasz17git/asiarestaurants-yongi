@@ -3,6 +3,21 @@
 // issue: GitHub issue number; no link/linkText on changes (the client asked for none in #3)
 const releaseNotes = [
     {
+        date: '2026-11-03',
+        branch: 'lucas-3',
+        title: 'Nuevo diseño: Asia con el estilo japonés de IOYI',
+        summary: 'Este diseño mezcla la web de Asia (sus colores, el dorado y las ramas con flores) con el estilo japonés del diseño de IOYI: letras nuevas, secciones en color papel, sellos rojos y kanjis.',
+        changes: [
+            { text: 'Letras nuevas de estilo japonés en títulos y textos; el nombre «Asia», la franja roja y los nombres de los favoritos mantienen la letra de siempre.' },
+            { text: 'Inicio cambia de orden: después de «Quiénes somos» viene una guía «Elige tu sushi» con uramakis, nigiris, venere, temakis y crispy, sus fotos y precios.' },
+            { text: 'Los números de «Quiénes somos» empiezan por la nota de 4,2 sobre 5 de más de 500 reseñas.' },
+            { text: '«Un bol para cada uno» muestra las cuatro cocinas en cuadros con su nombre en japonés, y «¿Antojo ahora? Te lo llevamos» pasa a fondo rojo.' },
+            { text: 'Nueva sección «Lo que más repiten nuestros clientes», con lo que más se dice en las reseñas, y el horario de mediodía y noche junto a los botones de reservar.' },
+            { text: '«Pedir online» toma el diseño de IOYI: botones de sección con su kanji, tarjetas de plato con la foto entera sobre papel y el resumen del pedido abajo.' },
+            { text: 'En Menús, la portada lleva un texto y el horario en vez de los accesos, los precios van en un sello rojo sobre la foto, «Para llevar» tiene fondo rojo y postres y vinos van sobre papel.' },
+        ],
+    },
+    {
         date: '2026-10-28',
         issue: 16,
         branch: 'diseno-14',

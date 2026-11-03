@@ -1,9 +1,12 @@
+@charset "UTF-8";
 /*white*/
 /*gold*/
 /*grey*/
 /*brown-gold*/
 /*gold line*/
 /*red of the logo*/
+/*washi paper and ink, for the light sections (from the IOYI design)*/
+/*the gold of the logo, under the names the IOYI sections use*/
 .main-menu {
   position: relative;
   overflow-x: hidden;
@@ -85,74 +88,24 @@
   font-size: clamp(42px, 7vw, 84px);
   text-shadow: 0px 6px 30px rgba(0, 0, 0, 0.6);
 }
-.main-menu .menus-shortcuts {
-  width: min(100%, 980px);
-  margin-top: 10px;
-  overflow: hidden;
-  border: 1px solid rgba(201, 171, 129, 0.3);
-  border-radius: 26px;
-  background-color: rgba(12, 14, 16, 0.62);
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 30px 60px -30px #000;
+.main-menu .menus-hero-content .heading em {
+  text-shadow: none;
+  filter: drop-shadow(0px 6px 20px rgba(0, 0, 0, 0.7));
 }
-.main-menu .menus-shortcuts-text {
-  padding: 20px 28px 18px;
-  border-bottom: 1px solid rgba(201, 171, 129, 0.2);
+.main-menu .menus-hero-content .lead {
+  max-width: 700px;
+  text-wrap: balance;
   color: #d2d2d2;
-  font-size: 16px;
-  line-height: 1.6;
+  text-shadow: 0px 2px 14px rgba(0, 0, 0, 0.8);
 }
-.main-menu .menus-shortcuts-links {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-}
-.main-menu .menus-shortcuts-links button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 18px 10px 16px;
-  border: none;
-  border-left: 1px solid rgba(201, 171, 129, 0.2);
-  color: #eee;
-  background: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.main-menu .menus-shortcuts-links button:first-child {
-  border-left: none;
-}
-.main-menu .menus-shortcuts-links button:hover {
-  background-color: rgba(201, 171, 129, 0.1);
-}
-.main-menu .menus-shortcuts-links button:hover .menus-shortcut-arrow {
-  transform: translateY(4px);
-  opacity: 1;
-}
-.main-menu .menus-shortcuts-links button:focus-visible {
-  outline: 2px solid #ead1af;
-  outline-offset: -2px;
-}
-.main-menu .menus-shortcut-number {
-  background: radial-gradient(#b88746, #fdf5a6);
-  background: -webkit-linear-gradient(top, #b88746, #fdf5a6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "AsianHiro", serif;
-  font-size: 30px;
-  line-height: 1;
-}
-.main-menu .menus-shortcut-name {
-  font-family: "CondLight", sans-serif;
-  font-size: 15px;
+.main-menu .menus-hero-hours {
+  color: #ead1af;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  letter-spacing: 2px;
 }
-.main-menu .menus-shortcut-arrow {
-  color: #c9ab81;
-  opacity: 0.6;
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s;
+.main-menu .menus-hero-hours span {
+  white-space: nowrap;
 }
 .main-menu .menus-container {
   padding: 120px 24px 100px;
@@ -200,7 +153,7 @@
   padding: 6px 14px;
   border-radius: 999px;
   color: #fff;
-  font-family: "CondLight", sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
   background-color: rgba(12, 14, 16, 0.85);
@@ -216,24 +169,48 @@
 }
 .main-menu .menu-title {
   color: #c9ab81;
-  font-family: "Italianno", serif;
-  font-size: 52px;
+  font-family: "Yuji Syuku", serif;
+  font-size: 44px;
   font-weight: 400;
   line-height: 1;
 }
-.main-menu .menu-price {
-  background: radial-gradient(#b88746, #fdf5a6);
-  background: -webkit-linear-gradient(top, #b88746, #fdf5a6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: "AsianHiro", serif;
-  font-size: 60px;
-  line-height: 1.1;
+.main-menu .menu-stamp {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 118px;
+  height: 118px;
+  padding: 10px;
+  border: 2px solid rgba(244, 237, 225, 0.35);
+  border-radius: 50%;
+  color: #f4ede1;
+  text-align: center;
+  background: radial-gradient(circle at 30% 20%, #d2383d, #a8292e 50%, #6e1519);
+  box-shadow: 0px 14px 30px -12px #000;
+  rotate: -6deg;
 }
-.main-menu .menu-price2 {
-  margin-top: -6px;
-  color: #959494;
-  font-size: 14px;
+.main-menu .menu-stamp b {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 30px;
+  line-height: 1;
+}
+.main-menu .menu-stamp small {
+  font-size: 10px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.main-menu .menu-stamp-kanji {
+  font-family: "Yuji Syuku", serif;
+  font-size: 22px;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 .main-menu .menu-description {
   flex: 1;
@@ -305,7 +282,7 @@
   border: 1px solid rgba(201, 171, 129, 0.16);
   border-radius: 18px;
   color: #eee;
-  font-family: "CondLight", sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -374,7 +351,7 @@
 }
 .main-menu .dish-container .name {
   color: #eee;
-  font-family: "CondLight", sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -389,6 +366,48 @@
 }
 .main-menu .takeaway {
   padding: 110px 30px;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(circle at 75% 50%, #a8292e, #6e1519 55%, #4a0d10);
+}
+.main-menu .takeaway::after {
+  content: "持ち帰り";
+  position: absolute;
+  z-index: -1;
+  right: -4%;
+  bottom: -5%;
+  color: #000;
+  font-family: "Yuji Syuku", serif;
+  font-size: 260px;
+  line-height: 1;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.main-menu .takeaway .kicker {
+  color: #ead1af;
+}
+.main-menu .takeaway .heading em {
+  background: none;
+  color: #ead1af;
+  -webkit-text-fill-color: #ead1af;
+}
+.main-menu .takeaway .lead {
+  color: #f4ede1;
+  opacity: 0.85;
+}
+.main-menu .takeaway .cta-red {
+  color: #15191d;
+  background: #f4ede1;
+  box-shadow: 0px 10px 24px -10px #000;
+}
+.main-menu .takeaway .cta-gold {
+  color: #f4ede1;
+  border-color: #f4ede1;
+  background: transparent;
+}
+.main-menu .takeaway .cta-gold:hover {
+  color: #6e1519;
+  background-color: #f4ede1;
 }
 .main-menu .takeaway .container {
   display: grid;
@@ -420,7 +439,14 @@
 }
 .main-menu .cartas {
   padding: 110px 24px 120px;
-  background-color: #191D22;
+  color: #15191d;
+  background: radial-gradient(circle at 15% 20%, rgba(168, 41, 46, 0.06), transparent 40%), radial-gradient(circle at 85% 80%, rgba(201, 171, 129, 0.16), transparent 45%), #f4ede1;
+}
+.main-menu .cartas .kicker {
+  color: #a8292e;
+}
+.main-menu .cartas .heading {
+  color: #15191d;
 }
 .main-menu .cartas .wrapper {
   display: grid;
@@ -434,9 +460,9 @@
   align-items: center;
   gap: 14px;
   padding: 34px 24px 32px;
-  border: 1px solid rgba(201, 171, 129, 0.2);
+  border: 1.5px solid rgba(21, 25, 29, 0.12);
   border-radius: 26px;
-  background: radial-gradient(circle at 50% 35%, rgba(201, 171, 129, 0.14), transparent 60%), #171b1f;
+  background-color: rgba(255, 255, 255, 0.55);
 }
 .main-menu .cartas .carta:hover .carta-image {
   transform: translateY(-10px) rotate(-4deg) scale(1.05);
@@ -447,7 +473,7 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  filter: drop-shadow(0px 18px 18px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0px 18px 18px rgba(21, 25, 29, 0.35));
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .main-menu .cartas .carta-dulces {
@@ -456,19 +482,30 @@
 .main-menu .cartas .carta-vinos {
   background-image: url("../images/menus/cartaVinos.webp");
 }
-.main-menu .cartas .carta-title {
-  color: #c9ab81;
-  font-family: "Italianno", serif;
-  font-size: 50px;
+.main-menu .cartas .carta-kanji {
+  color: #a8292e;
+  font-family: "Yuji Syuku", serif;
+  font-size: 26px;
   line-height: 1;
+}
+.main-menu .cartas .carta-title {
+  color: #15191d;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.main-menu .cartas .carta-text {
+  color: #5a5d61;
+  font-size: 15px;
 }
 .main-menu .cartas .carta-button a {
   display: inline-flex;
   padding: 10px 24px;
-  border: 1.5px solid #c9ab81;
+  border: 1.5px solid #a8292e;
   border-radius: 999px;
-  color: #c9ab81;
-  font-family: "CondLight", sans-serif;
+  color: #a8292e;
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -476,8 +513,8 @@
   transition: color 0.3s, background-color 0.3s;
 }
 .main-menu .cartas .carta-button a:hover {
-  color: #121518;
-  background-color: #c9ab81;
+  color: #f4ede1;
+  background-color: #a8292e;
 }
 
 @keyframes menus-hero-zoom {
@@ -547,29 +584,6 @@
   .main-menu .menus-hero {
     min-height: 0;
     padding: 120px 18px 80px;
-  }
-  .main-menu .menus-shortcuts-text {
-    padding: 16px 18px 14px;
-    font-size: 15px;
-  }
-  .main-menu .menus-shortcuts-links {
-    grid-template-columns: none;
-  }
-  .main-menu .menus-shortcuts-links button {
-    flex-direction: row;
-    gap: 14px;
-    padding: 14px 20px;
-    border-left: none;
-    border-top: 1px solid rgba(201, 171, 129, 0.2);
-  }
-  .main-menu .menus-shortcuts-links button:first-child {
-    border-top: none;
-  }
-  .main-menu .menus-shortcut-number {
-    font-size: 24px;
-  }
-  .main-menu .menus-shortcut-arrow {
-    margin-left: auto;
   }
   .main-menu .meals-grid {
     grid-template-columns: repeat(2, 1fr);

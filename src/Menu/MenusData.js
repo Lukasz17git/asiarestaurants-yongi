@@ -1,4 +1,5 @@
 // image: path under src/images, without .webp
+// stamp: the red seal on the photo; price and price2 are shown on Home's MenusTeaser
 const menus = {
     day: {
         name: {
@@ -14,6 +15,7 @@ const menus = {
             cat: ''
         },
         price: '15,90€',
+        stamp: { value: '15,90€', note: 'Sushi, wok y más' },
         button: {
             es: 'Ver Carta',
             cat: ''
@@ -36,6 +38,7 @@ const menus = {
         },
         price: '21,90€',
         price2: 'Viernes y festivos +1€',
+        stamp: { value: '21,90€', note: 'Viernes y festivos +1€' },
         button: {
             es: 'Ver Carta',
             cat: ''
@@ -66,6 +69,7 @@ const menus = {
             es: 'Ver Carta',
             cat: ''
         },
+        stamp: { kanji: '持ち帰り', note: 'Para llevar' },
         image: 'menus/takeAway',
         pdf: './pdfs/CartaLlevar2024_compressed.pdf'
     }

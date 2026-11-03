@@ -9,15 +9,15 @@ import Dish from './Dish'
 import Marquee from '../_new/sections/Marquee'
 import FinalCall from '../_new/sections/FinalCall'
 import { revealDelay, useReveal } from '../_new/reveal/useReveal'
-import { reservationWhatsappUrl } from '../_new/sections/reservation'
+import { hoursText, reservationWhatsappUrl } from '../_new/sections/reservation'
 
 // The category with most dishes; each one fills two rows at most
 const defaultCategoryName = 'Uramaki'
 
 const getVisibleMeals = (categoryName, language) => meals.find((category) => category.name[language] === categoryName).meals
 
-// The page's own base href ('/') would turn '#menus' into the Home page, so the shortcuts scroll by hand
-const scrollToSection = (id) => document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+// On phones the line breaks only at '·'
+const [lunchHours, dinnerHours] = hoursText.split(' · ')
 
 const Menus = () => {
   const language = 'es'
@@ -28,18 +28,11 @@ const Menus = () => {
   const visibleMeals = getVisibleMeals(categoryName, language)
   const { day, night, pedidos } = menus
 
-  const restaurantsTitle = {
-    es: 'Más de 200 platos para pedir sin parar: elige tu menú, pide otra ronda y deja hueco para el postre.',
+  const heroText = {
+    es: 'Más de 200 platos de Japón y China: uramakis, nigiris, dim sum, ramen y wok. Elige tu menú, pide otra ronda y deja hueco para el postre.',
     cat: '',
-    it: 'Prova subito tutti i nostri piatti e menù!'
+    it: ''
   }
-  const sectionLinks = [
-    { id: 'menus', name: { es: 'Menús' } },
-    { id: 'todo', name: { es: 'Todo lo que puedas comer' } },
-    { id: 'platos', name: { es: 'Platos' } },
-    { id: 'llevar', name: { es: 'Para llevar' } },
-    { id: 'acompanar', name: { es: 'Postres y vinos' } },
-  ]
   const menusWords = ['Menú Mediodía', 'Menú Noche', 'Sushi', 'Cocina japonesa', 'Comida china', 'Para llevar', 'A domicilio']
 
   const allYouCanEat = {
@@ -74,8 +67,8 @@ const Menus = () => {
     cat: '',
     it: ''
   }
-  const dulcesButton = {
-    es: 'Carta Dulces',
+  const dulcesText = {
+    es: 'Pregúntanos por los de hoy al acabar.',
     cat: '',
     it: ''
   }
@@ -92,18 +85,8 @@ const Menus = () => {
         <div className='menus-hero-content'>
           <p className='kicker'>Carta y menús</p>
           <h1 className='heading'>Nuestra carta de <em>sushi</em>, cocina japonesa y china</h1>
-          <div className='menus-shortcuts'>
-            <p className='menus-shortcuts-text'>{restaurantsTitle[language]}</p>
-            <nav className='menus-shortcuts-links'>
-              {sectionLinks.map(({ id, name }, index) => (
-                <button key={id} type='button' onClick={() => scrollToSection(id)}>
-                  <span className='menus-shortcut-number'>0{index + 1}</span>
-                  <span className='menus-shortcut-name'>{name[language]}</span>
-                  <span className='menus-shortcut-arrow'>↓</span>
-                </button>
-              ))}
-            </nav>
-          </div>
+          <p className='lead'>{heroText[language]}</p>
+          <p className='menus-hero-hours'><span>{lunchHours}</span> · <span>{dinnerHours}</span></p>
         </div>
       </header>
 
@@ -182,18 +165,16 @@ const Menus = () => {
         <div className='wrapper'>
           <div className='carta' data-reveal='up' style={revealDelay(0)}>
             <div className='carta-image carta-dulces' />
-            <div className='carta-title'>{dulcesTitle[language]}</div>
-            <div className='carta-button'>
-              <a target='blank' >
-                {dulcesButton[language]}
-              </a>
-            </div>
+            <b className='carta-kanji' aria-hidden='true'>甘味</b>
+            <h3 className='carta-title'>{dulcesTitle[language]}</h3>
+            <p className='carta-text'>{dulcesText[language]}</p>
           </div>
           <div className='carta' data-reveal='up' style={revealDelay(1)}>
             <div className='carta-image carta-vinos' />
-            <div className='carta-title'>{vinosTitle[language]}</div>
+            <b className='carta-kanji' aria-hidden='true'>酒</b>
+            <h3 className='carta-title'>{vinosTitle[language]}</h3>
             <div className='carta-button'>
-              <a href='./pdfs/CartaVinos2024v2_compressed.pdf' target='blank' >
+              <a href='./pdfs/CartaVinos2024v2_compressed.pdf' target='_blank' rel='noreferrer'>
                 {vinosButton[language]}
               </a>
             </div>
