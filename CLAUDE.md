@@ -1,7 +1,8 @@
 # asiarestaurants-yongi
 
-Test copy of asiarestaurants.es (Create React App). Every push to `main` deploys to
-https://asiarestaurants-yongi.vercel.app in a few minutes.
+Test copy of asiarestaurants.es (Create React App). The `ioyi-ramen` branch is a local design for IOYI Ramen
+(Vilafranca del Penedès): same pages, its own texts, photos (`src/_new/images/ioyi/`, loaded with `ioyiPhoto`) and theme.
+Every push to `main` deploys to https://asiarestaurants-yongi.vercel.app in a few minutes.
 
 ## Client preferences
 
@@ -21,20 +22,21 @@ Lasting wishes from the client; follow them in every change and add new ones her
 - Pages (`src/App.js`): `/` Home, `/restaurant` Restaurants, `/menu` Menus, `/qr` and `/qr-new` QR menu pages,
   `/pedidos` «Pedir online»
 - «Pedir online» (`src/_new/pedidos/`): the takeaway dishes from `takeaway-menu.json` (`takeawayMenu.js`), a cart kept in
-  localStorage and a button that opens WhatsApp (`34656181427`) with the order written (`whatsappOrder.js`). Delivery
+  localStorage and a button that opens WhatsApp (`34644645938`) with the order written (`whatsappOrder.js`). Delivery
   fee and minimum order by postal code are in `deliveryRules.js`
 - Texts and data, one file per section:
-  - `src/Home/examplesData.js`: featured dishes on Home (`photo: '_uramaki'` is a CSS class, see Images)
-  - `src/Home/cocinaData.js`: the 4 cuisines on Home (`photo: 'home/home12'` -> `src/images/home/home12.webp`)
-  - `src/Menu/MenusData.js`: menus (name, hours, price, PDF, `image` like `photo` above)
-  - `src/Menu/MealsData.js`: dish gallery by category (`photo: 'meal21'` -> `src/images/mealsNoBg/meal21.webp`)
+  - `src/Home/examplesData.js`: featured dishes on Home (`photo: 'unagi-don'` ->
+    `src/_new/images/ioyi/dishes/unagi-don.webp`)
+  - `src/Home/cocinaData.js`: the 4 «Un bol para cada uno» cards on Home (`photo: 'dishes/ramen-vegan'`, a path
+    under `src/_new/images/ioyi/`)
+  - `src/Menu/MenusData.js`: menus (name, hours, price, `image: 'dishes/x'` or `'place/x'`, `to`: a route or
+    `'#platos'`)
+  - Dish gallery on Menus: the sections of `takeaway-menu.json` but drinks, shown by `Dish.js`
   - `src/Restaurant/restaurantsData.js`: restaurants (address, phone, maps, WhatsApp)
   - `src/qr/qrData.js`: PDFs on the `/qr` page
-  - `src/_new/pedidos/takeaway-menu.json`: takeaway dish database, used by `/pedidos`. Numbers, Spanish texts, prices
-    (`priceInCents`) and vegan/spicy come from `public/pdfs/CartaLlevar2024_compressed.pdf`; the other languages
-    (`cat`/`en`/`it`/`zh`) and `photo: 'uramaki-tiger'` (a photo of the assets site, see Images) from the same
-    dish in the `restaurant_menu_maker` repo. Dishes it doesn't have (new uramaki, Spicy Pot...) have only `es` and no
-    photo
+  - `src/_new/pedidos/takeaway-menu.json`: IOYI's dishes by section (ramen, arroces, entrantes, baos, sandos, bebidas),
+    used by `/pedidos`, Menus and the ramen guide on Home. Only `es`; `photo: 'akamaru'` ->
+    `src/_new/images/ioyi/dishes/akamaru.webp`, `null` when IOYI has no photo of it
   - `src/_new/releaseNotesData.js`: the changes listed in «Editar con IA» -> «Ver cambios», newest entry first (one entry
     per change request, in Spanish for the client); each shows only on its `branch`
 - Sections shared by Home and Menus (`src/_new/sections/`): the red `Marquee`, the photo `Gallery`, `MenusTeaser`,
@@ -69,15 +71,13 @@ Lasting wishes from the client; follow them in every change and add new ones her
 
 ## Images
 
-- Live in `src/images/` (`home/`, `menus/`, `restaurants/`, `mealsNoBg/`), all `.webp`
-- The takeaway photos are not in this repo: `photo: 'uramaki-tiger'` loads
-  https://asiarestaurants-assets-and-data.vercel.app/images/meals/optimized/webp/uramaki-tiger.webp (`takeawayMenu.js`),
-  from the private repo `asiarestaurants-assets-and-data`. Before setting a `photo`, check its URL answers 200
-  (`curl -sI <url>`): a wrong name only shows as a broken image. A photo it doesn't have waits for the client (#7)
-- Dish photos must be `.webp`: `Dish.js` loads `mealsNoBg/${photo}.webp`. Convert others with
-  `cwebp -q 80 -resize 500 0 in.jpg -o out.webp` (`-resize 800 0` outside `mealsNoBg/`, like the existing ones)
-- Home, menu and restaurant images are set in the CSS (`content:url("../images/home/home1.webp")`)
-  or imported in `Restaurant.js`, so a new one needs its CSS rule or import too
+- The original site's images live in `src/images/`, all `.webp`; this branch only uses its icons and patterns
+- IOYI's photos are in `src/_new/images/ioyi/` (`dishes/`, `place/`, logos and seal), loaded with
+  `ioyiPhoto('dishes/akamaru')`; a wrong name passes the build and breaks the page when it renders.
+  `place/` mixes IOYI's own photos with generic ramen-bar photos (alt "Ambiente de ramen japonés")
+- Photos must be `.webp`. Convert others with `cwebp -q 80 -resize 800 0 in.jpg -o out.webp`
+- The final call's background is set in `sections.scss` (`place/shop-night.webp`), the logos in `Navbar.scss`,
+  `Footer.scss` and `BgTop.scss`
 
 ## Styles
 

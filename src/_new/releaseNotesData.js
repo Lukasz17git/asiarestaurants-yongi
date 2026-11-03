@@ -3,6 +3,21 @@
 // issue: GitHub issue number; no link/linkText on changes (the client asked for none in #3)
 const releaseNotes = [
     {
+        date: '2026-11-03',
+        branch: 'ioyi-ramen',
+        title: 'Nuevo diseño para IOYI Ramen',
+        summary: 'La web pasa a ser la de IOYI Ramen en Vilafranca del Penedès: colores de tinta y papel japonés, letras japonesas, fotos de sus ramen y su carta para llevar.',
+        changes: [
+            { text: 'Colores nuevos: fondo negro tinta, rojo del sello de IOYI, ámbar en vez de dorado y secciones en color papel para que los platos destaquen.' },
+            { text: 'Letras nuevas de estilo japonés para títulos, textos y detalles escritos a pincel.' },
+            { text: 'Inicio: portada con un bol de Akamaru girando, la historia del local (20 plazas), una guía de ramen por tipo de caldo, los entrantes favoritos, galería de fotos, pedidos para llevar y en Glovo, resumen de las reseñas y opciones veganas, sin gluten, picantes y sin caldo.' },
+            { text: 'Menús: el menú del día y la carta, un bol de ramen explicado por partes, todos los platos por categoría con precio y etiquetas de vegano y picante, y postres y bebidas.' },
+            { text: 'Restaurantes: solo IOYI, en Carrer de la Indústria, 7, con horario, teléfono, WhatsApp, Instagram y mapa.' },
+            { text: '«Pedir online» usa la carta de IOYI y envía el pedido a su WhatsApp; el precio del envío se confirma por WhatsApp.' },
+            { text: 'Logo, icono de la pestaña y pie de página de IOYI.' },
+        ],
+    },
+    {
         date: '2026-10-28',
         issue: 16,
         branch: 'diseno-14',
