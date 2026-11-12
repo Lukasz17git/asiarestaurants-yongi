@@ -3,10 +3,10 @@ import sections from './takeaway-menu.json'
 // 'Ramen y Sopas' -> 'ramen-y-sopas'
 const toSlug = (text) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 
-const ASSETS_URL = 'https://asiarestaurants-assets-and-data.vercel.app'
+const PHOTOS_URL = `${process.env.PUBLIC_URL}/dishes/photos-for-web`
 
-// 'uramaki-tiger' -> <ASSETS_URL>/images/meals/optimized/webp/uramaki-tiger.webp; null without a photo
-const getPhotoUrl = (photo) => (photo ? `${ASSETS_URL}/images/meals/optimized/webp/${photo}.webp` : null)
+// 'uramaki-tiger' -> /dishes/photos-for-web/uramaki-tiger.webp; null without a photo
+const getPhotoUrl = (photo) => (photo ? `${PHOTOS_URL}/${photo}.webp` : null)
 
 // Hides a description that only repeats the name ('Empanadillas de carne')
 const getDescription = (dish) => {
