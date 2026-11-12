@@ -1,6 +1,7 @@
-/*white*/
+/*sumi: warm ink black*/
+/*rice white*/
 /*gold*/
-/*grey*/
+/*warm grey*/
 /*brown-gold*/
 /*gold line*/
 /*red of the logo*/
@@ -33,7 +34,7 @@ code {
 
 .App {
   text-align: center;
-  background-color: #121518;
+  background-color: #141311;
   width: 100%;
   min-height: 100vh;
 }
@@ -103,14 +104,14 @@ code {
   transform: translateY(0px) scale(0.97);
 }
 .cta:focus-visible {
-  outline: 2px solid #ead1af;
+  outline: 2px solid #ecd3a8;
   outline-offset: 3px;
 }
 
 .cta-red {
   color: #fff;
-  background: linear-gradient(135deg, #d2383d, #a8292e);
-  box-shadow: 0px 12px 30px -12px #d2383d;
+  background: linear-gradient(135deg, #e0443f, #c0282d);
+  box-shadow: 0px 12px 30px -12px #e0443f;
 }
 .cta-red::before {
   content: "";
@@ -122,28 +123,28 @@ code {
   transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .cta-red:hover {
-  box-shadow: 0px 16px 40px -10px #d2383d;
+  box-shadow: 0px 16px 40px -10px #e0443f;
 }
 .cta-red:hover::before {
   transform: translateX(120%);
 }
 
 .cta-gold {
-  color: #c9ab81;
-  border: 1.5px solid #c9ab81;
-  background-color: rgba(18, 21, 24, 0.4);
+  color: #d4af72;
+  border: 1.5px solid #d4af72;
+  background-color: rgba(20, 19, 17, 0.4);
   backdrop-filter: blur(6px);
 }
 .cta-gold:hover {
-  color: #121518;
-  background-color: #c9ab81;
+  color: #141311;
+  background-color: #d4af72;
 }
 
 .kicker {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  color: #c9ab81;
+  color: #d4af72;
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -159,14 +160,14 @@ code {
 }
 
 .heading {
-  color: #eee;
+  color: #f4ede1;
   font-family: "Shippori Mincho B1", serif;
   font-size: clamp(34px, 5.2vw, 62px);
   font-weight: 700;
   line-height: 1.15;
 }
 .heading em {
-  background: linear-gradient(to bottom, #e0484d, #a8292e);
+  background: linear-gradient(to bottom, #e0484d, #c0282d);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -176,7 +177,7 @@ code {
 .lead {
   max-width: 640px;
   margin: 0px auto;
-  color: #b3b2b2;
+  color: #b9b1a5;
   font-size: 17px;
   line-height: 1.7;
 }
@@ -195,19 +196,19 @@ code {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #d2383d;
+  background-color: #e0443f;
   animation: pulse-dot 1.8s infinite;
 }
 
 @keyframes pulse-dot {
   0% {
-    box-shadow: 0px 0px 0px 0px rgba(210, 56, 61, 0.7);
+    box-shadow: 0px 0px 0px 0px rgba(224, 68, 63, 0.7);
   }
   70% {
-    box-shadow: 0px 0px 0px 12px rgba(210, 56, 61, 0);
+    box-shadow: 0px 0px 0px 12px rgba(224, 68, 63, 0);
   }
   100% {
-    box-shadow: 0px 0px 0px 0px rgba(210, 56, 61, 0);
+    box-shadow: 0px 0px 0px 0px rgba(224, 68, 63, 0);
   }
 }
 @media (prefers-reduced-motion: reduce) {

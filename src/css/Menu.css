@@ -1,7 +1,8 @@
 @charset "UTF-8";
-/*white*/
+/*sumi: warm ink black*/
+/*rice white*/
 /*gold*/
-/*grey*/
+/*warm grey*/
 /*brown-gold*/
 /*gold line*/
 /*red of the logo*/
@@ -10,8 +11,8 @@
 .main-menu {
   position: relative;
   overflow-x: hidden;
-  color: #eee;
-  background-color: #121518;
+  color: #f4ede1;
+  background-color: #141311;
   /*
    * Hero
    */
@@ -49,7 +50,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(ellipse at 50% 45%, rgba(18, 21, 24, 0.35), rgba(18, 21, 24, 0.75) 75%), linear-gradient(to bottom, rgba(18, 21, 24, 0.7), transparent 30%, transparent 65%, #121518);
+  background: radial-gradient(ellipse at 50% 45%, rgba(20, 19, 17, 0.35), rgba(20, 19, 17, 0.75) 75%), linear-gradient(to bottom, rgba(20, 19, 17, 0.7), transparent 30%, transparent 65%, #141311);
 }
 .main-menu .menus-hero-bg {
   position: absolute;
@@ -99,7 +100,7 @@
   text-shadow: 0px 2px 14px rgba(0, 0, 0, 0.8);
 }
 .main-menu .menus-hero-hours {
-  color: #ead1af;
+  color: #ecd3a8;
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
@@ -121,15 +122,15 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid rgba(201, 171, 129, 0.2);
+  border: 1px solid rgba(212, 175, 114, 0.2);
   border-radius: 26px;
-  background: linear-gradient(160deg, #1f252b, #14181c);
+  background: linear-gradient(160deg, #24211d, #171512);
   transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s), border-color 0.45s, box-shadow 0.45s, translate 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .main-menu .menu-card:hover {
   translate: 0px -8px;
-  border-color: rgba(201, 171, 129, 0.75);
-  box-shadow: 0px 26px 50px -26px #c9ab81;
+  border-color: rgba(212, 175, 114, 0.75);
+  box-shadow: 0px 26px 50px -26px #d4af72;
 }
 .main-menu .menu-card:hover .menu-photo img {
   transform: scale(1.08);
@@ -168,7 +169,7 @@
   padding: 26px 24px 30px;
 }
 .main-menu .menu-title {
-  color: #c9ab81;
+  color: #d4af72;
   font-family: "Yuji Syuku", serif;
   font-size: 44px;
   font-weight: 400;
@@ -190,7 +191,7 @@
   border-radius: 50%;
   color: #f4ede1;
   text-align: center;
-  background: radial-gradient(circle at 30% 20%, #d2383d, #a8292e 50%, #6e1519);
+  background: radial-gradient(circle at 30% 20%, #e0443f, #c0282d 50%, #6e1519);
   box-shadow: 0px 14px 30px -12px #000;
   rotate: -6deg;
 }
@@ -216,13 +217,13 @@
   flex: 1;
   max-width: 300px;
   margin-bottom: 14px;
-  color: #b3b2b2;
+  color: #b9b1a5;
   font-size: 15px;
   line-height: 1.6;
 }
 .main-menu .allYouCan {
   padding: 110px 30px;
-  background: radial-gradient(ellipse at 80% 50%, rgba(201, 171, 129, 0.1), transparent 60%), #191D22;
+  background: radial-gradient(ellipse at 80% 50%, rgba(212, 175, 114, 0.1), transparent 60%), #211e1a;
 }
 .main-menu .allYouCan .container {
   display: grid;
@@ -279,15 +280,15 @@
   align-items: center;
   gap: 6px;
   padding: 12px 8px 12px;
-  border: 1px solid rgba(201, 171, 129, 0.16);
+  border: 1px solid rgba(212, 175, 114, 0.16);
   border-radius: 18px;
-  color: #eee;
+  color: #f4ede1;
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  background: radial-gradient(circle at 50% 40%, #262d34, #171b1f 70%);
+  background: radial-gradient(circle at 50% 40%, #2b2722, #1a1815 70%);
   cursor: pointer;
   transition: color 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -300,20 +301,20 @@
 }
 .main-menu .meals-tabs button:hover {
   transform: translateY(-3px);
-  border-color: rgba(201, 171, 129, 0.6);
+  border-color: rgba(212, 175, 114, 0.6);
 }
 .main-menu .meals-tabs button:hover img {
   transform: scale(1.1) rotate(-6deg);
 }
 .main-menu .meals-tabs button:focus-visible {
-  outline: 2px solid #ead1af;
+  outline: 2px solid #ecd3a8;
   outline-offset: 2px;
 }
 .main-menu .meals-tabs .is-selected {
-  color: #ead1af;
-  border-color: #c9ab81;
-  background: radial-gradient(circle at 50% 40%, rgba(201, 171, 129, 0.22), #171b1f 75%);
-  box-shadow: 0px 14px 30px -18px #c9ab81;
+  color: #ecd3a8;
+  border-color: #d4af72;
+  background: radial-gradient(circle at 50% 40%, rgba(212, 175, 114, 0.22), #1a1815 75%);
+  box-shadow: 0px 14px 30px -18px #d4af72;
 }
 .main-menu .meals-grid {
   display: grid;
@@ -332,9 +333,9 @@
   align-items: center;
   height: 100%;
   padding: 18px 14px 20px;
-  border: 1px solid rgba(201, 171, 129, 0.16);
+  border: 1px solid rgba(212, 175, 114, 0.16);
   border-radius: 22px;
-  background: radial-gradient(circle at 50% 40%, #262d34, #171b1f 70%);
+  background: radial-gradient(circle at 50% 40%, #2b2722, #1a1815 70%);
   transition: border-color 0.4s, box-shadow 0.4s;
 }
 .main-menu .dish-container .photo {
@@ -350,7 +351,7 @@
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .main-menu .dish-container .name {
-  color: #eee;
+  color: #f4ede1;
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 17px;
   font-weight: 700;
@@ -358,8 +359,8 @@
   text-transform: uppercase;
 }
 .main-menu .dish-container:hover .dish-bg {
-  border-color: rgba(201, 171, 129, 0.75);
-  box-shadow: 0px 20px 40px -24px #c9ab81;
+  border-color: rgba(212, 175, 114, 0.75);
+  box-shadow: 0px 20px 40px -24px #d4af72;
 }
 .main-menu .dish-container:hover .photo img {
   transform: scale(1.12) rotate(-6deg);
@@ -368,7 +369,7 @@
   padding: 110px 30px;
   overflow: hidden;
   isolation: isolate;
-  background: radial-gradient(circle at 75% 50%, #a8292e, #6e1519 55%, #4a0d10);
+  background: radial-gradient(circle at 75% 50%, #c0282d, #6e1519 55%, #4a0d10);
 }
 .main-menu .takeaway::after {
   content: "持ち帰り";
@@ -384,19 +385,19 @@
   pointer-events: none;
 }
 .main-menu .takeaway .kicker {
-  color: #ead1af;
+  color: #ecd3a8;
 }
 .main-menu .takeaway .heading em {
   background: none;
-  color: #ead1af;
-  -webkit-text-fill-color: #ead1af;
+  color: #ecd3a8;
+  -webkit-text-fill-color: #ecd3a8;
 }
 .main-menu .takeaway .lead {
   color: #f4ede1;
   opacity: 0.85;
 }
 .main-menu .takeaway .cta-red {
-  color: #15191d;
+  color: #1a1714;
   background: #f4ede1;
   box-shadow: 0px 10px 24px -10px #000;
 }
@@ -439,14 +440,14 @@
 }
 .main-menu .cartas {
   padding: 110px 24px 120px;
-  color: #15191d;
-  background: radial-gradient(circle at 15% 20%, rgba(168, 41, 46, 0.06), transparent 40%), radial-gradient(circle at 85% 80%, rgba(201, 171, 129, 0.16), transparent 45%), #f4ede1;
+  color: #1a1714;
+  background: radial-gradient(circle at 15% 20%, rgba(168, 41, 46, 0.06), transparent 40%), radial-gradient(circle at 85% 80%, rgba(212, 175, 114, 0.16), transparent 45%), #f4ede1;
 }
 .main-menu .cartas .kicker {
-  color: #a8292e;
+  color: #c0282d;
 }
 .main-menu .cartas .heading {
-  color: #15191d;
+  color: #1a1714;
 }
 .main-menu .cartas .wrapper {
   display: grid;
@@ -460,7 +461,7 @@
   align-items: center;
   gap: 14px;
   padding: 34px 24px 32px;
-  border: 1.5px solid rgba(21, 25, 29, 0.12);
+  border: 1.5px solid rgba(27, 25, 22, 0.12);
   border-radius: 26px;
   background-color: rgba(255, 255, 255, 0.55);
 }
@@ -473,7 +474,7 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  filter: drop-shadow(0px 18px 18px rgba(21, 25, 29, 0.35));
+  filter: drop-shadow(0px 18px 18px rgba(27, 25, 22, 0.35));
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .main-menu .cartas .carta-dulces {
@@ -483,28 +484,28 @@
   background-image: url("../images/menus/cartaVinos.webp");
 }
 .main-menu .cartas .carta-kanji {
-  color: #a8292e;
+  color: #c0282d;
   font-family: "Yuji Syuku", serif;
   font-size: 26px;
   line-height: 1;
 }
 .main-menu .cartas .carta-title {
-  color: #15191d;
+  color: #1a1714;
   font-family: "Shippori Mincho B1", serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.1;
 }
 .main-menu .cartas .carta-text {
-  color: #5a5d61;
+  color: #5d554b;
   font-size: 15px;
 }
 .main-menu .cartas .carta-button a {
   display: inline-flex;
   padding: 10px 24px;
-  border: 1.5px solid #a8292e;
+  border: 1.5px solid #c0282d;
   border-radius: 999px;
-  color: #a8292e;
+  color: #c0282d;
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 700;
   letter-spacing: 2px;
@@ -514,7 +515,7 @@
 }
 .main-menu .cartas .carta-button a:hover {
   color: #f4ede1;
-  background-color: #a8292e;
+  background-color: #c0282d;
 }
 
 @keyframes menus-hero-zoom {

@@ -4,6 +4,20 @@
 const releaseNotes = [
     {
         date: '2026-11-03',
+        branch: 'lucas-4',
+        title: 'Nuevo diseño «Revista»: Asia como la portada de una revista',
+        summary: 'Una variación de la web de Asia con los colores de siempre (negro cálido, dorado y el rojo del logo) y secciones con otra forma: portada de revista, artículo, carta impresa y pasos de pedido.',
+        changes: [
+            { text: 'Nueva portada: «ASIA» en grande y dorado de lado a lado, el Golden Lobster Roll encima con su precio, una banda roja con 創業 2006 y abajo una barra con el horario, la dirección, la nota 4,2 y el teléfono.' },
+            { text: '«Quiénes somos» es un artículo: número 01, la frase en grande, el texto en dos columnas, tres fotos con su nombre y las cifras entre líneas doradas.' },
+            { text: '«Elige tu sushi» es una carta impresa: los tipos a la izquierda, los platos con su precio en el centro y la foto del plato al pasar el ratón.' },
+            { text: '«¿Antojo ahora?» explica el pedido en tres pasos: elegir los platos, enviarlo por WhatsApp y recogerlo o recibirlo en casa.' },
+            { text: 'Las reseñas pasan a una placa dorada con la nota y un índice numerado de lo que más repiten los clientes.' },
+            { text: 'Los favoritos son un mosaico, las cocinas cortinas japonesas y los menús tickets de papel con el precio en un sello rojo.' },
+        ],
+    },
+    {
+        date: '2026-11-03',
         branch: 'lucas-3',
         title: 'Nuevo diseño: Asia con el estilo japonés de IOYI',
         summary: 'Este diseño mezcla la web de Asia (sus colores, el dorado y las ramas con flores) con el estilo japonés del diseño de IOYI: letras nuevas, secciones en color papel, sellos rojos y kanjis.',

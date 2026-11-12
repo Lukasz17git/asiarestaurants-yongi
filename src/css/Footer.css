@@ -1,19 +1,22 @@
-/*white*/
+/*sumi: warm ink black*/
+/*rice white*/
 /*gold*/
-/*grey*/
+/*warm grey*/
 /*brown-gold*/
 /*gold line*/
 /*red of the logo*/
+/*washi paper and ink, for the light sections (from the IOYI design)*/
+/*the gold of the logo, under the names the IOYI sections use*/
 .footer {
   position: relative;
   padding: 80px 30px 140px;
-  background-color: #121518;
+  background-color: #141311;
   display: grid;
   grid-template-columns: 104px minmax(334px, 800px) auto;
   gap: 4vw;
   align-items: center;
   justify-content: center;
-  color: #eee;
+  color: #f4ede1;
 }
 .footer::before {
   content: "";
@@ -22,7 +25,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #a8292e 25%, #d2383d 50%, #a8292e 75%, transparent);
+  background: linear-gradient(90deg, transparent, #c0282d 25%, #e0443f 50%, #c0282d 75%, transparent);
 }
 .footer img {
   width: 104px;

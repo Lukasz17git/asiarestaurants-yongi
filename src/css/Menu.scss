@@ -32,8 +32,8 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             inset: 0;
             z-index: -1;
             background:
-                radial-gradient(ellipse at 50% 45%, rgba(18, 21, 24, 0.35), rgba(18, 21, 24, 0.75) 75%),
-                linear-gradient(to bottom, rgba(18, 21, 24, 0.7), transparent 30%, transparent 65%, $backgroundColor2);
+                radial-gradient(ellipse at 50% 45%, rgba(20, 19, 17, 0.35), rgba(20, 19, 17, 0.75) 75%),
+                linear-gradient(to bottom, rgba(20, 19, 17, 0.7), transparent 30%, transparent 65%, $backgroundColor2);
         }
     }
 
@@ -117,15 +117,15 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        border: 1px solid rgba(201, 171, 129, 0.2);
+        border: 1px solid rgba(212, 175, 114, 0.2);
         border-radius: 26px;
-        background: linear-gradient(160deg, #1f252b, #14181c);
+        background: linear-gradient(160deg, #24211d, #171512);
         // Keeps the data-reveal transitions (reveal.scss), which this one would replace; the hover moves `translate`
         transition: opacity 0.9s $easeOut var(--reveal-delay, 0s), transform 0.9s $easeOut var(--reveal-delay, 0s), border-color 0.45s, box-shadow 0.45s, translate 0.45s $easeOut;
 
         &:hover {
             translate: 0px -8px;
-            border-color: rgba(201, 171, 129, 0.75);
+            border-color: rgba(212, 175, 114, 0.75);
             box-shadow: 0px 26px 50px -26px $textColor2;
 
             .menu-photo img {
@@ -238,7 +238,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
     .allYouCan {
         padding: 110px 30px;
         background:
-            radial-gradient(ellipse at 80% 50%, rgba(201, 171, 129, 0.1), transparent 60%),
+            radial-gradient(ellipse at 80% 50%, rgba(212, 175, 114, 0.1), transparent 60%),
             $backgroundColor3;
 
         .container {
@@ -310,7 +310,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             align-items: center;
             gap: 6px;
             padding: 12px 8px 12px;
-            border: 1px solid rgba(201, 171, 129, 0.16);
+            border: 1px solid rgba(212, 175, 114, 0.16);
             border-radius: 18px;
             color: $textColor1;
             font-family: $fontBody;
@@ -318,7 +318,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             font-weight: 700;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            background: radial-gradient(circle at 50% 40%, #262d34, #171b1f 70%);
+            background: radial-gradient(circle at 50% 40%, #2b2722, #1a1815 70%);
             cursor: pointer;
             transition: color 0.3s, border-color 0.3s, box-shadow 0.3s, transform 0.3s $easeOut;
 
@@ -332,7 +332,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
 
             &:hover {
                 transform: translateY(-3px);
-                border-color: rgba(201, 171, 129, 0.6);
+                border-color: rgba(212, 175, 114, 0.6);
 
                 img {
                     transform: scale(1.1) rotate(-6deg);
@@ -348,7 +348,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         .is-selected {
             color: $lineColor2;
             border-color: $textColor2;
-            background: radial-gradient(circle at 50% 40%, rgba(201, 171, 129, 0.22), #171b1f 75%);
+            background: radial-gradient(circle at 50% 40%, rgba(212, 175, 114, 0.22), #1a1815 75%);
             box-shadow: 0px 14px 30px -18px $textColor2;
         }
     }
@@ -371,9 +371,9 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             align-items: center;
             height: 100%;
             padding: 18px 14px 20px;
-            border: 1px solid rgba(201, 171, 129, 0.16);
+            border: 1px solid rgba(212, 175, 114, 0.16);
             border-radius: 22px;
-            background: radial-gradient(circle at 50% 40%, #262d34, #171b1f 70%);
+            background: radial-gradient(circle at 50% 40%, #2b2722, #1a1815 70%);
             transition: border-color 0.4s, box-shadow 0.4s;
         }
 
@@ -402,7 +402,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
 
         &:hover {
             .dish-bg {
-                border-color: rgba(201, 171, 129, 0.75);
+                border-color: rgba(212, 175, 114, 0.75);
                 box-shadow: 0px 20px 40px -24px $textColor2;
             }
 
@@ -514,7 +514,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
         padding: 110px 24px 120px;
         color: $ink;
         background: radial-gradient(circle at 15% 20%, rgba(168, 41, 46, 0.06), transparent 40%),
-            radial-gradient(circle at 85% 80%, rgba(201, 171, 129, 0.16), transparent 45%), $washi;
+            radial-gradient(circle at 85% 80%, rgba(212, 175, 114, 0.16), transparent 45%), $washi;
 
         .kicker {
             color: $red;
@@ -537,7 +537,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             align-items: center;
             gap: 14px;
             padding: 34px 24px 32px;
-            border: 1.5px solid rgba(21, 25, 29, 0.12);
+            border: 1.5px solid rgba(27, 25, 22, 0.12);
             border-radius: 26px;
             background-color: rgba(255, 255, 255, 0.55);
 
@@ -552,7 +552,7 @@ $easeOut: cubic-bezier(0.22, 1, 0.36, 1);
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            filter: drop-shadow(0px 18px 18px rgba(21, 25, 29, 0.35));
+            filter: drop-shadow(0px 18px 18px rgba(27, 25, 22, 0.35));
             transition: transform 0.6s $easeOut;
         }
 

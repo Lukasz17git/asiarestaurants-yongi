@@ -1,26 +1,26 @@
-$backgroundColor1: #171c20;
-$backgroundColor2:#121518;
-$backgroundColor3: #191D22;
-$textColor1: #eee; /*white*/
-$textColor2: #c9ab81; /*gold*/
-$textColor3:#b3b2b2; /*grey*/
+$backgroundColor1: #1b1916; /*sumi: warm ink black*/
+$backgroundColor2: #141311;
+$backgroundColor3: #211e1a;
+$textColor1: #f4ede1; /*rice white*/
+$textColor2: #d4af72; /*gold*/
+$textColor3: #b9b1a5; /*warm grey*/
 $textColor4: #959494;
 $textColor5: #ad8b5e; /*brown-gold*/
 
-$lineColor1: #c9ab81; /*gold line*/
-$lineColor2: #ead1af;
+$lineColor1: #d4af72; /*gold line*/
+$lineColor2: #ecd3a8;
 $lineColor3: #856B48;
 $lineColor4: #8F795C;
 $lineColor5: #99866a;
 
 /*red of the logo*/
-$red: #a8292e;
-$redLight: #d2383d;
+$red: #c0282d;
+$redLight: #e0443f;
 $redDark: #6e1519;
-$redGlow: rgba(210, 56, 61, 0.35);
+$redGlow: rgba(224, 68, 63, 0.35);
 
 $lineColorHover: #fff;
-$black: #01090B;
+$black: #0a0908;
 $underline: rgb(237, 167, 126);
 
 @mixin gold{
@@ -44,13 +44,13 @@ $underline: rgb(237, 167, 126);
 /*washi paper and ink, for the light sections (from the IOYI design)*/
 $washi: #f4ede1;
 $washi2: #e9dfcd;
-$ink: #15191d;
-$inkGrey: #5a5d61;
+$ink: #1a1714;
+$inkGrey: #5d554b;
 
 /*the gold of the logo, under the names the IOYI sections use*/
-$amber: #c9ab81;
-$amberLight: #ead1af;
-$amberGlow: rgba(201, 171, 129, 0.35);
+$amber: #d4af72;
+$amberLight: #ecd3a8;
+$amberGlow: rgba(212, 175, 114, 0.35);
 
 $fontDisplay: 'Shippori Mincho B1', serif;
 $fontBody: 'Zen Kaku Gothic New', sans-serif;

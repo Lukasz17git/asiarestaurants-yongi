@@ -6,7 +6,6 @@ import Section3 from './Section3'
 import Section4 from './Section4'
 import Footer from '../Footer'
 import Front from './Front'
-import Marquee from '../_new/sections/Marquee'
 import Gallery from '../_new/sections/Gallery'
 import MenusTeaser from '../_new/sections/MenusTeaser'
 import FinalCall from '../_new/sections/FinalCall'
@@ -21,7 +20,6 @@ const Home = () => {
   return (
     <div className='home' ref={homeRef}>
       <Front />
-      <Marquee />
       <Section1 />
       <SushiGuide />
       <Section3 />

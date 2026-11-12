@@ -3,6 +3,12 @@
 Test copy of asiarestaurants.es (Create React App). Every push to `main` deploys to
 https://asiarestaurants-yongi.vercel.app in a few minutes.
 
+The `lucas-4` branch is the «Revista» design: Asia's site laid out like a magazine, in warm black, gold and the logo's red
+(colors in `src/css/_theme.scss`). Home: a cover with «ASIA» across the page under the Golden Lobster Roll, a red 創業 2006
+banner and an info bar instead of the marquee (`src/Home/Front.js`); «Quiénes somos» as an article; the sushi guide as a
+printed menu card; the favorites as a bento, the cuisines as noren, the menus as paper tickets, delivery as 一二三 steps
+and the reviews as a numbered index.
+
 ## Client preferences
 
 Lasting wishes from the client; follow them in every change and add new ones here.

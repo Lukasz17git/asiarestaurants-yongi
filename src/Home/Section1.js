@@ -2,6 +2,13 @@ import React from 'react'
 import CountUp from '../_new/reveal/CountUp'
 import { revealDelay } from '../_new/reveal/useReveal'
 
+const photos = [
+  { photo: 'home1', alt: 'Mesa con platos de cocina china para compartir', caption: 'Para compartir' },
+  { photo: 'home3', alt: 'Uramaki de ternera', caption: 'Uramaki de ternera' },
+  { photo: 'home12', alt: 'Dim sum al vapor', caption: 'Dim sum al vapor' },
+]
+
+// Laid out like a magazine article: number, big quote, two text columns, a photo strip and the figures
 const Section1 = () => {
   const language = 'es'
   const question = {
@@ -28,34 +35,39 @@ const Section1 = () => {
     en: ''
   }
   const stats = [
-    { number: '4,2', text: { es: 'de media en más de 500 reseñas' }, featured: true },
+    { number: '4,2', text: { es: 'de media en más de 500 reseñas' }, stars: true },
     { number: <CountUp to={200} prefix='+' />, text: { es: 'platos en carta' } },
     { number: '2006', text: { es: 'cocinando desde' } },
   ]
 
   return (
     <section className='section1'>
-      <div className='collage' data-reveal='left'>
-        <img className='collage-main' src={require('../images/home/home1.webp')} alt='Mesa con platos de cocina china para compartir' loading='lazy' />
-        <img className='collage-top' src={require('../images/home/home3.webp')} alt='Uramaki de ternera' loading='lazy' />
-        <img className='collage-bottom' src={require('../images/home/home12.webp')} alt='Dim sum al vapor' loading='lazy' />
-        <div className='collage-badge'><span>+200</span>platos</div>
-      </div>
-      <div className='intro' data-reveal='right'>
+      <header className='article-header' data-reveal='up'>
+        <span className='article-number'>01</span>
         <p className='kicker'>{question[language]}</p>
-        <h2 className='heading'>{title[language][0]} <em>{title[language][1]}</em></h2>
+      </header>
+      <h2 className='heading article-quote' data-reveal='up'>{title[language][0]} <em>{title[language][1]}</em></h2>
+      <div className='article-columns' data-reveal='up'>
         <p className='lead'>{description1[language]}</p>
         <p className='lead'>{description2[language]}</p>
-        <div className='stats'>
-          {stats.map(({ number, text, featured }, index) => (
-            <div key={index} className={featured ? 'stat stat-featured' : 'stat'} data-reveal='up' style={revealDelay(index, 0.15)}>
-              {featured && <div className='stat-stars' aria-hidden='true'>★★★★☆</div>}
-              <div className='stat-number'>{number}</div>
-              <div className='stat-text'>{text[language]}</div>
-            </div>
-          ))}
-        </div>
       </div>
+      <div className='article-photos'>
+        {photos.map(({ photo, alt, caption }, index) => (
+          <figure key={photo} data-reveal='up' style={revealDelay(index, 0.12)}>
+            <img src={require(`../images/home/${photo}.webp`)} alt={alt} loading='lazy' />
+            <figcaption>{caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <ul className='article-stats'>
+        {stats.map(({ number, text, stars }, index) => (
+          <li key={index} data-reveal='up' style={revealDelay(index, 0.15)}>
+            <div className='stat-number'>{number}</div>
+            {stars && <div className='stat-stars' aria-hidden='true'>★★★★☆</div>}
+            <div className='stat-text'>{text[language]}</div>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }
