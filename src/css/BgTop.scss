@@ -1,10 +1,26 @@
 @import './theme';
 
+@keyframes lantern-swing {
+    0%,
+    100% {
+        transform: rotate(-1.5deg);
+    }
+
+    50% {
+        transform: rotate(1.5deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .main-restaurant .restaurant-hero-lantern {
+        animation: none;
+    }
+}
+
 .main-restaurant {
     .bg-wrapper {
         position: relative;
         z-index: 1;
-        padding-top: 40px;
 
         &::before {
             content: '';
@@ -21,63 +37,139 @@
             background-size: calc(max(100%, 800px)) 100%;
             z-index: -1;
         }
+    }
 
-        // The red sun of the logo behind the title
+    // A ramen-ya's night photo under the bar, a lantern hanging over it and the title on the photo's end
+    .restaurant-hero {
+        --photo-height: clamp(540px, 52vw, 680px);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: calc(68px + var(--photo-height) + 120px);
+        text-align: left;
+    }
+
+    .restaurant-hero-photo {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 68px;
+        height: var(--photo-height);
+        background: url('../_new/images/ioyi/place/shop-night.webp') center 60% / cover no-repeat;
+
+        // Fades into the page under the title
         &::after {
             content: '';
             position: absolute;
-            top: 270px;
-            left: 50%;
-            width: min(80vw, 460px);
-            aspect-ratio: 1;
-            border-radius: 50%;
-            background: radial-gradient(circle at 38% 32%, $redLight, $red 55%, $redDark);
-            box-shadow: 0px 0px 120px 20px $redGlow;
-            opacity: 0.22;
-            transform: translate(-50%, -50%);
-            z-index: -1;
+            inset: 0;
+            background: linear-gradient(180deg, rgba($black, 0.15), rgba($black, 0.35) 45%, $backgroundColor2);
         }
     }
 
-    .title-menu {
+    .restaurant-hero-lantern {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        width: max-content;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform-origin: top center;
+        animation: lantern-swing 6s ease-in-out infinite;
+
+        // The cord it hangs from
+        &::before {
+            content: '';
+            width: 2px;
+            height: 34px;
+            background-color: $lineColor3;
+        }
+
+        .lantern-cap {
+            position: relative;
+            z-index: 1;
+            width: 64px;
+            height: 14px;
+            border: 1px solid $lineColor3;
+            border-radius: 3px;
+            background-color: $ink;
+        }
+
+        .lantern-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 132px;
+            height: 196px;
+            margin: -2px 0px;
+            border-radius: 66px / 52px;
+            background: repeating-linear-gradient(180deg, transparent 0 20px, rgba(0, 0, 0, 0.18) 20px 22px),
+                linear-gradient(90deg, $redDark, $redLight 45%, $red 70%, $redDark);
+            box-shadow: 0px 0px 60px rgba($redLight, 0.45);
+            writing-mode: vertical-rl;
+            color: $washi;
+            font-family: $fontBrush;
+            font-size: 34px;
+            letter-spacing: 6px;
+        }
+
+        .lantern-tassel {
+            position: relative;
+            width: 10px;
+            height: 22px;
+            margin-top: 16px;
+            border-radius: 2px 2px 5px 5px;
+            background-color: $amber;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 4px;
+                bottom: 100%;
+                width: 2px;
+                height: 16px;
+                background-color: $lineColor3;
+            }
+        }
+    }
+
+    .restaurant-hero-seal {
+        position: absolute;
+        right: 24px;
+        top: 100px;
+        width: 64px;
+        transform: rotate(-6deg);
+    }
+
+    .restaurant-hero-content {
         position: relative;
-        height: 460px;
         width: 100%;
-        overflow: hidden;
+        max-width: 1200px;
+        margin: 0px auto;
+        padding: 0px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
 
-        .letter {
-            position: absolute;
-            height: 160px;
-            top: 50%;
-            left: 50%;
-            transform-origin: bottom center;
-            color: $textColor1;
-            font-size: 40px;
-            font-family: $fontDisplay;
+        // Only the line on the left
+        .kicker {
+            font-size: 12px;
+
+            &::after {
+                display: none;
+            }
         }
 
-        .logo {
-            position: absolute;
-            height: 190px;
-            width: 180px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -11%);
-            background-image: url('../_new/images/ioyi/seal.webp');
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
+        .heading {
+            max-width: 720px;
+            font-size: clamp(38px, 5.2vw, 62px);
+            font-weight: 800;
+            line-height: 1.12;
         }
-
-    }
-
-    .restaurant-title {
-        padding: 0px 40px 20px;
-        color: $textColor2;
-        font-size: 60px;
-        font-family: $fontBrush;
-        max-width: 800px;
-        margin: auto;
     }
 
     .menu-top {

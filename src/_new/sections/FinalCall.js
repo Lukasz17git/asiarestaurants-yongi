@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { addressText, hoursText, phoneText, phoneUrl, reservationWhatsappUrl } from './reservation'
+import { addressText, hoursText, phoneText, phoneUrl } from './reservation'
 import './sections.css'
 
 // Last call before the footer: book a table, order online or see the menu
@@ -13,7 +13,7 @@ const FinalCall = () => {
                 <p className='lead'>Somos un local pequeño y se llena rápido. Reserva por WhatsApp o llámanos, ven con hambre y nosotros ponemos el caldo.</p>
                 <p className='final-call-hours'>{hoursText}</p>
                 <div className='cta-buttons'>
-                    <a className='cta cta-red' href={reservationWhatsappUrl} target='_blank' rel='noreferrer'>Reservar por WhatsApp</a>
+                    <Link className='cta cta-red' to='/reservar'>Reservar mesa</Link>
                     <a className='cta cta-gold' href={phoneUrl}>Llamar al {phoneText.replace('+34 ', '')}</a>
                 </div>
                 <p className='final-call-links'>

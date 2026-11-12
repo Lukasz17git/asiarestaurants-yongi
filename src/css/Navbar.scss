@@ -77,6 +77,12 @@
         font-family: $fontBody;
         letter-spacing: 3px;
 
+        // Only in the phone menu
+        .link-kanji,
+        .menu-info {
+            display: none;
+        }
+
         // The lines only show under the page you are on
         .selected {
             color: $lineColor2;
@@ -157,22 +163,173 @@
     .navbar {
         .menu-icon {
             visibility: visible;
+            transition: background-size 0.3s;
+
+            // The 4 lines turn into an ✕ while the menu is open
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 26px;
+                height: 1.5px;
+                border-radius: 2px;
+                background-color: #ead1af;
+                opacity: 0;
+                transform: translate(-50%, -50%);
+                transition: opacity 0.3s, transform 0.4s;
+            }
         }
 
+        &.is-open .menu-icon {
+            background-size: 0px auto;
+
+            &::before {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &::after {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+
+        // Full screen under the bar, with the red sun of the seal at the bottom
         .menu {
-            height: auto;
+            position: fixed;
+            top: 68px;
+            left: 0;
+            right: 0;
+            height: calc(100vh - 68px);
+            height: calc(100dvh - 68px);
             flex-direction: column;
-            background-color: $backgroundColor2;
-            right: 0px;
-            transform: translateX(110%);
-            top: calc(100% + 2px);
-            padding: 40px 24px;
+            gap: 0;
+            padding: 16px 28px 32px;
+            overflow-y: auto;
             background-color: $black;
-            opacity: 0.85;
-            border-bottom: 2px solid $lineColor1;
-            border-left: 2px solid $lineColor1;
-            border-bottom-left-radius: 6px;
-            transition: 0.5s;
+            background-image: radial-gradient(circle at 100% 100%, rgba($red, 0.3), rgba($red, 0.08) 35%, transparent 60%);
+            transform: translateX(100%);
+            visibility: hidden;
+            transition: transform 0.5s cubic-bezier(0.7, 0, 0.2, 1), visibility 0.5s;
+
+            .link {
+                align-self: stretch;
+                border-bottom: 1px solid rgba($lineColor1, 0.18);
+                opacity: 0;
+                transform: translateX(32px);
+                transition: opacity 0.4s, transform 0.4s, box-shadow 0.3s;
+
+                a {
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-between;
+                    padding: 22px 4px 18px 16px;
+                    font-family: $fontDisplay;
+                    font-size: 22px;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    color: $textColor1;
+                    transition: color 0.3s;
+                }
+
+                .link-kanji {
+                    display: inline;
+                    font-family: $fontBrush;
+                    font-size: 20px;
+                    letter-spacing: 0;
+                    color: $lineColor3;
+                    transition: color 0.3s;
+                }
+
+                .underline {
+                    display: none;
+                }
+
+                &:hover a {
+                    color: $lineColor2;
+                }
+
+                // A red bar marks the page you are on
+                &.selected {
+                    box-shadow: inset 3px 0 0 $red;
+
+                    a {
+                        color: $lineColor2;
+                    }
+
+                    .link-kanji {
+                        color: $redLight;
+                    }
+                }
+
+                // «Pedir online» goes last, as a wide red button
+                &.link-order {
+                    order: 1;
+                    margin-top: 32px;
+                    border-bottom: none;
+                    box-shadow: none;
+
+                    a {
+                        justify-content: center;
+                        gap: 14px;
+                        padding: 16px 24px;
+                        font-family: $fontBody;
+                        font-size: 16px;
+                        letter-spacing: 4px;
+                        color: #fff;
+                    }
+
+                    .link-kanji {
+                        font-size: 16px;
+                        color: rgba(#fff, 0.75);
+                    }
+                }
+            }
+
+            .menu-info {
+                order: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                margin-top: auto;
+                padding-top: 32px;
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                text-align: center;
+                color: $textColor3;
+                opacity: 0;
+                transition: opacity 0.4s;
+
+                a {
+                    color: $textColor2;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        // The links slide in one after another
+        &.is-open .menu {
+            transform: none;
+            visibility: visible;
+
+            .link {
+                opacity: 1;
+                transform: none;
+                transition-delay: calc(0.15s + var(--i) * 0.06s);
+
+                &.link-order {
+                    transition-delay: 0.45s;
+                }
+            }
+
+            .menu-info {
+                opacity: 1;
+                transition-delay: 0.55s;
+            }
         }
     }
 }

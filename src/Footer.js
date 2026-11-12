@@ -5,7 +5,6 @@ const Footer = () => {
   const description = {
     es: 'Ramen japonés de caldo lento en Vilafranca del Penedès. Un pequeño local de 20 plazas, para comer aquí, para llevar o a domicilio.',
   }
-  const openInstagram = () => window.open(instagramUrl, '_blank')
 
   return (
     <div className='footer'>
@@ -15,10 +14,10 @@ const Footer = () => {
         <div className='description font3 grey'>{description.es}</div>
       </div>
       <div className='buttons'>
-        <div className='button' onClick={openInstagram}>
+        <a className='button' href={instagramUrl} target='_blank' rel='noreferrer'>
           <div className='instagram' />
           <div className='text' >@ioyiramen</div>
-        </div>
+        </a>
       </div>
       <div className='copy font3'>© 2026 IOYI Ramen · Carrer de la Indústria, 7 · Vilafranca del Penedès</div>
     </div>

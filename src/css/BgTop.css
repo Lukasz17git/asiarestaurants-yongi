@@ -1,4 +1,5 @@
 /*sumi: the dark of the noodle bar*/
+/*sumi grey, for cards*/
 /*cream*/
 /*amber, the lantern light*/
 /*grey*/
@@ -6,10 +7,22 @@
 /*amber line*/
 /*red of the hanko seal*/
 /*washi paper, where the dish photos (white background) sit*/
+@keyframes lantern-swing {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .main-restaurant .restaurant-hero-lantern {
+    animation: none;
+  }
+}
 .main-restaurant .bg-wrapper {
   position: relative;
   z-index: 1;
-  padding-top: 40px;
 }
 .main-restaurant .bg-wrapper::before {
   content: "";
@@ -26,55 +39,119 @@
   background-size: max(100%, 800px) 100%;
   z-index: -1;
 }
-.main-restaurant .bg-wrapper::after {
+.main-restaurant .restaurant-hero {
+  --photo-height: clamp(540px, 52vw, 680px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: calc(68px + var(--photo-height) + 120px);
+  text-align: left;
+}
+.main-restaurant .restaurant-hero-photo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 68px;
+  height: var(--photo-height);
+  background: url("../_new/images/ioyi/place/shop-night.webp") center 60%/cover no-repeat;
+}
+.main-restaurant .restaurant-hero-photo::after {
   content: "";
   position: absolute;
-  top: 270px;
-  left: 50%;
-  width: min(80vw, 460px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle at 38% 32%, #e0393f, #c8242b 55%, #8d171c);
-  box-shadow: 0px 0px 120px 20px rgba(224, 57, 63, 0.35);
-  opacity: 0.22;
-  transform: translate(-50%, -50%);
-  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 11, 10, 0.15), rgba(13, 11, 10, 0.35) 45%, #141210);
 }
-.main-restaurant .title-menu {
+.main-restaurant .restaurant-hero-lantern {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  width: max-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  animation: lantern-swing 6s ease-in-out infinite;
+}
+.main-restaurant .restaurant-hero-lantern::before {
+  content: "";
+  width: 2px;
+  height: 34px;
+  background-color: #8a5e1f;
+}
+.main-restaurant .restaurant-hero-lantern .lantern-cap {
   position: relative;
-  height: 460px;
-  width: 100%;
-  overflow: hidden;
+  z-index: 1;
+  width: 64px;
+  height: 14px;
+  border: 1px solid #8a5e1f;
+  border-radius: 3px;
+  background-color: #1a1714;
 }
-.main-restaurant .title-menu .letter {
-  position: absolute;
-  height: 160px;
-  top: 50%;
-  left: 50%;
-  transform-origin: bottom center;
-  color: #f2eadc;
-  font-size: 40px;
-  font-family: "Shippori Mincho B1", serif;
-}
-.main-restaurant .title-menu .logo {
-  position: absolute;
-  height: 190px;
-  width: 180px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -11%);
-  background-image: url("../_new/images/ioyi/seal.webp");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.main-restaurant .restaurant-title {
-  padding: 0px 40px 20px;
-  color: #e3a33f;
-  font-size: 60px;
+.main-restaurant .restaurant-hero-lantern .lantern-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 196px;
+  margin: -2px 0px;
+  border-radius: 66px/52px;
+  background: repeating-linear-gradient(180deg, transparent 0 20px, rgba(0, 0, 0, 0.18) 20px 22px), linear-gradient(90deg, #8d171c, #e0393f 45%, #c8242b 70%, #8d171c);
+  box-shadow: 0px 0px 60px rgba(224, 57, 63, 0.45);
+  writing-mode: vertical-rl;
+  color: #f4ede1;
   font-family: "Yuji Syuku", serif;
-  max-width: 800px;
-  margin: auto;
+  font-size: 34px;
+  letter-spacing: 6px;
+}
+.main-restaurant .restaurant-hero-lantern .lantern-tassel {
+  position: relative;
+  width: 10px;
+  height: 22px;
+  margin-top: 16px;
+  border-radius: 2px 2px 5px 5px;
+  background-color: #e3a33f;
+}
+.main-restaurant .restaurant-hero-lantern .lantern-tassel::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 100%;
+  width: 2px;
+  height: 16px;
+  background-color: #8a5e1f;
+}
+.main-restaurant .restaurant-hero-seal {
+  position: absolute;
+  right: 24px;
+  top: 100px;
+  width: 64px;
+  transform: rotate(-6deg);
+}
+.main-restaurant .restaurant-hero-content {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.main-restaurant .restaurant-hero-content .kicker {
+  font-size: 12px;
+}
+.main-restaurant .restaurant-hero-content .kicker::after {
+  display: none;
+}
+.main-restaurant .restaurant-hero-content .heading {
+  max-width: 720px;
+  font-size: clamp(38px, 5.2vw, 62px);
+  font-weight: 800;
+  line-height: 1.12;
 }
 .main-restaurant .menu-top {
   height: 100px;

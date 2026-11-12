@@ -43,7 +43,7 @@ Lasting wishes from the client; follow them in every change and add new ones her
   - `src/_new/releaseNotesData.js`: the changes listed in «Editar con IA» -> «Ver cambios», newest entry first (one entry
     per change request, in Spanish for the client); each shows only on its `branch`
 - Sections shared by Home and Menus (`src/_new/sections/`): the red `Marquee`, the photo `Gallery`, `MenusTeaser`,
-  `FinalCall` and `reservation.js` (the WhatsApp booking link, and the message and time slots of `/reservar`). Scroll animations (`src/_new/reveal/`): `useReveal(pageRef)`
+  `FinalCall` and `reservation.js` (phone, address and hours, and the message and time slots of `/reservar`). Scroll animations (`src/_new/reveal/`): `useReveal(pageRef)`
   fades in every `data-reveal='up|left|right|zoom'` of the page when it comes into view; `CountUp` counts a number up.
   Shared buttons and titles (`cta cta-red`, `cta cta-gold`, `kicker`, `heading` with `<em>` in red, `lead`) are in `App.scss`
 - "Editar con IA" is the floating button at the bottom right: `src/_new/ai-web-editor/`, a self-contained module mounted once

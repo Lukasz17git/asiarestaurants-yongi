@@ -75,6 +75,10 @@
   font-family: "Zen Kaku Gothic New", sans-serif;
   letter-spacing: 3px;
 }
+.navbar .menu .link-kanji,
+.navbar .menu .menu-info {
+  display: none;
+}
 .navbar .menu .selected {
   color: #f2c477;
 }
@@ -137,20 +141,144 @@
 @media (max-width: 940px) {
   .navbar .menu-icon {
     visibility: visible;
+    transition: background-size 0.3s;
+  }
+  .navbar .menu-icon::before, .navbar .menu-icon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 26px;
+    height: 1.5px;
+    border-radius: 2px;
+    background-color: #ead1af;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s, transform 0.4s;
+  }
+  .navbar.is-open .menu-icon {
+    background-size: 0px auto;
+  }
+  .navbar.is-open .menu-icon::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .navbar.is-open .menu-icon::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
   .navbar .menu {
-    height: auto;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 68px);
+    height: calc(100dvh - 68px);
     flex-direction: column;
-    background-color: #141210;
-    right: 0px;
-    transform: translateX(110%);
-    top: calc(100% + 2px);
-    padding: 40px 24px;
+    gap: 0;
+    padding: 16px 28px 32px;
+    overflow-y: auto;
     background-color: #0d0b0a;
-    opacity: 0.85;
-    border-bottom: 2px solid #e3a33f;
-    border-left: 2px solid #e3a33f;
-    border-bottom-left-radius: 6px;
-    transition: 0.5s;
+    background-image: radial-gradient(circle at 100% 100%, rgba(200, 36, 43, 0.3), rgba(200, 36, 43, 0.08) 35%, transparent 60%);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.5s cubic-bezier(0.7, 0, 0.2, 1), visibility 0.5s;
+  }
+  .navbar .menu .link {
+    align-self: stretch;
+    border-bottom: 1px solid rgba(227, 163, 63, 0.18);
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.4s, transform 0.4s, box-shadow 0.3s;
+  }
+  .navbar .menu .link a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 22px 4px 18px 16px;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #f2eadc;
+    transition: color 0.3s;
+  }
+  .navbar .menu .link .link-kanji {
+    display: inline;
+    font-family: "Yuji Syuku", serif;
+    font-size: 20px;
+    letter-spacing: 0;
+    color: #8a5e1f;
+    transition: color 0.3s;
+  }
+  .navbar .menu .link .underline {
+    display: none;
+  }
+  .navbar .menu .link:hover a {
+    color: #f2c477;
+  }
+  .navbar .menu .link.selected {
+    box-shadow: inset 3px 0 0 #c8242b;
+  }
+  .navbar .menu .link.selected a {
+    color: #f2c477;
+  }
+  .navbar .menu .link.selected .link-kanji {
+    color: #e0393f;
+  }
+  .navbar .menu .link.link-order {
+    order: 1;
+    margin-top: 32px;
+    border-bottom: none;
+    box-shadow: none;
+  }
+  .navbar .menu .link.link-order a {
+    justify-content: center;
+    gap: 14px;
+    padding: 16px 24px;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: #fff;
+  }
+  .navbar .menu .link.link-order .link-kanji {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .navbar .menu .menu-info {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #b2a998;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .navbar .menu .menu-info a {
+    color: #e3a33f;
+    cursor: pointer;
+  }
+  .navbar.is-open .menu {
+    transform: none;
+    visibility: visible;
+  }
+  .navbar.is-open .menu .link {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(0.15s + var(--i) * 0.06s);
+  }
+  .navbar.is-open .menu .link.link-order {
+    transition-delay: 0.45s;
+  }
+  .navbar.is-open .menu .menu-info {
+    opacity: 1;
+    transition-delay: 0.55s;
   }
 }

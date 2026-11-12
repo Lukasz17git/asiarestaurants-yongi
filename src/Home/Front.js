@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { reservationWhatsappUrl } from '../_new/sections/reservation'
 import { ioyiPhoto } from '../_new/images/ioyi/photos'
 
 const Front = () => {
@@ -22,12 +21,12 @@ const Front = () => {
         </p>
         <div className='cta-buttons front-buttons'>
           <Link className='cta cta-red' to='/menu'>Ver carta</Link>
-          <a className='cta cta-gold' href={reservationWhatsappUrl} target='_blank' rel='noreferrer'>Reservar mesa</a>
+          <Link className='cta cta-gold' to='/reservar'>Reservar mesa</Link>
         </div>
-        <a className='front-fomo' href={reservationWhatsappUrl} target='_blank' rel='noreferrer'>
+        <Link className='front-fomo' to='/reservar'>
           <span className='pulse-dot' />
           Solo 20 plazas y se llena rápido: <u>reserva la tuya</u>
-        </a>
+        </Link>
       </div>
       <div className='front-scroll'><span /></div>
     </section>
